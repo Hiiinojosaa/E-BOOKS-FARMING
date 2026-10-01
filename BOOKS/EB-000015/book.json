@@ -18,7 +18,7 @@
   "assigned_agent": "TEST-AGENT",
   "owner_partner": null,
   "created_at": "2026-10-01T18:16:31Z",
-  "updated_at": "2026-10-01T18:19:12Z",
+  "updated_at": "2026-10-01T18:20:04Z",
   "version": "1.0",
   "parent_book": null,
   "translated_from": null,
@@ -33,7 +33,7 @@
   "price_suggested": null,
   "risk_level": "LOW",
   "risk_reasons": [],
-  "word_count_target": 1300,
+  "word_count_target": 600,
   "brief_approved": true,
   "brief_approved_by": "ADMIN",
   "human_approval": {

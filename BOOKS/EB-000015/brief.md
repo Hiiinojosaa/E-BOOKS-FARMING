@@ -31,8 +31,9 @@ quality guarantee. This book's puzzles are generated and re-verified by a solver
 Plain, warm, reassuring. No jargon. Short sentences in the instructional chapters.
 
 ## Length
-Intro + How to Solve only: approximately 1,100-1,300 words of prose. The rest of the book is
-puzzle grids and a solution key, not prose — word count does not apply to those pages.
+Intro + How to Solve only: approximately 600 words of prose (this is a short reference section,
+not a full chapter — most of the book's value is the verified puzzles, not the instructions). The
+rest of the book is puzzle grids and a solution key, not prose — word count does not apply there.
 
 ## Sources to use
 None restated (see research.md: this run deliberately avoids citing third-party statistics).
