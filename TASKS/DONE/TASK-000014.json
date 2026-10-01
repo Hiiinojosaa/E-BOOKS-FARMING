@@ -5,17 +5,20 @@
   "role": "RESEARCH_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "S1-JEFE",
   "created_by": "S1-JEFE",
   "created_at": "2026-10-01T17:19:42Z",
   "started_at": "2026-10-01T17:20:04Z",
-  "completed_at": null,
+  "completed_at": "2026-10-01T17:20:45Z",
   "claimed_from_state": "RESEARCH_COMPLETE",
   "dependencies": [],
   "prompt": "PROMPTS/BRIEF.md",
   "notes": "",
-  "output": null,
+  "output": {
+    "brief_chapters": 7,
+    "word_count_target": 6000
+  },
   "error": null,
   "errors": [],
   "retry_count": 0,
@@ -23,7 +26,12 @@
   "attempts": [
     {
       "agent": "S1-JEFE",
-      "started_at": "2026-10-01T17:20:04Z"
+      "started_at": "2026-10-01T17:20:04Z",
+      "ended_at": "2026-10-01T17:20:45Z",
+      "result": "DONE",
+      "note": "Plan de 7 capítulos (intro + 5 + conclusión), 6000 palabras, riesgo bajo, sin estadísticas prestadas en el texto.",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }
