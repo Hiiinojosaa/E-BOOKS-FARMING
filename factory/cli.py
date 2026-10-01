@@ -61,6 +61,7 @@ def _pg_drain(agent):
         pg_sync.push_state(panel.state(agent))
         for b in books.all_books():
             pg_sync.push_book_details(b["id"], panel.book_detail(b["id"]))
+            pg_sync.push_book_files(b)
     except Exception as e:  # noqa: BLE001 - the remote bridge must never break a local CLI command
         print(f"[pg_sync] fallo: {e}")
 

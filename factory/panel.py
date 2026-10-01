@@ -407,6 +407,7 @@ def _pg_tick(agent):
         for b in books.all_books():
             try:
                 pg_sync.push_book_details(b["id"], book_detail(b["id"]))
+                pg_sync.push_book_files(b)
             except Exception as e:  # noqa: BLE001
                 print(f"[pg_sync] push_book_details({b['id']}) fallo: {e}")
     except Exception as e:  # noqa: BLE001

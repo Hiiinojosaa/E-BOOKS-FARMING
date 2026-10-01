@@ -67,6 +67,44 @@ def push_book_details(book_id, detail_dict):
         )
 
 
+def push_book_file(book_id, kind, file_path):
+    """Mirror a cover/PDF/EPUB into Postgres so the Vercel panel (no access to the local disk)
+    can serve it. Skips the upload if this exact file (by mtime) is already stored."""
+    if not enabled():
+        return
+    file_path = path(file_path)
+    if not file_path.exists():
+        return
+    mtime = file_path.stat().st_mtime
+    with _connect() as conn, conn.cursor() as cur:
+        cur.execute("select mtime from book_files where book_id = %s and kind = %s", [book_id, kind])
+        row = cur.fetchone()
+        if row and row[0] == mtime:
+            return
+        ctype = mimetypes.guess_type(file_path.name)[0] or "application/octet-stream"
+        cur.execute(
+            "insert into book_files (book_id, kind, filename, content_type, mtime, data, updated_at) "
+            "values (%s, %s, %s, %s, %s, %s, now()) "
+            "on conflict (book_id, kind) do update set filename = excluded.filename, "
+            "content_type = excluded.content_type, mtime = excluded.mtime, data = excluded.data, updated_at = now()",
+            [book_id, kind, file_path.name, ctype, mtime, file_path.read_bytes()],
+        )
+
+
+def push_book_files(book):
+    """Push whichever of cover/pdf/epub currently exist for this book. Cheap no-op when unchanged."""
+    if not enabled():
+        return
+    bdir = path("BOOKS", book["id"])
+    cover = bdir / "design" / "cover.png"
+    if cover.exists():
+        push_book_file(book["id"], "cover", cover)
+    for kind in ("pdf", "epub"):
+        rel = (book.get("files") or {}).get(kind)
+        if rel:
+            push_book_file(book["id"], kind, bdir / rel)
+
+
 def push_users():
     if not enabled():
         return
