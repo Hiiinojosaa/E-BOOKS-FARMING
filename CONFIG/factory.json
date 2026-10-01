@@ -58,9 +58,8 @@
   ],
   "main_agent": "S1-JEFE",
   "partner_names": {
-    "SOCIO-1": "Socio 1",
-    "DANI": "Socio 2"
+    "ADMIN": "Addless Motions"
   },
-  "daily_target": 12,
+  "daily_target": 20,
   "auto_approve_recommendations": false
 }

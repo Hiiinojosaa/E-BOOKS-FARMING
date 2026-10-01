@@ -60,7 +60,7 @@ def _hash(pin, salt):
 def partner_names():
     cfg = load_config()
     names = cfg.get("partner_names") or {}
-    return {p: names.get(p) or {"SOCIO-1": "Socio 1", "DANI": "Dani"}.get(p, p) for p in cfg["partners"]}
+    return {p: names.get(p) or p for p in cfg["partners"]}
 
 
 def login(partner, pin, name=None):
@@ -71,9 +71,9 @@ def login(partner, pin, name=None):
     if until > time.time():
         raise FactoryError(f"Demasiados intentos. Espera {int(until - time.time())} s")
     users = _users()
-    if partner not in users:  # first time on this computer: create the PIN
-        if not pin.isdigit() or not 4 <= len(pin) <= 8:
-            raise FactoryError("El PIN debe tener entre 4 y 8 números")
+    if partner not in users:  # first time on this computer: create the password
+        if not 4 <= len(pin) <= 40:
+            raise FactoryError("La contraseña debe tener entre 4 y 40 caracteres")
         salt = secrets.token_hex(16)
         users[partner] = {"salt": salt, "pin": _hash(pin, salt), "created_at": now_iso()}
         write_json(_users_file(), users)
@@ -100,9 +100,9 @@ def change_pin(partner, old, new):
     users = _users()
     u = users.get(partner)
     if not u or not secrets.compare_digest(u["pin"], _hash(str(old), u["salt"])):
-        raise FactoryError("PIN actual incorrecto")
-    if not str(new).isdigit() or not 4 <= len(str(new)) <= 8:
-        raise FactoryError("El PIN nuevo debe tener entre 4 y 8 números")
+        raise FactoryError("Contraseña actual incorrecta")
+    if not 4 <= len(str(new)) <= 40:
+        raise FactoryError("La contraseña nueva debe tener entre 4 y 40 caracteres")
     salt = secrets.token_hex(16)
     users[partner] = {"salt": salt, "pin": _hash(str(new), salt), "created_at": u["created_at"], "changed_at": now_iso()}
     write_json(_users_file(), users)
