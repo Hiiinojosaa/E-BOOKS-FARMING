@@ -186,7 +186,7 @@ def verify_wordsearch(entry):
 
 
 # ---------------------------------------------------------------------- rendering (headless Chrome, like covers)
-def _render_png(svg, out_path, size):
+def _render_png(svg, out_path, width, height):
     page = (f'<!doctype html><html><head><meta charset="utf-8"><style>'
             f"html,body{{margin:0;padding:0;background:#fff}}</style></head>"
             f"<body>{svg}</body></html>")
@@ -195,11 +195,15 @@ def _render_png(svg, out_path, size):
     write_text(tmp_html, page)
     if out_path.exists():
         out_path.unlink()
-    r = build._chrome([f"--screenshot={out_path.resolve()}", f"--window-size={size},{size}",
+    r = build._chrome([f"--screenshot={out_path.resolve()}", f"--window-size={width},{height}",
                         "--hide-scrollbars", "--force-device-scale-factor=1", tmp_html.resolve().as_uri()])
     tmp_html.unlink(missing_ok=True)
     if not out_path.exists():
         raise FactoryError(f"Chrome no generó la imagen del puzzle: {r.stderr[-400:]}")
+
+
+def img_height(size, title):
+    return size + (60 if title else 0)
 
 
 def sudoku_svg(grid, size=900, given_mask=None, title=""):
