@@ -5,7 +5,7 @@
   "role": "RESEARCH_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "READY",
   "assigned_agent": "TEST-AGENT",
   "created_by": "TEST-AGENT",
   "created_at": "2026-10-01T18:17:07Z",
@@ -16,14 +16,23 @@
   "prompt": "PROMPTS/RESEARCH.md",
   "notes": "",
   "output": null,
-  "error": null,
-  "errors": [],
-  "retry_count": 0,
+  "error": "Validación fallida: research/research.md demasiado corto (353 < 400 palabras)",
+  "errors": [
+    {
+      "at": "2026-10-01T18:17:43Z",
+      "agent": "TEST-AGENT",
+      "error": "Validación fallida: research/research.md demasiado corto (353 < 400 palabras)"
+    }
+  ],
+  "retry_count": 1,
   "last_attempt": "2026-10-01T18:17:13Z",
   "attempts": [
     {
       "agent": "TEST-AGENT",
-      "started_at": "2026-10-01T18:17:13Z"
+      "started_at": "2026-10-01T18:17:13Z",
+      "ended_at": "2026-10-01T18:17:43Z",
+      "result": "FAILED",
+      "error": "Validación fallida: research/research.md demasiado corto (353 < 400 palabras)"
     }
   ]
 }
