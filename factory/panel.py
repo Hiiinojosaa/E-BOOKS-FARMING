@@ -287,7 +287,8 @@ def do_action(a, by):
         if target_working:
             ack = f"Recibido. {', '.join(x['agent_id'] for x in target_working)} está trabajando ahora y te responderá aquí al terminar su tarea actual."
         elif target_agent:
-            ack = f"Recibido. {agentLabel_(target_agent)} no está encendido ahora mismo: tu mensaje queda en cola para cuando arranque."
+            label = next((x.get("label") or x["agent_id"] for x in agents.all_agents() if x["agent_id"] == target_agent), target_agent)
+            ack = f"Recibido. {label} no está encendido ahora mismo: tu mensaje queda en cola para cuando arranque."
         else:
             ack = "Recibido. Ahora mismo no hay ningún agente encendido: tu mensaje queda en cola y el primero que arranque lo atenderá y te responderá aquí."
         chat.post("Fábrica", "system", ack, kind="note", order_id=o["id"], reply_to=msg["id"])
