@@ -79,7 +79,7 @@ def detect_risk(*texts):
 def create(topic, language="en-US", market=None, *, book_id=None, agent="HUMAN", priority="NORMAL",
            niche="", genre="non-fiction", target_audience="", target_languages=None, collection=None,
            parent_book=None, translated_from=None, state="IDEA", word_count_target=6000, notes="", recommended=False,
-           rationale=""):
+           rationale="", kind="TEXT", puzzle_count=None, word_list=None):
     cfg = load_config()
     language = norm_lang(language)
     if priority not in states.PRIORITIES:
@@ -96,6 +96,9 @@ def create(topic, language="en-US", market=None, *, book_id=None, agent="HUMAN",
     ts = now_iso()
     book = {
         "id": book_id,
+        "kind": kind,
+        "puzzle_count": puzzle_count,
+        "word_list": word_list or [],
         "topic": topic,
         "title": topic,
         "subtitle": "",

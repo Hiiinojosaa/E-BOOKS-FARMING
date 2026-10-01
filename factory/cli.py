@@ -112,9 +112,11 @@ def cmd_agent(a):
 def cmd_book(a):
     a.id = a.id or a.id_opt
     if a.action == "new":
+        word_list = [w.strip() for w in a.word_list.split(",")] if getattr(a, "word_list", None) else None
         b = books.create(a.topic, a.language, a.market, book_id=a.id, agent=a.by, priority=a.priority, niche=a.niche or "",
                          target_audience=a.audience or "", target_languages=a.target_languages.split(",") if a.target_languages else None,
-                         collection=a.collection, word_count_target=a.words, notes=a.notes or "")
+                         collection=a.collection, word_count_target=a.words, notes=a.notes or "",
+                         kind=getattr(a, "kind", None) or "TEXT", puzzle_count=getattr(a, "puzzle_count", None), word_list=word_list)
         if a.collection:
             _collection_add(a.collection, b["id"])
         out({"id": b["id"], "status": b["status"], "risk_level": b["risk_level"]})
@@ -497,6 +499,9 @@ def parser():
     s.add_argument("--priority", default="NORMAL"); s.add_argument("--niche"); s.add_argument("--audience")
     s.add_argument("--target-languages"); s.add_argument("--collection"); s.add_argument("--words", type=int, default=6000)
     s.add_argument("--notes"); s.add_argument("--by", default="HUMAN")
+    s.add_argument("--kind", choices=["TEXT", "PUZZLE_SUDOKU", "PUZZLE_WORDSEARCH"], default="TEXT")
+    s.add_argument("--puzzle-count", dest="puzzle_count", type=int)
+    s.add_argument("--word-list", dest="word_list", help="para PUZZLE_WORDSEARCH: palabras separadas por comas")
     s.add_argument("--id", dest="id_opt", help="ID explícito (p.ej. EB-TEST-001); por defecto se asigna EB-NNNNNN")
     for name, fn, h in [("tick", cmd_tick, "recover+orchestrate+auto+reports"), ("auto", cmd_auto, "ejecutar tareas automáticas (FORMAT)"),
                         ("recover", cmd_recover, "RECOVER tras un cierre"), ("orchestrate", cmd_orchestrate, "crear siguientes tareas")]:

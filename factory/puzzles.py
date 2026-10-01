@@ -338,22 +338,12 @@ def generate_book(book_id, agent, seed=None):
             entries.append(make_sudoku(difficulty, rng))
     else:
         words = b.get("word_list") or []
-        if len(words) < count:
-            raise FactoryError(f"{book_id}: word_list tiene {len(words)} palabras, hacen falta {count}")
-        rng.shuffle(words)
-        for i in range(count):
-            entries.append(make_wordsearch(words[i:i + 1] + rng.sample([w for w in words if w != words[i]],
-                                                                        k=min(14, len(words) - 1)), rng))
+        if len(words) < 15:
+            raise FactoryError(f"{book_id}: word_list tiene {len(words)} palabras, hacen falta al menos 15")
+        for _ in range(count):
+            entries.append(make_wordsearch(rng.sample(words, k=min(15, len(words))), rng))
 
-    chapters = []
-    if kind == "PUZZLE_SUDOKU":
-        chapters.append(("Introduction", SUDOKU_INTRO.format(count=count).split("\n\n", 1)[0]
-                          .replace("# Introduction\n\n", "")))
-        full = SUDOKU_INTRO.format(count=count)
-    else:
-        full = WORDSEARCH_INTRO.format(count=count)
-
-    puzzle_lines, solution_lines = {}, []
+    full = SUDOKU_INTRO.format(count=count) if kind == "PUZZLE_SUDOKU" else WORDSEARCH_INTRO.format(count=count)
     by_tier = {}
     for i, entry in enumerate(entries, 1):
         tier = entry.get("difficulty", "ALL")
@@ -390,13 +380,10 @@ def generate_book(book_id, agent, seed=None):
     write_text(manuscript_dir / "draft.md", full)
     write_json(manuscript_dir / "puzzles.json", {"kind": kind, "count": count, "generated_at": now_iso(),
                                                   "seed": str(seed), "entries": entries})
-    prose_words = word_count(SUDOKU_INTRO.format(count=count) if kind == "PUZZLE_SUDOKU"
-                              else WORDSEARCH_INTRO.format(count=count))
-    b = books.load(book_id)
-    b["word_count_target"] = max(600, int(prose_words / 0.85))
-    b["brief_chapters"] = 2 + len(by_tier) + 1  # intro + how-to-solve + one chapter per tier + solutions
-    books.save(b)
-    return {"puzzles": count, "images": count * 2, "word_count_target": b["word_count_target"]}
+    # word_count_target / brief_chapters come from the brief, same contract as any other book: the
+    # brief for a puzzle book should state ~N words (intro + how-to-solve only) and 6 chapters
+    # (Introduction, How to Solve, Easy/Medium/Hard Puzzles, Solutions) — see SYSTEM/puzzle_books.md.
+    return {"puzzles": count, "images": count * 2, "word_count": word_count(full)}
 
 
 def verify_book_puzzles(book_id):
