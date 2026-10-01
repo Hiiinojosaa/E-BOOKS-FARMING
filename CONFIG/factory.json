@@ -60,7 +60,7 @@
   "main_agent": "S1-JEFE",
   "partner_names": {
     "SOCIO-1": "Socio 1",
-    "DANI": "Dani"
+    "DANI": "Socio 2"
   },
   "daily_target": 12,
   "auto_approve_recommendations": false
