@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.png binary
+*.jpg binary
+*.epub binary
+*.pdf binary
+# append-only logs: let git keep both sides instead of conflicting
+*.jsonl merge=union

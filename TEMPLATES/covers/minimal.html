@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><style>
+/* Cover template "minimal": typographic, one accent shape. Variables: {{bg}} {{fg}} {{accent}} {{muted}} */
+html,body{margin:0;width:{{width}}px;height:{{height}}px;overflow:hidden}
+body{background:{{bg}};color:{{fg}};font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;position:relative}
+.band{position:absolute;left:0;right:0;top:0;height:14px;background:{{accent}}}
+.shape{position:absolute;right:-260px;top:300px;width:980px;height:980px;border-radius:50%;border:56px solid {{accent}};opacity:.9}
+.dot{position:absolute;right:300px;top:780px;width:120px;height:120px;border-radius:50%;background:{{accent}}}
+.tag{position:absolute;left:130px;top:150px;font-size:44px;letter-spacing:.32em;text-transform:uppercase;color:{{muted}};font-weight:600}
+.title{position:absolute;left:130px;right:130px;top:1330px;font-weight:800;line-height:.98;letter-spacing:-.02em}
+.title .l1{font-size:200px;display:block}
+.title .l2{font-size:200px;display:block;color:{{accent}}}
+.sub{position:absolute;left:130px;right:200px;top:1830px;font-size:64px;line-height:1.25;color:{{fg}};opacity:.86;font-weight:400}
+.author{position:absolute;left:130px;bottom:150px;font-size:56px;letter-spacing:.14em;text-transform:uppercase;font-weight:600}
+.rule{position:absolute;left:130px;bottom:250px;width:180px;height:8px;background:{{accent}}}
+</style></head><body>
+<div class="band"></div><div class="shape"></div><div class="dot"></div>
+<div class="tag">{{tagline}}</div>
+<div class="title"><span class="l1">{{title_line1}}</span><span class="l2">{{title_line2}}</span></div>
+<div class="sub">{{subtitle}}</div>
+<div class="rule"></div><div class="author">{{author}}</div>
+</body></html>

@@ -1,0 +1,12 @@
+{
+  "python": "3.14.7",
+  "git": "git version 2.55.0.windows.5",
+  "chrome_or_edge (PDF/portada)": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "pandoc (opcional)": null,
+  "epubcheck (opcional, requiere Java)": null,
+  "java (opcional)": null,
+  "calibre ebook-convert (opcional, MOBI/AZW3)": null,
+  "git_sync_enabled": false,
+  "integrity_problems": [],
+  "checked_at": "2026-10-01T08:32:04Z"
+}

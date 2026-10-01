@@ -1,0 +1,60 @@
+{
+  "project_name": "E-Book Factory",
+  "default_author": "TBD-PEN-NAME",
+  "publisher": "",
+  "partners": [
+    "SOCIO-1",
+    "DANI"
+  ],
+  "approvals_required": 1,
+  "lock_ttl_minutes": 90,
+  "agent_offline_minutes": 180,
+  "max_retries": 3,
+  "max_qc_failures": 2,
+  "max_active_books": 5,
+  "auto_promote_ideas": true,
+  "brief_approval": "auto",
+  "max_tasks_per_session": 12,
+  "trim_size": {
+    "width_in": 6,
+    "height_in": 9
+  },
+  "cover_size_px": {
+    "width": 1600,
+    "height": 2560
+  },
+  "chrome_path": "",
+  "git": {
+    "sync_enabled": false,
+    "remote": "origin",
+    "branch": "main"
+  },
+  "high_risk_keywords": [
+    "medic",
+    "health",
+    "salud",
+    "diet",
+    "nutri",
+    "supplement",
+    "suplement",
+    "legal",
+    "law",
+    "ley",
+    "tax",
+    "impuesto",
+    "fiscal",
+    "invest",
+    "inver",
+    "crypto",
+    "finanz",
+    "financ",
+    "mental illness",
+    "therapy",
+    "terapia",
+    "pregnan",
+    "embaraz",
+    "drug",
+    "fármaco",
+    "farmac"
+  ]
+}
