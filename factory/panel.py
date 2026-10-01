@@ -299,6 +299,13 @@ def do_action(a, by):
     elif act == "answer_question":
         res = decisions.answer(a["id"], by, a["answer"])["id"]
         orchestrator.orchestrate(by)  # an approved recommendation enters the queue right away
+    elif act == "start_production":
+        b = books.load(a["id"])
+        if b["status"] != "IDEA" or not b.get("idea_approved", True):
+            raise FactoryError("Esta idea todavía no se puede producir")
+        books.transition(a["id"], "RESEARCH_PENDING", by, "PROMOTE_IDEA", note=f"Producción iniciada por {by}")
+        chat.post("Fábrica", "system", f"{partner_names().get(by, by)} ha puesto a producir «{b['title']}».", kind="note", book_id=a["id"])
+        res = orchestrator.orchestrate(by)
     elif act == "new_book":
         langs = [l for l in (a.get("target_languages") or []) if l]
         b = books.create(a["topic"], a.get("language", "en-US"), agent=by, priority=a.get("priority", "NORMAL"),

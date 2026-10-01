@@ -12,8 +12,8 @@
   "max_retries": 3,
   "max_qc_failures": 2,
   "max_active_books": 25,
-  "auto_promote_ideas": true,
-  "brief_approval": "auto",
+  "auto_promote_ideas": false,
+  "brief_approval": "human",
   "max_tasks_per_session": 12,
   "trim_size": {
     "width_in": 6,
