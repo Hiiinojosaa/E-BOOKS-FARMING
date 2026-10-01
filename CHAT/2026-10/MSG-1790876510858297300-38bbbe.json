@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1790876510858297300-38bbbe",
+  "ts": "2026-10-01T17:41:50Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "message",
+  "to": null,
+  "text": "He añadido 13 ideas nuevas a la librería (las que nos diste: prompts de IA, finanzas, journaling, eventos, mascotas, fitness y toda la tanda de Navidad/Hanukkah con prioridad alta por la fecha). Están en Ideas, esperando que les deis a «Empezar a producir».",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}

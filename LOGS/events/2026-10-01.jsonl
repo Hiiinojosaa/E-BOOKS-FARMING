@@ -134,3 +134,17 @@
 {"ts": "2026-10-01T17:36:58Z", "type": "STATE_CHANGE", "book_id": "EB-000001", "frm": "BRIEF_READY", "to": "WRITING_PENDING", "agent": "SOCIO-1", "action": "BRIEF_GATE", "result": "APPROVED"}
 {"ts": "2026-10-01T17:36:58Z", "type": "TASK_CREATED", "task_id": "TASK-000015", "book_id": "EB-000001", "step": "WRITE", "priority": "NORMAL"}
 {"ts": "2026-10-01T17:36:58Z", "type": "ORCHESTRATE", "agent": "SOCIO-1", "actions": 2}
+{"ts": "2026-10-01T17:41:50Z", "type": "BOOK_CREATED", "book_id": "EB-000002", "agent": "ADMIN", "topic": "Los 200 Mejores Prompts de IA para Trabajar Menos y Rendir Más", "language": "es-ES"}
+{"ts": "2026-10-01T17:41:50Z", "type": "BOOK_CREATED", "book_id": "EB-000003", "agent": "ADMIN", "topic": "Tu Primer Año de Orden Financiero: Guía y Planner Completo", "language": "es-ES"}
+{"ts": "2026-10-01T17:41:50Z", "type": "BOOK_CREATED", "book_id": "EB-000004", "agent": "ADMIN", "topic": "Diario de Autoconocimiento: 100 Preguntas para Conocerte y Reordenar tu Vida", "language": "es-ES"}
+{"ts": "2026-10-01T17:41:50Z", "type": "BOOK_CREATED", "book_id": "EB-000005", "agent": "ADMIN", "topic": "El Planner Definitivo de Eventos: Organiza Cualquier Celebracion sin Estres", "language": "es-ES"}
+{"ts": "2026-10-01T17:41:50Z", "type": "BOOK_CREATED", "book_id": "EB-000006", "agent": "ADMIN", "topic": "Guia Completa para el Primer Año con tu Mascota", "language": "es-ES"}
+{"ts": "2026-10-01T17:41:50Z", "type": "BOOK_CREATED", "book_id": "EB-000007", "agent": "ADMIN", "topic": "Ponte en Forma en Casa: Plan de 12 Semanas", "language": "es-ES"}
+{"ts": "2026-10-01T17:41:50Z", "type": "BOOK_CREATED", "book_id": "EB-000008", "agent": "ADMIN", "topic": "El Planner de Navidad Completo: Organiza Regalos, Menus y Presupuesto sin Estres", "language": "es-ES"}
+{"ts": "2026-10-01T17:41:50Z", "type": "BOOK_CREATED", "book_id": "EB-000009", "agent": "ADMIN", "topic": "Recetario Navideño: 50 Recetas y Menus Listos para Toda la Temporada", "language": "es-ES"}
+{"ts": "2026-10-01T17:41:50Z", "type": "BOOK_CREATED", "book_id": "EB-000010", "agent": "ADMIN", "topic": "Diciembre en Familia: Calendario de Adviento, Actividades y Recuerdos", "language": "es-ES"}
+{"ts": "2026-10-01T17:41:50Z", "type": "BOOK_CREATED", "book_id": "EB-000011", "agent": "ADMIN", "topic": "Guia de Regalos de Navidad: Ideas para Todos sin Gastar de Mas", "language": "es-ES"}
+{"ts": "2026-10-01T17:41:50Z", "type": "BOOK_CREATED", "book_id": "EB-000012", "agent": "ADMIN", "topic": "Cierra el Año y Diseña el Siguiente: Guia de Revision y Metas", "language": "es-ES"}
+{"ts": "2026-10-01T17:41:50Z", "type": "BOOK_CREATED", "book_id": "EB-000013", "agent": "ADMIN", "topic": "Black Friday y Navidad sin Sustos: Guia para Comprar Mejor y Gastar Menos", "language": "es-ES"}
+{"ts": "2026-10-01T17:41:50Z", "type": "BOOK_CREATED", "book_id": "EB-000014", "agent": "ADMIN", "topic": "Hanukkah en Familia: Actividades, Recetas y Tradiciones", "language": "es-ES"}
+{"ts": "2026-10-01T17:41:50Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "message", "msg": "MSG-1790876510858297300-38bbbe"}
