@@ -53,6 +53,15 @@ def all_agents():
     return [read_json(f) for f in sorted(d.glob("*.json"))] if d.exists() else []
 
 
+def ensure_system(agent_id):
+    """Register a script agent (for automatic FORMAT tasks) if it does not exist yet."""
+    try:
+        return get(agent_id)
+    except FactoryError:
+        return register(agent_id, "SYSTEM", provider="script", model="factory", capabilities=["FORMAT_AGENT"],
+                        notes="Agente de sistema para tareas automáticas (maquetación)")
+
+
 def can_do(agent, role):
     caps = agent.get("capabilities", ["*"])
     return "*" in caps or role in caps

@@ -282,3 +282,39 @@ class TestGitMultiMachine(unittest.TestCase):
         finally:
             core.set_root(REPO)
             shutil.rmtree(tmp, ignore_errors=True)
+
+
+class TestPanelActions(Base):
+    """The panel's action layer (same functions the web UI calls), without HTTP."""
+
+    def test_panel_flow(self):
+        from factory import decisions, orders, panel
+        r = panel.do_action({"action": "new_book", "by": "SOCIO-1", "topic": "Panel idea", "language": "es-ES", "priority": "HIGH"})
+        bid = r["result"]["id"]
+        self.assertEqual(books.load(bid)["author"], core.load_config()["default_author"])
+        panel.do_action({"action": "set_priority", "by": "DANI", "id": bid, "priority": "LOW"})
+        self.assertEqual(books.load(bid)["priority"], "LOW")
+        oid = panel.do_action({"action": "order_new", "by": "DANI", "text": "Busca 3 ideas para Navidad", "kind": "RESEARCH_IDEAS"})["result"]
+        self.assertEqual([o["id"] for o in orders.for_agent("AGENT-A")], [oid])
+        orders.update(oid, "IN_PROGRESS", "AGENT-A")
+        self.assertEqual(orders.for_agent("AGENT-B"), [])  # taken by A
+        orders.update(oid, "DONE", "AGENT-A", "hecho")
+        did = decisions.ask("¿Colección?", "AGENT-A", options=["Sí", "No"])["id"]
+        panel.do_action({"action": "decide", "by": "SOCIO-1", "id": did, "answer": "Sí"})
+        self.assertEqual(decisions.all_decisions("OPEN"), [])
+        with self.assertRaises(FactoryError):
+            panel.do_action({"action": "approve", "by": "", "id": bid})  # must say who you are
+        s = panel.state()
+        self.assertEqual(s["groups"]["TOTAL BOOKS"], 1)
+
+    def test_panel_approve_with_author_and_price(self):
+        from factory import panel
+        b = books.create("Pipeline", "en-US", book_id="EB-TEST-970")
+        orchestrator.orchestrate()
+        for step in TestFullPipeline.PIPE:
+            self.run_step("AGENT-A", b["id"], step)
+        r = panel.do_action({"action": "approve", "by": "DANI", "id": b["id"], "author": "Addless Motions", "price": "3.99"})
+        bk = books.load(b["id"])
+        self.assertEqual(bk["status"], "READY_FOR_PUBLISHING")
+        meta = core.read_json(Path(self.root, "BOOKS", b["id"], bk["files"]["publishing_package"], "metadata.json"))
+        self.assertEqual((meta["author"], meta["price"]["amount"]), ("Addless Motions", 3.99))

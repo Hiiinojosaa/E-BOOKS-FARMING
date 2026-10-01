@@ -5,7 +5,7 @@ import shutil
 import subprocess
 import sys
 
-from . import agents, books, build, decisions, gitsync, orchestrator, publishing, qc, reports, states, tasks
+from . import agents, books, build, decisions, gitsync, orchestrator, orders, publishing, qc, reports, states, tasks
 from .core import FactoryError, load_config, log_event, now_iso, path, read_json, write_json, write_text
 
 DIRS = ["AGENTS", "BOOKS", "COLLECTIONS", "CONFIG", "DECISIONS", "LOCKS", "LOGS/events", "METRICS", "PROMPTS",
@@ -140,6 +140,10 @@ def cmd_tick(a):
 
 
 def _run_auto(agent):
+    try:
+        agents.get(agent)
+    except FactoryError:
+        agents.ensure_system(agent)  # e.g. ORCHESTRATOR running `tick` before any registration
     done, tried = [], set()
     while True:
         # each task at most once per run: retries are spread across ticks, not burned in a loop
@@ -318,6 +322,28 @@ def cmd_decide(a):
     _after(a.by, f"decide {a.id}")
 
 
+def cmd_orders(a):
+    if gitsync.enabled():
+        gitsync.sync(a.agent or "HUMAN", "pull orders")
+    lst = orders.for_agent(a.agent) if a.agent else orders.all_orders(["OPEN", "IN_PROGRESS"])
+    out([{k: o[k] for k in ("id", "kind", "status", "priority", "by", "target_agent", "book_id", "text", "taken_by")} for o in lst]
+        or "No hay órdenes abiertas.")
+
+
+def cmd_order(a):
+    if a.action == "new":
+        out(orders.create(a.text, a.by, a.kind, a.target, a.book, a.priority))
+    else:
+        status = {"take": "IN_PROGRESS", "done": "DONE", "reject": "REJECTED", "cancel": "CANCELLED"}[a.action]
+        out(orders.update(a.id, status, a.by, a.note or ""))
+    _after(a.by, f"order {a.action} {a.id or ''}".strip())
+
+
+def cmd_panel(a):
+    from . import panel
+    panel.serve(a.port, open_browser=not a.no_browser)
+
+
 def cmd_report(a):
     out(reports.all_reports())
     out("Generados: REPORTS/DASHBOARD.md, REPORTS/dashboard.html, REPORTS/DAILY_REPORT.md, REPORTS/WEEKLY_REPORT.md, REPORTS/MEETING_PACK.md, METRICS/metrics.json")
@@ -392,6 +418,13 @@ def parser():
     s = add("ask", cmd_ask, "escalar una pregunta a los socios"); s.add_argument("question"); s.add_argument("--by", required=True)
     s.add_argument("--book"); s.add_argument("--options", help="opciones separadas por |")
     s = add("decide", cmd_decide, "responder decisión (socio)"); s.add_argument("id"); s.add_argument("--by", required=True); s.add_argument("--answer", required=True)
+    s = add("orders", cmd_orders, "órdenes abiertas de los socios (con --agent: las que te tocan)"); s.add_argument("--agent")
+    s = add("order", cmd_order, "crear/gestionar una orden"); s.add_argument("action", choices=["new", "take", "done", "reject", "cancel"])
+    s.add_argument("id", nargs="?"); s.add_argument("--text"); s.add_argument("--by", required=True)
+    s.add_argument("--kind", default="GENERAL", choices=orders.KINDS); s.add_argument("--target"); s.add_argument("--book")
+    s.add_argument("--priority", default="NORMAL"); s.add_argument("--note")
+    s = add("panel", cmd_panel, "abrir el panel de control web (solo en este ordenador)"); s.add_argument("--port", type=int, default=8765)
+    s.add_argument("--no-browser", action="store_true")
     add("report", cmd_report, "dashboard + informes + meeting pack + métricas")
     add("status", cmd_status, "resumen rápido")
     s = add("sync", cmd_sync, "git pull --rebase + push"); s.add_argument("--agent", default="HUMAN"); s.add_argument("--message")

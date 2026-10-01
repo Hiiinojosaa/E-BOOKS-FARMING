@@ -11,7 +11,22 @@ publicar; **la publicación la hacéis vosotros a mano**.
 ## Requisitos
 Python 3.10+ (sin paquetes extra), Git, Google Chrome o Microsoft Edge (para PDF y portadas). Nada más.
 
-## Uso diario (socios)
+## Panel de control (lo más fácil)
+
+Doble clic en **`ABRIR_PANEL.bat`** (o `python factory.py panel`). Se abre en el navegador, solo en tu ordenador
+(http://127.0.0.1:8765), y se sincroniza con GitHub cada 2 minutos, así que ves lo mismo que Dani.
+
+- **Inicio:** qué hay en la cadena y qué necesita vuestra atención.
+- **Libros:** portadas, estado, ficha de cada libro; aprobar, pedir cambios, rechazar, prioridad, otras ediciones; nueva idea.
+- **Órdenes a los agentes:** escribís lo que queréis en lenguaje normal; el siguiente agente que arranque lo lee, lo hace y responde ahí.
+- **Decisiones:** preguntas que os hacen los agentes.
+- **Agentes:** quién está trabajando, en qué, y cómo arrancar uno (a mano o con horario).
+- **Actividad:** todo lo que ha pasado.
+
+El panel no lanza agentes: les deja órdenes. Un agente es una sesión de Claude abierta en la carpeta del proyecto
+(a mano o programada con horario).
+
+## Uso diario por terminal (socios)
 
 ```bash
 python factory.py status                 # resumen rápido
