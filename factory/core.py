@@ -188,7 +188,7 @@ def all_events():
 # ---------------------------------------------------------------- config
 DEFAULT_CONFIG = {
     "project_name": "E-Book Factory",
-    "default_author": "Addless Motions",
+    "default_author": "E-Book Factory",
     "publisher": "",
     "partners": ["ADMIN"],
     "partner_names": {"ADMIN": "Addless Motions"},
