@@ -6,7 +6,7 @@
   "capabilities": [
     "*"
   ],
-  "status": "IDLE",
+  "status": "OFFLINE",
   "current_task": null,
   "last_seen": "2026-10-01T08:48:05Z",
   "registered_at": "2026-10-01T08:40:47Z",
