@@ -3,6 +3,7 @@
   "text": "No produzcas ni recomiendes libros nuevos sin que te lo pidamos",
   "by": "DANI",
   "created_at": "2026-10-01T14:26:16Z",
-  "active": true,
-  "removed_by": null
+  "active": false,
+  "removed_by": "DANI",
+  "removed_at": "2026-10-01T14:27:47Z"
 }
