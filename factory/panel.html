@@ -577,7 +577,7 @@ async function openBook(id, silent){
       <div class="bookhead"><div>${coverHTML({...sum,...b,has_cover:has("design/cover.png")})}</div>
       <div><h2>${esc(b.title)}</h2><div class="mut" style="margin-top:4px">${esc(b.subtitle||"")}</div>
         <dl class="kv" style="margin-top:14px"><dt>Autor</dt><dd>${esc(b.author==="TBD-PEN-NAME"?"Pendiente":b.author)}</dd><dt>Mercado</dt><dd>${esc(b.language)}</dd>${b.page_count?`<dt>Páginas</dt><dd>${b.page_count}</dd>`:""}${price.amount?`<dt>Precio sugerido</dt><dd>${esc(price.amount)} ${esc(price.currency||"")}</dd>`:""}</dl>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">${pdf?`<a class="btn" href="${f(pdf)}" target="_blank">${icon("book","sm")} Leer</a>`:""}${epub?`<a class="btn" href="${f(epub)}" download>${icon("download","sm")} EPUB</a>`:""}<button class="btn" onclick="talkAbout('${b.id}')">${icon("chat","sm")} Comentar con el jefe</button></div></div></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">${pdf?`<a class="btn primary" href="${f(pdf)}" target="_blank">${icon("book","sm")} Previsualizar PDF</a><a class="btn" href="${f(pdf)}" download>${icon("download","sm")} Descargar PDF</a>`:""}${epub?`<a class="btn" href="${f(epub)}" download>${icon("download","sm")} Descargar EPUB</a>`:""}<button class="btn ghost" onclick="talkAbout('${b.id}')">${icon("chat","sm")} Comentar con el jefe</button></div></div></div>
       <div class="steps">${steps}</div>
       ${main}
       ${d.description?`<div class="sec"><h3>Descripción para la tienda</h3></div><div class="card pad small" style="white-space:pre-wrap">${esc(d.description)}</div>`:""}
