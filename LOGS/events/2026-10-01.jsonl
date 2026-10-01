@@ -157,3 +157,5 @@
 {"ts": "2026-10-01T18:16:31Z", "type": "BOOK_CREATED", "book_id": "EB-000015", "agent": "HUMAN", "topic": "Large Print Sudoku for Seniors: 9 Easy to Hard Puzzles", "language": "en-US"}
 {"ts": "2026-10-01T18:16:40Z", "type": "STATE_CHANGE", "book_id": "EB-000015", "frm": "IDEA", "to": "RESEARCH_PENDING", "agent": "HUMAN", "action": "PROMOTE_IDEA", "result": "OK"}
 {"ts": "2026-10-01T18:16:53Z", "type": "AGENT_REGISTERED", "agent": "TEST-AGENT", "owner": "ADMIN", "model": "claude-sonnet-5-5"}
+{"ts": "2026-10-01T18:17:07Z", "type": "TASK_CREATED", "task_id": "TASK-000017", "book_id": "EB-000015", "step": "RESEARCH", "priority": "NORMAL"}
+{"ts": "2026-10-01T18:17:07Z", "type": "ORCHESTRATE", "agent": "TEST-AGENT", "actions": 1}
