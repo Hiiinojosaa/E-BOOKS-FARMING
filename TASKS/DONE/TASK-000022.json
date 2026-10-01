@@ -5,17 +5,19 @@
   "role": "MARKET_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "TEST-AGENT",
   "created_by": "TEST-AGENT",
   "created_at": "2026-10-01T18:21:01Z",
   "started_at": "2026-10-01T18:21:12Z",
-  "completed_at": null,
+  "completed_at": "2026-10-01T18:21:28Z",
   "claimed_from_state": "FACT_CHECKED",
   "dependencies": [],
   "prompt": "PROMPTS/METADATA.md",
   "notes": "",
-  "output": null,
+  "output": {
+    "title": "Large Print Sudoku for Seniors"
+  },
   "error": null,
   "errors": [],
   "retry_count": 0,
@@ -23,7 +25,12 @@
   "attempts": [
     {
       "agent": "TEST-AGENT",
-      "started_at": "2026-10-01T18:21:12Z"
+      "started_at": "2026-10-01T18:21:12Z",
+      "ended_at": "2026-10-01T18:21:28Z",
+      "result": "DONE",
+      "note": "metadata lista",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }

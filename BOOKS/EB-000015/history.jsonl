@@ -14,3 +14,4 @@
 {"ts": "2026-10-01T18:20:58Z", "from": "EDITED", "to": "FACT_CHECKING", "agent": "TEST-AGENT", "action": "CLAIM FACT_CHECK", "result": "OK", "task_id": "TASK-000021"}
 {"ts": "2026-10-01T18:21:01Z", "from": "FACT_CHECKING", "to": "FACT_CHECKED", "agent": "TEST-AGENT", "action": "COMPLETE FACT_CHECK", "result": "OK", "task_id": "TASK-000021", "note": "sin afirmaciones factuales externas; unicidad verificada por solver"}
 {"ts": "2026-10-01T18:21:12Z", "from": "FACT_CHECKED", "to": "METADATA_IN_PROGRESS", "agent": "TEST-AGENT", "action": "CLAIM METADATA", "result": "OK", "task_id": "TASK-000022"}
+{"ts": "2026-10-01T18:21:28Z", "from": "METADATA_IN_PROGRESS", "to": "DESIGN_PENDING", "agent": "TEST-AGENT", "action": "COMPLETE METADATA", "result": "OK", "task_id": "TASK-000022", "note": "metadata lista"}

@@ -1,0 +1,24 @@
+{
+  "title": "Large Print Sudoku for Seniors",
+  "subtitle": "9 Easy to Hard Puzzles with Verified Solutions",
+  "description": "A short, comfortable sudoku collection in large, easy-to-read print. Nine puzzles move from easy to hard, each one checked by a solver to make sure it has exactly one true solution before going to print, so you never waste time on a flawed grid. A plain-language how-to-solve chapter walks through the one sudoku rule and simple scanning technique for anyone new to the puzzle, and a full solution key sits in the back in the same order as the puzzles, so you can check your work or get unstuck without any guesswork.",
+  "keywords": [
+    "large print sudoku",
+    "sudoku for seniors",
+    "easy sudoku puzzles",
+    "sudoku solutions included"
+  ],
+  "categories": [
+    "Puzzles & Games / Sudoku",
+    "Puzzles & Games / Logic & Brain Teasers"
+  ],
+  "target_audience": "Seniors and beginners who want comfortably large, verified sudoku puzzles",
+  "positioning": "Short, verified-quality large-print sudoku pilot batch; one puzzle per page with a full solution key.",
+  "price": {
+    "amount": 6.99,
+    "currency": "USD",
+    "basis": "ESTIMATE"
+  },
+  "author": "Addless Motions",
+  "language": "en-US"
+}
