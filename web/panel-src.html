@@ -52,7 +52,6 @@ label{display:block;font-size:12.5px;font-weight:500;color:var(--mut);margin:14p
 .dotx{width:7px;height:7px;border-radius:50%;background:currentColor;display:inline-block}
 
 /* logo + avatars */
-.mark{width:34px;height:34px;border-radius:9px;background:linear-gradient(145deg,var(--acc-2),var(--acc));display:flex;align-items:center;justify-content:center;color:#fff;flex:none}
 .mark svg{width:20px;height:20px;stroke:#fff;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
 .wordmark{font-weight:700;letter-spacing:-.01em;font-size:16px}
 .wordmark small{display:block;font-weight:500;font-size:11.5px;letter-spacing:0;opacity:.7}
@@ -168,6 +167,13 @@ main{padding:28px 34px 80px;max-width:1240px;width:100%}
 .overlay{position:fixed;inset:0;background:rgba(9,14,13,.42);z-index:40;display:flex;justify-content:flex-end}
 .drawer{width:min(760px,100%);height:100%;overflow-y:auto;background:var(--bg);box-shadow:-12px 0 40px rgba(0,0,0,.18);animation:slide .22s ease}
 @keyframes slide{from{transform:translateX(30px);opacity:.6}to{transform:none;opacity:1}}
+/* inline PDF preview */
+.pdfoverlay{position:fixed;inset:0;background:rgba(9,14,13,.6);z-index:60;display:flex;align-items:center;justify-content:center;padding:18px}
+.pdfmodal{width:min(900px,100%);height:100%;max-height:100%;background:var(--panel);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.pdfhead{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--line);background:var(--bg)}
+.pdfhead b{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:14px}
+#pdfFrame{flex:1;border:0;width:100%;background:#525659}
+@media (max-width:640px){.pdfoverlay{padding:0}.pdfmodal{border-radius:0}}
 .dhead{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);padding:14px 22px;display:flex;align-items:center;gap:10px;z-index:2}
 .dbody{padding:22px}
 .bookhead{display:grid;grid-template-columns:170px 1fr;gap:22px}
@@ -252,7 +258,7 @@ table{width:100%;border-collapse:collapse;font-size:13.5px} td{padding:10px 16px
 <body>
 
 <section id="login" class="hidden">
-  <div class="loginbrand"><div class="mark" id="lmark"></div><div class="wordmark" style="color:#fff">E-Book Factory<small style="color:#dfe1f5">Addless Motions</small></div></div>
+  <div class="loginbrand"><div class="wordmark" style="color:#fff">E-Book Factory<small style="color:#dfe1f5">Addless Motions</small></div></div>
   <div class="logintag"><span class="eyebrow">PANEL PRIVADO</span><h1>Tu editorial, trabajando mientras tú decides.</h1><p>Investiga, escribe, edita, diseña y empaqueta. Tú das el visto bueno de cada libro.</p></div>
   <div class="logincard"><div class="loginbox">
     <h2>Iniciar sesión</h2><div class="mut" id="loginSub">Elige tu perfil</div>
@@ -270,9 +276,10 @@ table{width:100%;border-collapse:collapse;font-size:13.5px} td{padding:10px 16px
 
 <section id="app" class="hidden">
   <aside>
-    <div class="brand"><div class="mark" id="amark"></div><div class="wordmark">E-Book Factory<small>Addless Motions</small></div></div>
+    <div class="brand"><div class="wordmark">E-Book Factory<small>Addless Motions</small></div></div>
     <button class="nav" data-t="today"></button>
     <button class="nav" data-t="library"></button>
+    <button class="nav" data-t="mercado"></button>
     <button class="nav" data-t="chat"></button>
     <button class="nav" data-t="team"></button>
     <div class="foot">
@@ -285,6 +292,10 @@ table{width:100%;border-collapse:collapse;font-size:13.5px} td{padding:10px 16px
 </section>
 
 <div id="overlay" class="overlay hidden"><div class="drawer" id="drawer"></div></div>
+<div id="pdfoverlay" class="pdfoverlay hidden"><div class="pdfmodal">
+  <div class="pdfhead"><b id="pdfTitle"></b><a id="pdfOpenNew" class="btn ghost icon" target="_blank" title="Abrir en pestaña nueva"></a><button id="pdfClose" class="btn ghost icon" onclick="closePdfPreview()"></button></div>
+  <iframe id="pdfFrame" src="about:blank"></iframe>
+</div></div>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -311,6 +322,7 @@ const ICONS = {
   copy:'<rect x="9" y="9" width="11.5" height="11.5" rx="2"/><path d="M5.5 15H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v.5"/>',
   target:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.2"/>',
   arrow:'<path d="M5 12h14M13 6l6 6-6 6"/>', eye:'<path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>',
+  external:'<path d="M14 4h6v6"/><path d="M20 4 10 14"/><path d="M18 13v6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6"/>',
   inbox:'<path d="M3 13h5l1.5 3h5L16 13h5"/><path d="M5.5 5h13L21 13v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1v-6z"/>',
   layers:'<path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/>',
   compass:'<circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/>',
@@ -392,8 +404,9 @@ async function showLogin(me){
   $("#app").classList.add("hidden"); $("#login").classList.remove("hidden"); closeBook();
   if(me.profiles.length===1){
     $("#profiles").innerHTML="";
-    $("#loginSub").textContent = me.profiles[0].has_pin ? "Introduce la contraseña" : "Primera vez: crea tu contraseña";
-    selectProfile(me.profiles[0]);
+    const p=me.profiles[0];
+    $("#loginSub").textContent = `${p.name} · ${p.has_pin ? "Introduce la contraseña" : "Primera vez: crea tu contraseña"}`;
+    selectProfile(p);
     return;
   }
   $("#loginSub").textContent="Elige tu perfil";
@@ -414,7 +427,7 @@ $("#logout").innerHTML=icon("logout");
 $("#logout").onclick=async()=>{ await api("/api/logout",{}).catch(()=>{}); ME=null; S=null; if(window._poll) clearInterval(window._poll); showLogin(); };
 
 // ---------------------------------------------------------------- shell
-const NAV = {today:["home","Hoy"],library:["library","Librería"],chat:["chat","Chat"],team:["team","Equipo y ajustes"]};
+const NAV = {today:["home","Hoy"],library:["library","Librería"],mercado:["package","Mercado"],chat:["chat","Chat"],team:["team","Equipo y ajustes"]};
 function startApp(){
   $("#login").classList.add("hidden"); $("#app").classList.remove("hidden");
   $("#meAv").textContent=initials(ME.name); $("#meName").textContent=ME.name;
@@ -452,7 +465,7 @@ function renderNav(){
     b.innerHTML=icon(ic)+`<span>${l}</span>`+(n?`<span class="badge">${n}</span>`:"");
   });
 }
-function render(){ if(!S) return; renderNav(); ({today:vToday,library:vLibrary,chat:vChat,team:vTeam})[TAB](); }
+function render(){ if(!S) return; renderNav(); ({today:vToday,library:vLibrary,mercado:vMercado,chat:vChat,team:vTeam})[TAB](); }
 
 // ---------------------------------------------------------------- notifications
 function notify(prev){
@@ -542,6 +555,14 @@ function vLibrary(){
       `<div class="card empty" style="margin-top:22px">No hay libros aquí. Pulsa <b>Nueva idea</b> o pide al jefe que te recomiende temas.</div>`}`;
   const s=$("#search"); s.oninput=()=>{ SEARCH=s.value; const p=s.selectionStart; vLibrary(); const n=$("#search"); n.focus(); n.setSelectionRange(p,p); };
 }
+function vMercado(){
+  const list=S.books.filter(b=>b.shelf==="ready"||b.shelf==="published");
+  $("#view").innerHTML=`
+    <div class="head"><div><h1>Mercado</h1><div class="sub">El catálogo que vais acumulando: libros aprobados, listos o ya publicados.</div></div></div>
+    ${list.length?`<div class="shelf">${list.map(b=>`<button class="bk" onclick="openBook('${b.id}')">${coverHTML(b)}<div class="t">${esc(b.title)}</div>
+        <div class="m">${b.shelf==="published"?`<span class="pill good">Publicado</span>`:`<span class="pill acc">Listo para publicar</span>`}${b.price?` · ${esc(b.price)} USD`:""}</div></button>`).join("")}</div>`:
+      `<div class="card empty" style="margin-top:22px">Todavía no hay libros aprobados. En cuanto deis el OK a uno en Librería, aparece aquí.</div>`}`;
+}
 function newIdea(){
   openDrawer(`<div class="dhead"><b style="flex:1">Nueva idea de libro</b><button class="btn ghost icon" onclick="closeBook()">${icon("x")}</button></div><div class="dbody">
     <div class="mut">Escríbela tal cual. Se guarda en <b>Ideas</b> y no se produce hasta que pulséis «Empezar a producir».</div>
@@ -586,7 +607,7 @@ async function openBook(id, silent){
       <div class="bookhead"><div>${coverHTML({...sum,...b,has_cover:has("design/cover.png")})}</div>
       <div><h2>${esc(b.title)}</h2><div class="mut" style="margin-top:4px">${esc(b.subtitle||"")}</div>
         <dl class="kv" style="margin-top:14px"><dt>Autor</dt><dd>${esc(b.author==="TBD-PEN-NAME"?"Pendiente":b.author)}</dd><dt>Mercado</dt><dd>${esc(b.language)}</dd>${b.page_count?`<dt>Páginas</dt><dd>${b.page_count}</dd>`:""}${price.amount?`<dt>Precio sugerido</dt><dd>${esc(price.amount)} ${esc(price.currency||"")}</dd>`:""}</dl>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">${pdf?`<a class="btn primary" href="${f(pdf)}" target="_blank">${icon("book","sm")} Previsualizar PDF</a><a class="btn" href="${f(pdf)}" download>${icon("download","sm")} Descargar PDF</a>`:""}${epub?`<a class="btn" href="${f(epub)}" download>${icon("download","sm")} Descargar EPUB</a>`:""}<button class="btn ghost" onclick="talkAbout('${b.id}')">${icon("chat","sm")} Comentar con el jefe</button></div></div></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">${pdf?`<a class="btn primary" href="${f(pdf)}" target="_blank" onclick="return previewPdf(event,'${f(pdf)}','${esc(b.title).replace(/'/g,"\\'")}')">${icon("book","sm")} Previsualizar PDF</a><a class="btn" href="${f(pdf)}" download>${icon("download","sm")} Descargar PDF</a>`:""}${epub?`<a class="btn" href="${f(epub)}" download>${icon("download","sm")} Descargar EPUB</a>`:""}<button class="btn ghost" onclick="talkAbout('${b.id}')">${icon("chat","sm")} Comentar con el jefe</button></div></div></div>
       <div class="steps">${steps}</div>
       ${main}
       ${d.description?`<div class="sec"><h3>Descripción para la tienda</h3></div><div class="card pad small" style="white-space:pre-wrap">${esc(d.description)}</div>`:""}
@@ -613,7 +634,19 @@ function talkAbout(id){ CHAT_BOOK=id; MODE="message"; CHAT_TO="factory"; closeBo
 function openDrawer(h){ $("#drawer").innerHTML=h; $("#overlay").classList.remove("hidden"); document.body.style.overflow="hidden"; }
 function closeBook(){ OPEN_BOOK=null; $("#overlay").classList.add("hidden"); document.body.style.overflow=""; }
 $("#overlay").addEventListener("click",e=>{ if(e.target.id==="overlay") closeBook(); });
-document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeBook(); });
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"){ closeBook(); closePdfPreview(); } });
+
+// ---------------------------------------------------------------- inline PDF preview
+$("#pdfOpenNew").innerHTML=icon("external","sm"); $("#pdfClose").innerHTML=icon("x");
+function previewPdf(e, url, title){
+  if(e && (e.ctrlKey||e.metaKey||e.shiftKey||e.button===1)) return true; // let the browser open a new tab as usual
+  if(e) e.preventDefault();
+  $("#pdfTitle").textContent=title||"Vista previa"; $("#pdfOpenNew").href=url; $("#pdfFrame").src=url;
+  $("#pdfoverlay").classList.remove("hidden"); document.body.style.overflow="hidden";
+  return false;
+}
+function closePdfPreview(){ $("#pdfoverlay").classList.add("hidden"); $("#pdfFrame").src="about:blank"; document.body.style.overflow=""; }
+$("#pdfoverlay").addEventListener("click",e=>{ if(e.target.id==="pdfoverlay") closePdfPreview(); });
 
 // ---------------------------------------------------------------- CHAT
 function vChat(){
