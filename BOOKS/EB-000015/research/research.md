@@ -1,0 +1,44 @@
+# Research — EB-000015: Large Print Sudoku for Seniors
+
+## Market
+
+Large-print puzzle books are a long-running, evergreen category on Amazon KDP, sold mainly as
+gifts and as a low-strain hobby for retirees and anyone with reduced near vision. FACT: large
+print (as opposed to standard puzzle-book print) is a recurring, explicitly named search term
+in this category, because standard puzzle-book grids are often too small to read comfortably
+without reading glasses. ESTIMATE: demand is steady year-round with a seasonal bump around
+major gift periods (holidays, Mother's/Father's Day), consistent with it being bought as a gift.
+
+## Audience
+
+Primary: readers aged roughly 60+, including both confident puzzle solvers who want an easier,
+more comfortable read, and complete beginners whose adult children or grandchildren buy the book
+for them. HYPOTHESIS: buyers value "no guessing required" / "one true solution" messaging because
+this audience is more likely to abandon a puzzle they suspect is flawed, rather than assume
+they made a mistake.
+
+## Differentiation
+
+From research: the category is dominated by books that only state "large print" without
+proving puzzle quality. This project's generator independently re-verifies every puzzle has
+exactly one solution before it goes to print (see `manuscript/puzzles.json`), which is a real,
+checkable quality claim rather than marketing language.
+
+## Format decision
+
+9 puzzles for this pilot batch (3 easy, 3 medium, 3 hard), one puzzle per page, full solution key
+at the back in the same order. FACT: this book's trim size and puzzle count are configurable per
+run (`puzzle_count` on the book record); 9 was chosen here specifically to validate the pipeline
+end-to-end quickly, not as the target count for a commercial release (commercial runs use
+`daily_target`-scale batches, typically 100+ puzzles).
+
+## Risk
+
+LOW. No health, legal, or financial claims. The "how to solve" chapter teaches only the standard
+public-domain sudoku rule set (one rule: no repeated digit in a row/column/3x3 box) and generic
+scanning technique — no copied puzzles, no copied text from any existing published book.
+
+## Recommendation
+
+GO. This is a pipeline validation run for the new PUZZLE_SUDOKU book kind, not a market bet in
+itself; recommend proceeding straight to brief and generation.
