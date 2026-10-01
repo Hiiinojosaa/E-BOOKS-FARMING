@@ -100,3 +100,10 @@
 {"ts": "2026-10-01T08:48:16Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "APPROVED", "to": "READY_FOR_PUBLISHING", "agent": "S1-CLAUDE-001", "action": "RELEASE_PACKAGE", "result": "OK"}
 {"ts": "2026-10-01T08:48:16Z", "type": "PACKAGE_READY", "book_id": "EB-TEST-001", "version": "1.0", "files": ["EB-TEST-001_productivity-for-beginners_v1.0.epub", "EB-TEST-001_productivity-for-beginners_v1.0.pdf", "cover.png", "cover.jpg"]}
 {"ts": "2026-10-01T08:53:35Z", "type": "RECOVER", "agent": "S1-CLAUDE-001", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
+{"ts": "2026-10-01T12:32:31Z", "type": "AGENT_REGISTERED", "agent": "S1-JEFE", "owner": "SOCIO-1", "model": "claude"}
+{"ts": "2026-10-01T12:32:31Z", "type": "AGENT_REGISTERED", "agent": "S1-INVESTIGADOR", "owner": "SOCIO-1", "model": "claude"}
+{"ts": "2026-10-01T12:32:31Z", "type": "AGENT_REGISTERED", "agent": "S1-ESCRITOR", "owner": "SOCIO-1", "model": "claude"}
+{"ts": "2026-10-01T12:32:31Z", "type": "AGENT_REGISTERED", "agent": "S1-EDITOR", "owner": "SOCIO-1", "model": "claude"}
+{"ts": "2026-10-01T12:32:31Z", "type": "AGENT_REGISTERED", "agent": "S1-DISENADOR", "owner": "SOCIO-1", "model": "claude"}
+{"ts": "2026-10-01T12:32:31Z", "type": "AGENT_REGISTERED", "agent": "S1-EMPAQUETADOR", "owner": "SOCIO-1", "model": "claude"}
+{"ts": "2026-10-01T12:32:31Z", "type": "AGENT_REGISTERED", "agent": "S1-CALIDAD", "owner": "SOCIO-1", "model": "claude"}

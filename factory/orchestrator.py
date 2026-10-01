@@ -24,7 +24,7 @@ def orchestrate(agent=ORCH):
         tasks.promote_inbox()
         all_b = books.all_books()
         active = sum(1 for b in all_b if _active(b))
-        ideas = sorted((b for b in all_b if b["status"] == "IDEA"),
+        ideas = sorted((b for b in all_b if b["status"] == "IDEA" and b.get("idea_approved", True)),
                        key=lambda b: (states.PRIORITIES[b["priority"]], b["created_at"]))
         for b in ideas:
             if cfg["auto_promote_ideas"] and active < cfg["max_active_books"]:

@@ -11,7 +11,7 @@ import time
 from .core import create_exclusive_json, log_event, now_iso, path, read_json, utcnow
 
 ROLES = ("partner", "agent", "system")
-KINDS = ("message", "progress", "question", "answer", "note")
+KINDS = ("message", "progress", "question", "answer", "note", "directive", "report")
 
 
 def _dir():

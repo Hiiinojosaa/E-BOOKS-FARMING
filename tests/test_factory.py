@@ -348,3 +348,38 @@ class TestPanelActions(Base):
         self.assertEqual(bk["status"], "READY_FOR_PUBLISHING")
         meta = core.read_json(Path(self.root, "BOOKS", b["id"], bk["files"]["publishing_package"], "metadata.json"))
         self.assertEqual((meta["author"], meta["price"]["amount"]), ("Addless Motions", 3.99))
+
+
+class TestChiefFlow(Base):
+    def test_recommendation_buttons_and_directives(self):
+        from factory import chat, decisions, directives, panel
+        from factory.cli import capacity
+        self.assertEqual(capacity()["recomendar_ahora"], 5)
+        b = books.create("Meal prep", "en-US", agent="S1-JEFE", recommended=True, rationale="ESTIMATE: demanda estable")
+        decisions.ask("Te recomiendo «Meal prep»", "S1-JEFE", b["id"], ["Adelante", "Descartar"],
+                      action={"type": "approve_idea", "book_id": b["id"], "yes": "Adelante", "no": "Descartar"})
+        orchestrator.orchestrate()
+        self.assertEqual(books.load(b["id"])["status"], "IDEA")  # waits for the partners
+        att = panel.state("SOCIO-1")["attention"]
+        self.assertEqual(att[0]["kind"], "recommendation")
+        panel.do_action({"action": "answer_question", "id": att[0]["decision_id"], "answer": "Adelante"}, "DANI")
+        orchestrator.orchestrate()
+        self.assertEqual(books.load(b["id"])["status"], "RESEARCH_PENDING")
+        b2 = books.create("Crypto tips", "en-US", agent="S1-JEFE", recommended=True)
+        d2 = decisions.ask("¿Crypto?", "S1-JEFE", b2["id"], ["Adelante", "Descartar"], action={"type": "approve_idea", "book_id": b2["id"]})
+        decisions.answer(d2["id"], "SOCIO-1", "Descartar")
+        self.assertEqual(books.load(b2["id"])["status"], "REJECTED")
+        did = panel.do_action({"action": "directive_add", "text": "Esta semana solo en-US"}, "SOCIO-1")["result"]
+        self.assertEqual([d["text"] for d in directives.active()], ["Esta semana solo en-US"])
+        self.assertEqual(chat.all_messages()[-1]["kind"], "directive")
+        panel.do_action({"action": "directive_remove", "id": did}, "DANI")
+        self.assertEqual(directives.active(), [])
+
+    def test_team_roles_route_tasks(self):
+        ids = agents.setup_team("SOCIO-1", "S1")
+        self.assertIn("S1-ESCRITOR", ids)
+        books.create("Team", "en-US", book_id="EB-TEST-980")
+        orchestrator.orchestrate()
+        self.assertIsNone(tasks.claim_next("S1-ESCRITOR"))  # RESEARCH is not a writer's job
+        t = tasks.claim_next("S1-INVESTIGADOR")
+        self.assertEqual(t["type"], "RESEARCH")

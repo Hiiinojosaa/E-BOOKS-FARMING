@@ -1,0 +1,18 @@
+{
+  "agent_id": "S1-DISENADOR",
+  "owner": "SOCIO-1",
+  "provider": "anthropic",
+  "model": "claude",
+  "capabilities": [
+    "DESIGN_AGENT",
+    "FORMAT_AGENT"
+  ],
+  "status": "IDLE",
+  "current_task": null,
+  "last_seen": "2026-10-01T12:32:31Z",
+  "registered_at": "2026-10-01T12:32:31Z",
+  "notes": "Hace la portada y maqueta el EPUB y el PDF.",
+  "role": "DISENADOR",
+  "label": "Diseñador",
+  "prompt": "PROMPTS/WORKER.md"
+}

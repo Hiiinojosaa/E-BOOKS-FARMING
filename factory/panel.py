@@ -19,7 +19,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
-from . import agents, books, chat, decisions, gitsync, orchestrator, orders, publishing, reports, states, tasks
+from . import agents, books, chat, decisions, directives, gitsync, orchestrator, orders, publishing, reports, states, tasks
 from .core import (FactoryError, all_events, load_config, log_event, now_iso, parse_iso, path, read_json, read_text, utcnow,
                    word_count, write_json)
 
@@ -172,12 +172,32 @@ def _attention(all_b):
         items.append({"kind": "blocked", "task_id": t["task_id"], "book_id": t["book_id"], "step": t["type"],
                       "error": (t.get("error") or "")[:200]})
     for d in decisions.all_decisions("OPEN"):
-        items.append({"kind": "question", "decision_id": d["id"], "question": d["question"], "options": d.get("options", []),
-                      "by": d["asked_by"]})
+        act = d.get("action") or {}
+        if act.get("type") == "approve_idea":
+            try:
+                b = books.load(act["book_id"])
+            except FactoryError:
+                continue
+            items.append({"kind": "recommendation", "decision_id": d["id"], "book_id": b["id"], "title": b["title"],
+                          "language": b["language"], "why": b.get("recommendation") or "", "by": d["asked_by"],
+                          "options": d.get("options", [])})
+        else:
+            items.append({"kind": "question", "decision_id": d["id"], "question": d["question"], "options": d.get("options", []),
+                          "by": d["asked_by"]})
     return items
 
 
+def _team(ags):
+    by_role = {}
+    for a in ags:
+        if a.get("role"):
+            by_role.setdefault(a["role"], []).append(a["agent_id"])
+    return [{"role": m["role"], "label": m["label"], "desc": m["desc"], "prompt": m["prompt"], "agents": by_role.get(m["role"], [])}
+            for m in agents.TEAM]
+
+
 def state(partner):
+    from .cli import capacity
     all_b = books.all_books()
     cfg = load_config()
     ags = [a for a in agents.all_agents() if a.get("owner") not in ("SYSTEM", "test")]
@@ -199,6 +219,7 @@ def state(partner):
         "chat": msgs, "pending_orders": [{k: o[k] for k in ("id", "status", "taken_by", "chat_msg", "text")} for o in open_orders],
         "events": list(reversed(all_events()[-80:])),
         "queue": len(tasks.all_tasks(["READY"])),
+        "capacity": capacity(), "directives": directives.active(), "team": _team(ags),
         "week": reports._week_stats(all_b),
         "sync": SYNC, "steps": list(states.STEPS), "languages": ["en-US", "en-GB", "es-ES", "es-MX"],
     }
@@ -247,7 +268,11 @@ def do_action(a, by):
         raise FactoryError("Sesión no válida")
     act = a.get("action")
     res = None
-    if act == "chat_send":
+    if act == "directive_add":
+        res = directives.add(a.get("text"), by)["id"]
+    elif act == "directive_remove":
+        res = directives.remove(a["id"], by)["id"]
+    elif act == "chat_send":
         text = (a.get("text") or "").strip()
         if not text:
             raise FactoryError("Escribe un mensaje")
@@ -261,6 +286,16 @@ def do_action(a, by):
                    "Recibido. Ahora mismo no hay ningún agente encendido: tu mensaje queda en cola y el primero que arranque lo atenderá y te responderá aquí.")
             chat.post("Fábrica", "system", ack, kind="note", order_id=o["id"], reply_to=msg["id"])
         res = msg["id"]
+    elif act == "set_target":
+        n = int(a.get("target") or 0)
+        if not 1 <= n <= 100:
+            raise FactoryError("El objetivo debe estar entre 1 y 100 libros al día")
+        p = path("CONFIG", "factory.json")
+        cfg = read_json(p, default={})
+        cfg["daily_target"] = n
+        write_json(p, cfg)
+        chat.post("Fábrica", "system", f"{partner_names().get(by, by)} ha fijado el objetivo en {n} libros al día.", kind="note")
+        res = n
     elif act == "answer_question":
         res = decisions.answer(a["id"], by, a["answer"])["id"]
     elif act == "new_book":

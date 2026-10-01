@@ -1,0 +1,18 @@
+{
+  "agent_id": "S1-EMPAQUETADOR",
+  "owner": "SOCIO-1",
+  "provider": "anthropic",
+  "model": "claude",
+  "capabilities": [
+    "MARKET_AGENT",
+    "METADATA_AGENT"
+  ],
+  "status": "IDLE",
+  "current_task": null,
+  "last_seen": "2026-10-01T12:32:31Z",
+  "registered_at": "2026-10-01T12:32:31Z",
+  "notes": "Pone título, descripción, palabras clave, categorías y precio.",
+  "role": "EMPAQUETADOR",
+  "label": "Empaquetador",
+  "prompt": "PROMPTS/WORKER.md"
+}

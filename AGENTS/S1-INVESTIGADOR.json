@@ -1,0 +1,17 @@
+{
+  "agent_id": "S1-INVESTIGADOR",
+  "owner": "SOCIO-1",
+  "provider": "anthropic",
+  "model": "claude",
+  "capabilities": [
+    "RESEARCH_AGENT"
+  ],
+  "status": "IDLE",
+  "current_task": null,
+  "last_seen": "2026-10-01T12:32:31Z",
+  "registered_at": "2026-10-01T12:32:31Z",
+  "notes": "Estudia el nicho y la competencia y prepara el plan de cada libro.",
+  "role": "INVESTIGADOR",
+  "label": "Investigador",
+  "prompt": "PROMPTS/WORKER.md"
+}

@@ -5,8 +5,8 @@ import shutil
 import subprocess
 import sys
 
-from . import agents, books, build, chat, decisions, gitsync, orchestrator, orders, publishing, qc, reports, states, tasks
-from .core import FactoryError, load_config, log_event, now_iso, path, read_json, write_json, write_text
+from . import agents, books, build, chat, decisions, directives, gitsync, orchestrator, orders, publishing, qc, reports, states, tasks
+from .core import FactoryError, all_events, load_config, log_event, now_iso, path, read_json, utcnow, write_json, write_text
 
 DIRS = ["AGENTS", "BOOKS", "COLLECTIONS", "CONFIG", "DECISIONS", "LOCKS", "LOGS/events", "METRICS", "PROMPTS",
         "REPORTS/daily", "REPORTS/weekly", "RESEARCH/opportunities", "SYSTEM", "TEMPLATES/covers", "TEMPLATES/text"] + \
@@ -339,6 +339,44 @@ def cmd_order(a):
     _after(a.by, f"order {a.action} {a.id or ''}".strip())
 
 
+def cmd_team(a):
+    if a.action == "setup":
+        out(agents.setup_team(a.owner, a.prefix, a.model))
+        _after(a.owner, f"team setup {a.prefix}")
+    else:
+        out([{"agent": x["agent_id"], "rol": x.get("label") or "-", "estado": x["status"], "tarea": x.get("current_task")}
+             for x in agents.all_agents() if x.get("owner") != "SYSTEM"])
+
+
+def cmd_recommend(a):
+    """Chief: recommend a topic to the partners (chat question with Adelante / Descartar buttons)."""
+    cfg = load_config()
+    auto = cfg["auto_approve_recommendations"]
+    b = books.create(a.topic, a.language, agent=a.agent, priority=a.priority, niche=a.niche or "",
+                     target_audience=a.audience or "", recommended=not auto, rationale=a.why, word_count_target=a.words)
+    if auto:
+        chat.post(a.agent, "agent", f"He añadido a producción «{a.topic}» ({a.language}). {a.why}", book_id=b["id"])
+    else:
+        decisions.ask(f"Te recomiendo «{a.topic}» ({a.language}). {a.why}", a.agent, b["id"], ["Adelante", "Descartar"],
+                      action={"type": "approve_idea", "book_id": b["id"], "yes": "Adelante", "no": "Descartar"})
+    out({"id": b["id"], "needs_approval": not auto})
+    _after(a.agent, f"recommend {b['id']}")
+
+
+def cmd_directives(a):
+    if a.action == "add":
+        out(directives.add(a.text, a.by))
+    elif a.action == "remove":
+        out(directives.remove(a.id, a.by))
+    else:
+        if gitsync.enabled():
+            gitsync.sync(a.by or "HUMAN", "pull directives")
+        lst = directives.active()
+        out([f"[{d['id']}] {d['text']} (de {d['by']})" for d in lst] or "No hay directrices vigentes.")
+        return
+    _after(a.by, f"directive {a.action}")
+
+
 def cmd_say(a):
     """Agent progress note shown live in the partners' chat/panel."""
     agents.get(a.agent)
@@ -363,6 +401,21 @@ def cmd_report(a):
     out("Generados: REPORTS/DASHBOARD.md, REPORTS/dashboard.html, REPORTS/DAILY_REPORT.md, REPORTS/WEEKLY_REPORT.md, REPORTS/MEETING_PACK.md, METRICS/metrics.json")
 
 
+def capacity():
+    """How many new topics the chief should recommend now to keep the daily target."""
+    cfg = load_config()
+    all_b = books.all_books()
+    today = utcnow().strftime("%Y-%m-%d")
+    done_today = sum(1 for e in all_events() if e["type"] == "STATE_CHANGE" and e.get("to") == "HUMAN_REVIEW" and e["ts"].startswith(today))
+    approved_ideas = sum(1 for b in all_b if b["status"] == "IDEA" and b.get("idea_approved", True))
+    early = sum(1 for b in all_b if b["status"] in ("RESEARCH_PENDING", "RESEARCHING", "RESEARCH_COMPLETE", "BRIEFING",
+                                                     "BRIEF_READY", "WRITING_PENDING"))
+    pending = sum(1 for b in all_b if b["status"] == "IDEA" and not b.get("idea_approved", True))
+    want = max(0, cfg["daily_target"] - approved_ideas - early - pending)
+    return {"objetivo_diario": cfg["daily_target"], "terminados_hoy": done_today, "ideas_aprobadas_en_reserva": approved_ideas,
+            "libros_empezando": early, "recomendaciones_sin_responder": pending, "recomendar_ahora": min(5, want)}
+
+
 def cmd_status(a):
     g = reports._group_counts(books.all_books())
     out({"pipeline": {k: v for k, v in g.items() if v},
@@ -370,7 +423,8 @@ def cmd_status(a):
          "ready": [f"{t['task_id']} {t['type']} {t['book_id']} {t['priority']}" for t in tasks.all_tasks(["READY"])],
          "blocked": [f"{t['task_id']} {t['type']} {t['book_id']}: {str(t.get('error'))[:100]}" for t in tasks.all_tasks(["BLOCKED"])],
          "human_review": [b["id"] for b in books.all_books() if b["status"] == "HUMAN_REVIEW"],
-         "open_decisions": [d["id"] for d in decisions.all_decisions("OPEN")]})
+         "open_decisions": [d["id"] for d in decisions.all_decisions("OPEN")],
+         "capacidad": capacity(), "directrices": [d["text"] for d in directives.active()]})
 
 
 def cmd_sync(a):
@@ -437,6 +491,14 @@ def parser():
     s.add_argument("id", nargs="?"); s.add_argument("--text"); s.add_argument("--by", required=True)
     s.add_argument("--kind", default="GENERAL", choices=orders.KINDS); s.add_argument("--target"); s.add_argument("--book")
     s.add_argument("--priority", default="NORMAL"); s.add_argument("--note")
+    s = add("team", cmd_team, "equipo de agentes especialistas"); s.add_argument("action", choices=["setup", "list"])
+    s.add_argument("--owner", default="SOCIO-1"); s.add_argument("--prefix", default="S1"); s.add_argument("--model", default="claude")
+    s = add("recommend", cmd_recommend, "jefe: recomendar un tema a los socios"); s.add_argument("--topic", required=True)
+    s.add_argument("--why", required=True, help="por qué, con evidencia (FACT/ESTIMATE/HYPOTHESIS)"); s.add_argument("--agent", required=True)
+    s.add_argument("--language", default="en-US"); s.add_argument("--niche"); s.add_argument("--audience"); s.add_argument("--priority", default="NORMAL")
+    s.add_argument("--words", type=int, default=6000)
+    s = add("directives", cmd_directives, "directrices de los socios"); s.add_argument("action", nargs="?", default="list", choices=["list", "add", "remove"])
+    s.add_argument("id", nargs="?"); s.add_argument("--text"); s.add_argument("--by", default="HUMAN")
     s = add("say", cmd_say, "agente: publicar un mensaje de progreso en el chat de los socios"); s.add_argument("text")
     s.add_argument("--agent", required=True); s.add_argument("--book")
     s = add("chat", cmd_chat, "leer los últimos mensajes del chat"); s.add_argument("--last", type=int, default=30); s.add_argument("--agent")

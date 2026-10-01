@@ -1,0 +1,18 @@
+{
+  "agent_id": "S1-ESCRITOR",
+  "owner": "SOCIO-1",
+  "provider": "anthropic",
+  "model": "claude",
+  "capabilities": [
+    "WRITER_AGENT",
+    "TRANSLATOR_AGENT"
+  ],
+  "status": "IDLE",
+  "current_task": null,
+  "last_seen": "2026-10-01T12:32:31Z",
+  "registered_at": "2026-10-01T12:32:31Z",
+  "notes": "Escribe los libros y las ediciones en otros idiomas.",
+  "role": "ESCRITOR",
+  "label": "Escritor",
+  "prompt": "PROMPTS/WORKER.md"
+}

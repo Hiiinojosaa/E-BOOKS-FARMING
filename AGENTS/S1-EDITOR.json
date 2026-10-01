@@ -1,0 +1,18 @@
+{
+  "agent_id": "S1-EDITOR",
+  "owner": "SOCIO-1",
+  "provider": "anthropic",
+  "model": "claude",
+  "capabilities": [
+    "EDITOR_AGENT",
+    "FACT_CHECK_AGENT"
+  ],
+  "status": "IDLE",
+  "current_task": null,
+  "last_seen": "2026-10-01T12:32:31Z",
+  "registered_at": "2026-10-01T12:32:31Z",
+  "notes": "Corrige el texto, comprueba los datos y arregla lo que falle.",
+  "role": "EDITOR",
+  "label": "Editor",
+  "prompt": "PROMPTS/WORKER.md"
+}

@@ -1,0 +1,17 @@
+{
+  "agent_id": "S1-CALIDAD",
+  "owner": "SOCIO-1",
+  "provider": "anthropic",
+  "model": "claude",
+  "capabilities": [
+    "QC_AGENT"
+  ],
+  "status": "IDLE",
+  "current_task": null,
+  "last_seen": "2026-10-01T12:32:31Z",
+  "registered_at": "2026-10-01T12:32:31Z",
+  "notes": "Revisa cada libro antes de que os llegue.",
+  "role": "CALIDAD",
+  "label": "Calidad",
+  "prompt": "PROMPTS/WORKER.md"
+}

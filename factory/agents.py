@@ -27,6 +27,7 @@ def register(agent_id, owner, provider="anthropic", model="", capabilities=None,
         "capabilities": caps, "status": data.get("status", "IDLE"),
         "current_task": data.get("current_task"), "last_seen": now_iso(),
         "registered_at": data.get("registered_at", now_iso()), "notes": notes,
+        "role": data.get("role"), "label": data.get("label"), "prompt": data.get("prompt", "PROMPTS/WORKER.md"),
     })
     write_json(f, data)
     log_event("AGENT_REGISTERED", agent=agent_id, owner=owner, model=model)
@@ -51,6 +52,37 @@ def update(agent_id, **fields):
 def all_agents():
     d = path("AGENTS")
     return [read_json(f) for f in sorted(d.glob("*.json"))] if d.exists() else []
+
+
+# The specialist team. Each role only receives the tasks of its capabilities; the chief can do anything
+# (so a single session still moves the whole pipeline) but its first job is talking to the partners.
+TEAM = [
+    {"role": "JEFE", "label": "Jefe", "caps": ["*"], "prompt": "PROMPTS/CHIEF.md",
+     "desc": "Habla con vosotros en el chat, os recomienda temas, sigue vuestras directrices y coordina al equipo."},
+    {"role": "INVESTIGADOR", "label": "Investigador", "caps": ["RESEARCH_AGENT"], "prompt": "PROMPTS/WORKER.md",
+     "desc": "Estudia el nicho y la competencia y prepara el plan de cada libro."},
+    {"role": "ESCRITOR", "label": "Escritor", "caps": ["WRITER_AGENT", "TRANSLATOR_AGENT"], "prompt": "PROMPTS/WORKER.md",
+     "desc": "Escribe los libros y las ediciones en otros idiomas."},
+    {"role": "EDITOR", "label": "Editor", "caps": ["EDITOR_AGENT", "FACT_CHECK_AGENT"], "prompt": "PROMPTS/WORKER.md",
+     "desc": "Corrige el texto, comprueba los datos y arregla lo que falle."},
+    {"role": "DISENADOR", "label": "Diseñador", "caps": ["DESIGN_AGENT", "FORMAT_AGENT"], "prompt": "PROMPTS/WORKER.md",
+     "desc": "Hace la portada y maqueta el EPUB y el PDF."},
+    {"role": "EMPAQUETADOR", "label": "Empaquetador", "caps": ["MARKET_AGENT", "METADATA_AGENT"], "prompt": "PROMPTS/WORKER.md",
+     "desc": "Pone título, descripción, palabras clave, categorías y precio."},
+    {"role": "CALIDAD", "label": "Calidad", "caps": ["QC_AGENT"], "prompt": "PROMPTS/WORKER.md",
+     "desc": "Revisa cada libro antes de que os llegue."},
+]
+
+
+def setup_team(owner, prefix, model="claude"):
+    out = []
+    for m in TEAM:
+        aid = f"{prefix}-{m['role']}"
+        a = register(aid, owner, "anthropic", model, m["caps"], notes=m["desc"])
+        a.update(role=m["role"], label=m["label"], prompt=m["prompt"])
+        write_json(agent_file(aid), a)
+        out.append(aid)
+    return out
 
 
 def ensure_system(agent_id):

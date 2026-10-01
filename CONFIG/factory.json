@@ -11,7 +11,7 @@
   "agent_offline_minutes": 180,
   "max_retries": 3,
   "max_qc_failures": 2,
-  "max_active_books": 5,
+  "max_active_books": 25,
   "auto_promote_ideas": true,
   "brief_approval": "auto",
   "max_tasks_per_session": 12,
@@ -57,9 +57,11 @@
     "fármaco",
     "farmac"
   ],
-  "main_agent": "S1-CLAUDE-001",
+  "main_agent": "S1-JEFE",
   "partner_names": {
     "SOCIO-1": "Socio 1",
     "DANI": "Dani"
-  }
+  },
+  "daily_target": 12,
+  "auto_approve_recommendations": false
 }

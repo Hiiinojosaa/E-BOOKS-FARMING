@@ -78,7 +78,8 @@ def detect_risk(*texts):
 
 def create(topic, language="en-US", market=None, *, book_id=None, agent="HUMAN", priority="NORMAL",
            niche="", genre="non-fiction", target_audience="", target_languages=None, collection=None,
-           parent_book=None, translated_from=None, state="IDEA", word_count_target=6000, notes=""):
+           parent_book=None, translated_from=None, state="IDEA", word_count_target=6000, notes="", recommended=False,
+           rationale=""):
     cfg = load_config()
     language = norm_lang(language)
     if priority not in states.PRIORITIES:
@@ -139,6 +140,10 @@ def create(topic, language="en-US", market=None, *, book_id=None, agent="HUMAN",
         "publication_status": "NOT_PUBLISHED",
         "published": [],
         "notes": notes,
+        "recommended_by": agent if recommended else None,
+        "recommendation": rationale,
+        "idea_approved": not recommended,  # partner ideas go straight in; agent recommendations wait for a yes
+        "idea_approved_by": None if recommended else agent,
     }
     if translated_from:
         src = load(translated_from)

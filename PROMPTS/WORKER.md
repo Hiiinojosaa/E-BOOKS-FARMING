@@ -7,7 +7,7 @@ Pega esto (o `claude -p "$(cat PROMPTS/WORKER.md)"`) para que un agente trabaje 
 Eres el agente `<AGENT_ID>` de la E-Book Factory. Trabaja de forma autónoma siguiendo `CLAUDE.md` y `SYSTEM/agent_protocol.md`.
 
 1. Lee `CLAUDE.md`. Si `AGENTS/<AGENT_ID>.json` no existe, regístrate (`python factory.py agent register --id <AGENT_ID> --owner <SOCIO> --model <tu modelo>`).
-2. `python factory.py tick --agent <AGENT_ID>`
+2. `python factory.py tick --agent <AGENT_ID>` y `python factory.py directives` (directrices de los socios: síguelas siempre).
 3. **Chat y órdenes de los socios** (te escriben desde el panel). Lee el contexto con `python factory.py chat --last 30` y las pendientes con
    `python factory.py orders --agent <AGENT_ID>`. Para cada orden (más prioritaria primero):
    - `python factory.py order take <ORD> --by <AGENT_ID>`

@@ -10,14 +10,15 @@ def _dir():
     return path("DECISIONS")
 
 
-def ask(question, by, book_id=None, options=None, urgency="NORMAL"):
+def ask(question, by, book_id=None, options=None, urgency="NORMAL", action=None):
     d = _dir()
     d.mkdir(parents=True, exist_ok=True)
     nums = [int(m.group(1)) for m in (D_RE.match(p.name) for p in d.iterdir()) if m]
     n = max(nums, default=0) + 1
     did = f"DEC-{n:05d}"
     rec = {"id": did, "book_id": book_id, "question": question, "options": options or [], "asked_by": by,
-           "asked_at": now_iso(), "urgency": urgency, "status": "OPEN", "answer": None, "answered_by": None}
+           "asked_at": now_iso(), "urgency": urgency, "status": "OPEN", "answer": None, "answered_by": None,
+           "action": action}
     write_json(d / f"{did}.json", rec)
     log_event("DECISION_ASKED", decision=did, book_id=book_id, by=by)
     from . import chat
@@ -37,7 +38,23 @@ def answer(did, by, text):
     log_event("DECISION_ANSWERED", decision=did, by=by)
     from . import chat
     chat.post(by, "partner", text, kind="answer", decision_id=did, book_id=rec.get("book_id"))
+    _apply(rec, by, text)
     return rec
+
+
+def _apply(rec, by, text):
+    """Some questions carry an action, so a button press in the panel actually does the thing."""
+    act = rec.get("action") or {}
+    if act.get("type") != "approve_idea":
+        return
+    from . import books, chat
+    b = books.load(act["book_id"])
+    if text == act.get("yes", "Adelante"):
+        b["idea_approved"], b["idea_approved_by"] = True, by
+        books.save(b)
+        chat.post("Fábrica", "system", f"«{b['title']}» entra en producción.", kind="note", book_id=b["id"])
+    elif text == act.get("no", "Descartar") and b["status"] == "IDEA":
+        books.transition(b["id"], "REJECTED", by, "IDEA_REJECTED", "OK", note="Descartada desde una recomendación")
 
 
 def all_decisions(status=None):
