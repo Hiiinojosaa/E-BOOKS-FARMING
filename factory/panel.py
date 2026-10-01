@@ -19,7 +19,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
-from . import agents, books, chat, decisions, directives, gitsync, orchestrator, orders, publishing, reports, states, tasks
+from . import agents, books, chat, decisions, directives, gitsync, orchestrator, orders, pg_sync, publishing, reports, states, tasks
 from .core import (FactoryError, all_events, load_config, log_event, now_iso, parse_iso, path, read_json, read_text, utcnow,
                    word_count, write_json)
 
@@ -376,7 +376,49 @@ def do_action(a, by):
     else:
         raise FactoryError(f"Acción desconocida: {act}")
     sync = _sync(by, f"panel: {act} {a.get('id') or a.get('task') or ''}".strip())
+    _pg_push_state(by)
     return {"ok": True, "result": res, "sync": sync}
+
+
+# ------------------------------------------------------------------ remote panel bridge (Postgres)
+def _pg_push_state(by):
+    if not pg_sync.enabled():
+        return
+    try:
+        pg_sync.push_state(state(by))
+    except Exception as e:  # noqa: BLE001 - never let the remote bridge break a local action
+        print(f"[pg_sync] push_state fallo: {e}")
+
+
+def _pg_tick(agent):
+    if not pg_sync.enabled():
+        return
+    try:
+        pg_sync.push_users()
+        for row in pg_sync.pull_pending_actions():
+            try:
+                result = do_action(row["payload"], row["partner"])
+                pg_sync.mark_action_done(row["id"], result)
+            except FactoryError as e:
+                pg_sync.mark_action_error(row["id"], str(e))
+            except Exception as e:  # noqa: BLE001
+                pg_sync.mark_action_error(row["id"], f"{type(e).__name__}: {e}")
+        _pg_push_state(agent)
+        for b in books.all_books():
+            try:
+                pg_sync.push_book_details(b["id"], book_detail(b["id"]))
+            except Exception as e:  # noqa: BLE001
+                print(f"[pg_sync] push_book_details({b['id']}) fallo: {e}")
+    except Exception as e:  # noqa: BLE001
+        print(f"[pg_sync] tick fallo: {e}")
+
+
+def _background_pg_bridge(interval=6):
+    agents.ensure_system("PG-BRIDGE")
+    while True:
+        time.sleep(interval)
+        with ACTION_LOCK:
+            _pg_tick("PG-BRIDGE")
 
 
 # ------------------------------------------------------------------ http
@@ -521,6 +563,9 @@ def serve(port=8765, open_browser=True, sync_every=60):
     srv = ThreadingHTTPServer(("127.0.0.1", port), Handler)
     srv.daemon_threads = True
     threading.Thread(target=_background_sync, args=(sync_every,), daemon=True).start()
+    if pg_sync.enabled():
+        threading.Thread(target=_background_pg_bridge, daemon=True).start()
+        print("Puente con el panel remoto (Postgres) activo.")
     url = f"http://127.0.0.1:{port}/"
     print(f"Panel en {url}  (deja esta ventana abierta; Ctrl+C para cerrar). Sincroniza con GitHub cada {sync_every}s.")
     if open_browser:
