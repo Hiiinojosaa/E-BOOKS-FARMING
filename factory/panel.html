@@ -619,12 +619,12 @@ document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeBook(); });
 
 // ---------------------------------------------------------------- CHAT
 function vChat(){
-  const other=Object.keys(S.names).find(p=>p!==S.me);
   const books=S.books.filter(b=>!["discarded","published"].includes(b.shelf));
   const chief=S.agents.find(a=>a.agent_id===S.main_agent);
   const chiefOn=chief && chief.status==="BUSY";
+  const recipients=[["factory","Jefe (general)"],...S.team.map(t=>[t.agents[0]||t.role,t.label])].filter(([id])=>id);
   $("#view").innerHTML=`
-    <div class="head"><div><h1>Chat</h1><div class="sub">Habláis con el jefe como con un compañero. ${esc(nameOf(other))} también lo ve todo.</div></div></div>
+    <div class="head"><div><h1>Chat</h1><div class="sub">Habla con el jefe o con un especialista en concreto. Todo el equipo lo ve.</div></div></div>
     <div class="chatgrid">
       <div class="card chatbox">
         <div class="chhead">${roleAv("JEFE")}<div class="grow" style="flex:1"><div style="font-weight:600">Jefe de la fábrica</div><div class="tiny mut">${chiefOn?`<span class="pill good"><span class="dotx"></span> Trabajando ahora</span>`:`Responde cuando está trabajando · visto ${chief?ago(chief.last_seen):"nunca"}`}</div></div></div>
@@ -639,7 +639,7 @@ function vChat(){
               <div class="sec-t">Tipo de mensaje</div>
               <div class="seg" id="modeSeg"><button data-m="message">${icon("chat","sm")} Mensaje</button><button data-m="directive">${icon("flag","sm")} Directriz</button></div>
               <div id="toWrap"><div class="sec-t">Para</div>
-                <div class="seg" id="toSeg"><button data-to="factory">Al jefe</button><button data-to="${esc(other)}">A ${esc(nameOf(other))}</button></div></div>
+                <select id="toSel">${recipients.map(([id,label])=>`<option value="${esc(id)}">${esc(label)}</option>`).join("")}</select></div>
               <div id="bookWrap"><div class="sec-t">Sobre un libro (opcional)</div>
                 <select id="aboutBook"><option value="">Sin libro concreto</option>${books.map(b=>`<option value="${b.id}" ${b.id===CHAT_BOOK?"selected":""}>${esc(b.title.slice(0,46))}</option>`).join("")}</select></div>
             </div>
@@ -653,12 +653,12 @@ function vChat(){
         <div class="card dirs">${S.directives.length?S.directives.map(d=>`<div class="d">${icon("flag","sm")}<span>${esc(d.text)}<div class="tiny faint">${esc(nameOf(d.by))} · ${ago(d.created_at)}</div></span><button class="btn ghost icon x" title="Quitar" onclick="act({action:'directive_remove',id:'${d.id}'},this,'Directriz retirada')">${icon("x","sm")}</button></div>`).join(""):`<div class="empty">Aún no hay directrices. Abre el «+» del chat y elige <b>Directriz</b>: el jefe y todo el equipo la seguirán hasta que la quitéis.</div>`}</div>
         <div class="sec"><h3>Equipo</h3></div>
         <div class="card">${S.team.map(t=>{ const a=t.agents.map(agentOf).filter(Boolean); const busy=a.some(x=>x.status==="BUSY");
-          return `<div class="row" style="padding:9px 14px;border-bottom:1px solid var(--line)">${roleAv(t.role,true)}<div class="grow small"><b>${esc(t.label)}</b></div><span class="pill ${busy?"good":""}">${busy?"Trabajando":a.length?"En espera":"Sin agente"}</span></div>`; }).join("")}</div>
+          return `<button class="row" style="padding:9px 14px;border-bottom:1px solid var(--line);width:100%;background:none;border-left:0;border-right:0;border-top:0;cursor:pointer;text-align:left" onclick="CHAT_TO='${esc(t.agents[0]||t.role)}';vChat()">${roleAv(t.role,true)}<div class="grow small"><b>${esc(t.label)}</b></div><span class="pill ${busy?"good":""}">${busy?"Trabajando":a.length?"En espera":"Sin agente"}</span></button>`; }).join("")}</div>
       </div>
     </div>`;
   const setSeg=()=>{
     document.querySelectorAll("#modeSeg button").forEach(b=>b.classList.toggle("on",b.dataset.m===MODE));
-    document.querySelectorAll("#toSeg button").forEach(b=>b.classList.toggle("on",b.dataset.to===CHAT_TO));
+    $("#toSel").value=CHAT_TO;
     $("#toWrap").classList.toggle("hidden",MODE==="directive"); $("#bookWrap").classList.toggle("hidden",MODE==="directive");
     $("#aboutBook").value=CHAT_BOOK||"";
     $("#msg").placeholder = MODE==="directive" ? "Ej.: Esta semana, 70 % de los libros en inglés de EE. UU. y nada de temas de salud" : "Escribe un mensaje…";
@@ -667,7 +667,7 @@ function vChat(){
     const c=$("#optChips"); if(!c) return;
     const items=[];
     if(MODE==="directive") items.push({ic:"flag",label:"Directriz",clear:()=>{MODE="message";}});
-    else { if(CHAT_TO!=="factory") items.push({ic:"user",label:`Para ${nameOf(CHAT_TO)}`,clear:()=>{CHAT_TO="factory";}});
+    else { if(CHAT_TO!=="factory") items.push({ic:"user",label:`Para ${agentLabel(CHAT_TO)}`,clear:()=>{CHAT_TO="factory";}});
       if(CHAT_BOOK) items.push({ic:"book",label:`Sobre «${bookTitle(CHAT_BOOK).slice(0,28)}»`,clear:()=>{CHAT_BOOK="";}}); }
     c.innerHTML=items.map(it=>`<span class="optchip">${icon(it.ic,"sm")} ${esc(it.label)} <button>${icon("x","sm")}</button></span>`).join("");
     c.querySelectorAll(".optchip button").forEach((b,i)=>b.onclick=()=>{ items[i].clear(); setSeg(); });
@@ -676,7 +676,7 @@ function vChat(){
   $("#addBtn").onclick=e=>{ e.stopPropagation(); $("#optsPop").classList.toggle("hidden"); $("#addBtn").classList.toggle("on", !$("#optsPop").classList.contains("hidden")); };
   $("#optsPop").onclick=e=>e.stopPropagation();
   document.querySelectorAll("#modeSeg button").forEach(b=>b.onclick=()=>{ MODE=b.dataset.m; setSeg(); });
-  document.querySelectorAll("#toSeg button").forEach(b=>b.onclick=()=>{ CHAT_TO=b.dataset.to; setSeg(); });
+  $("#toSel").onchange=e=>{ CHAT_TO=e.target.value; renderOptChips(); };
   $("#aboutBook").onchange=e=>{ CHAT_BOOK=e.target.value; renderOptChips(); };
   $("#send").onclick=sendMsg;
   $("#msg").addEventListener("keydown",e=>{ if(e.key==="Enter"&&!e.shiftKey){ e.preventDefault(); sendMsg(); } });
@@ -685,8 +685,8 @@ function vChat(){
 document.addEventListener("click",e=>{ const p=$("#optsPop"), a=$("#addBtn"); if(p && !p.classList.contains("hidden") && a && !a.contains(e.target)) { p.classList.add("hidden"); a.classList.remove("on"); } });
 function chips(){
   const c=$("#chips"); if(!c) return;
-  const s = MODE==="directive" ? ["Objetivo: 12 libros al día","Precio máximo 3,99 $","Prioridad: inglés de EE. UU.","Nada de temas de salud ni finanzas"]
-    : CHAT_TO==="factory" ? ["¿Cómo va todo?","Recomiéndanos 5 temas nuevos","¿Qué libro va más avanzado?","Resumen de la semana"] : ["¿Revisamos hoy?","He aprobado un libro","Lo vemos en la reunión"];
+  const s = MODE==="directive" ? ["Objetivo: 20 libros al día","Precio máximo 3,99 $","Prioridad: inglés de EE. UU.","Nada de temas de salud ni finanzas"]
+    : CHAT_TO==="factory" ? ["¿Cómo va todo?","Recomiéndanos temas nuevos","¿Qué libro va más avanzado?","Resumen de la semana"] : ["¿En qué estás trabajando?","Aquí tienes una idea para ti","¿Cómo vas con tu última tarea?"];
   c.innerHTML=s.map(x=>`<button class="chip">${esc(x)}</button>`).join("");
   c.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{ $("#msg").value=b.textContent; $("#msg").focus(); });
 }
@@ -731,13 +731,12 @@ async function sendMsg(){
 function vTeam(){
   const phrase=(id,prompt)=>`Trabaja como ${id} de la E-Book Factory siguiendo ${prompt||"PROMPTS/WORKER.md"}`;
   const st=a=>a.status==="BUSY"?["good","Trabajando"]:(a.minutes_ago!=null&&a.minutes_ago>180)||a.status==="OFFLINE"?["","Apagado"]:["acc","En espera"];
-  const other=Object.keys(S.names).find(p=>p!==S.me), sy=S.sync;
-  const prefix = S.me==="DANI"?"DANI":"S1";
+  const sy=S.sync;
   const noAgents = !S.team.some(t=>t.agents.length);
   const noti = ("Notification" in window) ? Notification.permission : "unsupported";
   $("#view").innerHTML=`
     <div class="head"><div><h1>Equipo y ajustes</h1><div class="sub">Quién hace cada cosa, cómo ponerlos a trabajar y vuestras preferencias.</div></div></div>
-    ${noAgents?`<div class="notice">${icon("team")}<div style="flex:1">Todavía no habéis creado el equipo. En la carpeta del proyecto, ejecuta una vez: <code class="cmd">python factory.py team setup --owner ${esc(S.me)} --prefix ${prefix}</code></div></div>`:""}
+    ${noAgents?`<div class="notice">${icon("team")}<div style="flex:1">Todavía no has creado el equipo. En la carpeta del proyecto, ejecuta una vez: <code class="cmd">python factory.py team setup --owner ${esc(S.me)} --prefix S1</code></div></div>`:""}
     <div class="sec"><h3>El equipo</h3></div>
     <div class="team">${S.team.map(t=>{ const as=t.agents.map(agentOf).filter(Boolean);
       return `<div class="card member"><div class="row">${roleAv(t.role)}<div class="grow"><div style="font-weight:600">${esc(t.label)}</div><div class="tiny mut">${as.length?as.map(a=>esc(a.agent_id)).join(", "):"Sin agente asignado"}</div></div>
@@ -747,8 +746,8 @@ function vTeam(){
     <div class="sec"><h3>Cómo se ponen a trabajar</h3></div>
     <div class="card pad small" style="line-height:1.7">
       Cada miembro del equipo es una sesión de <b>Claude Code</b> abierta en la carpeta del proyecto. Para arrancar uno, abre Claude Code y pega su orden de arranque (botón de arriba). Pueden trabajar varios a la vez: cada uno coge solo las tareas de su oficio, y el jefe además os atiende en el chat.<br>
-      <b>Para que trabajen solos con horario</b> (también de noche), pide a Claude: «programa el equipo cada 2 horas». ${esc(nameOf(other))} puede sumar su propio equipo desde su ordenador con <code>--prefix DANI</code>.<br>
-      <span class="mut">Ritmo realista: cada libro consume bastante trabajo de agente y todos los agentes de una cuenta comparten su cuota de Claude. Más libros al día = más agentes en marcha y más cuota (las cuentas de ambos socios suman).</span>
+      <b>Para que trabajen solos con horario</b> (también de noche), pide a Claude: «programa el equipo cada 2 horas».<br>
+      <span class="mut">Ritmo realista: cada libro consume bastante trabajo de agente y todos los agentes comparten tu cuota de Claude. Más libros al día = más agentes en marcha y más cuota.</span>
     </div>
     <div class="sec"><h3>Objetivo de producción</h3></div>
     <div class="card pad"><div class="row" style="flex-wrap:wrap"><div class="grow"><div style="font-weight:600">Libros al día</div><div class="small mut">El jefe recomienda temas nuevos para mantener la fábrica a este ritmo.</div></div>
