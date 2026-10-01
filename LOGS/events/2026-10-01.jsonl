@@ -202,3 +202,5 @@
 {"ts": "2026-10-01T18:21:28Z", "type": "TASK_DONE", "task_id": "TASK-000022", "book_id": "EB-000015", "agent": "TEST-AGENT", "step": "METADATA", "warnings": 0}
 {"ts": "2026-10-01T18:21:28Z", "type": "TASK_CREATED", "task_id": "TASK-000023", "book_id": "EB-000015", "step": "DESIGN", "priority": "NORMAL"}
 {"ts": "2026-10-01T18:21:28Z", "type": "ORCHESTRATE", "agent": "TEST-AGENT", "actions": 1}
+{"ts": "2026-10-01T18:21:39Z", "type": "STATE_CHANGE", "book_id": "EB-000015", "frm": "DESIGN_PENDING", "to": "DESIGNING", "agent": "TEST-AGENT", "action": "CLAIM DESIGN", "result": "OK", "task_id": "TASK-000023"}
+{"ts": "2026-10-01T18:21:39Z", "type": "TASK_CLAIMED", "task_id": "TASK-000023", "book_id": "EB-000015", "agent": "TEST-AGENT", "step": "DESIGN"}
