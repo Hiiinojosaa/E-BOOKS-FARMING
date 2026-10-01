@@ -159,3 +159,5 @@
 {"ts": "2026-10-01T18:16:53Z", "type": "AGENT_REGISTERED", "agent": "TEST-AGENT", "owner": "ADMIN", "model": "claude-sonnet-5-5"}
 {"ts": "2026-10-01T18:17:07Z", "type": "TASK_CREATED", "task_id": "TASK-000017", "book_id": "EB-000015", "step": "RESEARCH", "priority": "NORMAL"}
 {"ts": "2026-10-01T18:17:07Z", "type": "ORCHESTRATE", "agent": "TEST-AGENT", "actions": 1}
+{"ts": "2026-10-01T18:17:13Z", "type": "STATE_CHANGE", "book_id": "EB-000015", "frm": "RESEARCH_PENDING", "to": "RESEARCHING", "agent": "TEST-AGENT", "action": "CLAIM RESEARCH", "result": "OK", "task_id": "TASK-000017"}
+{"ts": "2026-10-01T18:17:13Z", "type": "TASK_CLAIMED", "task_id": "TASK-000017", "book_id": "EB-000015", "agent": "TEST-AGENT", "step": "RESEARCH"}
