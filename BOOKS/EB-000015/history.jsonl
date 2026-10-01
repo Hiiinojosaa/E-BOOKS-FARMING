@@ -5,3 +5,4 @@
 {"ts": "2026-10-01T18:18:09Z", "from": "RESEARCH_PENDING", "to": "RESEARCHING", "agent": "TEST-AGENT", "action": "CLAIM RESEARCH", "result": "OK", "task_id": "TASK-000017"}
 {"ts": "2026-10-01T18:18:12Z", "from": "RESEARCHING", "to": "RESEARCH_COMPLETE", "agent": "TEST-AGENT", "action": "COMPLETE RESEARCH", "result": "OK", "task_id": "TASK-000017", "note": "investigacion completada (pipeline de validacion)"}
 {"ts": "2026-10-01T18:18:23Z", "from": "RESEARCH_COMPLETE", "to": "BRIEFING", "agent": "TEST-AGENT", "action": "CLAIM BRIEF", "result": "OK", "task_id": "TASK-000018"}
+{"ts": "2026-10-01T18:18:50Z", "from": "BRIEFING", "to": "BRIEF_READY", "agent": "TEST-AGENT", "action": "COMPLETE BRIEF", "result": "OK", "task_id": "TASK-000018", "note": "brief completo, outline fijo para el generador de puzzles"}

@@ -12,13 +12,13 @@
   "genre": "non-fiction",
   "niche": "large-print puzzle books",
   "target_audience": "seniors and beginners who want relaxing, easy-to-read sudoku",
-  "status": "BRIEFING",
+  "status": "BRIEF_READY",
   "blocked_from": null,
   "priority": "NORMAL",
-  "assigned_agent": "TEST-AGENT",
+  "assigned_agent": null,
   "owner_partner": null,
   "created_at": "2026-10-01T18:16:31Z",
-  "updated_at": "2026-10-01T18:18:23Z",
+  "updated_at": "2026-10-01T18:18:51Z",
   "version": "1.0",
   "parent_book": null,
   "translated_from": null,
@@ -33,7 +33,7 @@
   "price_suggested": null,
   "risk_level": "LOW",
   "risk_reasons": [],
-  "word_count_target": 1200,
+  "word_count_target": 1300,
   "brief_approved": false,
   "brief_approved_by": null,
   "human_approval": {
@@ -55,5 +55,6 @@
   "recommended_by": null,
   "recommendation": "",
   "idea_approved": true,
-  "idea_approved_by": "HUMAN"
+  "idea_approved_by": "HUMAN",
+  "brief_chapters": 6
 }

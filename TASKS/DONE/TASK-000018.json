@@ -5,17 +5,20 @@
   "role": "RESEARCH_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "TEST-AGENT",
   "created_by": "TEST-AGENT",
   "created_at": "2026-10-01T18:18:12Z",
   "started_at": "2026-10-01T18:18:23Z",
-  "completed_at": null,
+  "completed_at": "2026-10-01T18:18:50Z",
   "claimed_from_state": "RESEARCH_COMPLETE",
   "dependencies": [],
   "prompt": "PROMPTS/BRIEF.md",
   "notes": "",
-  "output": null,
+  "output": {
+    "brief_chapters": 6,
+    "word_count_target": 1300
+  },
   "error": null,
   "errors": [],
   "retry_count": 0,
@@ -23,7 +26,12 @@
   "attempts": [
     {
       "agent": "TEST-AGENT",
-      "started_at": "2026-10-01T18:18:23Z"
+      "started_at": "2026-10-01T18:18:23Z",
+      "ended_at": "2026-10-01T18:18:50Z",
+      "result": "DONE",
+      "note": "brief completo, outline fijo para el generador de puzzles",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }
