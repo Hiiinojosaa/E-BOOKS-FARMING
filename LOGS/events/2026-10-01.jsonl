@@ -169,3 +169,5 @@
 {"ts": "2026-10-01T18:18:12Z", "type": "TASK_DONE", "task_id": "TASK-000017", "book_id": "EB-000015", "agent": "TEST-AGENT", "step": "RESEARCH", "warnings": 0}
 {"ts": "2026-10-01T18:18:12Z", "type": "TASK_CREATED", "task_id": "TASK-000018", "book_id": "EB-000015", "step": "BRIEF", "priority": "NORMAL"}
 {"ts": "2026-10-01T18:18:12Z", "type": "ORCHESTRATE", "agent": "TEST-AGENT", "actions": 1}
+{"ts": "2026-10-01T18:18:23Z", "type": "STATE_CHANGE", "book_id": "EB-000015", "frm": "RESEARCH_COMPLETE", "to": "BRIEFING", "agent": "TEST-AGENT", "action": "CLAIM BRIEF", "result": "OK", "task_id": "TASK-000018"}
+{"ts": "2026-10-01T18:18:23Z", "type": "TASK_CLAIMED", "task_id": "TASK-000018", "book_id": "EB-000015", "agent": "TEST-AGENT", "step": "BRIEF"}
