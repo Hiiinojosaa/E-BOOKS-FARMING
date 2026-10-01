@@ -1,0 +1,46 @@
+{
+  "title": "Productivity for Beginners",
+  "subtitle": "A Simple Weekend System to Get Organized, Focus Better and Stop Feeling Overwhelmed",
+  "description": "Feeling busy but scattered? Tried apps, planners and morning routines that never stuck? This short, practical guide helps you build one small productivity system in a single weekend, and keep it running.\n\nInstead of fifty tricks, you will set up four simple parts, one at a time, each with a hands-on exercise:\n\n- Capture: get every task and idea out of your head and into one trusted inbox.\n- One list: turn vague worries into clear next actions you can start in minutes.\n- Priorities: separate what is urgent from what is truly important, and choose your daily top three.\n- Focus: use short, timed work sprints to beat distractions and finally start the tasks you keep postponing.\n\nThen you will add the one habit that keeps everything working: a 30-minute weekly review, with a ready-to-use checklist and a simple way to get back on track when life gets busy.\n\nThe ideas come from well-known, time-tested methods, explained in plain language and adapted for people starting from zero. No special app required: a notebook or your phone is enough.\n\nPerfect for anyone who wants to feel calmer, remember everything and spend more time on what matters.",
+  "keywords": [
+    "time management for beginners",
+    "how to get organized",
+    "stop procrastinating",
+    "to do list system",
+    "focus and concentration",
+    "weekly planning",
+    "simple productivity system"
+  ],
+  "categories": [
+    "Self-Help > Time Management",
+    "Business & Money > Skills > Time Management",
+    "Self-Help > Personal Transformation"
+  ],
+  "price": {
+    "amount": 2.99,
+    "currency": "USD",
+    "basis": "ESTIMATE",
+    "rationale": "Short (~5,600 words, ~30 pages) beginner ebook in a crowded category; lowest price that typically qualifies for KDP's 70% royalty option (verify the current band). Consider 3.99 if bundled into a series."
+  },
+  "target_audience": "Adults new to productivity systems who feel busy but disorganized and want a short, practical starting point",
+  "positioning": "The smallest complete productivity system for absolute beginners: four parts plus a weekly review, set up in one weekend, tool-agnostic.",
+  "claims": [
+    {
+      "text": "Productivity for beginners is an evergreen topic with seasonal peaks (New Year, September)",
+      "type": "ESTIMATE",
+      "source": null
+    },
+    {
+      "text": "Beginners prefer a short, single-system book over comprehensive manuals",
+      "type": "HYPOTHESIS",
+      "source": null
+    },
+    {
+      "text": "Core methods referenced in the book are long-established (Pomodoro late 1980s, GTD 2001)",
+      "type": "FACT",
+      "source": "S1, S5"
+    }
+  ],
+  "author": "TBD-PEN-NAME",
+  "language": "en-US"
+}

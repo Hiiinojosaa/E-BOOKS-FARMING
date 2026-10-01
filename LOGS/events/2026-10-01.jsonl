@@ -1,0 +1,102 @@
+{"ts": "2026-10-01T08:40:47Z", "type": "AGENT_REGISTERED", "agent": "S1-CLAUDE-001", "owner": "SOCIO-1", "model": "claude-opus-5-5"}
+{"ts": "2026-10-01T08:40:55Z", "type": "BOOK_CREATED", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "topic": "Productivity for Beginners", "language": "en-US"}
+{"ts": "2026-10-01T08:40:55Z", "type": "RECOVER", "agent": "S1-CLAUDE-001", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
+{"ts": "2026-10-01T08:40:55Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "IDEA", "to": "RESEARCH_PENDING", "agent": "S1-CLAUDE-001", "action": "PROMOTE_IDEA", "result": "OK"}
+{"ts": "2026-10-01T08:40:55Z", "type": "TASK_CREATED", "task_id": "TASK-000001", "book_id": "EB-TEST-001", "step": "RESEARCH", "priority": "HIGH"}
+{"ts": "2026-10-01T08:40:55Z", "type": "ORCHESTRATE", "agent": "S1-CLAUDE-001", "actions": 2}
+{"ts": "2026-10-01T08:40:55Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "RESEARCH_PENDING", "to": "RESEARCHING", "agent": "S1-CLAUDE-001", "action": "CLAIM RESEARCH", "result": "OK", "task_id": "TASK-000001"}
+{"ts": "2026-10-01T08:40:55Z", "type": "TASK_CLAIMED", "task_id": "TASK-000001", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "RESEARCH"}
+{"ts": "2026-10-01T08:41:57Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "RESEARCHING", "to": "RESEARCH_COMPLETE", "agent": "S1-CLAUDE-001", "action": "COMPLETE RESEARCH", "result": "OK", "task_id": "TASK-000001"}
+{"ts": "2026-10-01T08:41:57Z", "type": "TASK_DONE", "task_id": "TASK-000001", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "RESEARCH", "warnings": 0}
+{"ts": "2026-10-01T08:41:57Z", "type": "TASK_CREATED", "task_id": "TASK-000002", "book_id": "EB-TEST-001", "step": "BRIEF", "priority": "HIGH"}
+{"ts": "2026-10-01T08:41:57Z", "type": "ORCHESTRATE", "agent": "S1-CLAUDE-001", "actions": 1}
+{"ts": "2026-10-01T08:41:58Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "RESEARCH_COMPLETE", "to": "BRIEFING", "agent": "S1-CLAUDE-001", "action": "CLAIM BRIEF", "result": "OK", "task_id": "TASK-000002"}
+{"ts": "2026-10-01T08:41:58Z", "type": "TASK_CLAIMED", "task_id": "TASK-000002", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "BRIEF"}
+{"ts": "2026-10-01T08:42:22Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "BRIEFING", "to": "BRIEF_READY", "agent": "S1-CLAUDE-001", "action": "COMPLETE BRIEF", "result": "OK", "task_id": "TASK-000002"}
+{"ts": "2026-10-01T08:42:22Z", "type": "TASK_DONE", "task_id": "TASK-000002", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "BRIEF", "warnings": 0}
+{"ts": "2026-10-01T08:42:22Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "BRIEF_READY", "to": "WRITING_PENDING", "agent": "S1-CLAUDE-001", "action": "BRIEF_GATE", "result": "APPROVED"}
+{"ts": "2026-10-01T08:42:22Z", "type": "TASK_CREATED", "task_id": "TASK-000003", "book_id": "EB-TEST-001", "step": "WRITE", "priority": "HIGH"}
+{"ts": "2026-10-01T08:42:22Z", "type": "ORCHESTRATE", "agent": "S1-CLAUDE-001", "actions": 2}
+{"ts": "2026-10-01T08:42:22Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "WRITING_PENDING", "to": "WRITING", "agent": "S1-CLAUDE-001", "action": "CLAIM WRITE", "result": "OK", "task_id": "TASK-000003"}
+{"ts": "2026-10-01T08:42:22Z", "type": "TASK_CLAIMED", "task_id": "TASK-000003", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "WRITE"}
+{"ts": "2026-10-01T08:44:35Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "WRITING", "to": "DRAFT_COMPLETE", "agent": "S1-CLAUDE-001", "action": "COMPLETE WRITE", "result": "OK", "task_id": "TASK-000003"}
+{"ts": "2026-10-01T08:44:35Z", "type": "TASK_DONE", "task_id": "TASK-000003", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "WRITE", "warnings": 0}
+{"ts": "2026-10-01T08:44:35Z", "type": "TASK_CREATED", "task_id": "TASK-000004", "book_id": "EB-TEST-001", "step": "EDIT", "priority": "HIGH"}
+{"ts": "2026-10-01T08:44:35Z", "type": "ORCHESTRATE", "agent": "S1-CLAUDE-001", "actions": 1}
+{"ts": "2026-10-01T08:44:35Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "DRAFT_COMPLETE", "to": "EDITING", "agent": "S1-CLAUDE-001", "action": "CLAIM EDIT", "result": "OK", "task_id": "TASK-000004"}
+{"ts": "2026-10-01T08:44:35Z", "type": "TASK_CLAIMED", "task_id": "TASK-000004", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "EDIT"}
+{"ts": "2026-10-01T08:44:48Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "EDITING", "to": "EDITED", "agent": "S1-CLAUDE-001", "action": "COMPLETE EDIT", "result": "OK", "task_id": "TASK-000004"}
+{"ts": "2026-10-01T08:44:48Z", "type": "TASK_DONE", "task_id": "TASK-000004", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "EDIT", "warnings": 0}
+{"ts": "2026-10-01T08:44:48Z", "type": "TASK_CREATED", "task_id": "TASK-000005", "book_id": "EB-TEST-001", "step": "FACT_CHECK", "priority": "HIGH"}
+{"ts": "2026-10-01T08:44:48Z", "type": "ORCHESTRATE", "agent": "S1-CLAUDE-001", "actions": 1}
+{"ts": "2026-10-01T08:44:48Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "EDITED", "to": "FACT_CHECKING", "agent": "S1-CLAUDE-001", "action": "CLAIM FACT_CHECK", "result": "OK", "task_id": "TASK-000005"}
+{"ts": "2026-10-01T08:44:48Z", "type": "TASK_CLAIMED", "task_id": "TASK-000005", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "FACT_CHECK"}
+{"ts": "2026-10-01T08:45:27Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "FACT_CHECKING", "to": "FACT_CHECKED", "agent": "S1-CLAUDE-001", "action": "COMPLETE FACT_CHECK", "result": "OK", "task_id": "TASK-000005"}
+{"ts": "2026-10-01T08:45:27Z", "type": "TASK_DONE", "task_id": "TASK-000005", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "FACT_CHECK", "warnings": 0}
+{"ts": "2026-10-01T08:45:27Z", "type": "TASK_CREATED", "task_id": "TASK-000006", "book_id": "EB-TEST-001", "step": "METADATA", "priority": "HIGH"}
+{"ts": "2026-10-01T08:45:27Z", "type": "ORCHESTRATE", "agent": "S1-CLAUDE-001", "actions": 1}
+{"ts": "2026-10-01T08:45:27Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "FACT_CHECKED", "to": "METADATA_IN_PROGRESS", "agent": "S1-CLAUDE-001", "action": "CLAIM METADATA", "result": "OK", "task_id": "TASK-000006"}
+{"ts": "2026-10-01T08:45:27Z", "type": "TASK_CLAIMED", "task_id": "TASK-000006", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "METADATA"}
+{"ts": "2026-10-01T08:45:43Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "METADATA_IN_PROGRESS", "to": "DESIGN_PENDING", "agent": "S1-CLAUDE-001", "action": "COMPLETE METADATA", "result": "OK", "task_id": "TASK-000006"}
+{"ts": "2026-10-01T08:45:43Z", "type": "TASK_DONE", "task_id": "TASK-000006", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "METADATA", "warnings": 0}
+{"ts": "2026-10-01T08:45:43Z", "type": "TASK_CREATED", "task_id": "TASK-000007", "book_id": "EB-TEST-001", "step": "DESIGN", "priority": "HIGH"}
+{"ts": "2026-10-01T08:45:43Z", "type": "ORCHESTRATE", "agent": "S1-CLAUDE-001", "actions": 1}
+{"ts": "2026-10-01T08:45:44Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "DESIGN_PENDING", "to": "DESIGNING", "agent": "S1-CLAUDE-001", "action": "CLAIM DESIGN", "result": "OK", "task_id": "TASK-000007"}
+{"ts": "2026-10-01T08:45:44Z", "type": "TASK_CLAIMED", "task_id": "TASK-000007", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "DESIGN"}
+{"ts": "2026-10-01T08:46:14Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "DESIGNING", "to": "DESIGN_COMPLETE", "agent": "S1-CLAUDE-001", "action": "COMPLETE DESIGN", "result": "OK", "task_id": "TASK-000007"}
+{"ts": "2026-10-01T08:46:14Z", "type": "TASK_DONE", "task_id": "TASK-000007", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "DESIGN", "warnings": 0}
+{"ts": "2026-10-01T08:46:14Z", "type": "TASK_CREATED", "task_id": "TASK-000008", "book_id": "EB-TEST-001", "step": "FORMAT", "priority": "HIGH"}
+{"ts": "2026-10-01T08:46:14Z", "type": "ORCHESTRATE", "agent": "S1-CLAUDE-001", "actions": 1}
+{"ts": "2026-10-01T08:46:14Z", "type": "RECOVER", "agent": "S1-CLAUDE-001", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
+{"ts": "2026-10-01T08:46:14Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "DESIGN_COMPLETE", "to": "FORMATTING", "agent": "S1-CLAUDE-001", "action": "CLAIM FORMAT", "result": "OK", "task_id": "TASK-000008"}
+{"ts": "2026-10-01T08:46:14Z", "type": "TASK_CLAIMED", "task_id": "TASK-000008", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "FORMAT"}
+{"ts": "2026-10-01T08:46:15Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "FORMATTING", "to": "DESIGN_COMPLETE", "agent": "S1-CLAUDE-001", "action": "FAIL FORMAT", "result": "RETRY", "task_id": "TASK-000008"}
+{"ts": "2026-10-01T08:46:15Z", "type": "TASK_FAILED", "task_id": "TASK-000008", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "error": "FactoryError: Chrome no generó el PDF: mand_handler\\headless_command_handler.cc:266] Failed to write file C:\\Users\\DAW\\AppData\\Local\\Packages\\Claude_pzs8sxrjxfjjc\\LocalCache\\Roaming\\Claude\\scratch-workspaces\\1c1eb07b-d2ee-4bf1-bc7a-52d779cd99ec\\cad1e497-5bfb-4b6d-8b6c-a9c68de32943\\scratch-2026-10-01-e58d4e\\BOOKS\\EB-TEST-001\\build\\EB-TEST-001_productivity-for-beginners_v1.0.pdf: El sistema no puede encontrar la ruta especificada. (0x3)\n", "retry_count": 1}
+{"ts": "2026-10-01T08:46:15Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "DESIGN_COMPLETE", "to": "FORMATTING", "agent": "S1-CLAUDE-001", "action": "CLAIM FORMAT", "result": "OK", "task_id": "TASK-000008"}
+{"ts": "2026-10-01T08:46:15Z", "type": "TASK_CLAIMED", "task_id": "TASK-000008", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "FORMAT"}
+{"ts": "2026-10-01T08:46:16Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "FORMATTING", "to": "DESIGN_COMPLETE", "agent": "S1-CLAUDE-001", "action": "FAIL FORMAT", "result": "RETRY", "task_id": "TASK-000008"}
+{"ts": "2026-10-01T08:46:16Z", "type": "TASK_FAILED", "task_id": "TASK-000008", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "error": "FactoryError: Chrome no generó el PDF: mand_handler\\headless_command_handler.cc:266] Failed to write file C:\\Users\\DAW\\AppData\\Local\\Packages\\Claude_pzs8sxrjxfjjc\\LocalCache\\Roaming\\Claude\\scratch-workspaces\\1c1eb07b-d2ee-4bf1-bc7a-52d779cd99ec\\cad1e497-5bfb-4b6d-8b6c-a9c68de32943\\scratch-2026-10-01-e58d4e\\BOOKS\\EB-TEST-001\\build\\EB-TEST-001_productivity-for-beginners_v1.0.pdf: El sistema no puede encontrar la ruta especificada. (0x3)\n", "retry_count": 2}
+{"ts": "2026-10-01T08:46:16Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "DESIGN_COMPLETE", "to": "FORMATTING", "agent": "S1-CLAUDE-001", "action": "CLAIM FORMAT", "result": "OK", "task_id": "TASK-000008"}
+{"ts": "2026-10-01T08:46:16Z", "type": "TASK_CLAIMED", "task_id": "TASK-000008", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "FORMAT"}
+{"ts": "2026-10-01T08:46:18Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "FORMATTING", "to": "DESIGN_COMPLETE", "agent": "S1-CLAUDE-001", "action": "FAIL FORMAT", "result": "FAILED", "task_id": "TASK-000008"}
+{"ts": "2026-10-01T08:46:18Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "DESIGN_COMPLETE", "to": "BLOCKED", "agent": "S1-CLAUDE-001", "action": "BLOCK FORMAT", "result": "MAX_RETRIES", "task_id": "TASK-000008"}
+{"ts": "2026-10-01T08:46:18Z", "type": "TASK_BLOCKED", "task_id": "TASK-000008", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "error": "FactoryError: Chrome no generó el PDF: mand_handler\\headless_command_handler.cc:266] Failed to write file C:\\Users\\DAW\\AppData\\Local\\Packages\\Claude_pzs8sxrjxfjjc\\LocalCache\\Roaming\\Claude\\scratch-workspaces\\1c1eb07b-d2ee-4bf1-bc7a-52d779cd99ec\\cad1e497-5bfb-4b6d-8b6c-a9c68de32943\\scratch-2026-10-01-e58d4e\\BOOKS\\EB-TEST-001\\build\\EB-TEST-001_productivity-for-beginners_v1.0.pdf: El sistema no puede encontrar la ruta especificada. (0x3)\n"}
+{"ts": "2026-10-01T08:46:50Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "BLOCKED", "to": "DESIGN_COMPLETE", "agent": "SOCIO-1", "action": "UNBLOCK", "result": "OK", "task_id": "TASK-000008"}
+{"ts": "2026-10-01T08:46:50Z", "type": "TASK_UNBLOCKED", "task_id": "TASK-000008", "by": "SOCIO-1", "note": "Bug de rutas Windows/Chrome corregido en build.py/core.py (desbloqueado por el agente durante el bootstrap)"}
+{"ts": "2026-10-01T08:46:50Z", "type": "RECOVER", "agent": "S1-CLAUDE-001", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
+{"ts": "2026-10-01T08:46:50Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "DESIGN_COMPLETE", "to": "FORMATTING", "agent": "S1-CLAUDE-001", "action": "CLAIM FORMAT", "result": "OK", "task_id": "TASK-000008"}
+{"ts": "2026-10-01T08:46:50Z", "type": "TASK_CLAIMED", "task_id": "TASK-000008", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "FORMAT"}
+{"ts": "2026-10-01T08:46:51Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "FORMATTING", "to": "QC_PENDING", "agent": "S1-CLAUDE-001", "action": "COMPLETE FORMAT", "result": "OK", "task_id": "TASK-000008"}
+{"ts": "2026-10-01T08:46:51Z", "type": "TASK_DONE", "task_id": "TASK-000008", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "FORMAT", "warnings": 0}
+{"ts": "2026-10-01T08:46:51Z", "type": "TASK_CREATED", "task_id": "TASK-000009", "book_id": "EB-TEST-001", "step": "QC", "priority": "HIGH"}
+{"ts": "2026-10-01T08:46:51Z", "type": "ORCHESTRATE", "agent": "S1-CLAUDE-001", "actions": 1}
+{"ts": "2026-10-01T08:46:51Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "QC_PENDING", "to": "QC", "agent": "S1-CLAUDE-001", "action": "CLAIM QC", "result": "OK", "task_id": "TASK-000009"}
+{"ts": "2026-10-01T08:46:51Z", "type": "TASK_CLAIMED", "task_id": "TASK-000009", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "QC"}
+{"ts": "2026-10-01T08:47:38Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "QC", "to": "QC_FAILED", "agent": "S1-CLAUDE-001", "action": "COMPLETE QC", "result": "OK", "task_id": "TASK-000009"}
+{"ts": "2026-10-01T08:47:38Z", "type": "TASK_DONE", "task_id": "TASK-000009", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "QC", "warnings": 0}
+{"ts": "2026-10-01T08:47:38Z", "type": "TASK_CREATED", "task_id": "TASK-000010", "book_id": "EB-TEST-001", "step": "FIX", "priority": "HIGH"}
+{"ts": "2026-10-01T08:47:38Z", "type": "ORCHESTRATE", "agent": "S1-CLAUDE-001", "actions": 1}
+{"ts": "2026-10-01T08:47:38Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "QC_FAILED", "to": "FIXING", "agent": "S1-CLAUDE-001", "action": "CLAIM FIX", "result": "OK", "task_id": "TASK-000010"}
+{"ts": "2026-10-01T08:47:39Z", "type": "TASK_CLAIMED", "task_id": "TASK-000010", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "FIX"}
+{"ts": "2026-10-01T08:47:47Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "FIXING", "to": "DESIGN_COMPLETE", "agent": "S1-CLAUDE-001", "action": "COMPLETE FIX", "result": "OK", "task_id": "TASK-000010"}
+{"ts": "2026-10-01T08:47:47Z", "type": "TASK_DONE", "task_id": "TASK-000010", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "FIX", "warnings": 0}
+{"ts": "2026-10-01T08:47:47Z", "type": "TASK_CREATED", "task_id": "TASK-000011", "book_id": "EB-TEST-001", "step": "FORMAT", "priority": "HIGH"}
+{"ts": "2026-10-01T08:47:47Z", "type": "ORCHESTRATE", "agent": "S1-CLAUDE-001", "actions": 1}
+{"ts": "2026-10-01T08:47:47Z", "type": "RECOVER", "agent": "S1-CLAUDE-001", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
+{"ts": "2026-10-01T08:47:47Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "DESIGN_COMPLETE", "to": "FORMATTING", "agent": "S1-CLAUDE-001", "action": "CLAIM FORMAT", "result": "OK", "task_id": "TASK-000011"}
+{"ts": "2026-10-01T08:47:47Z", "type": "TASK_CLAIMED", "task_id": "TASK-000011", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "FORMAT"}
+{"ts": "2026-10-01T08:47:48Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "FORMATTING", "to": "QC_PENDING", "agent": "S1-CLAUDE-001", "action": "COMPLETE FORMAT", "result": "OK", "task_id": "TASK-000011"}
+{"ts": "2026-10-01T08:47:48Z", "type": "TASK_DONE", "task_id": "TASK-000011", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "FORMAT", "warnings": 0}
+{"ts": "2026-10-01T08:47:48Z", "type": "TASK_CREATED", "task_id": "TASK-000012", "book_id": "EB-TEST-001", "step": "QC", "priority": "HIGH"}
+{"ts": "2026-10-01T08:47:48Z", "type": "ORCHESTRATE", "agent": "S1-CLAUDE-001", "actions": 1}
+{"ts": "2026-10-01T08:47:49Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "QC_PENDING", "to": "QC", "agent": "S1-CLAUDE-001", "action": "CLAIM QC", "result": "OK", "task_id": "TASK-000012"}
+{"ts": "2026-10-01T08:47:49Z", "type": "TASK_CLAIMED", "task_id": "TASK-000012", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "QC"}
+{"ts": "2026-10-01T08:48:05Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "QC", "to": "QC_PASSED", "agent": "S1-CLAUDE-001", "action": "COMPLETE QC", "result": "OK", "task_id": "TASK-000012"}
+{"ts": "2026-10-01T08:48:05Z", "type": "TASK_DONE", "task_id": "TASK-000012", "book_id": "EB-TEST-001", "agent": "S1-CLAUDE-001", "step": "QC", "warnings": 0}
+{"ts": "2026-10-01T08:48:05Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "QC_PASSED", "to": "HUMAN_REVIEW", "agent": "S1-CLAUDE-001", "action": "REVIEW_PACK", "result": "OK"}
+{"ts": "2026-10-01T08:48:05Z", "type": "ORCHESTRATE", "agent": "S1-CLAUDE-001", "actions": 1}
+{"ts": "2026-10-01T08:48:16Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "HUMAN_REVIEW", "to": "APPROVED", "agent": "S1-CLAUDE-001", "action": "HUMAN_APPROVE", "result": "OK"}
+{"ts": "2026-10-01T08:48:16Z", "type": "HUMAN_DECISION", "book_id": "EB-TEST-001", "by": "S1-CLAUDE-001", "decision": "APPROVE", "notes": "Aprobación de TEST del bootstrap por instrucción de SOCIO-1 (sección 42). NO PUBLICAR. Pen name pendiente de los socios."}
+{"ts": "2026-10-01T08:48:16Z", "type": "STATE_CHANGE", "book_id": "EB-TEST-001", "frm": "APPROVED", "to": "READY_FOR_PUBLISHING", "agent": "S1-CLAUDE-001", "action": "RELEASE_PACKAGE", "result": "OK"}
+{"ts": "2026-10-01T08:48:16Z", "type": "PACKAGE_READY", "book_id": "EB-TEST-001", "version": "1.0", "files": ["EB-TEST-001_productivity-for-beginners_v1.0.epub", "EB-TEST-001_productivity-for-beginners_v1.0.pdf", "cover.png", "cover.jpg"]}
+{"ts": "2026-10-01T08:53:35Z", "type": "RECOVER", "agent": "S1-CLAUDE-001", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}

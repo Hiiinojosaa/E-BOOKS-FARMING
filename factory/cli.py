@@ -88,6 +88,7 @@ def cmd_agent(a):
 
 
 def cmd_book(a):
+    a.id = a.id or a.id_opt
     if a.action == "new":
         b = books.create(a.topic, a.language, a.market, book_id=a.id, agent=a.by, priority=a.priority, niche=a.niche or "",
                          target_audience=a.audience or "", target_languages=a.target_languages.split(",") if a.target_languages else None,
@@ -139,11 +140,13 @@ def cmd_tick(a):
 
 
 def _run_auto(agent):
-    done = []
+    done, tried = [], set()
     while True:
-        t = tasks.claim_next(agent, types=["FORMAT"], include_auto=True)
+        # each task at most once per run: retries are spread across ticks, not burned in a loop
+        t = tasks.claim_next(agent, types=["FORMAT"], include_auto=True, exclude=tried)
         if not t:
             return done
+        tried.add(t["task_id"])
         try:
             info = build.build_all(t["book_id"])
             res = tasks.complete(t["task_id"], agent, note=f"{info['pages']} págs, {info['chapters']} caps, {info['words']} palabras")
@@ -357,6 +360,7 @@ def parser():
     s.add_argument("--priority", default="NORMAL"); s.add_argument("--niche"); s.add_argument("--audience")
     s.add_argument("--target-languages"); s.add_argument("--collection"); s.add_argument("--words", type=int, default=6000)
     s.add_argument("--notes"); s.add_argument("--by", default="HUMAN")
+    s.add_argument("--id", dest="id_opt", help="ID explícito (p.ej. EB-TEST-001); por defecto se asigna EB-NNNNNN")
     for name, fn, h in [("tick", cmd_tick, "recover+orchestrate+auto+reports"), ("auto", cmd_auto, "ejecutar tareas automáticas (FORMAT)"),
                         ("recover", cmd_recover, "RECOVER tras un cierre"), ("orchestrate", cmd_orchestrate, "crear siguientes tareas")]:
         s = add(name, fn, h); s.add_argument("--agent", default="ORCHESTRATOR")

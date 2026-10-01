@@ -1,0 +1,14 @@
+{
+  "agent_id": "S1-CLAUDE-001",
+  "owner": "SOCIO-1",
+  "provider": "anthropic",
+  "model": "claude-opus-5-5",
+  "capabilities": [
+    "*"
+  ],
+  "status": "IDLE",
+  "current_task": null,
+  "last_seen": "2026-10-01T08:48:05Z",
+  "registered_at": "2026-10-01T08:40:47Z",
+  "notes": "Claude Code (cuenta Pro de SOCIO-1), agente principal"
+}

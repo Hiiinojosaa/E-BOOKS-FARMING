@@ -1,0 +1,36 @@
+{
+  "task_id": "TASK-000005",
+  "book_id": "EB-TEST-001",
+  "type": "FACT_CHECK",
+  "role": "FACT_CHECK_AGENT",
+  "auto": false,
+  "priority": "HIGH",
+  "status": "DONE",
+  "assigned_agent": "S1-CLAUDE-001",
+  "created_by": "S1-CLAUDE-001",
+  "created_at": "2026-10-01T08:44:48Z",
+  "started_at": "2026-10-01T08:44:48Z",
+  "completed_at": "2026-10-01T08:45:27Z",
+  "claimed_from_state": "EDITED",
+  "dependencies": [],
+  "prompt": "PROMPTS/FACT_CHECK.md",
+  "notes": "",
+  "output": {
+    "flags": 0
+  },
+  "error": null,
+  "errors": [],
+  "retry_count": 0,
+  "last_attempt": "2026-10-01T08:44:48Z",
+  "attempts": [
+    {
+      "agent": "S1-CLAUDE-001",
+      "started_at": "2026-10-01T08:44:48Z",
+      "ended_at": "2026-10-01T08:45:27Z",
+      "result": "DONE",
+      "note": "11 afirmaciones: 8 verificadas, 2 corregidas, 1 eliminada; fuente primaria S7 añadida",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}

@@ -1,0 +1,168 @@
+{
+  "book_id": "EB-TEST-001",
+  "version": "1.0",
+  "at": "2026-10-01T08:48:05Z",
+  "overall": "HUMAN_REVIEW",
+  "counts": {
+    "PASS": 25,
+    "HUMAN_REVIEW": 1
+  },
+  "checks": [
+    {
+      "category": "CONTENT",
+      "check": "manuscript_exists",
+      "result": "PASS",
+      "detail": "final.md"
+    },
+    {
+      "category": "CONTENT",
+      "check": "chapters",
+      "result": "PASS",
+      "detail": "8 capítulos"
+    },
+    {
+      "category": "CONTENT",
+      "check": "chapters_complete",
+      "result": "PASS",
+      "detail": "todos ≥150 palabras"
+    },
+    {
+      "category": "CONTENT",
+      "check": "length",
+      "result": "PASS",
+      "detail": "5591 palabras"
+    },
+    {
+      "category": "CONTENT",
+      "check": "no_placeholders",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "category": "CONTENT",
+      "check": "no_internal_instructions",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "category": "CONTENT",
+      "check": "no_duplicate_paragraphs",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "category": "CONTENT",
+      "check": "unique_chapter_titles",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "category": "LANGUAGE",
+      "check": "language_matches",
+      "result": "PASS",
+      "detail": "detectado=en esperado=en"
+    },
+    {
+      "category": "LANGUAGE",
+      "check": "repeated_words",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "category": "LANGUAGE",
+      "check": "us_spelling",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "category": "LANGUAGE",
+      "check": "spacing",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "category": "FORMAT",
+      "check": "epub_valid",
+      "result": "PASS",
+      "detail": "12 docs, 24 enlaces"
+    },
+    {
+      "category": "CONSISTENCY",
+      "check": "epub_title_matches",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "category": "FORMAT",
+      "check": "pdf_pages",
+      "result": "PASS",
+      "detail": "26 páginas"
+    },
+    {
+      "category": "FORMAT",
+      "check": "cover",
+      "result": "PASS",
+      "detail": "1600x2560px"
+    },
+    {
+      "category": "FORMAT",
+      "check": "cover_jpg",
+      "result": "PASS",
+      "detail": "1600x2560"
+    },
+    {
+      "category": "FORMAT",
+      "check": "chapter_numbering",
+      "result": "PASS",
+      "detail": "[1, 2, 3, 4, 5, 6]"
+    },
+    {
+      "category": "METADATA",
+      "check": "title",
+      "result": "PASS",
+      "detail": "Productivity for Beginners"
+    },
+    {
+      "category": "METADATA",
+      "check": "subtitle",
+      "result": "PASS",
+      "detail": "A Simple Weekend System to Get Organized, Focus Better and Stop Feeling Overwhelmed"
+    },
+    {
+      "category": "METADATA",
+      "check": "author",
+      "result": "HUMAN_REVIEW",
+      "detail": "'TBD-PEN-NAME' es provisional: los socios deben decidir el pen name"
+    },
+    {
+      "category": "METADATA",
+      "check": "language",
+      "result": "PASS",
+      "detail": "en-US"
+    },
+    {
+      "category": "METADATA",
+      "check": "keywords",
+      "result": "PASS",
+      "detail": "7 keywords"
+    },
+    {
+      "category": "METADATA",
+      "check": "categories",
+      "result": "PASS",
+      "detail": "3"
+    },
+    {
+      "category": "METADATA",
+      "check": "description",
+      "result": "PASS",
+      "detail": "1151 caracteres"
+    },
+    {
+      "category": "METADATA",
+      "check": "metadata_clean",
+      "result": "PASS",
+      "detail": ""
+    }
+  ]
+}

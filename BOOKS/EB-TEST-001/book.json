@@ -1,0 +1,81 @@
+{
+  "id": "EB-TEST-001",
+  "topic": "Productivity for Beginners",
+  "title": "Productivity for Beginners",
+  "subtitle": "A Simple Weekend System to Get Organized, Focus Better and Stop Feeling Overwhelmed",
+  "author": "TBD-PEN-NAME",
+  "language": "en-US",
+  "market": "US",
+  "genre": "non-fiction",
+  "niche": "personal productivity",
+  "target_audience": "Adults new to productivity systems who feel busy but disorganized and want a short, practical starting point",
+  "status": "READY_FOR_PUBLISHING",
+  "blocked_from": null,
+  "priority": "HIGH",
+  "assigned_agent": null,
+  "owner_partner": null,
+  "created_at": "2026-10-01T08:40:55Z",
+  "updated_at": "2026-10-01T08:48:16Z",
+  "version": "1.0",
+  "parent_book": null,
+  "translated_from": null,
+  "related_books": [],
+  "source_language": null,
+  "target_languages": [],
+  "collections": [],
+  "series": null,
+  "keywords": [
+    "time management for beginners",
+    "how to get organized",
+    "stop procrastinating",
+    "to do list system",
+    "focus and concentration",
+    "weekly planning",
+    "simple productivity system"
+  ],
+  "categories": [
+    "Self-Help > Time Management",
+    "Business & Money > Skills > Time Management",
+    "Self-Help > Personal Transformation"
+  ],
+  "description": "Feeling busy but scattered? Tried apps, planners and morning routines that never stuck? This short, practical guide helps you build one small productivity system in a single weekend, and keep it running.\n\nInstead of fifty tricks, you will set up four simple parts, one at a time, each with a hands-on exercise:\n\n- Capture: get every task and idea out of your head and into one trusted inbox.\n- One list: turn vague worries into clear next actions you can start in minutes.\n- Priorities: separate what is urgent from what is truly important, and choose your daily top three.\n- Focus: use short, timed work sprints to beat distractions and finally start the tasks you keep postponing.\n\nThen you will add the one habit that keeps everything working: a 30-minute weekly review, with a ready-to-use checklist and a simple way to get back on track when life gets busy.\n\nThe ideas come from well-known, time-tested methods, explained in plain language and adapted for people starting from zero. No special app required: a notebook or your phone is enough.\n\nPerfect for anyone who wants to feel calmer, remember everything and spend more time on what matters.",
+  "price_suggested": {
+    "amount": 2.99,
+    "currency": "USD",
+    "basis": "ESTIMATE",
+    "rationale": "Short (~5,600 words, ~30 pages) beginner ebook in a crowded category; lowest price that typically qualifies for KDP's 70% royalty option (verify the current band). Consider 3.99 if bundled into a series."
+  },
+  "risk_level": "LOW",
+  "risk_reasons": [],
+  "word_count_target": 5500,
+  "brief_approved": true,
+  "brief_approved_by": "S1-CLAUDE-001 (auto: riesgo LOW)",
+  "human_approval": {
+    "decision": "APPROVE",
+    "by": [
+      "S1-CLAUDE-001"
+    ],
+    "at": "2026-10-01T08:48:16Z",
+    "notes": "[S1-CLAUDE-001] Aprobación de TEST del bootstrap por instrucción de SOCIO-1 (sección 42). NO PUBLICAR. Pen name pendiente de los socios."
+  },
+  "change_requests": [],
+  "flags": [],
+  "qc_status": "HUMAN_REVIEW",
+  "qc_fail_count": 1,
+  "page_count": 26,
+  "formats": [
+    "EPUB",
+    "PDF"
+  ],
+  "files": {
+    "cover": "design/cover.png",
+    "cover_jpg": "design/cover.jpg",
+    "epub": "build/EB-TEST-001_productivity-for-beginners_v1.0.epub",
+    "pdf": "build/EB-TEST-001_productivity-for-beginners_v1.0.pdf",
+    "publishing_package": "releases/v1.0/PUBLISHING_PACKAGE"
+  },
+  "publication_status": "NOT_PUBLISHED",
+  "published": [],
+  "notes": "Test de pipeline completo (no publicar)",
+  "brief_chapters": 8
+}

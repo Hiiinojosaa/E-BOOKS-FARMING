@@ -7,9 +7,12 @@ import datetime
 import json
 import os
 import re
+import time
 from pathlib import Path
 
-_ROOT = Path(os.environ.get("EBF_ROOT") or Path(__file__).resolve().parent.parent)
+# abspath, NOT resolve(): on Windows resolve() can follow app-container redirections (e.g. MSIX
+# LocalCache) to paths that external programs like Chrome cannot see.
+_ROOT = Path(os.path.abspath(os.environ.get("EBF_ROOT") or Path(__file__).parent.parent))
 
 
 class FactoryError(Exception):
@@ -18,7 +21,7 @@ class FactoryError(Exception):
 
 def set_root(p):
     global _ROOT
-    _ROOT = Path(p).resolve()
+    _ROOT = Path(os.path.abspath(p))
 
 
 def root():
@@ -31,7 +34,7 @@ def path(*parts):
 
 def rel(p):
     try:
-        return Path(p).resolve().relative_to(_ROOT).as_posix()
+        return Path(os.path.abspath(p)).relative_to(_ROOT).as_posix()
     except ValueError:
         return str(p)
 
@@ -56,14 +59,57 @@ def iso_plus_minutes(minutes):
 
 
 # ---------------------------------------------------------------- json io
+def retry_io(fn, *args, attempts=40, delay=0.025):
+    """Windows: rename/replace/open fail with PermissionError while another process has the
+    file open for a moment. Retry briefly instead of crashing (no effect on POSIX)."""
+    for i in range(attempts):
+        try:
+            return fn(*args)
+        except PermissionError:
+            if i == attempts - 1:
+                raise
+            time.sleep(delay * (1 + i % 5))
+
+
+def _load_json(p):
+    for i in range(20):
+        try:
+            with open(p, encoding="utf-8") as f:
+                return json.load(f)
+        except json.JSONDecodeError:
+            if i == 19:
+                raise
+            time.sleep(0.02)  # file being replaced right now; read again
+
+
+def create_exclusive_json(p, data):
+    """Create p with its full content, failing with FileExistsError if it already exists.
+    tmp + os.link is atomic on NTFS and POSIX, so readers never see an empty or partial file."""
+    p = Path(p)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    tmp = p.with_name(p.name + f".{os.getpid()}.tmp")
+    with open(tmp, "w", encoding="utf-8", newline="\n") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+        f.write("\n")
+    try:
+        os.link(tmp, p)
+    finally:
+        os.remove(tmp)
+
+
 def read_json(p, default=None):
     p = Path(p)
     if not p.exists():
         if default is not None:
             return default
         raise FactoryError(f"Archivo no encontrado: {rel(p)}")
-    with open(p, encoding="utf-8") as f:
-        return json.load(f)
+    try:
+        return retry_io(_load_json, p)
+    except FileNotFoundError:
+        # moved by another agent between exists() and open()
+        if default is not None:
+            return default
+        raise FactoryError(f"Archivo no encontrado: {rel(p)}")
 
 
 def write_json(p, data):
@@ -74,7 +120,7 @@ def write_json(p, data):
     with open(tmp, "w", encoding="utf-8", newline="\n") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
         f.write("\n")
-    os.replace(tmp, p)
+    retry_io(os.replace, tmp, p)
 
 
 def write_text(p, text):
@@ -83,7 +129,7 @@ def write_text(p, text):
     tmp = p.with_name(p.name + f".{os.getpid()}.tmp")
     with open(tmp, "w", encoding="utf-8", newline="\n") as f:
         f.write(text)
-    os.replace(tmp, p)
+    retry_io(os.replace, tmp, p)
 
 
 def read_text(p, default=None):

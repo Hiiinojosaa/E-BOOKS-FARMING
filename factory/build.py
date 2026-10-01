@@ -214,16 +214,16 @@ def render_cover(book_id):
     png = bdir / "design" / "cover.png"
     if png.exists():
         png.unlink()
-    r = _chrome([f"--screenshot={png}", f"--window-size={w},{h}", "--hide-scrollbars",
-                 "--force-device-scale-factor=1", html_out.resolve().as_uri()])
+    r = _chrome([f"--screenshot={os.path.abspath(png)}", f"--window-size={w},{h}", "--hide-scrollbars",
+                 "--force-device-scale-factor=1", Path(os.path.abspath(html_out)).as_uri()])
     if not png.exists():
         raise FactoryError(f"Chrome no generó la portada: {r.stderr[-400:]}")
     size = png_size(png)
     jpg = bdir / "design" / "cover.jpg"
     if jpg.exists():
         jpg.unlink()
-    _chrome([f"--screenshot={jpg}", f"--window-size={w},{h}", "--hide-scrollbars",
-             "--force-device-scale-factor=1", html_out.resolve().as_uri()])
+    _chrome([f"--screenshot={os.path.abspath(jpg)}", f"--window-size={w},{h}", "--hide-scrollbars",
+             "--force-device-scale-factor=1", Path(os.path.abspath(html_out)).as_uri()])
     jpg_ok = False
     if jpg.exists():
         try:
@@ -250,6 +250,7 @@ hr.break:after { content: "* * *"; }
 .titlepage { text-align: center; margin-top: 25%; }
 .titlepage h1 { page-break-before: avoid; text-align: center; font-size: 2em; }
 .titlepage .subtitle { font-size: 1.15em; font-style: italic; margin: 1em 0 3em; }
+.titlepage p { text-align: center; }
 .titlepage .author { font-size: 1.1em; letter-spacing: .05em; }
 .copyright { font-size: .8em; margin-top: 30%; }
 .cover { margin: 0; padding: 0; text-align: center; }
@@ -459,6 +460,7 @@ hr.break {{ border: 0; text-align: center; margin: 1.2em 0; }} hr.break:after {{
 .titlepage {{ text-align: center; padding-top: 2in; break-after: page; }}
 .titlepage h1 {{ break-before: avoid; margin: 0; font-size: 24pt; }}
 .titlepage .subtitle {{ font-style: italic; font-size: 13pt; margin: .3in 0 1.2in; }}
+.titlepage p {{ text-align: center; hyphens: manual; }}
 .copyright {{ font-size: 8.5pt; padding-top: 4in; break-after: page; }}
 .copyright h2, .copyright h3 {{ font-size: 9pt; }}
 .toc {{ break-after: page; }} .toc h1 {{ break-before: avoid; margin-top: .3in; }}
@@ -498,8 +500,8 @@ def build_pdf(book, out_path):
     out_path = Path(out_path)
     if out_path.exists():
         out_path.unlink()
-    r = _chrome(["--no-pdf-header-footer", "--print-to-pdf-no-header", f"--print-to-pdf={out_path}",
-                 src.resolve().as_uri()], timeout=180)
+    r = _chrome(["--no-pdf-header-footer", "--print-to-pdf-no-header", f"--print-to-pdf={os.path.abspath(out_path)}",
+                 Path(os.path.abspath(src)).as_uri()], timeout=180)
     if not out_path.exists():
         raise FactoryError(f"Chrome no generó el PDF: {r.stderr[-400:]}")
     return {"pages": pdf_page_count(out_path)}

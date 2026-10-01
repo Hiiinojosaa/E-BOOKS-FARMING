@@ -1,0 +1,36 @@
+{
+  "task_id": "TASK-000006",
+  "book_id": "EB-TEST-001",
+  "type": "METADATA",
+  "role": "MARKET_AGENT",
+  "auto": false,
+  "priority": "HIGH",
+  "status": "DONE",
+  "assigned_agent": "S1-CLAUDE-001",
+  "created_by": "S1-CLAUDE-001",
+  "created_at": "2026-10-01T08:45:27Z",
+  "started_at": "2026-10-01T08:45:27Z",
+  "completed_at": "2026-10-01T08:45:43Z",
+  "claimed_from_state": "FACT_CHECKED",
+  "dependencies": [],
+  "prompt": "PROMPTS/METADATA.md",
+  "notes": "",
+  "output": {
+    "title": "Productivity for Beginners"
+  },
+  "error": null,
+  "errors": [],
+  "retry_count": 0,
+  "last_attempt": "2026-10-01T08:45:27Z",
+  "attempts": [
+    {
+      "agent": "S1-CLAUDE-001",
+      "started_at": "2026-10-01T08:45:27Z",
+      "ended_at": "2026-10-01T08:45:43Z",
+      "result": "DONE",
+      "note": "título final, 7 keywords, 3 categorías, precio ESTIMATE 2.99",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}

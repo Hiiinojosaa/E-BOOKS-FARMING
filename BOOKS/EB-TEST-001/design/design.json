@@ -1,0 +1,9 @@
+{
+  "template": "minimal",
+  "title_line1": "Productivity",
+  "title_line2": "for Beginners",
+  "tagline": "A weekend starter system",
+  "badge": "",
+  "palette": {"bg": "#F4EFE6", "fg": "#1F2A2E", "accent": "#C8553D", "muted": "#6B7A80"},
+  "rationale": "Warm off-white background and a single terracotta accent read as calm and approachable (brief: no hustle tone). Dark slate text gives high contrast at thumbnail size. Typographic cover avoids third-party imagery."
+}

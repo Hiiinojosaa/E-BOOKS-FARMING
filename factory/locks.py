@@ -1,6 +1,6 @@
 """File locks with TTL.
 
-acquire  -> atomic create (O_CREAT|O_EXCL): only one process can win.
+acquire  -> atomic exclusive create (tmp + hard link): only one process can win, never a half-written lock.
 check    -> read lock, see owner and expiry.
 release  -> only the owner may release (or recover, for expired locks).
 recover  -> expired locks are removed so they never block the project forever.
@@ -8,8 +8,10 @@ heartbeat-> owner extends expiry while doing long work.
 """
 import json
 import os
+import time
 
-from .core import FactoryError, iso_plus_minutes, load_config, log_event, now_iso, parse_iso, path, utcnow, write_json
+from .core import (FactoryError, create_exclusive_json, iso_plus_minutes, load_config, log_event, now_iso, parse_iso,
+                   path, utcnow, write_json)
 
 
 def _lock_path(resource):
@@ -21,11 +23,20 @@ def read_lock(resource):
     p = _lock_path(resource)
     if not p.exists():
         return None
+    for _ in range(20):
+        try:
+            return json.loads(p.read_text(encoding="utf-8"))
+        except FileNotFoundError:
+            return None
+        except (json.JSONDecodeError, OSError):
+            time.sleep(0.02)  # being written/replaced right now
+    # Still unreadable after ~0.4 s: corrupt. Treat as expired only if it is old, never a fresh one.
     try:
-        return json.loads(p.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        # Torn/corrupt lock: treat as expired so recovery can clear it.
-        return {"resource": resource, "agent": "?", "expires_at": "1970-01-01T00:00:00Z"}
+        age = time.time() - p.stat().st_mtime
+    except FileNotFoundError:
+        return None
+    exp = "1970-01-01T00:00:00Z" if age > 60 else iso_plus_minutes(1)
+    return {"resource": resource, "agent": "?", "expires_at": exp}
 
 
 def is_expired(lock):
@@ -44,7 +55,7 @@ def acquire(resource, agent, task_id=None, ttl_minutes=None):
     }
     for _ in range(2):
         try:
-            fd = os.open(str(p), os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+            create_exclusive_json(p, data)
         except FileExistsError:
             cur = read_lock(resource)
             if cur and cur.get("agent") == agent and cur.get("task_id") == task_id:
@@ -54,8 +65,6 @@ def acquire(resource, agent, task_id=None, ttl_minutes=None):
                 _break(resource, cur, reason="expired on acquire")
                 continue
             return False
-        with os.fdopen(fd, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2)
         return True
     return False
 

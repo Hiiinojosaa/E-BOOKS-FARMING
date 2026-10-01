@@ -1,0 +1,58 @@
+[
+  {
+    "id": "S1",
+    "title": "Pomodoro Technique (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Pomodoro_Technique",
+    "accessed": "2026-10-01",
+    "used_for": "Developed by Francesco Cirillo in the late 1980s; 25-minute intervals named after a tomato-shaped kitchen timer",
+    "reliability": "medium"
+  },
+  {
+    "id": "S2",
+    "title": "Gollwitzer & Sheeran (2006). Implementation intentions and goal achievement: A meta-analysis of effects and processes. Advances in Experimental Social Psychology, 38, 69-119",
+    "url": "https://kops.uni-konstanz.de/handle/123456789/10973",
+    "accessed": "2026-10-01",
+    "used_for": "If-then plans improve goal attainment; 94 studies, d = 0.65",
+    "reliability": "high"
+  },
+  {
+    "id": "S3",
+    "title": "Asana — The Eisenhower Matrix (history: Eisenhower 1954 address; Covey 1989)",
+    "url": "https://asana.com/resources/eisenhower-matrix",
+    "accessed": "2026-10-01",
+    "used_for": "Urgent vs important distinction from Eisenhower's 1954 speech; matrix popularized by Covey in The 7 Habits of Highly Effective People (1989)",
+    "reliability": "medium"
+  },
+  {
+    "id": "S4",
+    "title": "Masicampo & Baumeister (2011). Consider it done! Plan making can eliminate the cognitive effects of unfulfilled goals. Journal of Personality and Social Psychology",
+    "url": "https://users.wfu.edu/masicaej/MasicampoBaumeister2011JPSP.pdf",
+    "accessed": "2026-10-01",
+    "used_for": "Making a specific plan reduces intrusive thoughts about unfinished goals",
+    "reliability": "high"
+  },
+  {
+    "id": "S5",
+    "title": "Todoist — The Two-Minute Rule (David Allen, Getting Things Done, 2001)",
+    "url": "https://www.todoist.com/inspiration/two-minute-rule",
+    "accessed": "2026-10-01",
+    "used_for": "Two-minute rule and weekly review from Getting Things Done",
+    "reliability": "medium"
+  },
+  {
+    "id": "S6",
+    "title": "Parkinson's law (Wikipedia)",
+    "url": "https://en.wikipedia.org/wiki/Parkinson's_law",
+    "accessed": "2026-10-01",
+    "used_for": "C. Northcote Parkinson, The Economist, 1955: work expands to fill the time available",
+    "reliability": "medium"
+  },
+  {
+    "id": "S7",
+    "title": "Dwight D. Eisenhower, Address at the Second Assembly of the World Council of Churches, Evanston, Illinois, August 19, 1954 (The American Presidency Project)",
+    "url": "https://www.presidency.ucsb.edu/documents/address-the-second-assembly-the-world-council-churches-evanston-illinois",
+    "accessed": "2026-10-01",
+    "used_for": "Exact wording and attribution of the urgent/important remark (primary source)",
+    "reliability": "high"
+  }
+]

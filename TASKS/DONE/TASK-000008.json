@@ -1,0 +1,71 @@
+{
+  "task_id": "TASK-000008",
+  "book_id": "EB-TEST-001",
+  "type": "FORMAT",
+  "role": "FORMAT_AGENT",
+  "auto": true,
+  "priority": "HIGH",
+  "status": "DONE",
+  "assigned_agent": "S1-CLAUDE-001",
+  "created_by": "S1-CLAUDE-001",
+  "created_at": "2026-10-01T08:46:14Z",
+  "started_at": "2026-10-01T08:46:50Z",
+  "completed_at": "2026-10-01T08:46:51Z",
+  "claimed_from_state": "DESIGN_COMPLETE",
+  "dependencies": [],
+  "prompt": "PROMPTS/FORMAT.md",
+  "notes": "[UNBLOCK SOCIO-1] Bug de rutas Windows/Chrome corregido en build.py/core.py (desbloqueado por el agente durante el bootstrap)",
+  "output": null,
+  "error": null,
+  "errors": [
+    {
+      "at": "2026-10-01T08:46:15Z",
+      "agent": "S1-CLAUDE-001",
+      "error": "FactoryError: Chrome no generó el PDF: mand_handler\\headless_command_handler.cc:266] Failed to write file C:\\Users\\DAW\\AppData\\Local\\Packages\\Claude_pzs8sxrjxfjjc\\LocalCache\\Roaming\\Claude\\scratch-workspaces\\1c1eb07b-d2ee-4bf1-bc7a-52d779cd99ec\\cad1e497-5bfb-4b6d-8b6c-a9c68de32943\\scratch-2026-10-01-e58d4e\\BOOKS\\EB-TEST-001\\build\\EB-TEST-001_productivity-for-beginners_v1.0.pdf: El sistema no puede encontrar la ruta especificada. (0x3)\n"
+    },
+    {
+      "at": "2026-10-01T08:46:16Z",
+      "agent": "S1-CLAUDE-001",
+      "error": "FactoryError: Chrome no generó el PDF: mand_handler\\headless_command_handler.cc:266] Failed to write file C:\\Users\\DAW\\AppData\\Local\\Packages\\Claude_pzs8sxrjxfjjc\\LocalCache\\Roaming\\Claude\\scratch-workspaces\\1c1eb07b-d2ee-4bf1-bc7a-52d779cd99ec\\cad1e497-5bfb-4b6d-8b6c-a9c68de32943\\scratch-2026-10-01-e58d4e\\BOOKS\\EB-TEST-001\\build\\EB-TEST-001_productivity-for-beginners_v1.0.pdf: El sistema no puede encontrar la ruta especificada. (0x3)\n"
+    },
+    {
+      "at": "2026-10-01T08:46:18Z",
+      "agent": "S1-CLAUDE-001",
+      "error": "FactoryError: Chrome no generó el PDF: mand_handler\\headless_command_handler.cc:266] Failed to write file C:\\Users\\DAW\\AppData\\Local\\Packages\\Claude_pzs8sxrjxfjjc\\LocalCache\\Roaming\\Claude\\scratch-workspaces\\1c1eb07b-d2ee-4bf1-bc7a-52d779cd99ec\\cad1e497-5bfb-4b6d-8b6c-a9c68de32943\\scratch-2026-10-01-e58d4e\\BOOKS\\EB-TEST-001\\build\\EB-TEST-001_productivity-for-beginners_v1.0.pdf: El sistema no puede encontrar la ruta especificada. (0x3)\n"
+    }
+  ],
+  "retry_count": 0,
+  "last_attempt": "2026-10-01T08:46:50Z",
+  "attempts": [
+    {
+      "agent": "S1-CLAUDE-001",
+      "started_at": "2026-10-01T08:46:14Z",
+      "ended_at": "2026-10-01T08:46:15Z",
+      "result": "FAILED",
+      "error": "FactoryError: Chrome no generó el PDF: mand_handler\\headless_command_handler.cc:266] Failed to write file C:\\Users\\DAW\\AppData\\Local\\Packages\\Claude_pzs8sxrjxfjjc\\LocalCache\\Roaming\\Claude\\scratch-workspaces\\1c1eb07b-d2ee-4bf1-bc7a-52d779cd99ec\\cad1e497-5bfb-4b6d-8b6c-a9c68de32943\\scratch-2026-10-01-e58d4e\\BOOKS\\EB-TEST-001\\build\\EB-TEST-001_productivity-for-beginners_v1.0.pdf: El sistema no puede encontrar la ruta especificada. (0x3)\n"
+    },
+    {
+      "agent": "S1-CLAUDE-001",
+      "started_at": "2026-10-01T08:46:15Z",
+      "ended_at": "2026-10-01T08:46:16Z",
+      "result": "FAILED",
+      "error": "FactoryError: Chrome no generó el PDF: mand_handler\\headless_command_handler.cc:266] Failed to write file C:\\Users\\DAW\\AppData\\Local\\Packages\\Claude_pzs8sxrjxfjjc\\LocalCache\\Roaming\\Claude\\scratch-workspaces\\1c1eb07b-d2ee-4bf1-bc7a-52d779cd99ec\\cad1e497-5bfb-4b6d-8b6c-a9c68de32943\\scratch-2026-10-01-e58d4e\\BOOKS\\EB-TEST-001\\build\\EB-TEST-001_productivity-for-beginners_v1.0.pdf: El sistema no puede encontrar la ruta especificada. (0x3)\n"
+    },
+    {
+      "agent": "S1-CLAUDE-001",
+      "started_at": "2026-10-01T08:46:16Z",
+      "ended_at": "2026-10-01T08:46:18Z",
+      "result": "FAILED",
+      "error": "FactoryError: Chrome no generó el PDF: mand_handler\\headless_command_handler.cc:266] Failed to write file C:\\Users\\DAW\\AppData\\Local\\Packages\\Claude_pzs8sxrjxfjjc\\LocalCache\\Roaming\\Claude\\scratch-workspaces\\1c1eb07b-d2ee-4bf1-bc7a-52d779cd99ec\\cad1e497-5bfb-4b6d-8b6c-a9c68de32943\\scratch-2026-10-01-e58d4e\\BOOKS\\EB-TEST-001\\build\\EB-TEST-001_productivity-for-beginners_v1.0.pdf: El sistema no puede encontrar la ruta especificada. (0x3)\n"
+    },
+    {
+      "agent": "S1-CLAUDE-001",
+      "started_at": "2026-10-01T08:46:50Z",
+      "ended_at": "2026-10-01T08:46:51Z",
+      "result": "DONE",
+      "note": "26 págs, 8 caps, 5544 palabras",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}

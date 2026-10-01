@@ -8,7 +8,7 @@ import os
 import re
 
 from . import agents, books, locks, states, validators
-from .core import FactoryError, load_config, log_event, now_iso, path, read_json, write_json
+from .core import FactoryError, create_exclusive_json, load_config, log_event, now_iso, path, read_json, retry_io, write_json
 
 TASK_STATUSES = ["INBOX", "READY", "RUNNING", "BLOCKED", "DONE", "FAILED"]
 OPEN_STATUSES = ["INBOX", "READY", "RUNNING", "BLOCKED"]
@@ -36,7 +36,9 @@ def all_tasks(statuses=None):
         d = path("TASKS", st)
         if d.exists():
             for f in sorted(d.glob("TASK-*.json")):
-                t = read_json(f)
+                t = read_json(f, default={})
+                if not t:
+                    continue  # moved by another agent while listing
                 t["status"] = st  # folder wins over field
                 out.append(t)
     return out
@@ -59,7 +61,7 @@ def _next_number():
 
 
 def _move(task, frm, to):
-    os.rename(task_path(frm, task["task_id"]), task_path(to, task["task_id"]))
+    retry_io(os.rename, task_path(frm, task["task_id"]), task_path(to, task["task_id"]))
     task["status"] = to
     write_json(task_path(to, task["task_id"]), task)
 
@@ -69,28 +71,24 @@ def create(book_id, step, priority="NORMAL", dependencies=None, notes="", assign
     if step not in states.STEPS:
         raise FactoryError(f"Tipo de tarea desconocido: {step}")
     status = "INBOX" if dependencies else "READY"
+    st = states.STEPS[step]
     n = _next_number()
     while True:
         task_id = f"TASK-{n:06d}"
-        p = task_path(status, task_id)
-        p.parent.mkdir(parents=True, exist_ok=True)
+        task = {
+            "task_id": task_id, "book_id": book_id, "type": step, "role": st["role"],
+            "auto": st["auto"], "priority": priority, "status": status,
+            "assigned_agent": assigned_agent, "created_by": agent, "created_at": now_iso(),
+            "started_at": None, "completed_at": None, "claimed_from_state": None,
+            "dependencies": dependencies or [], "prompt": f"PROMPTS/{step}.md", "notes": notes,
+            "output": None, "error": None, "errors": [], "retry_count": 0, "last_attempt": None,
+            "attempts": [],
+        }
         try:
-            fd = os.open(str(p), os.O_CREAT | os.O_EXCL | os.O_WRONLY)
-            os.close(fd)
+            create_exclusive_json(task_path(status, task_id), task)
             break
         except FileExistsError:
             n += 1
-    st = states.STEPS[step]
-    task = {
-        "task_id": task_id, "book_id": book_id, "type": step, "role": st["role"],
-        "auto": st["auto"], "priority": priority, "status": status,
-        "assigned_agent": assigned_agent, "created_by": agent, "created_at": now_iso(),
-        "started_at": None, "completed_at": None, "claimed_from_state": None,
-        "dependencies": dependencies or [], "prompt": f"PROMPTS/{step}.md", "notes": notes,
-        "output": None, "error": None, "errors": [], "retry_count": 0, "last_attempt": None,
-        "attempts": [],
-    }
-    write_json(p, task)
     log_event("TASK_CREATED", task_id=task_id, book_id=book_id, step=step, priority=priority)
     return task
 
@@ -108,7 +106,7 @@ def promote_inbox():
     return moved
 
 
-def claim_next(agent_id, types=None, book_id=None, include_auto=False):
+def claim_next(agent_id, types=None, book_id=None, include_auto=False, exclude=()):
     """Claim the highest-priority READY task this agent can do. Returns task or None."""
     agent = agents.get(agent_id)
     if agent.get("current_task"):
@@ -123,6 +121,8 @@ def claim_next(agent_id, types=None, book_id=None, include_auto=False):
     cands = all_tasks(["READY"])
     cands.sort(key=lambda t: (states.PRIORITIES.get(t["priority"], 9), t["created_at"], t["task_id"]))
     for t in cands:
+        if t["task_id"] in exclude:
+            continue
         if types and t["type"] not in types:
             continue
         if book_id and t["book_id"] != book_id:
@@ -150,7 +150,7 @@ def claim_next(agent_id, types=None, book_id=None, include_auto=False):
         if not locks.acquire(res, agent_id, t["task_id"]):
             continue  # another agent is working on this book
         try:
-            os.rename(task_path("READY", t["task_id"]), task_path("RUNNING", t["task_id"]))
+            retry_io(os.rename, task_path("READY", t["task_id"]), task_path("RUNNING", t["task_id"]))
         except (FileNotFoundError, FileExistsError, PermissionError):
             locks.release(res, agent_id)
             continue  # lost the race
