@@ -363,7 +363,7 @@ def generate_book(book_id, agent, seed=None):
             else:
                 svg = wordsearch_svg(entry, title=f"Puzzle {i} · Find: " + ", ".join(entry["words"][:3]) + "…")
             png = pdir / f"puzzle-{i:03d}.png"
-            _render_png(svg, png, 900)
+            _render_png(svg, png, 900, img_height(900, True))
             lines.append(f"![Puzzle {i}](design/puzzles/puzzle-{i:03d}.png)")
             if kind == "PUZZLE_WORDSEARCH":
                 lines.append(f"\nWords: " + ", ".join(entry["words"]) + "\n")
@@ -376,7 +376,7 @@ def generate_book(book_id, agent, seed=None):
         else:
             svg = wordsearch_svg(entry, title=f"Solution {i}", show_solution=True)
         png = pdir / f"solution-{i:03d}.png"
-        _render_png(svg, png, 900)
+        _render_png(svg, png, 900, img_height(900, True))
         sol_lines.append(f"![Solution {i}](design/puzzles/solution-{i:03d}.png)")
     full += "\n\n# Solutions\n\n" + "\n\n".join(sol_lines)
 
