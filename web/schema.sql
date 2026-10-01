@@ -32,6 +32,17 @@ create table if not exists sessions (
   expires_at timestamptz not null
 );
 
+create table if not exists book_files (
+  book_id text not null,
+  kind text not null,                -- 'cover' | 'pdf' | 'epub'
+  filename text not null,
+  content_type text not null,
+  mtime double precision not null,   -- source file's mtime, to skip redundant re-uploads
+  data bytea not null,
+  updated_at timestamptz not null default now(),
+  primary key (book_id, kind)
+);
+
 create table if not exists pending_actions (
   id text primary key,
   partner text not null,

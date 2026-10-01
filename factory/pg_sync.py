@@ -11,6 +11,7 @@ factory keeps working stdlib-only for anyone who hasn't set up the remote panel.
 Needs `pip install "psycopg[binary]"` to actually sync.
 """
 import json
+import mimetypes
 import os
 
 from .core import path, read_json
