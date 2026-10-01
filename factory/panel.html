@@ -75,12 +75,13 @@ label{display:block;font-size:12.5px;font-weight:500;color:var(--mut);margin:14p
 .logintag{position:relative;text-align:center;color:#fff;margin-bottom:26px}
 .logintag h1{font-size:30px;line-height:1.2;margin:0 0 8px;letter-spacing:-.02em;font-weight:700;text-shadow:0 2px 20px rgba(0,0,0,.25)}
 .logintag p{color:#dfe1f5;margin:0;font-size:14.5px}
-.logincard{position:relative;width:min(400px,100%);background:rgba(255,255,255,.97);border:1px solid rgba(255,255,255,.5);border-radius:20px;box-shadow:0 24px 60px rgba(4,6,16,.45);padding:34px 32px;backdrop-filter:blur(10px)}
-.loginbox h2{margin:0 0 4px;font-size:24px;font-weight:700;letter-spacing:-.01em}
-.prof{display:flex;align-items:center;gap:12px;width:100%;padding:14px;border:1px solid var(--line);border-radius:13px;background:var(--panel);cursor:pointer;margin-top:10px;text-align:left;transition:border-color .15s,box-shadow .15s,transform .15s}
-.prof:hover{transform:translateY(-1px)}
+.logincard{position:relative;width:min(380px,100%);background:#fff;border:1px solid rgba(20,22,30,.08);border-radius:3px;box-shadow:0 2px 4px rgba(4,6,16,.08),0 18px 40px rgba(4,6,16,.28);padding:36px 34px}
+.logincard:before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--acc)}
+.loginbox h2{margin:0 0 3px;font-size:21px;font-weight:700;letter-spacing:-.01em}
+.prof{display:flex;align-items:center;gap:12px;width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:4px;background:var(--panel);cursor:pointer;margin-top:9px;text-align:left;transition:border-color .15s,box-shadow .15s}
 .prof:hover,.prof.sel{border-color:var(--acc);box-shadow:0 0 0 3px var(--acc-soft)}
-.pin{font-size:24px;letter-spacing:.5em;text-align:center}
+.pin{font-size:15px;letter-spacing:normal;text-align:left}
+#login input,#login select,#login textarea,#login .btn{border-radius:4px}
 .privbadge{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;color:var(--mut)}
 @media(max-width:560px){.loginbrand{position:static;justify-content:center;margin-bottom:22px}.logintag h1{font-size:25px}}
 
@@ -378,19 +379,29 @@ async function act(payload, btn, ok){
 
 // ---------------------------------------------------------------- login
 async function boot(){ const me=await fetch("/api/me").then(r=>r.json()); if(me.partner){ME=me;startApp();} else showLogin(me); }
+function selectProfile(p){
+  PROFILE={id:p.id,has:p.has_pin,name:p.name};
+  $("#pinStep").classList.remove("hidden"); $("#nameRow").classList.toggle("hidden",PROFILE.has);
+  $("#loginName").value = PROFILE.has?"":PROFILE.name;
+  $("#pinLabel").textContent = PROFILE.has?"Contraseña":"Crea tu contraseña";
+  $("#pinHelp").textContent = PROFILE.has?"":"La usarás cada vez que entres desde este ordenador.";
+  $("#pin").value=""; $("#pin").focus();
+}
 async function showLogin(me){
   me = me || await fetch("/api/me").then(r=>r.json());
   $("#app").classList.add("hidden"); $("#login").classList.remove("hidden"); closeBook();
+  if(me.profiles.length===1){
+    $("#profiles").innerHTML="";
+    $("#loginSub").textContent = me.profiles[0].has_pin ? "Introduce la contraseña" : "Primera vez: crea tu contraseña";
+    selectProfile(me.profiles[0]);
+    return;
+  }
+  $("#loginSub").textContent="Elige tu perfil";
   $("#profiles").innerHTML = me.profiles.map(p=>`<button class="prof" data-p="${esc(p.id)}" data-has="${p.has_pin?1:0}" data-name="${esc(p.name)}">
-    <div class="av person">${esc(initials(p.name))}</div><div class="grow" style="flex:1"><div style="font-weight:600">${esc(p.name)}</div><div class="tiny mut">${p.has_pin?"Entrar con tu PIN":"Primera vez: crea tu acceso"}</div></div>${icon("arrow","sm")}</button>`).join("");
+    <div class="av person">${esc(initials(p.name))}</div><div class="grow" style="flex:1"><div style="font-weight:600">${esc(p.name)}</div><div class="tiny mut">${p.has_pin?"Entrar con tu contraseña":"Primera vez: crea tu acceso"}</div></div>${icon("arrow","sm")}</button>`).join("");
   document.querySelectorAll(".prof").forEach(el=>el.onclick=()=>{
     document.querySelectorAll(".prof").forEach(x=>x.classList.remove("sel")); el.classList.add("sel");
-    PROFILE={id:el.dataset.p,has:el.dataset.has==="1",name:el.dataset.name};
-    $("#pinStep").classList.remove("hidden"); $("#nameRow").classList.toggle("hidden",PROFILE.has);
-    $("#loginName").value = PROFILE.has?"":PROFILE.name;
-    $("#pinLabel").textContent = PROFILE.has?"PIN":"Crea tu PIN (de 4 a 8 números)";
-    $("#pinHelp").textContent = PROFILE.has?"":"Lo usarás cada vez que entres desde este ordenador.";
-    $("#pin").value=""; $("#pin").focus();
+    selectProfile({id:el.dataset.p,has_pin:el.dataset.has==="1",name:el.dataset.name});
   });
 }
 async function doLogin(){
