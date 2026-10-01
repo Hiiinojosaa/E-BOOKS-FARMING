@@ -112,3 +112,4 @@
 {"ts": "2026-10-01T14:26:16Z", "type": "DIRECTIVE_ADDED", "by": "DANI", "directive": "DIR-1790864776554358700-399a"}
 {"ts": "2026-10-01T14:26:16Z", "type": "CHAT", "by": "DANI", "role": "partner", "kind": "directive", "msg": "MSG-1790864776556550600-fc32d1"}
 {"ts": "2026-10-01T14:27:47Z", "type": "DIRECTIVE_REMOVED", "by": "DANI", "directive": "DIR-1790864776554358700-399a"}
+{"ts": "2026-10-01T14:28:14Z", "type": "ORDER_UPDATED", "order": "ORD-00001", "by": "DANI", "status": "CANCELLED"}

@@ -7,10 +7,18 @@
   "priority": "NORMAL",
   "target_agent": null,
   "book_id": null,
-  "status": "OPEN",
+  "status": "CANCELLED",
   "taken_by": null,
-  "updated_at": "2026-10-01T14:26:02Z",
+  "updated_at": "2026-10-01T14:28:14Z",
   "result": null,
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-01T14:28:14Z",
+      "by": "DANI",
+      "from": "OPEN",
+      "to": "CANCELLED",
+      "note": "mensaje de prueba durante el rediseño del panel"
+    }
+  ],
   "chat_msg": "MSG-1790864762472082600-79e6e5"
 }
