@@ -5,12 +5,12 @@
   "role": "RESEARCH_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "S1-JEFE",
   "created_by": "S1-JEFE",
   "created_at": "2026-10-01T17:18:11Z",
   "started_at": "2026-10-01T17:18:34Z",
-  "completed_at": null,
+  "completed_at": "2026-10-01T17:19:42Z",
   "claimed_from_state": "RESEARCH_PENDING",
   "dependencies": [],
   "prompt": "PROMPTS/RESEARCH.md",
@@ -23,7 +23,12 @@
   "attempts": [
     {
       "agent": "S1-JEFE",
-      "started_at": "2026-10-01T17:18:34Z"
+      "started_at": "2026-10-01T17:18:34Z",
+      "ended_at": "2026-10-01T17:19:42Z",
+      "result": "DONE",
+      "note": "Investigación real con búsqueda web: recomendación GO, ángulo diferenciado (sistema de una página) frente a la competencia encontrada (playbooks de IA, cursos genéricos).",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }
