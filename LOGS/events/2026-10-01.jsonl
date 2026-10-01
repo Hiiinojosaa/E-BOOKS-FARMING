@@ -180,3 +180,7 @@
 {"ts": "2026-10-01T18:19:12Z", "type": "STATE_CHANGE", "book_id": "EB-000015", "frm": "WRITING_PENDING", "to": "WRITING", "agent": "TEST-AGENT", "action": "CLAIM WRITE", "result": "OK", "task_id": "TASK-000019"}
 {"ts": "2026-10-01T18:19:12Z", "type": "TASK_CLAIMED", "task_id": "TASK-000019", "book_id": "EB-000015", "agent": "TEST-AGENT", "step": "WRITE"}
 {"ts": "2026-10-01T18:20:04Z", "type": "BOOK_UPDATED", "book_id": "EB-000015", "by": "ADMIN", "fields": ["word_count_target=600"]}
+{"ts": "2026-10-01T18:20:13Z", "type": "STATE_CHANGE", "book_id": "EB-000015", "frm": "WRITING", "to": "DRAFT_COMPLETE", "agent": "TEST-AGENT", "action": "COMPLETE WRITE", "result": "OK", "task_id": "TASK-000019"}
+{"ts": "2026-10-01T18:20:13Z", "type": "TASK_DONE", "task_id": "TASK-000019", "book_id": "EB-000015", "agent": "TEST-AGENT", "step": "WRITE", "warnings": 0}
+{"ts": "2026-10-01T18:20:13Z", "type": "TASK_CREATED", "task_id": "TASK-000020", "book_id": "EB-000015", "step": "EDIT", "priority": "NORMAL"}
+{"ts": "2026-10-01T18:20:13Z", "type": "ORCHESTRATE", "agent": "TEST-AGENT", "actions": 1}
