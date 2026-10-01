@@ -114,3 +114,4 @@
 {"ts": "2026-10-01T14:27:47Z", "type": "DIRECTIVE_REMOVED", "by": "DANI", "directive": "DIR-1790864776554358700-399a"}
 {"ts": "2026-10-01T14:28:14Z", "type": "ORDER_UPDATED", "order": "ORD-00001", "by": "DANI", "status": "CANCELLED"}
 {"ts": "2026-10-01T17:17:44Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 8}
+{"ts": "2026-10-01T17:17:56Z", "type": "BOOK_CREATED", "book_id": "EB-000001", "agent": "S1-JEFE", "topic": "The One-Page System: A Productivity Method for Solo Freelancers", "language": "en-US"}
