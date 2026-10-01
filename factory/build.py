@@ -513,19 +513,20 @@ def build_print_html(book):
     chapters = split_chapters(read_text(manuscript_path(book)))
     lang = book["language"]
     css = PRINT_CSS.format(w=cfg["trim_size"]["width_in"], h=cfg["trim_size"]["height_in"])
+    img_resolver = lambda src: "../" + src  # interior.html lives in build/, one level under the book dir
     parts = [f'<div class="front titlepage"><h1>{inline(ctx["title"])}</h1>'
              + (f'<p class="subtitle">{inline(ctx["subtitle"])}</p>' if ctx["subtitle"] else "")
              + f'<p class="author">{inline(ctx["author"])}</p></div>']
     copy_md = _front_text(book, ctx, "copyright")
     if book.get("risk_level") == "HIGH":
         copy_md += "\n\n" + _front_text(book, ctx, "disclaimer")
-    parts.append(f'<div class="front copyright">{md_to_xhtml(copy_md, 1)}</div>')
+    parts.append(f'<div class="front copyright">{md_to_xhtml(copy_md, 1, img_resolver)}</div>')
     toc_label = "Contenido" if lang.startswith("es") else "Contents"
     parts.append(f'<div class="front toc"><h1>{toc_label}</h1><ol>'
                  + "".join(f'<li><a href="#ch{n:02d}">{inline(t)}</a></li>' for n, (t, _) in enumerate(chapters, 1))
                  + "</ol></div>")
     for n, (t, body) in enumerate(chapters, 1):
-        parts.append(f'<section id="ch{n:02d}"><h1>{inline(t)}</h1>{md_to_xhtml(body, 1)}</section>')
+        parts.append(f'<section id="ch{n:02d}"><h1>{inline(t)}</h1>{md_to_xhtml(body, 1, img_resolver)}</section>')
     return (f'<!DOCTYPE html><html lang="{lang}"><head><meta charset="utf-8"><title>{html.escape(ctx["title"])}</title>'
             f"<style>{css}</style></head><body>" + "\n".join(parts) + "</body></html>")
 
