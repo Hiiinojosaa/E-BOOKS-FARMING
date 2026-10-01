@@ -1,6 +1,6 @@
 {
   "agent_id": "S1-CALIDAD",
-  "owner": "SOCIO-1",
+  "owner": "ADMIN",
   "provider": "anthropic",
   "model": "claude",
   "capabilities": [

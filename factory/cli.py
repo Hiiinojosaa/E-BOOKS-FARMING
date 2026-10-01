@@ -553,7 +553,7 @@ def parser():
     s.add_argument("--kind", default="GENERAL", choices=orders.KINDS); s.add_argument("--target"); s.add_argument("--book")
     s.add_argument("--priority", default="NORMAL"); s.add_argument("--note")
     s = add("team", cmd_team, "equipo de agentes especialistas"); s.add_argument("action", choices=["setup", "list"])
-    s.add_argument("--owner", default="SOCIO-1"); s.add_argument("--prefix", default="S1"); s.add_argument("--model", default="claude")
+    s.add_argument("--owner", default="ADMIN"); s.add_argument("--prefix", default="S1"); s.add_argument("--model", default="claude")
     s = add("recommend", cmd_recommend, "jefe: recomendar un tema a los socios"); s.add_argument("--topic", required=True)
     s.add_argument("--why", required=True, help="por qué, con evidencia (FACT/ESTIMATE/HYPOTHESIS)"); s.add_argument("--agent", required=True)
     s.add_argument("--language", default="en-US"); s.add_argument("--niche"); s.add_argument("--audience"); s.add_argument("--priority", default="NORMAL")

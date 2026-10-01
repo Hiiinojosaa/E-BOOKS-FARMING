@@ -1,6 +1,6 @@
 {
   "agent_id": "S1-CLAUDE-001",
-  "owner": "SOCIO-1",
+  "owner": "ADMIN",
   "provider": "anthropic",
   "model": "claude-opus-5-5",
   "capabilities": [

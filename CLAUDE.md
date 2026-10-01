@@ -4,7 +4,7 @@ Lee esto entero al empezar cualquier sesión. Es el índice y las reglas fundame
 
 ## 1. Propósito
 
-Fábrica de e-books de dos socios (**SOCIO-1** y **DANI**) operada por agentes Claude. Produce libros de calidad
+Fábrica de e-books de **Addless Motions** (un único socio: `ADMIN`) operada por agentes Claude. Produce libros de calidad
 hasta `READY_FOR_PUBLISHING` (paquete listo). **Nunca publica sola**: la publicación la hace un socio a mano.
 
 **Regla de oro: el trabajo pertenece al PROYECTO, no a la conversación.** Todo lo importante vive en archivos.
@@ -55,7 +55,7 @@ Sesión autónoma: `PROMPTS/WORKER.md` es el prompt completo del trabajador.
 
 ## 4b. El equipo
 
-`python factory.py team setup --owner <SOCIO> --prefix <S1|DANI>` crea 7 agentes: JEFE (habla con los socios, recomienda
+`python factory.py team setup --owner ADMIN --prefix S1` crea 7 agentes: JEFE (habla con los socios, recomienda
 temas con `recommend`, sigue las directrices, coordina; puede hacer cualquier tarea), INVESTIGADOR, ESCRITOR, EDITOR,
 DISENADOR, EMPAQUETADOR y CALIDAD (cada uno solo recibe las tareas de su oficio). Arranque: el jefe con `PROMPTS/CHIEF.md`,
 el resto con `PROMPTS/WORKER.md`. Directrices de los socios: `python factory.py directives` (obligatorio leerlas).

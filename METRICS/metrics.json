@@ -1,29 +1,39 @@
 {
-  "generated_at": "2026-10-01T17:17:44Z",
-  "books_total": 1,
-  "books_started": 1,
+  "generated_at": "2026-10-01T22:15:21Z",
+  "books_total": 16,
+  "books_started": 3,
   "books_completed": 1,
   "books_failed": 0,
   "average_completion_time_hours": 0.12,
   "time_per_book_hours": {
     "EB-TEST-001": 0.12
   },
-  "tasks_total": 12,
-  "tasks_completed": 12,
-  "tasks_failed": 3,
+  "tasks_total": 24,
+  "tasks_completed": 22,
+  "tasks_failed": 4,
   "tasks_blocked": 0,
-  "retries": 0,
+  "retries": 1,
   "agent_utilization": {
     "S1-CLAUDE-001": {
       "tasks_done": 12,
       "tasks_failed": 3,
       "busy_hours": 0.1
+    },
+    "S1-JEFE": {
+      "tasks_done": 3,
+      "tasks_failed": 0,
+      "busy_hours": 0.16
+    },
+    "TEST-AGENT": {
+      "tasks_done": 7,
+      "tasks_failed": 1,
+      "busy_hours": 0.05
     }
   },
   "human_review_time_hours_avg": 0.0,
   "quality_failures": {
     "qc_failed": 1,
-    "validation_failed": 0
+    "validation_failed": 1
   },
   "cost_estimate": {
     "reported_tokens": 0,
