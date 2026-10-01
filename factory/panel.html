@@ -659,8 +659,8 @@ function vChat(){
     const c=$("#optChips"); if(!c) return;
     const items=[];
     if(MODE==="directive") items.push({ic:"flag",label:"Directriz",clear:()=>{MODE="message";}});
-    if(CHAT_TO!=="factory") items.push({ic:"user",label:`Para ${nameOf(CHAT_TO)}`,clear:()=>{CHAT_TO="factory";}});
-    if(CHAT_BOOK) items.push({ic:"book",label:`Sobre «${bookTitle(CHAT_BOOK).slice(0,28)}»`,clear:()=>{CHAT_BOOK="";}});
+    else { if(CHAT_TO!=="factory") items.push({ic:"user",label:`Para ${nameOf(CHAT_TO)}`,clear:()=>{CHAT_TO="factory";}});
+      if(CHAT_BOOK) items.push({ic:"book",label:`Sobre «${bookTitle(CHAT_BOOK).slice(0,28)}»`,clear:()=>{CHAT_BOOK="";}}); }
     c.innerHTML=items.map(it=>`<span class="optchip">${icon(it.ic,"sm")} ${esc(it.label)} <button>${icon("x","sm")}</button></span>`).join("");
     c.querySelectorAll(".optchip button").forEach((b,i)=>b.onclick=()=>{ items[i].clear(); setSeg(); });
   }

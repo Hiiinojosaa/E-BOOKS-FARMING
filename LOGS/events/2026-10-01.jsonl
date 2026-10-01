@@ -107,3 +107,5 @@
 {"ts": "2026-10-01T12:32:31Z", "type": "AGENT_REGISTERED", "agent": "S1-DISENADOR", "owner": "SOCIO-1", "model": "claude"}
 {"ts": "2026-10-01T12:32:31Z", "type": "AGENT_REGISTERED", "agent": "S1-EMPAQUETADOR", "owner": "SOCIO-1", "model": "claude"}
 {"ts": "2026-10-01T12:32:31Z", "type": "AGENT_REGISTERED", "agent": "S1-CALIDAD", "owner": "SOCIO-1", "model": "claude"}
+{"ts": "2026-10-01T14:26:02Z", "type": "CHAT", "by": "DANI", "role": "partner", "kind": "message", "msg": "MSG-1790864762472082600-79e6e5"}
+{"ts": "2026-10-01T14:26:02Z", "type": "ORDER_CREATED", "order": "ORD-00001", "by": "DANI", "kind": "CHAT"}

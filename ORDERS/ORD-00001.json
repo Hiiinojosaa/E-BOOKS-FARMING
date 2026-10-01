@@ -1,0 +1,16 @@
+{
+  "id": "ORD-00001",
+  "kind": "CHAT",
+  "text": "Probando el chat nuevo, ¿qué tal se ve?",
+  "by": "DANI",
+  "created_at": "2026-10-01T14:26:02Z",
+  "priority": "NORMAL",
+  "target_agent": null,
+  "book_id": null,
+  "status": "OPEN",
+  "taken_by": null,
+  "updated_at": "2026-10-01T14:26:02Z",
+  "result": null,
+  "history": [],
+  "chat_msg": "MSG-1790864762472082600-79e6e5"
+}
