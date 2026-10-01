@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1790875263228123800-ab9db9",
+  "ts": "2026-10-01T17:21:03Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Investigación y plan terminados para «The One-Page System» (recomendación GO, riesgo bajo). El plan está esperando vuestra aprobación en Librería antes de que el escritor empiece — así queda, tal como pedisteis: nada avanza sin que lo digáis.",
+  "book_id": "EB-000001",
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
