@@ -5,7 +5,7 @@ import shutil
 import subprocess
 import sys
 
-from . import agents, books, build, chat, decisions, directives, gitsync, orchestrator, orders, pg_sync, publishing, puzzles, qc, reports, states, tasks
+from . import agents, books, build, chat, decisions, directives, gitsync, images, orchestrator, orders, pg_sync, publishing, puzzles, qc, reports, states, tasks
 from .core import FactoryError, all_events, load_config, log_event, now_iso, path, read_json, utcnow, write_json, write_text
 
 DIRS = ["AGENTS", "BOOKS", "COLLECTIONS", "CONFIG", "DECISIONS", "LOCKS", "LOGS/events", "METRICS", "PROMPTS",
@@ -258,6 +258,10 @@ def cmd_cover(a):
 
 def cmd_puzzles(a):
     out(puzzles.generate_book(a.id, a.agent, seed=a.seed))
+
+
+def cmd_image(a):
+    out({"file": images.generate_image(a.prompt, a.out, aspect_ratio=a.aspect)})
 
 
 def cmd_build(a):
@@ -522,6 +526,9 @@ def parser():
     s = add("cover", cmd_cover, "renderizar portada"); s.add_argument("id")
     s = add("puzzles", cmd_puzzles, "generar puzzles (paso WRITE de libros PUZZLE_*)"); s.add_argument("id")
     s.add_argument("--agent", default="HUMAN"); s.add_argument("--seed")
+    s = add("image", cmd_image, "generar una imagen real (Gemini/Imagen) para embeber en un manuscrito")
+    s.add_argument("prompt"); s.add_argument("out", help="ruta relativa, p.ej. BOOKS/EB-000016/design/photos/paso-01.png")
+    s.add_argument("--aspect", default="1:1", choices=["1:1", "16:9", "9:16", "4:3", "3:4"])
     s = add("build", cmd_build, "generar EPUB+PDF"); s.add_argument("id")
     s = add("qc", cmd_qc, "QC automático independiente"); s.add_argument("id"); s.add_argument("--no-build", action="store_true")
     s = add("approve", cmd_approve, "aprobar (socio)"); s.add_argument("id"); s.add_argument("--by", required=True)
