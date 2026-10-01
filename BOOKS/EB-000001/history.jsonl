@@ -1,1 +1,2 @@
 {"ts": "2026-10-01T17:17:56Z", "from": null, "to": "IDEA", "agent": "S1-JEFE", "action": "CREATE", "result": "OK", "note": "The One-Page System: A Productivity Method for Solo Freelancers"}
+{"ts": "2026-10-01T17:18:11Z", "from": "IDEA", "to": "RESEARCH_PENDING", "agent": "S1-JEFE", "action": "PROMOTE_IDEA", "result": "OK", "note": "Producción iniciada: tema pedido y aprobado por el socio en el chat directo"}
