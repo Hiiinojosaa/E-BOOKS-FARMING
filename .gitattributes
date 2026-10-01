@@ -5,3 +5,5 @@
 *.pdf binary
 # append-only logs: let git keep both sides instead of conflicting
 *.jsonl merge=union
+*.bat text eol=crlf
+*.ps1 text eol=crlf
