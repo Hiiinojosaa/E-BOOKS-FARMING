@@ -4,7 +4,7 @@ import html
 from collections import Counter, defaultdict
 
 from . import agents, books, decisions, states, tasks
-from .core import all_events, load_config, now_iso, parse_iso, path, utcnow, write_json, write_text
+from .core import PLACEHOLDER_AUTHOR, all_events, load_config, now_iso, parse_iso, path, utcnow, write_json, write_text
 
 
 def _hours(a, b):
@@ -213,8 +213,9 @@ def meeting_pack():
     md += [f"- {b['id']} — {b['title']}: QC falló {b['qc_fail_count']} veces" for b in disc] or ["- Nada"]
     md += ["", "## DECISIONES", ""]
     dec = []
-    if any(b.get("author") == cfg["default_author"] for b in all_b if b["status"] in ("HUMAN_REVIEW", "READY_FOR_PUBLISHING")):
-        dec.append("¿Nombre de autor / pen name? (ahora es provisional: `" + cfg["default_author"] + "`)")
+    pending = [b["id"] for b in all_b if b.get("author") == PLACEHOLDER_AUTHOR and b["status"] in ("HUMAN_REVIEW", "READY_FOR_PUBLISHING")]
+    if pending:
+        dec.append(f"Autor provisional `{PLACEHOLDER_AUTHOR}` en {', '.join(pending)}: fijarlo con `approve --author` o pedir una nueva versión")
     for b in all_b:
         if b["status"] in ("HUMAN_REVIEW", "READY_FOR_PUBLISHING") and not b.get("translated_from"):
             have = {x["language"] for x in all_b if x.get("translated_from") == b["id"]} | {b["language"]}

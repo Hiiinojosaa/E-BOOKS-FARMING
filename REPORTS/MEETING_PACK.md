@@ -16,7 +16,7 @@
 
 ## DECISIONES
 
-- ¿Nombre de autor / pen name? (ahora es provisional: `TBD-PEN-NAME`)
+- Autor provisional `TBD-PEN-NAME` en EB-TEST-001: fijarlo con `approve --author` o pedir una nueva versión
 - EB-TEST-001: ¿crear versiones es-ES, en-GB? (`python factory.py translate EB-TEST-001 --to <lang>`)
 
 ## Estado de la fábrica

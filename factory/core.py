@@ -15,6 +15,9 @@ from pathlib import Path
 _ROOT = Path(os.path.abspath(os.environ.get("EBF_ROOT") or Path(__file__).parent.parent))
 
 
+PLACEHOLDER_AUTHOR = "TBD-PEN-NAME"  # QC flags this as a pending partner decision
+
+
 class FactoryError(Exception):
     """Expected, user-facing error (bad state, missing file, lock held...)."""
 
@@ -185,7 +188,7 @@ def all_events():
 # ---------------------------------------------------------------- config
 DEFAULT_CONFIG = {
     "project_name": "E-Book Factory",
-    "default_author": "TBD-PEN-NAME",
+    "default_author": "Addless Motions",
     "publisher": "",
     "partners": ["SOCIO-1", "DANI"],
     "approvals_required": 1,

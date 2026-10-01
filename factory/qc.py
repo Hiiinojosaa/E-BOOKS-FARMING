@@ -3,7 +3,7 @@ import re
 from collections import Counter
 from . import books
 from .build import jpeg_size, manuscript_path, pdf_page_count, png_size, split_chapters, validate_epub
-from .core import load_config, now_iso, read_json, read_text, word_count, write_json
+from .core import PLACEHOLDER_AUTHOR, load_config, now_iso, read_json, read_text, word_count, write_json
 
 # Case-sensitive on purpose: "todo" is a normal Spanish word, "TODO" is a placeholder.
 PLACEHOLDER_RE = re.compile(r"\b(TODO|TBD|FIXME|XXX+)\b|\{\{[^}]*\}\}|<placeholder>|\?\?\?")
@@ -176,7 +176,7 @@ def run_auto_qc(book_id, require_build=True):
     author = meta.get("author") or book.get("author")
     if not author:
         r.add("METADATA", "author", "FAIL", "vacío")
-    elif author == cfg["default_author"]:
+    elif author == PLACEHOLDER_AUTHOR:
         r.add("METADATA", "author", "HUMAN_REVIEW", f"'{author}' es provisional: los socios deben decidir el pen name")
     else:
         r.add("METADATA", "author", "PASS", author)
