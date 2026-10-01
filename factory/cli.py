@@ -453,6 +453,27 @@ def cmd_sync(a):
     out(gitsync.sync(a.agent, a.message or "sync"))
 
 
+def cmd_pg_setup(a):
+    """One-time: create the remote-panel tables and push the current state, so the
+    Vercel panel has data immediately instead of waiting for the next tick."""
+    if not pg_sync.enabled():
+        raise FactoryError("Falta DATABASE_URL (ponlo en .env o como variable de entorno)")
+    import os
+    import psycopg
+    schema = path("web", "schema.sql").read_text(encoding="utf-8")
+    with psycopg.connect(os.environ["DATABASE_URL"]) as conn:
+        with conn.cursor() as cur:
+            cur.execute(schema)
+        conn.commit()
+    _pg_drain(a.agent)
+    out({"ok": True, "result": "esquema creado y primer envío hecho"})
+
+
+def cmd_pg_status(a):
+    out({"enabled": pg_sync.enabled(),
+         "pending": len(pg_sync.pull_pending_actions()) if pg_sync.enabled() else None})
+
+
 # ------------------------------------------------------------------ parser
 def parser():
     p = argparse.ArgumentParser(prog="factory.py", description="E-Book Factory CLI")
@@ -529,6 +550,8 @@ def parser():
     add("report", cmd_report, "dashboard + informes + meeting pack + métricas")
     add("status", cmd_status, "resumen rápido")
     s = add("sync", cmd_sync, "git pull --rebase + push"); s.add_argument("--agent", default="HUMAN"); s.add_argument("--message")
+    s = add("pg-setup", cmd_pg_setup, "crear tablas del panel remoto (Postgres) y enviar el estado actual"); s.add_argument("--agent", default="HUMAN")
+    add("pg-status", cmd_pg_status, "ver si el puente con el panel remoto está activo")
     return p
 
 
