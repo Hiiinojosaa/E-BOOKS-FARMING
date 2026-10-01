@@ -9,7 +9,7 @@ import re
 from .core import FactoryError, create_exclusive_json, log_event, now_iso, path, read_json, write_json
 
 O_RE = re.compile(r"^ORD-(\d{5})\.json$")
-KINDS = ["GENERAL", "NEW_BOOK", "RESEARCH_IDEAS", "CHANGE", "PRIORITY", "REPORT"]
+KINDS = ["CHAT", "GENERAL", "NEW_BOOK", "RESEARCH_IDEAS", "CHANGE", "PRIORITY", "REPORT"]
 STATUSES = ["OPEN", "IN_PROGRESS", "DONE", "REJECTED", "CANCELLED"]
 
 
@@ -19,7 +19,7 @@ def _dir():
     return d
 
 
-def create(text, by, kind="GENERAL", target_agent=None, book_id=None, priority="NORMAL"):
+def create(text, by, kind="GENERAL", target_agent=None, book_id=None, priority="NORMAL", chat_msg=None):
     text = (text or "").strip()
     if len(text) < 5:
         raise FactoryError("La orden está vacía o es demasiado corta")
@@ -31,7 +31,7 @@ def create(text, by, kind="GENERAL", target_agent=None, book_id=None, priority="
         oid = f"ORD-{n:05d}"
         rec = {"id": oid, "kind": kind, "text": text, "by": by, "created_at": now_iso(), "priority": priority,
                "target_agent": target_agent or None, "book_id": book_id or None, "status": "OPEN",
-               "taken_by": None, "updated_at": now_iso(), "result": None, "history": []}
+               "taken_by": None, "updated_at": now_iso(), "result": None, "history": [], "chat_msg": chat_msg}
         try:
             create_exclusive_json(d / f"{oid}.json", rec)
             break
@@ -63,6 +63,9 @@ def update(oid, status, who, note=""):
         rec["result"] = note
     write_json(_dir() / f"{oid}.json", rec)
     log_event("ORDER_UPDATED", order=oid, by=who, status=status)
+    if status in ("DONE", "REJECTED") and note:
+        from . import chat  # the answer goes back to whoever asked, in the chat
+        chat.post(who, "agent", note, kind="answer", order_id=oid, reply_to=rec.get("chat_msg"), book_id=rec.get("book_id"))
     return rec
 
 

@@ -56,5 +56,10 @@
     "drug",
     "fármaco",
     "farmac"
-  ]
+  ],
+  "main_agent": "S1-CLAUDE-001",
+  "partner_names": {
+    "SOCIO-1": "Socio 1",
+    "DANI": "Dani"
+  }
 }

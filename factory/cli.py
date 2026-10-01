@@ -5,7 +5,7 @@ import shutil
 import subprocess
 import sys
 
-from . import agents, books, build, decisions, gitsync, orchestrator, orders, publishing, qc, reports, states, tasks
+from . import agents, books, build, chat, decisions, gitsync, orchestrator, orders, publishing, qc, reports, states, tasks
 from .core import FactoryError, load_config, log_event, now_iso, path, read_json, write_json, write_text
 
 DIRS = ["AGENTS", "BOOKS", "COLLECTIONS", "CONFIG", "DECISIONS", "LOCKS", "LOGS/events", "METRICS", "PROMPTS",
@@ -339,6 +339,20 @@ def cmd_order(a):
     _after(a.by, f"order {a.action} {a.id or ''}".strip())
 
 
+def cmd_say(a):
+    """Agent progress note shown live in the partners' chat/panel."""
+    agents.get(a.agent)
+    out(chat.post(a.agent, "agent", a.text, kind="progress", book_id=a.book)["id"])
+    _after(a.agent, "say")
+
+
+def cmd_chat(a):
+    if gitsync.enabled():
+        gitsync.sync(a.agent or "HUMAN", "pull chat")
+    for m in chat.all_messages()[-a.last:]:
+        print(f"[{m['ts'][:16].replace('T', ' ')}] {m['from']} ({m['role']}/{m['kind']}): {m['text']}")
+
+
 def cmd_panel(a):
     from . import panel
     panel.serve(a.port, open_browser=not a.no_browser)
@@ -423,6 +437,9 @@ def parser():
     s.add_argument("id", nargs="?"); s.add_argument("--text"); s.add_argument("--by", required=True)
     s.add_argument("--kind", default="GENERAL", choices=orders.KINDS); s.add_argument("--target"); s.add_argument("--book")
     s.add_argument("--priority", default="NORMAL"); s.add_argument("--note")
+    s = add("say", cmd_say, "agente: publicar un mensaje de progreso en el chat de los socios"); s.add_argument("text")
+    s.add_argument("--agent", required=True); s.add_argument("--book")
+    s = add("chat", cmd_chat, "leer los últimos mensajes del chat"); s.add_argument("--last", type=int, default=30); s.add_argument("--agent")
     s = add("panel", cmd_panel, "abrir el panel de control web (solo en este ordenador)"); s.add_argument("--port", type=int, default=8765)
     s.add_argument("--no-browser", action="store_true")
     add("report", cmd_report, "dashboard + informes + meeting pack + métricas")

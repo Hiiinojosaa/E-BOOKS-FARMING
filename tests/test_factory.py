@@ -287,25 +287,54 @@ class TestGitMultiMachine(unittest.TestCase):
 class TestPanelActions(Base):
     """The panel's action layer (same functions the web UI calls), without HTTP."""
 
-    def test_panel_flow(self):
-        from factory import decisions, orders, panel
-        r = panel.do_action({"action": "new_book", "by": "SOCIO-1", "topic": "Panel idea", "language": "es-ES", "priority": "HIGH"})
-        bid = r["result"]["id"]
-        self.assertEqual(books.load(bid)["author"], core.load_config()["default_author"])
-        panel.do_action({"action": "set_priority", "by": "DANI", "id": bid, "priority": "LOW"})
-        self.assertEqual(books.load(bid)["priority"], "LOW")
-        oid = panel.do_action({"action": "order_new", "by": "DANI", "text": "Busca 3 ideas para Navidad", "kind": "RESEARCH_IDEAS"})["result"]
-        self.assertEqual([o["id"] for o in orders.for_agent("AGENT-A")], [oid])
-        orders.update(oid, "IN_PROGRESS", "AGENT-A")
-        self.assertEqual(orders.for_agent("AGENT-B"), [])  # taken by A
-        orders.update(oid, "DONE", "AGENT-A", "hecho")
-        did = decisions.ask("¿Colección?", "AGENT-A", options=["Sí", "No"])["id"]
-        panel.do_action({"action": "decide", "by": "SOCIO-1", "id": did, "answer": "Sí"})
-        self.assertEqual(decisions.all_decisions("OPEN"), [])
+    def test_login_pin_never_in_repo_and_lockout(self):
+        from factory import panel
+        tok = panel.login("DANI", "4321", "Dani")
+        self.assertIn(tok, panel.SESSIONS)
+        users = core.read_json(Path(self.root, "CONFIG", "local_users.json"))
+        self.assertNotIn("4321", json.dumps(users))  # only a salted hash is stored
+        gi = (REPO / ".gitignore").read_text(encoding="utf-8")
+        self.assertIn("CONFIG/local_users.json", gi)
+        for _ in range(5):
+            with self.assertRaises(FactoryError):
+                panel.login("DANI", "0000")
         with self.assertRaises(FactoryError):
-            panel.do_action({"action": "approve", "by": "", "id": bid})  # must say who you are
-        s = panel.state()
-        self.assertEqual(s["groups"]["TOTAL BOOKS"], 1)
+            panel.login("DANI", "4321")  # locked out for 30 s after 5 failures
+        panel.FAILS.clear()
+
+    def test_chat_order_answer_roundtrip(self):
+        from factory import chat, decisions, orders, panel
+        panel.do_action({"action": "chat_send", "text": "Busca 3 ideas para Navidad"}, "SOCIO-1")
+        msgs = chat.all_messages()
+        self.assertEqual([m["role"] for m in msgs], ["partner", "system"])  # message + honest ack
+        o = orders.for_agent("AGENT-A")[0]
+        self.assertEqual((o["kind"], o["chat_msg"]), ("CHAT", msgs[0]["id"]))
+        orders.update(o["id"], "IN_PROGRESS", "AGENT-A")
+        orders.update(o["id"], "DONE", "AGENT-A", "Hecho: 3 ideas añadidas")
+        last = chat.all_messages()[-1]
+        self.assertEqual((last["role"], last["from"], last["reply_to"]), ("agent", "AGENT-A", msgs[0]["id"]))
+        panel.do_action({"action": "chat_send", "text": "Hola Dani", "to": "DANI"}, "SOCIO-1")
+        self.assertEqual(len(orders.all_orders()), 1)  # partner-to-partner messages are not orders
+        did = decisions.ask("¿Colección?", "AGENT-A", options=["Sí", "No"])["id"]
+        self.assertEqual(chat.all_messages()[-1]["kind"], "question")
+        panel.do_action({"action": "answer_question", "id": did, "answer": "Sí"}, "DANI")
+        with self.assertRaises(FactoryError):
+            panel.do_action({"action": "answer_question", "id": did, "answer": "No"}, "SOCIO-1")
+        st = panel.state("SOCIO-1")
+        self.assertEqual(st["attention"], [])
+
+    def test_panel_new_book_priority_live(self):
+        from factory import panel
+        bid = panel.do_action({"action": "new_book", "topic": "Panel idea", "language": "es-ES"}, "DANI")["result"]["id"]
+        self.assertEqual(books.load(bid)["author"], core.load_config()["default_author"])
+        panel.do_action({"action": "set_priority", "id": bid, "priority": "LOW"}, "SOCIO-1")
+        self.assertEqual(books.load(bid)["priority"], "LOW")
+        orchestrator.orchestrate()
+        tasks.claim_next("AGENT-A")
+        live = panel.state("DANI")["live"]
+        self.assertEqual((live[0]["book_id"], live[0]["agent"]), (bid, "AGENT-A"))
+        with self.assertRaises(FactoryError):
+            panel.do_action({"action": "approve", "id": bid}, "")
 
     def test_panel_approve_with_author_and_price(self):
         from factory import panel
@@ -313,7 +342,8 @@ class TestPanelActions(Base):
         orchestrator.orchestrate()
         for step in TestFullPipeline.PIPE:
             self.run_step("AGENT-A", b["id"], step)
-        r = panel.do_action({"action": "approve", "by": "DANI", "id": b["id"], "author": "Addless Motions", "price": "3.99"})
+        self.assertEqual(panel.state("DANI")["attention"][0]["kind"], "review")
+        panel.do_action({"action": "approve", "id": b["id"], "author": "Addless Motions", "price": "3,99"}, "DANI")
         bk = books.load(b["id"])
         self.assertEqual(bk["status"], "READY_FOR_PUBLISHING")
         meta = core.read_json(Path(self.root, "BOOKS", b["id"], bk["files"]["publishing_package"], "metadata.json"))

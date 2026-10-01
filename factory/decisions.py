@@ -20,6 +20,8 @@ def ask(question, by, book_id=None, options=None, urgency="NORMAL"):
            "asked_at": now_iso(), "urgency": urgency, "status": "OPEN", "answer": None, "answered_by": None}
     write_json(d / f"{did}.json", rec)
     log_event("DECISION_ASKED", decision=did, book_id=book_id, by=by)
+    from . import chat
+    chat.post(by, "agent", question, kind="question", decision_id=did, options=options or [], book_id=book_id)
     return rec
 
 
@@ -28,9 +30,13 @@ def answer(did, by, text):
     if not p.exists():
         raise FactoryError(f"No existe {did}")
     rec = read_json(p)
+    if rec["status"] != "OPEN":
+        raise FactoryError(f"{did} ya fue respondida por {rec.get('answered_by')}: {rec.get('answer')}")
     rec.update(status="ANSWERED", answer=text, answered_by=by, answered_at=now_iso())
     write_json(p, rec)
     log_event("DECISION_ANSWERED", decision=did, by=by)
+    from . import chat
+    chat.post(by, "partner", text, kind="answer", decision_id=did, book_id=rec.get("book_id"))
     return rec
 
 

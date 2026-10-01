@@ -13,18 +13,18 @@ Python 3.10+ (sin paquetes extra), Git, Google Chrome o Microsoft Edge (para PDF
 
 ## Panel de control (lo más fácil)
 
-Doble clic en **`ABRIR_PANEL.bat`** (o `python factory.py panel`). Se abre en el navegador, solo en tu ordenador
-(http://127.0.0.1:8765), y se sincroniza con GitHub cada 2 minutos, así que ves lo mismo que Dani.
+Doble clic en **`ABRIR_PANEL.bat`**. Se abre en el navegador (solo en tu ordenador). La primera vez eliges tu perfil
+y creas un PIN; el PIN se queda en tu ordenador, nunca va a GitHub.
 
-- **Inicio:** qué hay en la cadena y qué necesita vuestra atención.
-- **Libros:** portadas, estado, ficha de cada libro; aprobar, pedir cambios, rechazar, prioridad, otras ediciones; nueva idea.
-- **Órdenes a los agentes:** escribís lo que queréis en lenguaje normal; el siguiente agente que arranque lo lee, lo hace y responde ahí.
-- **Decisiones:** preguntas que os hacen los agentes.
-- **Agentes:** quién está trabajando, en qué, y cómo arrancar uno (a mano o con horario).
-- **Actividad:** todo lo que ha pasado.
+- **🏠 Hoy:** qué están haciendo los agentes *ahora mismo* (en directo, con progreso) y lo que necesita tu decisión.
+- **📚 Librería:** vuestros libros como estantería: para revisar, listos para publicar, en producción, ideas, publicados.
+  Abre uno para leerlo, aprobarlo, pedir cambios o descartarlo. Botón *+ Nueva idea de libro*.
+- **💬 Chat:** hablas con el agente jefe como en WhatsApp (o con tu socio). El agente responde ahí cuando está trabajando;
+  si no hay ninguno encendido, el mensaje espera y el chat te lo dice. Las preguntas de los agentes llegan aquí con botones.
+- **⚙️ Más:** los agentes y cómo encenderlos, sincronización con GitHub, tu nombre y tu PIN, historial completo.
 
-El panel no lanza agentes: les deja órdenes. Un agente es una sesión de Claude abierta en la carpeta del proyecto
-(a mano o programada con horario).
+El panel no enciende agentes: les habla. Un agente es una sesión de Claude abierta en la carpeta del proyecto
+(a mano o programada con horario). Lo que hace Dani en su panel lo ves en el tuyo en menos de un minuto.
 
 ## Uso diario por terminal (socios)
 

@@ -13,3 +13,5 @@ Thumbs.db
 BOOKS/*/build/interior.html
 BOOKS/*/design/cover.html
 .claude/settings.local.json
+# local panel logins (hashed PINs) — never commit
+CONFIG/local_users.json

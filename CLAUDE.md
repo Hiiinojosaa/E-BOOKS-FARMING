@@ -21,7 +21,7 @@ Si tu sesión muere, otro agente debe poder continuar leyendo solo este reposito
 | `AGENTS/` | registro de agentes (un JSON por agente) |
 | `PROMPTS/<PASO>.md` | instrucciones de cada especialista |
 | `SYSTEM/` | arquitectura, workflow, reglas de calidad/escritura/traducción/publicación, protocolo, seguridad, escalado |
-| `COLLECTIONS/`, `DECISIONS/`, `ORDERS/`, `RESEARCH/opportunities/` | colecciones/series, preguntas a los socios, órdenes de los socios a los agentes, ideas de mercado |
+| `COLLECTIONS/`, `DECISIONS/`, `ORDERS/`, `CHAT/`, `RESEARCH/opportunities/` | colecciones/series, preguntas a los socios, órdenes de los socios, chat (un archivo por mensaje), ideas de mercado |
 | `LOGS/events/` | log global append-only; `BOOKS/<ID>/history.jsonl` = historial por libro |
 | `REPORTS/`, `METRICS/` | dashboard, informes diario/semanal, MEETING_PACK, métricas |
 | `TEMPLATES/` | portadas, textos legales, estructura de libro |
@@ -42,7 +42,8 @@ Ediciones traducidas: `TRANSLATION_PENDING → TRANSLATING → TRANSLATED → ED
 ```
 python factory.py agent register --id <TU-ID> --owner <SOCIO> --model <modelo>   # 1 vez
 python factory.py tick --agent <TU-ID>        # recover + orquestar + tareas automáticas + informes
-python factory.py orders --agent <TU-ID>      # órdenes de los socios (panel): cumplirlas primero (ver PROMPTS/WORKER.md)
+python factory.py orders --agent <TU-ID>      # mensajes/órdenes de los socios (chat del panel): atenderlos primero (ver PROMPTS/WORKER.md)
+python factory.py say "…" --agent <TU-ID>    # contar progreso a los socios (lo ven en directo)
 python factory.py next --agent <TU-ID>        # reclama UNA tarea → JSON con instrucciones, entradas y salidas
    …lee PROMPTS/<TIPO>.md y SYSTEM/*_rules.md, haz el trabajo, escribe SOLO en BOOKS/<ID>/…
 python factory.py agent heartbeat --id <TU-ID>   # si el trabajo dura > 30 min (extiende tus locks)
@@ -92,6 +93,8 @@ activo, cada comando hace commit + push (ver `SYSTEM/architecture.md §Multi-má
 
 ## 10. Socios (humanos)
 
-Panel de control: `python factory.py panel` (http://127.0.0.1:8765). Desde ahí: revisar/aprobar libros, crear ideas, dar órdenes a los agentes, responder preguntas, desbloquear.
+Panel: `ABRIR_PANEL.bat` / `python factory.py panel` (http://127.0.0.1:8765), con login por socio (PIN local, nunca en git).
+Secciones: Hoy (en directo + lo que os necesita), Librería (estantería; aprobar/pedir cambios/descartar), Chat (con el agente jefe y entre socios), Más.
+Agente jefe: `main_agent` en CONFIG/factory.json (por defecto S1-CLAUDE-001).
 `REPORTS/MEETING_PACK.md` → decidir → `approve` / `request-changes --restart-at <PASO>` / `reject` / `approve-brief` /
 `decide` / `unblock` / `translate`. Tras publicar a mano: `mark-published`. Ver `README.md`.

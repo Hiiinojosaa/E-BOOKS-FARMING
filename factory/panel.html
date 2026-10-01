@@ -3,330 +3,589 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Panel E-Book Factory</title>
+<title>E-Book Factory</title>
 <style>
-:root{--bg:#f6f5f1;--card:#fff;--fg:#1d1f1e;--mut:#6c706b;--line:#e3e2dc;--acc:#2f5d50;--acc2:#e8f0ec;--hot:#b4472f;--hot2:#f8e9e4;--warn:#9a6a12;--warn2:#f7efdc;--ok:#2f6e3a;--ok2:#e6f2e7;--shadow:0 1px 2px rgba(0,0,0,.05)}
-@media (prefers-color-scheme:dark){:root{--bg:#141514;--card:#1d1f1d;--fg:#ecece6;--mut:#9b9e97;--line:#30332f;--acc:#86c2ab;--acc2:#1f2e28;--hot:#ec8f76;--hot2:#3a221b;--warn:#e0b45c;--warn2:#352a14;--ok:#8fd19a;--ok2:#1d2e20;--shadow:none}}
+:root{
+  --bg:#f5f3ee;--card:#ffffff;--soft:#efece5;--fg:#1f2321;--mut:#6d716c;--line:#e2dfd7;
+  --acc:#2f5d50;--acc-fg:#ffffff;--acc-soft:#e3eee9;
+  --hot:#c0492f;--hot-soft:#fbe9e3;--gold:#a8741a;--gold-soft:#f8eed9;--ok:#2f7a45;--ok-soft:#e3f2e6;
+  --me:#2f5d50;--me-fg:#fff;--other:#ffffff;--agent:#eef2f7;--agent-line:#d7dfea;
+  --r:14px;--shadow:0 1px 2px rgba(0,0,0,.05),0 4px 14px rgba(0,0,0,.04)
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#131513;--card:#1c1f1c;--soft:#232723;--fg:#ecebe6;--mut:#9da19b;--line:#30342f;
+  --acc:#7fbfa6;--acc-fg:#10201a;--acc-soft:#1d2d27;--hot:#ef8f76;--hot-soft:#38211a;--gold:#e1b866;--gold-soft:#332917;--ok:#8fd3a0;--ok-soft:#1b2e21;
+  --me:#3f7a68;--me-fg:#fff;--other:#232723;--agent:#1f2530;--agent-line:#2e3747;--shadow:none}}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.45 system-ui,-apple-system,"Segoe UI",sans-serif}
-header{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
-.bar{max-width:1180px;margin:0 auto;padding:12px 16px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-.brand{font-weight:650;font-size:16px;margin-right:auto}
-.brand small{display:block;font-weight:400;color:var(--mut);font-size:12px}
-nav{max-width:1180px;margin:0 auto;padding:0 16px;display:flex;gap:4px;overflow-x:auto}
-nav button{border:0;background:none;color:var(--mut);padding:9px 12px;border-bottom:2px solid transparent;cursor:pointer;font:inherit;white-space:nowrap}
-nav button.on{color:var(--fg);border-color:var(--acc);font-weight:600}
-nav .n{display:inline-block;min-width:18px;padding:0 5px;margin-left:5px;border-radius:9px;background:var(--hot);color:#fff;font-size:11px;text-align:center}
-main{max-width:1180px;margin:0 auto;padding:18px 16px 60px}
-h2{font-size:15px;margin:22px 0 10px}
-h2:first-child{margin-top:0}
-.mut{color:var(--mut)} .small{font-size:12px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px;box-shadow:var(--shadow)}
-.grid{display:grid;gap:10px}
-.tiles{grid-template-columns:repeat(auto-fill,minmax(118px,1fr))}
-.tile{padding:10px 12px}
-.tile .v{font-size:24px;font-weight:650;font-variant-numeric:tabular-nums}
-.tile .l{font-size:11px;letter-spacing:.04em;color:var(--mut);text-transform:uppercase}
-.tile.hot .v{color:var(--hot)}
-.two{grid-template-columns:1fr 1fr} @media(max-width:820px){.two{grid-template-columns:1fr}}
-.list{display:flex;flex-direction:column;gap:8px}
-.row{display:flex;gap:10px;align-items:center;justify-content:space-between;flex-wrap:wrap}
-.chip{display:inline-block;font-size:11px;padding:2px 7px;border-radius:5px;border:1px solid var(--line);color:var(--mut);white-space:nowrap}
-.chip.hot{color:var(--hot);border-color:var(--hot);background:var(--hot2)}
-.chip.ok{color:var(--ok);border-color:var(--ok);background:var(--ok2)}
-.chip.warn{color:var(--warn);border-color:var(--warn);background:var(--warn2)}
-.chip.acc{color:var(--acc);border-color:var(--acc);background:var(--acc2)}
-button.b,a.b{font:inherit;font-size:13px;padding:6px 11px;border-radius:7px;border:1px solid var(--line);background:var(--card);color:var(--fg);cursor:pointer;text-decoration:none;display:inline-block}
-button.b:hover{border-color:var(--mut)}
-button.p{background:var(--acc);border-color:var(--acc);color:var(--bg)}
-button.d{color:var(--hot);border-color:var(--hot)}
-button:disabled{opacity:.5;cursor:wait}
-select,input,textarea{font:inherit;font-size:13px;padding:6px 8px;border-radius:7px;border:1px solid var(--line);background:var(--card);color:var(--fg);width:100%}
-textarea{min-height:76px;resize:vertical}
-label{display:block;font-size:12px;color:var(--mut);margin:8px 0 3px}
-.form{display:grid;gap:4px 12px;grid-template-columns:1fr 1fr} .form .full{grid-column:1/-1}
-@media(max-width:640px){.form{grid-template-columns:1fr}}
-.books{grid-template-columns:repeat(auto-fill,minmax(190px,1fr))}
-.book{cursor:pointer;padding:0;overflow:hidden;display:flex;flex-direction:column}
-.book .cv{aspect-ratio:1/1.6;background:var(--acc2);display:flex;align-items:center;justify-content:center;color:var(--mut);font-size:12px}
-.book .cv img{width:100%;height:100%;object-fit:cover}
-.book .meta{padding:10px}
-.book .t{font-weight:600;margin:4px 0 6px;line-height:1.25}
-.filters{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
-.filters button{font-size:12px;padding:4px 9px}
-.filters button.on{border-color:var(--acc);color:var(--acc);background:var(--acc2)}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--mut);font-weight:500;font-size:12px}
-.wrap{overflow-x:auto}
-.mono{font-family:ui-monospace,Consolas,monospace;font-size:12px}
-.drawer{position:fixed;inset:0;background:rgba(0,0,0,.35);display:none;z-index:20}
-.drawer.on{display:block}
-.drawer .in{position:absolute;right:0;top:0;bottom:0;width:min(760px,100%);background:var(--bg);overflow-y:auto;padding:18px 18px 60px;border-left:1px solid var(--line)}
-.kv{display:grid;grid-template-columns:150px 1fr;gap:4px 10px;font-size:13px} .kv div:nth-child(odd){color:var(--mut)}
-pre{white-space:pre-wrap;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px;font-size:12px;max-height:380px;overflow:auto}
-.toast{position:fixed;bottom:18px;left:50%;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:10px 16px;border-radius:8px;font-size:13px;display:none;z-index:30;max-width:90vw}
+html,body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:var(--acc)}
+.hidden{display:none!important}
+.mut{color:var(--mut)} .small{font-size:13px} .tiny{font-size:12px}
+.btn{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:9px 15px;cursor:pointer;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;gap:6px;color:var(--fg)}
+.btn:hover{border-color:var(--mut)}
+.btn.primary{background:var(--acc);border-color:var(--acc);color:var(--acc-fg)}
+.btn.big{padding:13px 20px;font-size:16px;border-radius:12px}
+.btn.danger{color:var(--hot);border-color:var(--hot)}
+.btn.ghost{border-color:transparent;background:transparent}
+.btn:disabled{opacity:.55;cursor:wait}
+input,select,textarea{width:100%;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+textarea{resize:vertical;min-height:80px}
+label{display:block;font-size:13px;color:var(--mut);margin:12px 0 5px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)}
+
+/* ---------- login */
+#login{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px 16px}
+.login-box{width:min(560px,100%);text-align:center}
+.logo{font-size:30px;font-weight:750;letter-spacing:-.02em}
+.logo span{color:var(--acc)}
+.profiles{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0 8px}
+.profile{cursor:pointer;padding:26px 14px;text-align:center;border:2px solid var(--line)}
+.profile:hover,.profile.sel{border-color:var(--acc)}
+.avatar{width:58px;height:58px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:22px;background:var(--acc-soft);color:var(--acc)}
+.avatar.sm{width:32px;height:32px;font-size:13px;flex:none}
+.avatar.bot{background:var(--agent);color:var(--fg);border:1px solid var(--agent-line)}
+.pin-step{margin-top:18px;text-align:left}
+.pin{font-size:26px;letter-spacing:.5em;text-align:center}
+
+/* ---------- shell */
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top{max-width:1120px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px}
+.top .logo{font-size:19px;margin-right:auto}
+.live{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:var(--mut)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--mut)}
+.dot.on{background:#3fae5c;box-shadow:0 0 0 0 rgba(63,174,92,.6);animation:pulse 2s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(63,174,92,.55)}70%{box-shadow:0 0 0 8px rgba(63,174,92,0)}100%{box-shadow:0 0 0 0 rgba(63,174,92,0)}}
+nav.tabs{max-width:1120px;margin:0 auto;padding:0 16px;display:flex;gap:6px}
+nav.tabs button{flex:0 0 auto;border:0;background:none;padding:10px 14px 12px;cursor:pointer;color:var(--mut);font-weight:550;border-bottom:3px solid transparent;font-size:15px}
+nav.tabs button.on{color:var(--fg);border-color:var(--acc)}
+.badge{display:inline-block;min-width:19px;height:19px;line-height:19px;border-radius:10px;background:var(--hot);color:#fff;font-size:11px;text-align:center;padding:0 5px;margin-left:5px;vertical-align:1px}
+main{max-width:1120px;margin:0 auto;padding:22px 16px 90px}
+h1{font-size:26px;margin:0 0 4px;letter-spacing:-.01em}
+h2{font-size:18px;margin:30px 0 12px}
+@media(max-width:640px){
+  nav.tabs{position:fixed;bottom:0;left:0;right:0;background:var(--card);border-top:1px solid var(--line);justify-content:space-around;padding:0 4px;z-index:10}
+  nav.tabs button{padding:10px 6px 12px;font-size:13px;border-bottom:0;border-top:3px solid transparent}
+  nav.tabs button.on{border-top-color:var(--acc)}
+  main{padding-bottom:110px}
+}
+
+/* ---------- today */
+.now{display:flex;flex-direction:column;gap:12px}
+.worker{display:flex;gap:14px;align-items:center}
+.worker .what{flex:1;min-width:0}
+.bar{height:8px;background:var(--soft);border-radius:6px;overflow:hidden;margin-top:8px}
+.bar>i{display:block;height:100%;background:var(--acc);border-radius:6px;transition:width .6s}
+.need{display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap;border-left:4px solid var(--gold)}
+.need.hot{border-left-color:var(--hot)}
+.need .txt{flex:1;min-width:220px}
+.counts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+@media(max-width:640px){.counts{grid-template-columns:repeat(2,1fr)}}
+.count{cursor:pointer;text-align:left}
+.count .n{font-size:30px;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.feed{display:flex;flex-direction:column}
+.feed .it{display:flex;gap:10px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14px}
+.feed .it:last-child{border-bottom:0}
+.feed .when{color:var(--mut);font-size:12px;white-space:nowrap;min-width:64px}
+
+/* ---------- library */
+.shelf-head{display:flex;align-items:baseline;gap:10px}
+.shelf{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:18px}
+.bk{cursor:pointer;background:none;border:0;padding:0;text-align:left}
+.cover{aspect-ratio:1/1.6;border-radius:6px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.12),0 10px 24px rgba(0,0,0,.08);transition:transform .15s;background:var(--soft);position:relative}
+.bk:hover .cover{transform:translateY(-3px)}
+.cover img{width:100%;height:100%;object-fit:cover;display:block}
+.cover .ph{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:14px;color:#fff;font-weight:650;font-size:15px;line-height:1.2}
+.cover .tag{position:absolute;top:8px;left:8px;font-size:11px;font-weight:600;padding:3px 8px;border-radius:20px;background:rgba(0,0,0,.6);color:#fff}
+.bk .t{font-weight:600;margin-top:10px;font-size:14px;line-height:1.3}
+.bk .s{font-size:12px;color:var(--mut);margin-top:2px}
+.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.toolbar input{max-width:320px}
+
+/* ---------- book modal */
+.modal{position:fixed;inset:0;background:rgba(10,12,10,.45);z-index:30;display:flex;align-items:flex-start;justify-content:center;overflow-y:auto;padding:30px 12px}
+.sheet{background:var(--bg);border-radius:18px;width:min(940px,100%);padding:24px;position:relative}
+.close{position:absolute;top:14px;right:14px}
+.bookhead{display:grid;grid-template-columns:200px 1fr;gap:24px}
+@media(max-width:640px){.bookhead{grid-template-columns:1fr}.bookhead .cover{max-width:200px}}
+.journey{display:flex;gap:0;margin:18px 0 6px;overflow-x:auto;padding-bottom:4px}
+.step{flex:1;min-width:76px;text-align:center;position:relative;font-size:11px;color:var(--mut)}
+.step:before{content:"";position:absolute;top:9px;left:-50%;right:50%;height:3px;background:var(--line)}
+.step:first-child:before{display:none}
+.step .c{width:20px;height:20px;border-radius:50%;background:var(--card);border:3px solid var(--line);margin:0 auto 6px;position:relative;z-index:1}
+.step.done .c{background:var(--acc);border-color:var(--acc)} .step.done:before,.step.cur:before{background:var(--acc)}
+.step.cur .c{border-color:var(--acc);background:var(--card);box-shadow:0 0 0 4px var(--acc-soft)}
+.step.cur{color:var(--fg);font-weight:650}
+.decide{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px}
+@media(max-width:640px){.decide{grid-template-columns:1fr}}
+details{margin-top:18px} summary{cursor:pointer;color:var(--mut);font-weight:550}
+.hist{font-size:13px} .hist div{padding:6px 0;border-bottom:1px solid var(--line)}
+.files a{display:block;padding:4px 0;font-size:14px}
+
+/* ---------- chat */
+.chatwrap{display:flex;flex-direction:column;height:calc(100vh - 160px);min-height:420px}
+@media(max-width:640px){.chatwrap{height:calc(100vh - 200px)}}
+.msgs{flex:1;overflow-y:auto;padding:6px 2px 14px;display:flex;flex-direction:column;gap:10px}
+.m{display:flex;gap:9px;max-width:82%;align-items:flex-end}
+.m .bub{padding:10px 13px;border-radius:16px;background:var(--other);border:1px solid var(--line);white-space:pre-wrap;word-wrap:break-word}
+.m .who{font-size:12px;color:var(--mut);margin:0 0 3px 4px}
+.m.me{align-self:flex-end;flex-direction:row-reverse}
+.m.me .bub{background:var(--me);color:var(--me-fg);border-color:var(--me);border-bottom-right-radius:5px}
+.m.me .who{text-align:right;margin:0 4px 3px 0}
+.m.agent .bub{background:var(--agent);border-color:var(--agent-line);border-bottom-left-radius:5px}
+.m.partner .bub{border-bottom-left-radius:5px}
+.m .meta{font-size:11px;color:var(--mut);margin-top:3px}
+.m.me .meta{text-align:right}
+.sys{align-self:center;font-size:12px;color:var(--mut);background:var(--soft);padding:5px 12px;border-radius:20px;max-width:90%;text-align:center}
+.ev{align-self:center;font-size:12px;color:var(--mut)}
+.day{align-self:center;font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.06em;margin:8px 0}
+.opts{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.composer{border-top:1px solid var(--line);padding-top:12px}
+.to{display:inline-flex;background:var(--soft);border-radius:10px;padding:3px;gap:3px;margin-bottom:8px}
+.to button{border:0;background:none;padding:6px 12px;border-radius:8px;cursor:pointer;font-size:13px;color:var(--mut)}
+.to button.on{background:var(--card);color:var(--fg);box-shadow:var(--shadow);font-weight:600}
+.sendrow{display:flex;gap:8px;align-items:flex-end}
+.sendrow textarea{min-height:48px;max-height:160px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:20px;padding:5px 11px;font-size:13px;cursor:pointer}
+.chip:hover{border-color:var(--acc)}
+.waiting{font-size:12px;color:var(--gold);margin-bottom:6px}
+
+/* ---------- more */
+.agents{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.status{font-size:12px;font-weight:600;padding:3px 9px;border-radius:20px;display:inline-block}
+.status.busy{background:var(--ok-soft);color:var(--ok)} .status.idle{background:var(--soft);color:var(--mut)} .status.off{background:var(--hot-soft);color:var(--hot)}
+.steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.steps li{counter-increment:s;padding:10px 0 10px 42px;position:relative;border-bottom:1px solid var(--line)}
+.steps li:before{content:counter(s);position:absolute;left:0;top:9px;width:28px;height:28px;border-radius:50%;background:var(--acc-soft);color:var(--acc);font-weight:700;display:flex;align-items:center;justify-content:center}
+code.copy{display:block;background:var(--soft);padding:8px 10px;border-radius:8px;font-size:13px;margin:6px 0;word-break:break-word}
+table{width:100%;border-collapse:collapse;font-size:13px} td,th{padding:8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top} th{color:var(--mut);font-weight:500}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--fg);color:var(--bg);padding:11px 18px;border-radius:12px;font-size:14px;z-index:50;display:none;max-width:92vw;box-shadow:0 8px 24px rgba(0,0,0,.2)}
 .toast.err{background:var(--hot);color:#fff}
-.how{border-left:3px solid var(--acc);background:var(--acc2);padding:12px 14px;border-radius:0 8px 8px 0}
-.how ol{margin:6px 0 0;padding-left:18px} .how li{margin:4px 0}
-.copy{display:flex;gap:6px;align-items:flex-start;margin-top:6px} .copy code{flex:1;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:6px 8px;font-size:12px;word-break:break-word}
-.empty{color:var(--mut);font-size:13px;padding:6px 0}
-.who select{width:auto}
+@media(max-width:640px){.toast{bottom:84px}}
+.empty{color:var(--mut);padding:8px 0}
 </style>
 </head>
 <body>
-<header>
-  <div class="bar">
-    <div class="brand">E-Book Factory <small id="syncinfo">…</small></div>
-    <div class="who row"><span class="mut small">Soy</span><select id="who"></select></div>
-    <button class="b" id="btnSync" title="Subir y bajar cambios de GitHub ahora">⟳ Sincronizar</button>
-    <button class="b" id="btnTick" title="Recuperar, crear tareas siguientes, maquetar automáticamente y regenerar informes">▶ Ejecutar ciclo</button>
+
+<!-- =============== LOGIN =============== -->
+<section id="login" class="hidden">
+  <div class="login-box">
+    <div class="logo">E-Book <span>Factory</span></div>
+    <div class="mut">¿Quién eres?</div>
+    <div class="profiles" id="profiles"></div>
+    <div class="pin-step card hidden" id="pinStep">
+      <div id="pinTitle" style="font-weight:600"></div>
+      <div id="nameRow" class="hidden"><label>¿Cómo quieres que te llamemos?</label><input id="loginName" maxlength="40" autocomplete="off"></div>
+      <label id="pinLabel">PIN</label>
+      <input id="pin" class="pin" type="password" inputmode="numeric" maxlength="8" autocomplete="off">
+      <div class="tiny mut" id="pinHelp" style="margin-top:6px"></div>
+      <button class="btn primary big" style="width:100%;margin-top:14px;justify-content:center" id="loginBtn">Entrar</button>
+    </div>
+    <p class="tiny mut" style="margin-top:22px">El PIN se guarda solo en este ordenador, nunca en GitHub.</p>
   </div>
-  <nav id="tabs"></nav>
-</header>
-<main id="view"></main>
-<div class="drawer" id="drawer"><div class="in" id="drawerIn"></div></div>
+</section>
+
+<!-- =============== APP =============== -->
+<section id="app" class="hidden">
+  <header>
+    <div class="top">
+      <div class="logo">E-Book <span>Factory</span></div>
+      <span class="live" title="El panel se actualiza solo"><span class="dot" id="liveDot"></span><span id="liveTxt">Conectando…</span></span>
+      <span class="avatar sm" id="meAvatar" title=""></span>
+      <button class="btn ghost small" id="logout">Salir</button>
+    </div>
+    <nav class="tabs" id="tabs">
+      <button data-t="today">🏠 Hoy</button>
+      <button data-t="library">📚 Librería</button>
+      <button data-t="chat">💬 Chat</button>
+      <button data-t="more">⚙️ Más</button>
+    </nav>
+  </header>
+  <main id="view"></main>
+</section>
+
+<div id="modal" class="modal hidden"><div class="sheet" id="sheet"></div></div>
 <div class="toast" id="toast"></div>
 
 <script>
-const TOKEN = "__PANEL_TOKEN__";
-let S = null, TAB = "home", FILTER = "ALL";
+"use strict";
+let S = null, ME = null, TAB = "today", PROFILE = null, CHAT_TO = "factory", CHAT_BOOK = "", SEARCH = "", OPEN_BOOK = null;
 const $ = s => document.querySelector(s);
 const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
-const fmt = ts => ts ? new Date(ts).toLocaleString("es-ES",{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"}) : "–";
-function me(){ try { return localStorage.getItem("ebf_who") || ""; } catch(e){ return window._who || ""; } }
-function setMe(v){ try { localStorage.setItem("ebf_who", v); } catch(e){ window._who = v; } }
+const store = { get(k){ try { return localStorage.getItem(k); } catch(e){ return null; } }, set(k,v){ try { localStorage.setItem(k,v); } catch(e){} } };
 
-const STATE_LABEL = {IDEA:"Idea",RESEARCH_PENDING:"Investigación pendiente",RESEARCHING:"Investigando",RESEARCH_COMPLETE:"Investigación hecha",BRIEFING:"Haciendo brief",BRIEF_READY:"Brief listo",WRITING_PENDING:"Por escribir",WRITING:"Escribiendo",DRAFT_COMPLETE:"Borrador hecho",TRANSLATION_PENDING:"Por traducir",TRANSLATING:"Traduciendo",TRANSLATED:"Traducido",EDITING:"Editando",EDITED:"Editado",FACT_CHECKING:"Verificando datos",FACT_CHECKED:"Datos verificados",METADATA_IN_PROGRESS:"Título y metadatos",DESIGN_PENDING:"Por diseñar",DESIGNING:"Diseñando",DESIGN_COMPLETE:"Diseño hecho",FORMATTING:"Maquetando",QC_PENDING:"Por revisar (QC)",QC:"En QC",QC_FAILED:"QC fallido",QC_PASSED:"QC superado",FIXING:"Corrigiendo",HUMAN_REVIEW:"Os toca revisar",CHANGES_REQUIRED:"Cambios pedidos",APPROVED:"Aprobado",REJECTED:"Rechazado",READY_FOR_PUBLISHING:"Listo para publicar",PUBLISHED:"Publicado",BLOCKED:"Bloqueado"};
-const stateChip = s => { const c = ["HUMAN_REVIEW","BLOCKED","QC_FAILED"].includes(s)?"hot":["READY_FOR_PUBLISHING","PUBLISHED","APPROVED"].includes(s)?"ok":s==="REJECTED"?"":"acc"; return `<span class="chip ${c}">${esc(STATE_LABEL[s]||s)}</span>`; };
-const ORDER_STATUS = {OPEN:["Pendiente","warn"],IN_PROGRESS:["En curso","acc"],DONE:["Hecha","ok"],REJECTED:["Rechazada","hot"],CANCELLED:["Cancelada",""]};
-const ORDER_KIND = {GENERAL:"Instrucción general",NEW_BOOK:"Crear un libro",RESEARCH_IDEAS:"Buscar ideas de libros",CHANGE:"Cambiar algo de un libro",PRIORITY:"Prioridades",REPORT:"Pedir un informe"};
-const STEP_LABEL = {RESEARCH:"Investigación",BRIEF:"Brief",WRITE:"Escritura",TRANSLATE:"Traducción",EDIT:"Edición",FACT_CHECK:"Verificación de datos",METADATA:"Título y metadatos",DESIGN:"Portada",FORMAT:"Maquetación",QC:"Control de calidad",FIX:"Corrección"};
-
-function toast(msg, err){ const t=$("#toast"); t.textContent=msg; t.className="toast"+(err?" err":""); t.style.display="block"; clearTimeout(t._h); t._h=setTimeout(()=>t.style.display="none", err?7000:3500); }
-
-function editing(){
-  // never wipe a half-typed form: background refreshes only update the header while the user is typing
-  const a = document.activeElement;
-  if(a && ["INPUT","TEXTAREA","SELECT"].includes(a.tagName) && a.id !== "who") return true;
-  return [...document.querySelectorAll("#view textarea, #view input")].some(el => el.value && el.type !== "number" && !el.id.startsWith("nb_words"));
+// ---------- words
+const STEP_DOING = {RESEARCH:"está investigando el mercado para",BRIEF:"está preparando el plan de",WRITE:"está escribiendo",TRANSLATE:"está traduciendo",EDIT:"está editando",FACT_CHECK:"está comprobando los datos de",METADATA:"está creando el título y la descripción de",DESIGN:"está diseñando la portada de",FORMAT:"está maquetando",QC:"está revisando la calidad de",FIX:"está corrigiendo"};
+const STEP_NAME = {RESEARCH:"Investigación",BRIEF:"Plan del libro",WRITE:"Escritura",TRANSLATE:"Traducción",EDIT:"Edición",FACT_CHECK:"Comprobación de datos",METADATA:"Título y descripción",DESIGN:"Portada",FORMAT:"Maquetación",QC:"Control de calidad",FIX:"Corrección"};
+const SHELVES = [["review","Esperan vuestra revisión","Están terminados. Solo falta que digáis sí o no."],["ready","Listos para publicar","Aprobados. Solo queda subirlos a Amazon."],["production","En producción","Los agentes están trabajando en ellos."],["ideas","Ideas","Empezarán cuando haya hueco."],["published","Publicados",""],["stopped","Parados","Necesitan ayuda: mira el motivo dentro."],["discarded","Descartados",""]];
+const STATUS_SENTENCE = s => ({IDEA:"Es una idea. Empezará cuando haya hueco.",RESEARCH_PENDING:"En cola para investigar.",RESEARCHING:"Investigando el mercado.",RESEARCH_COMPLETE:"Investigación hecha, falta el plan.",BRIEFING:"Preparando el plan del libro.",BRIEF_READY:"El plan está listo.",WRITING_PENDING:"En cola para escribir.",WRITING:"Escribiéndose.",DRAFT_COMPLETE:"Borrador terminado, falta editarlo.",TRANSLATION_PENDING:"En cola para traducir.",TRANSLATING:"Traduciéndose.",TRANSLATED:"Traducido, falta editarlo.",EDITING:"Editándose.",EDITED:"Editado, faltan los datos.",FACT_CHECKING:"Comprobando los datos.",FACT_CHECKED:"Datos comprobados.",METADATA_IN_PROGRESS:"Creando título y descripción.",DESIGN_PENDING:"En cola para la portada.",DESIGNING:"Diseñando la portada.",DESIGN_COMPLETE:"Portada hecha, falta maquetar.",FORMATTING:"Maquetando EPUB y PDF.",QC_PENDING:"En cola para el control de calidad.",QC:"En control de calidad.",QC_FAILED:"El control de calidad encontró fallos; se van a corregir.",FIXING:"Corrigiendo fallos.",QC_PASSED:"Ha pasado el control de calidad.",HUMAN_REVIEW:"Terminado. Os toca revisarlo.",CHANGES_REQUIRED:"Pedisteis cambios.",APPROVED:"Aprobado.",REJECTED:"Descartado.",READY_FOR_PUBLISHING:"Listo para subir a Amazon.",PUBLISHED:"Publicado.",BLOCKED:"Parado: necesita ayuda."}[s]||s);
+const EVENT_TXT = e => { const b = e.book_id ? bookTitle(e.book_id) : "";
+  switch(e.type){
+    case "TASK_DONE": return `${e.agent} terminó: ${STEP_NAME[e.step]||e.step} de «${b}»`;
+    case "TASK_CLAIMED": return `${e.agent} empezó: ${STEP_NAME[e.step]||e.step} de «${b}»`;
+    case "TASK_FAILED": return `Un paso de «${b}» falló y se reintentará`;
+    case "TASK_BLOCKED": return `«${b}» se ha parado y necesita ayuda`;
+    case "PACKAGE_READY": return `«${b}» está listo para publicar`;
+    case "BOOK_CREATED": return `Nueva idea: «${e.topic||b}»`;
+    case "HUMAN_DECISION": return `${nameOf(e.by)} ${({APPROVE:"aprobó",REJECT:"descartó",REQUEST_CHANGES:"pidió cambios en"})[e.decision]||e.decision} «${b}»`;
+    default: return null; } };
+const nameOf = id => (S && S.names[id]) || id;
+const bookTitle = id => { const b = S && S.books.find(x=>x.id===id); return b ? b.title : id; };
+const ago = ts => { if(!ts) return ""; const s = (Date.now()-new Date(ts))/1000; if(s<60) return "ahora"; if(s<3600) return `hace ${Math.floor(s/60)} min`; if(s<86400) return `hace ${Math.floor(s/3600)} h`; return new Date(ts).toLocaleDateString("es-ES",{day:"numeric",month:"short"}); };
+const hhmm = ts => new Date(ts).toLocaleTimeString("es-ES",{hour:"2-digit",minute:"2-digit"});
+const initials = n => String(n||"?").split(/\s+/).map(w=>w[0]).join("").slice(0,2).toUpperCase();
+function coverHTML(b, tag){
+  const hue = [...b.id].reduce((a,c)=>a+c.charCodeAt(0),0) % 360;
+  return `<div class="cover">${b.has_cover?`<img loading="lazy" alt="" src="/files/BOOKS/${encodeURIComponent(b.id)}/design/cover.png?v=${encodeURIComponent(b.updated_at)}">`:
+    `<div class="ph" style="background:linear-gradient(160deg,hsl(${hue} 32% 38%),hsl(${(hue+40)%360} 30% 24%))">${esc(b.title)}</div>`}${tag?`<span class="tag">${esc(tag)}</span>`:""}</div>`;
 }
-async function load(soft){
-  try { const r = await fetch("/api/state"); S = await r.json(); if(soft && editing()) renderHeader(); else render(); }
-  catch(e){ $("#syncinfo").textContent = "Sin conexión con el panel (¿está abierto `python factory.py panel`?)"; }
+function toast(msg, err){ const t=$("#toast"); t.textContent=msg; t.className="toast"+(err?" err":""); t.style.display="block"; clearTimeout(t._h); t._h=setTimeout(()=>t.style.display="none", err?6500:3000); }
+
+// ---------- api
+async function api(url, body){
+  const r = await fetch(url, body ? {method:"POST",headers:{"Content-Type":"application/json","X-EBF":"1"},body:JSON.stringify(body),credentials:"same-origin"} : {credentials:"same-origin"});
+  if(r.status === 401){ showLogin(); throw new Error("Inicia sesión"); }
+  const d = await r.json().catch(()=>({}));
+  if(!r.ok || d.error) throw new Error(d.error || ("Error "+r.status));
+  return d;
 }
-async function act(payload, btn){
-  if(!me()){ toast("Elige primero quién eres (arriba a la derecha)", true); return null; }
+async function act(payload, btn, okMsg){
   if(btn) btn.disabled = true;
-  try {
-    const r = await fetch("/api/action",{method:"POST",headers:{"Content-Type":"application/json","X-Panel-Token":TOKEN},body:JSON.stringify({...payload,by:me()})});
-    const d = await r.json();
-    if(!r.ok || d.error){ toast(d.error || "Error", true); return null; }
-    const s = d.sync && d.sync.result;
-    toast("Hecho" + (s==="OK" ? " · subido a GitHub" : s && s!=="desactivado" ? ` · sync: ${s}` : ""));
-    await load(); return d;
-  } catch(e){ toast("Error: "+e, true); return null; }
+  try { const d = await api("/api/action", payload); toast(okMsg || "Hecho"); await load(); return d; }
+  catch(e){ toast(e.message, true); return null; }
   finally { if(btn) btn.disabled = false; }
 }
 
-function attention(){
-  const items = [];
-  S.books.filter(b=>b.status==="HUMAN_REVIEW").forEach(b=>items.push({k:"rev",b,txt:`<b>${esc(b.title)}</b> está listo para que lo reviséis`,btn:`<button class="b p" onclick="openBook('${b.id}')">Revisar</button>`}));
-  S.books.filter(b=>b.status==="BRIEF_READY"&&!b.brief_approved).forEach(b=>items.push({txt:`Brief de <b>${esc(b.title)}</b> (tema sensible) espera aprobación`,btn:`<button class="b" onclick="openBook('${b.id}')">Ver</button>`}));
-  S.tasks.filter(t=>t.status==="BLOCKED").forEach(t=>items.push({txt:`Tarea bloqueada: ${esc(STEP_LABEL[t.type]||t.type)} de ${esc(t.book_id)}<br><span class="small mut">${esc((t.error||"").slice(0,160))}</span>`,btn:`<button class="b" onclick="unblock('${t.task_id}',this)">Desbloquear</button>`}));
-  S.decisions.forEach(d=>items.push({txt:`Pregunta de un agente: ${esc(d.question)}`,btn:`<button class="b" onclick="go('dec')">Responder</button>`}));
-  return items;
+// ---------- login
+async function boot(){
+  const me = await fetch("/api/me").then(r=>r.json());
+  if(me.partner){ ME = me; startApp(); } else { showLogin(me); }
 }
+async function showLogin(me){
+  me = me || await fetch("/api/me").then(r=>r.json());
+  $("#app").classList.add("hidden"); $("#login").classList.remove("hidden"); closeModal();
+  $("#profiles").innerHTML = me.profiles.map(p=>`<div class="card profile" data-p="${esc(p.id)}" data-has="${p.has_pin?1:0}" data-name="${esc(p.name)}">
+    <div class="avatar">${esc(initials(p.name))}</div><div style="font-weight:650;font-size:18px;margin-top:10px">${esc(p.name)}</div>
+    <div class="tiny mut">${p.has_pin?"Entrar":"Primera vez"}</div></div>`).join("");
+  document.querySelectorAll(".profile").forEach(el=>el.onclick=()=>{
+    document.querySelectorAll(".profile").forEach(x=>x.classList.remove("sel")); el.classList.add("sel");
+    PROFILE = {id:el.dataset.p, has:el.dataset.has==="1", name:el.dataset.name};
+    $("#pinStep").classList.remove("hidden");
+    $("#pinTitle").textContent = PROFILE.has ? `Hola, ${PROFILE.name}` : `Bienvenido/a. Vamos a crear tu acceso`;
+    $("#nameRow").classList.toggle("hidden", PROFILE.has);
+    $("#loginName").value = PROFILE.has ? "" : PROFILE.name;
+    $("#pinLabel").textContent = PROFILE.has ? "Tu PIN" : "Crea un PIN (4 a 8 números)";
+    $("#pinHelp").textContent = PROFILE.has ? "" : "Lo usarás cada vez que entres en este ordenador.";
+    $("#pin").value = ""; $("#pin").focus();
+  });
+}
+async function doLogin(){
+  if(!PROFILE) return;
+  const btn = $("#loginBtn"); btn.disabled = true;
+  try { await api("/api/login",{partner:PROFILE.id,pin:$("#pin").value,name:$("#loginName").value}); ME = await fetch("/api/me").then(r=>r.json()); startApp(); }
+  catch(e){ toast(e.message, true); $("#pin").select(); }
+  finally { btn.disabled = false; }
+}
+$("#loginBtn").onclick = doLogin;
+$("#pin").addEventListener("keydown", e=>{ if(e.key==="Enter") doLogin(); });
+$("#logout").onclick = async ()=>{ await api("/api/logout",{}).catch(()=>{}); ME=null; S=null; if(window._es) window._es.close(); showLogin(); };
 
-const TABS = [["home","Inicio"],["books","Libros"],["orders","Órdenes a los agentes"],["dec","Decisiones"],["agents","Agentes"],["log","Actividad"]];
+// ---------- app shell
+function startApp(){
+  $("#login").classList.add("hidden"); $("#app").classList.remove("hidden");
+  $("#meAvatar").textContent = initials(ME.name); $("#meAvatar").title = ME.name;
+  TAB = store.get("ebf_tab") || "today";
+  document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>go(b.dataset.t));
+  load(); connectLive();
+}
+function go(t){ TAB=t; store.set("ebf_tab",t); render(); window.scrollTo(0,0); }
+function connectLive(){
+  if(window._es) window._es.close();
+  const es = new EventSource("/api/stream"); window._es = es;
+  es.onopen = ()=>{ $("#liveDot").classList.add("on"); $("#liveTxt").textContent = "En directo"; };
+  es.onmessage = ()=> load(true);
+  es.onerror = ()=>{ $("#liveDot").classList.remove("on"); $("#liveTxt").textContent = "Reconectando…"; };
+}
+setInterval(()=>{ if(ME) load(true); }, 45000);
+
+function typing(){
+  const a = document.activeElement;
+  if(a && ["INPUT","TEXTAREA","SELECT"].includes(a.tagName)) return true;
+  return [...document.querySelectorAll("#view textarea, #sheet textarea, #sheet input[type=text]")].some(el=>el.value.trim());
+}
+async function load(soft){
+  try { S = await api("/api/state"); }
+  catch(e){ return; }
+  if(soft && typing()){ renderTabs(); if(TAB==="chat") renderMessages(); return; }
+  render();
+  if(OPEN_BOOK && !$("#modal").classList.contains("hidden") && !typing()) openBook(OPEN_BOOK, true);
+}
+function unread(){ const seen = store.get("ebf_chat_seen") || ""; return S.chat.filter(m=>m.ts>seen && m.from!==S.me && m.role!=="system").length; }
 function renderTabs(){
-  const att = attention().length, dec = S.decisions.length;
-  $("#tabs").innerHTML = TABS.map(([k,l])=>`<button class="${TAB===k?"on":""}" onclick="go('${k}')">${l}${k==="home"&&att?`<span class="n">${att}</span>`:""}${k==="dec"&&dec?`<span class="n">${dec}</span>`:""}</button>`).join("");
+  document.querySelectorAll("#tabs button").forEach(b=>{
+    b.classList.toggle("on", b.dataset.t===TAB);
+    const base = {today:"🏠 Hoy",library:"📚 Librería",chat:"💬 Chat",more:"⚙️ Más"}[b.dataset.t];
+    const n = b.dataset.t==="today" ? S.attention.length : b.dataset.t==="chat" && TAB!=="chat" ? unread() : 0;
+    b.innerHTML = base + (n?`<span class="badge">${n}</span>`:"");
+  });
 }
-function go(t){ TAB=t; render(); window.scrollTo(0,0); }
+function render(){ if(!S) return; renderTabs(); ({today:vToday,library:vLibrary,chat:vChat,more:vMore})[TAB](); }
 
-function renderHeader(){
-  const sy = S.sync;
-  $("#syncinfo").textContent = sy.enabled ? `GitHub: ${sy.result==="OK"?"sincronizado":sy.result} · ${fmt(sy.at)}` : "Sincronización con GitHub desactivada";
+// ---------- HOY
+function vToday(){
+  const h = new Date().getHours(), hello = h<13?"Buenos días":h<20?"Buenas tardes":"Buenas noches";
+  const cnt = k => S.books.filter(b=>b.shelf===k).length;
+  const live = S.live.map(w=>{
+    const pct = w.words && w.target ? Math.min(100, Math.round(w.words/w.target*100)) : null;
+    return `<div class="card worker"><div class="avatar bot">🤖</div><div class="what">
+      <div><b>${esc(w.agent)}</b> ${esc(STEP_DOING[w.step]||w.step)} <b>«${esc(w.title)}»</b></div>
+      <div class="small mut">Empezó ${ago(w.started_at)}${w.words!=null?` · ${w.words.toLocaleString("es-ES")}${w.target?` de ${w.target.toLocaleString("es-ES")}`:""} palabras`:""}</div>
+      ${pct!=null?`<div class="bar"><i style="width:${pct}%"></i></div>`:""}</div></div>`; }).join("");
+  const need = S.attention.map(a=>{
+    if(a.kind==="review") return `<div class="card need"><div class="txt"><b>«${esc(a.title)}» está terminado.</b><div class="small mut">Revisadlo y decidid si se publica.</div></div><button class="btn primary" onclick="openBook('${a.book_id}')">Revisar</button></div>`;
+    if(a.kind==="brief") return `<div class="card need"><div class="txt"><b>El plan de «${esc(a.title)}» necesita vuestro visto bueno.</b><div class="small mut">Es un tema delicado (salud, dinero, leyes…).</div></div><button class="btn primary" onclick="openBook('${a.book_id}')">Ver plan</button></div>`;
+    if(a.kind==="question") return `<div class="card need"><div class="txt"><b>${esc(a.by)} pregunta:</b> ${esc(a.question)}
+      <div class="opts">${a.options.map(o=>`<button class="btn" onclick='answerQ(${JSON.stringify(a.decision_id)},${esc(JSON.stringify(o))},this)'>${esc(o)}</button>`).join("")}<button class="btn ghost" onclick="go('chat')">Responder en el chat</button></div></div></div>`;
+    if(a.kind==="blocked") return `<div class="card need hot"><div class="txt"><b>«${esc(bookTitle(a.book_id))}» se ha parado</b> en ${esc(STEP_NAME[a.step]||a.step)}.<div class="small mut">${esc(a.error)}</div></div><button class="btn" onclick="unblock('${a.task_id}',this)">Volver a intentarlo</button></div>`;
+    return "";
+  }).join("");
+  const feed = S.events.map(e=>({e,t:EVENT_TXT(e)})).filter(x=>x.t).slice(0,8);
+  $("#view").innerHTML = `
+    <h1>${hello}, ${esc(nameOf(S.me))}</h1>
+    <div class="mut">${S.live.length?`Ahora mismo ${S.live.length===1?"hay 1 agente trabajando":`hay ${S.live.length} agentes trabajando`}.`:"La fábrica está en pausa: ningún agente trabajando ahora mismo."}</div>
+    <h2>Ahora mismo</h2>
+    <div class="now">${live || `<div class="card"><b>Ningún agente está trabajando.</b> <span class="mut">${S.queue?`Hay ${S.queue} ${S.queue===1?"tarea esperando":"tareas esperando"}.`:"No hay tareas en cola."}</span>
+      <div class="small mut" style="margin-top:6px">Los agentes son sesiones de Claude. <a href="#" onclick="go('more');return false">Cómo encender uno</a></div></div>`}</div>
+    <h2>Te necesitamos</h2>
+    <div class="now">${need || `<div class="card mut">Nada pendiente. Todo está en manos de los agentes. 👌</div>`}</div>
+    <h2>Vuestros libros</h2>
+    <div class="counts">
+      ${[["review","Para revisar"],["production","En producción"],["ready","Listos para publicar"],["published","Publicados"]].map(([k,l])=>`<button class="card count" onclick="go('library')"><div class="n">${cnt(k)}</div><div class="small mut">${l}</div></button>`).join("")}
+    </div>
+    <h2>Lo último que ha pasado</h2>
+    <div class="card feed">${feed.map(x=>`<div class="it"><span class="when">${ago(x.e.ts)}</span><span>${esc(x.t)}</span></div>`).join("") || `<div class="empty">Todavía no ha pasado nada.</div>`}</div>`;
+}
+async function answerQ(id, ans, btn){ await act({action:"answer_question",id,answer:ans}, btn, "Respuesta enviada"); }
+async function unblock(task, btn){ await act({action:"unblock",task,note:"Reintento pedido desde el panel"}, btn, "Lo volverá a intentar el próximo agente"); }
+
+// ---------- LIBRERÍA
+function vLibrary(){
+  const q = SEARCH.toLowerCase();
+  const list = S.books.filter(b=>!q || (b.title+" "+b.topic+" "+b.id).toLowerCase().includes(q));
+  const shelves = SHELVES.map(([k,title,sub])=>{
+    const items = list.filter(b=>b.shelf===k);
+    if(!items.length) return "";
+    return `<div class="shelf-head"><h2>${title} <span class="mut small">(${items.length})</span></h2></div>${sub?`<div class="small mut" style="margin:-6px 0 12px">${sub}</div>`:""}
+      <div class="shelf">${items.map(b=>{
+        const tag = k==="production" ? (S.journey[b.stage]||"") : k==="review" ? "Revisar" : "";
+        const pct = b.stage!=null ? Math.round((b.stage+1)/S.journey.length*100) : 0;
+        return `<button class="bk" onclick="openBook('${b.id}')">${coverHTML(b, tag)}<div class="t">${esc(b.title)}</div>
+          <div class="s">${esc(b.language)}${b.assigned_agent?` · ✍️ ${esc(b.assigned_agent)}`:""}</div>
+          ${k==="production"?`<div class="bar" title="${pct}%"><i style="width:${pct}%"></i></div>`:""}</button>`; }).join("")}</div>`;
+  }).join("");
+  $("#view").innerHTML = `
+    <div class="toolbar"><h1 style="margin-right:auto">Librería</h1>
+      <input id="search" placeholder="Buscar un libro…" value="${esc(SEARCH)}">
+      <button class="btn primary" onclick="newIdea()">+ Nueva idea de libro</button></div>
+    ${shelves || `<div class="card" style="margin-top:20px">Todavía no hay libros. Pulsa <b>+ Nueva idea de libro</b> o pídeselo al agente jefe en el chat.</div>`}`;
+  const s = $("#search"); s.oninput = ()=>{ SEARCH = s.value; const pos = s.selectionStart; vLibrary(); const n=$("#search"); n.focus(); n.setSelectionRange(pos,pos); };
+}
+
+function newIdea(){
+  OPEN_BOOK = null;
+  openModal(`<button class="btn ghost close" onclick="closeModal()">✕</button>
+    <h1>Nueva idea de libro</h1><div class="mut">Escríbela tal cual. Un agente investigará si merece la pena antes de escribirla.</div>
+    <label>¿De qué va el libro?</label><input id="ni_topic" type="text" placeholder="p. ej. Recetas rápidas para padres con poco tiempo">
+    <div class="decide"><div><label>Idioma</label><select id="ni_lang"><option value="en-US">Inglés (EE. UU.)</option><option value="en-GB">Inglés (Reino Unido)</option><option value="es-ES">Español (España)</option><option value="es-MX">Español (México)</option></select></div>
+    <div><label>¿Es urgente?</label><select id="ni_prio"><option value="NORMAL">Normal</option><option value="HIGH">Sí, va primero</option><option value="LOW">No, cuando haya tiempo</option></select></div></div>
+    <label>¿Para quién es? (opcional)</label><input id="ni_aud" type="text" placeholder="p. ej. padres primerizos que trabajan">
+    <label>¿Algo más que deba saber el agente? (opcional)</label><textarea id="ni_notes"></textarea>
+    <div style="margin-top:18px;display:flex;gap:10px;justify-content:flex-end"><button class="btn" onclick="closeModal()">Cancelar</button><button class="btn primary big" id="ni_go">Añadir idea</button></div>`);
+  $("#ni_topic").focus();
+  $("#ni_go").onclick = async e=>{
+    if(!$("#ni_topic").value.trim()){ toast("Escribe de qué va el libro", true); return; }
+    const d = await act({action:"new_book",topic:$("#ni_topic").value,language:$("#ni_lang").value,priority:$("#ni_prio").value,audience:$("#ni_aud").value,notes:$("#ni_notes").value}, e.target, "Idea añadida a la librería");
+    if(d){ closeModal(); go("library"); }
+  };
+}
+
+async function openBook(id, silent){
+  OPEN_BOOK = id;
+  if(!silent) openModal(`<div class="mut">Abriendo…</div>`);
+  let d; try { d = await api("/api/book/"+encodeURIComponent(id)); } catch(e){ toast(e.message,true); return; }
+  const b = d.book, sum = S.books.find(x=>x.id===id) || {}, f = p => `/files/BOOKS/${encodeURIComponent(b.id)}/${p}`;
+  const has = p => d.files.includes(p);
+  const pdf = b.files && b.files.pdf, epub = b.files && b.files.epub;
+  const stage = d.stage;
+  const journey = S.journey.map((j,i)=>`<div class="step ${stage!=null&&i<stage?"done":""} ${i===stage?"cur":""}"><div class="c"></div>${esc(j)}</div>`).join("");
+  const live = S.live.find(w=>w.book_id===id);
+  let main = "";
+  if(b.status==="HUMAN_REVIEW"){
+    main = `<div class="card" style="border:2px solid var(--acc)"><h2 style="margin-top:0">¿Lo publicamos?</h2>
+      <div class="small mut">Léelo (PDF) y decide. Si lo aprobáis, se prepara el paquete para subirlo a Amazon.</div>
+      <div class="decide"><div><label>Autor</label><input id="ap_author" type="text" value="${esc(b.author==="TBD-PEN-NAME"?S.default_author:b.author)}"></div>
+      <div><label>Precio en ${esc((b.price_suggested||{}).currency||"USD")} (sugerido: ${esc((b.price_suggested||{}).amount??"–")})</label><input id="ap_price" type="text" placeholder="${esc((b.price_suggested||{}).amount??"")}"></div></div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:16px">
+        <button class="btn primary big" id="bApprove">✓ Aprobar</button>
+        <button class="btn big" id="bChanges">✎ Pedir cambios</button>
+        <button class="btn danger big" id="bReject">Descartar</button></div>
+      <div id="changesBox" class="hidden"><label>¿Qué hay que cambiar?</label><textarea id="ch_notes" placeholder="Explícalo como se lo dirías a un editor"></textarea>
+        <label>¿Desde qué punto hay que rehacerlo?</label><select id="ch_from"><option value="EDIT">Solo retocar el texto (edición)</option><option value="WRITE">Reescribirlo</option><option value="DESIGN">Solo la portada</option><option value="METADATA">Solo título y descripción</option><option value="RESEARCH">Empezar de cero (otro enfoque)</option></select>
+        <div style="margin-top:12px"><button class="btn primary" id="bSendChanges">Enviar cambios</button></div></div></div>`;
+  } else if(b.status==="BRIEF_READY" && !b.brief_approved){
+    main = `<div class="card" style="border:2px solid var(--gold)"><h2 style="margin-top:0">Este tema es delicado</h2><div>Antes de escribirlo, revisad el plan del libro.</div>
+      <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap"><a class="btn" href="${f("brief.md")}" target="_blank">Leer el plan</a><button class="btn primary" id="bBrief">Adelante, que lo escriban</button><button class="btn danger" id="bReject">Descartar</button></div></div>`;
+  } else if(b.status==="READY_FOR_PUBLISHING"){
+    const pk = b.files.publishing_package;
+    main = `<div class="card" style="border:2px solid var(--ok)"><h2 style="margin-top:0">Listo para subir a Amazon</h2>
+      <div class="small mut">Descarga estos archivos y sigue la lista de pasos. La fábrica nunca publica sola.</div>
+      <div class="files" style="margin-top:10px">${d.files.filter(p=>p.startsWith(pk+"/")).map(p=>`<a href="${f(p)}" target="_blank" download>⬇ ${esc(p.split("/").pop())}</a>`).join("")}</div>
+      <label>Cuando lo hayas publicado, pega aquí el enlace</label><div style="display:flex;gap:8px"><input id="pub_url" type="text" placeholder="https://www.amazon.com/…"><button class="btn primary" id="bPublished">Ya está publicado</button></div></div>`;
+  } else if(live){
+    main = `<div class="card"><div class="worker"><div class="avatar bot">🤖</div><div class="what"><b>${esc(live.agent)}</b> ${esc(STEP_DOING[live.step]||live.step)} este libro ahora mismo.
+      <div class="small mut">Empezó ${ago(live.started_at)}${live.words!=null?` · ${live.words.toLocaleString("es-ES")} palabras escritas`:""}</div></div></div></div>`;
+  } else if(b.status==="BLOCKED"){
+    main = `<div class="card need hot"><div class="txt"><b>Este libro se ha parado.</b><div class="small mut">Habla con el agente jefe en el chat o pide que lo vuelva a intentar desde la pantalla Hoy.</div></div></div>`;
+  }
+  $("#sheet").innerHTML = `<button class="btn ghost close" onclick="closeModal()">✕</button>
+    <div class="bookhead"><div>${coverHTML({...sum,...b,has_cover:has("design/cover.png")})}</div>
+      <div><div class="tiny mut">${esc(b.id)} · ${esc(b.language)}${b.translated_from?` · traducción de ${esc(b.translated_from)}`:""}</div>
+        <h1 style="margin-top:4px">${esc(b.title)}</h1><div class="mut">${esc(b.subtitle||"")}</div>
+        <div style="margin-top:10px">${b.author&&b.author!=="TBD-PEN-NAME"?`de <b>${esc(b.author)}</b> · `:""}${b.page_count?`${b.page_count} páginas · `:""}<span>${esc(STATUS_SENTENCE(b.status))}</span></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px">
+          ${pdf?`<a class="btn" href="${f(pdf)}" target="_blank">📖 Leer el libro</a>`:""}
+          ${epub?`<a class="btn" href="${f(epub)}" download>⬇ EPUB</a>`:""}
+          <button class="btn" onclick="talkAbout('${b.id}')">💬 Hablar de este libro</button></div>
+      </div></div>
+    <div class="journey">${journey}</div>
+    ${main?`<div style="margin-top:16px">${main}</div>`:""}
+    ${d.description?`<h2>Descripción para la tienda</h2><div class="card small" style="white-space:pre-wrap">${esc(d.description)}</div>`:""}
+    ${b.flags&&b.flags.length?`<h2>Avisos</h2>${b.flags.map(x=>`<div class="card small" style="margin-bottom:8px">⚠️ ${esc(x.message)}</div>`).join("")}`:""}
+    <details><summary>Más opciones</summary><div class="decide" style="margin-top:8px">
+      <div><label>Prioridad</label><select id="o_prio">${[["CRITICAL","Urgentísimo"],["HIGH","Alta"],["NORMAL","Normal"],["LOW","Baja"]].map(([v,l])=>`<option value="${v}" ${v===b.priority?"selected":""}>${l}</option>`).join("")}</select></div>
+      <div><label>Hacer también en otro idioma</label><div style="display:flex;gap:8px"><select id="o_lang">${S.languages.filter(l=>l!==b.language).map(l=>`<option>${l}</option>`).join("")}</select><button class="btn" id="bTranslate">Crear</button></div></div></div></details>
+    <details><summary>Historial y archivos</summary>
+      <div class="hist" style="margin-top:8px">${d.history.slice().reverse().map(h=>`<div><span class="mut">${ago(h.ts)}</span> · ${esc(STATUS_SENTENCE(h.to))} <span class="mut tiny">(${esc(h.agent)})</span></div>`).join("")}</div>
+      <div class="files" style="margin-top:12px">${d.files.filter(p=>!p.startsWith("releases/")).map(p=>`<a href="${f(p)}" target="_blank">${esc(p)}</a>`).join("")}</div></details>`;
+  const on = (sel, fn) => { const el = $(sel); if(el) el.onclick = fn; };
+  on("#bApprove", async e=>{ if(await act({action:"approve",id,author:$("#ap_author").value,price:$("#ap_price").value}, e.target, "¡Aprobado! Paquete listo para publicar")) openBook(id,true); });
+  on("#bChanges", ()=>{ $("#changesBox").classList.remove("hidden"); $("#ch_notes").focus(); });
+  on("#bSendChanges", async e=>{ const n=$("#ch_notes").value.trim(); if(!n){ toast("Explica qué hay que cambiar",true); return; } if(await act({action:"request_changes",id,notes:n,restart_at:$("#ch_from").value}, e.target, "Cambios enviados a los agentes")) closeModal(); });
+  on("#bReject", async e=>{ if(!confirm("¿Descartar este libro? Saldrá de la producción.")) return; if(await act({action:"reject",id,notes:"Descartado desde el panel"}, e.target, "Libro descartado")) closeModal(); });
+  on("#bBrief", async e=>{ if(await act({action:"approve_brief",id}, e.target, "Plan aprobado: empieza la escritura")) openBook(id,true); });
+  on("#bPublished", async e=>{ if(await act({action:"mark_published",id,platform:"KDP",url:$("#pub_url").value}, e.target, "¡Enhorabuena! Marcado como publicado")) openBook(id,true); });
+  on("#bTranslate", async e=>{ await act({action:"translate",id,to:$("#o_lang").value}, e.target, "Edición en otro idioma pedida"); });
+  const pr = $("#o_prio"); if(pr) pr.onchange = ()=>act({action:"set_priority",id,priority:pr.value}, null, "Prioridad cambiada");
+}
+function talkAbout(id){ CHAT_BOOK = id; closeModal(); go("chat"); setTimeout(()=>{ const t=$("#msg"); if(t){ t.focus(); } },50); }
+function openModal(h){ $("#sheet").innerHTML = h; $("#modal").classList.remove("hidden"); document.body.style.overflow="hidden"; }
+function closeModal(){ OPEN_BOOK = null; $("#modal").classList.add("hidden"); document.body.style.overflow=""; }
+$("#modal").addEventListener("click", e=>{ if(e.target.id==="modal") closeModal(); });
+document.addEventListener("keydown", e=>{ if(e.key==="Escape") closeModal(); });
+
+// ---------- CHAT
+function vChat(){
+  const other = Object.keys(S.names).find(p=>p!==S.me);
+  const books = S.books.filter(b=>!["discarded","published"].includes(b.shelf));
+  $("#view").innerHTML = `<div class="chatwrap">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:8px"><div class="avatar bot sm">🤖</div><div><b>Chat de la fábrica</b>
+      <div class="tiny mut">Te responde el agente jefe (${esc(S.main_agent)}) o el primer agente que esté trabajando. ${esc(nameOf(other))} también lo ve todo.</div></div></div>
+    <div class="msgs" id="msgs"></div>
+    <div class="composer">
+      <div id="waiting" class="waiting"></div>
+      <div class="to"><button data-to="factory">🤖 Al agente jefe</button><button data-to="${esc(other)}">👤 A ${esc(nameOf(other))}</button></div>
+      <div class="chips" id="chips"></div>
+      <div class="sendrow"><textarea id="msg" rows="2" placeholder="Escribe un mensaje… (Enter para enviar, Mayús+Enter para salto de línea)"></textarea>
+        <button class="btn primary big" id="send">Enviar</button></div>
+      <div style="margin-top:6px;display:flex;gap:8px;align-items:center"><span class="tiny mut">Sobre el libro:</span>
+        <select id="aboutBook" style="width:auto;padding:5px 8px;font-size:13px"><option value="">— ninguno —</option>${books.map(b=>`<option value="${b.id}" ${b.id===CHAT_BOOK?"selected":""}>${esc(b.title.slice(0,50))}</option>`).join("")}</select></div>
+    </div></div>`;
+  document.querySelectorAll(".to button").forEach(b=>{ b.classList.toggle("on", b.dataset.to===CHAT_TO); b.onclick=()=>{ CHAT_TO=b.dataset.to; vChatChips(); document.querySelectorAll(".to button").forEach(x=>x.classList.toggle("on",x===b)); }; });
+  $("#aboutBook").onchange = e=>{ CHAT_BOOK = e.target.value; };
+  $("#send").onclick = sendMsg;
+  $("#msg").addEventListener("keydown", e=>{ if(e.key==="Enter" && !e.shiftKey){ e.preventDefault(); sendMsg(); } });
+  vChatChips(); renderMessages(true);
+}
+function vChatChips(){
+  const c = $("#chips"); if(!c) return;
+  const sug = CHAT_TO==="factory" ? ["¿Cómo va todo?","Busca 3 ideas de libros nuevos","¿Qué libro va más avanzado?","Prioriza los libros en español"] : ["¿Lo revisamos hoy?","He aprobado un libro","Hablamos en la reunión"];
+  c.innerHTML = sug.map(s=>`<button class="chip">${esc(s)}</button>`).join("");
+  c.querySelectorAll(".chip").forEach(b=>b.onclick=()=>{ $("#msg").value = b.textContent; $("#msg").focus(); });
+}
+function renderMessages(scroll){
+  const box = $("#msgs"); if(!box) return;
+  const atBottom = box.scrollHeight - box.scrollTop - box.clientHeight < 80;
+  const items = S.chat.map(m=>({ts:m.ts, m}));
+  S.events.forEach(e=>{ const t = ["TASK_DONE","PACKAGE_READY","TASK_BLOCKED","BOOK_CREATED","HUMAN_DECISION"].includes(e.type) ? EVENT_TXT(e) : null; if(t) items.push({ts:e.ts, ev:t}); });
+  items.sort((a,b)=>a.ts<b.ts?-1:1);
+  let lastDay = "", html = "";
+  for(const it of items.slice(-250)){
+    const day = new Date(it.ts).toLocaleDateString("es-ES",{weekday:"long",day:"numeric",month:"long"});
+    if(day!==lastDay){ html += `<div class="day">${esc(day)}</div>`; lastDay = day; }
+    if(it.ev){ html += `<div class="ev">· ${esc(it.ev)} · ${hhmm(it.ts)}</div>`; continue; }
+    const m = it.m;
+    if(m.role==="system"){ html += `<div class="sys">${esc(m.text)}</div>`; continue; }
+    const mine = m.from===S.me, cls = mine ? "me" : m.role;
+    const who = m.role==="agent" ? `🤖 ${m.from}` : nameOf(m.from);
+    const to = m.role==="partner" && m.to && m.to!=="factory" ? ` → ${nameOf(m.to)}` : m.role==="partner" && m.to==="factory" ? " → agente jefe" : "";
+    const about = m.book_id ? ` · sobre «${bookTitle(m.book_id)}»` : "";
+    const prog = m.kind==="progress" ? "📈 " : m.kind==="question" ? "❓ " : "";
+    html += `<div class="m ${cls}">${mine?"":`<div class="avatar sm ${m.role==="agent"?"bot":""}">${m.role==="agent"?"🤖":esc(initials(nameOf(m.from)))}</div>`}
+      <div><div class="who">${esc(who)}${esc(to)}</div><div class="bub">${prog}${esc(m.text)}${m.open&&m.options.length?`<div class="opts">${m.options.map(o=>`<button class="btn" onclick='answerQ(${JSON.stringify(m.decision_id)},${esc(JSON.stringify(o))},this)'>${esc(o)}</button>`).join("")}</div>`:""}</div>
+      <div class="meta">${hhmm(m.ts)}${esc(about)}</div></div></div>`;
+  }
+  box.innerHTML = html || `<div class="sys">Aquí hablaréis con el agente jefe y entre vosotros. Prueba: «¿Cómo va todo?»</div>`;
+  if(scroll || atBottom) box.scrollTop = box.scrollHeight;
+  const pend = S.pending_orders.filter(o=>o.chat_msg).length;
+  const w = $("#waiting"); if(w) w.textContent = pend ? `⏳ ${pend} ${pend===1?"mensaje esperando":"mensajes esperando"} respuesta de un agente${S.live.length?"":" (ningún agente encendido ahora mismo)"}` : "";
+  if(S.chat.length) store.set("ebf_chat_seen", S.chat[S.chat.length-1].ts);
   renderTabs();
 }
-function render(){
-  if(!S) return;
-  const sel = $("#who");
-  sel.innerHTML = `<option value="">— elige —</option>` + S.partners.map(p=>`<option ${me()===p?"selected":""}>${esc(p)}</option>`).join("");
-  renderHeader();
-  ({home:vHome,books:vBooks,orders:vOrders,dec:vDec,agents:vAgents,log:vLog})[TAB]();
+async function sendMsg(){
+  const t = $("#msg"), text = t.value.trim(); if(!text) return;
+  const btn = $("#send"); btn.disabled = true;
+  try { await api("/api/action",{action:"chat_send",text,to:CHAT_TO,book:$("#aboutBook").value}); t.value=""; await load(); renderMessages(true); }
+  catch(e){ toast(e.message,true); }
+  finally { btn.disabled = false; }
 }
 
-function vHome(){
-  const g = S.groups, hot = ["HUMAN REVIEW","BLOCKED","FAILED"];
-  const att = attention();
-  const openOrders = S.orders.filter(o=>["OPEN","IN_PROGRESS"].includes(o.status));
-  $("#view").innerHTML = `
-  <h2>Cadena de producción</h2>
-  <div class="grid tiles">${Object.entries(g).map(([k,v])=>`<div class="card tile ${hot.includes(k)&&v?"hot":""}"><div class="v">${v}</div><div class="l">${esc(k)}</div></div>`).join("")}</div>
-  <div class="grid two" style="margin-top:14px">
-    <div><h2>Necesita vuestra atención</h2><div class="list">${att.length?att.map(i=>`<div class="card row"><div>${i.txt}</div>${i.btn}</div>`).join(""):`<div class="card empty">Nada pendiente. La fábrica puede seguir sola.</div>`}</div></div>
-    <div><h2>Órdenes abiertas a los agentes</h2><div class="list">${openOrders.length?openOrders.slice(0,6).map(orderCard).join(""):`<div class="card empty">No hay órdenes abiertas. <a href="#" onclick="go('orders');return false">Dar una orden</a></div>`}</div>
-    <h2>Últimos 7 días</h2><div class="card kv">
-      <div>Libros creados</div><div>${S.week.books_created}</div><div>Libros terminados</div><div>${S.week.books_completed}</div>
-      <div>Tareas hechas</div><div>${S.week.tasks_completed}</div><div>Tareas fallidas</div><div>${S.week.tasks_failed}</div></div></div>
-  </div>`;
-}
-
-function vBooks(){
-  const groups = ["ALL",...Object.keys(S.groups).filter(k=>k!=="TOTAL BOOKS"&&S.groups[k])];
-  const list = S.books.filter(b=>FILTER==="ALL"||b.group===FILTER);
-  $("#view").innerHTML = `
-  <div class="row"><h2>Libros (${S.books.length})</h2><button class="b p" onclick="newBookForm()">+ Nueva idea de libro</button></div>
-  <div class="filters">${groups.map(k=>`<button class="b ${FILTER===k?"on":""}" onclick="FILTER='${k}';vBooks()">${k==="ALL"?"Todos":esc(k)}</button>`).join("")}</div>
-  <div class="grid books">${list.map(b=>`
-    <div class="card book" onclick="openBook('${b.id}')">
-      <div class="cv">${b.has_cover?`<img loading="lazy" src="/files/BOOKS/${b.id}/design/cover.png?${encodeURIComponent(b.updated_at)}" alt="">`:"Sin portada todavía"}</div>
-      <div class="meta"><div class="small mut mono">${esc(b.id)} · ${esc(b.language)}</div><div class="t">${esc(b.title)}</div>${stateChip(b.status)}
-      ${b.priority!=="NORMAL"?` <span class="chip ${b.priority==="LOW"?"":"warn"}">${esc(b.priority)}</span>`:""}${b.assigned_agent?`<div class="small mut" style="margin-top:6px">Trabajando: ${esc(b.assigned_agent)}</div>`:""}</div>
-    </div>`).join("")||`<div class="empty">No hay libros en este grupo.</div>`}</div>`;
-}
-
-function newBookForm(){
-  openDrawer(`<h2>Nueva idea de libro</h2>
-  <p class="mut small">Queda como IDEA. Cuando haya hueco en la fábrica, un agente empezará a investigarla.</p>
-  <div class="form">
-    <div class="full"><label>Tema</label><input id="nb_topic" placeholder="p. ej. Meal prep for busy parents"></div>
-    <div><label>Idioma</label><select id="nb_lang">${S.languages.map(l=>`<option>${l}</option>`).join("")}</select></div>
-    <div><label>Prioridad</label><select id="nb_prio"><option>NORMAL</option><option>HIGH</option><option>CRITICAL</option><option>LOW</option></select></div>
-    <div><label>Nicho</label><input id="nb_niche"></div>
-    <div><label>Público</label><input id="nb_aud"></div>
-    <div><label>Palabras objetivo</label><input id="nb_words" type="number" value="6000"></div>
-    <div><label>Crear también en</label><select id="nb_tl" multiple size="3">${S.languages.map(l=>`<option>${l}</option>`).join("")}</select></div>
-    <div class="full"><label>Notas para los agentes</label><textarea id="nb_notes"></textarea></div>
-  </div><div class="row" style="margin-top:12px;justify-content:flex-end"><button class="b" onclick="closeDrawer()">Cancelar</button><button class="b p" onclick="createBook(this)">Crear idea</button></div>`);
-}
-async function createBook(btn){
-  const tl=[...$("#nb_tl").selectedOptions].map(o=>o.value);
-  const d = await act({action:"new_book",topic:$("#nb_topic").value,language:$("#nb_lang").value,priority:$("#nb_prio").value,niche:$("#nb_niche").value,audience:$("#nb_aud").value,words:$("#nb_words").value,target_languages:tl,notes:$("#nb_notes").value},btn);
-  if(d) closeDrawer();
-}
-
-async function openBook(id){
-  openDrawer(`<p class="mut">Cargando…</p>`);
-  const r = await fetch("/api/book/"+encodeURIComponent(id)); const d = await r.json();
-  if(d.error){ $("#drawerIn").innerHTML = `<p>${esc(d.error)}</p>`; return; }
-  const b = d.book, f = p => `/files/BOOKS/${b.id}/${p}`;
-  const price = b.price_suggested ? `${b.price_suggested.amount} ${b.price_suggested.currency} (${b.price_suggested.basis})` : "–";
-  let actions = "";
-  if(b.status==="HUMAN_REVIEW") actions = `
-    <div class="card"><h2>Vuestra decisión</h2>
-      <div class="form"><div><label>Autor</label><input id="ap_author" value="${esc(b.author==="TBD-PEN-NAME"?S.default_author:b.author)}"></div>
-      <div><label>Precio (vacío = sugerido)</label><input id="ap_price" placeholder="${esc(b.price_suggested?b.price_suggested.amount:"")}"></div>
-      <div class="full"><label>Notas</label><textarea id="ap_notes" placeholder="Opcional al aprobar. Obligatorio si pedís cambios: explicad qué cambiar."></textarea></div>
-      <div><label>Si pedís cambios, rehacer desde</label><select id="ap_restart">${S.steps.filter(s=>s!=="FORMAT").map(s=>`<option value="${s}" ${s==="EDIT"?"selected":""}>${esc(STEP_LABEL[s]||s)}</option>`).join("")}</select></div></div>
-      <div class="row" style="margin-top:12px;justify-content:flex-start">
-        <button class="b p" onclick="decideBook('approve','${b.id}',this)">✓ Aprobar</button>
-        <button class="b" onclick="decideBook('request_changes','${b.id}',this)">↺ Pedir cambios</button>
-        <button class="b d" onclick="decideBook('reject','${b.id}',this)">✕ Rechazar</button></div></div>`;
-  else if(b.status==="BRIEF_READY" && !b.brief_approved) actions = `<div class="card row"><div>Tema sensible: el brief necesita vuestra aprobación antes de escribir.<br><a class="small" href="${f("brief.md")}" target="_blank">Leer brief</a></div><button class="b p" onclick="act({action:'approve_brief',id:'${b.id}'},this).then(()=>openBook('${b.id}'))">Aprobar brief</button></div>`;
-  else if(b.status==="READY_FOR_PUBLISHING") actions = `<div class="card"><h2>Tras subirlo a la tienda</h2><div class="form"><div><label>Plataforma</label><input id="mp_plat" value="KDP"></div><div><label>URL</label><input id="mp_url"></div></div>
-    <div class="row" style="margin-top:10px;justify-content:flex-start"><a class="b" href="${f(b.files.publishing_package+"/CHECKLIST.md")}" target="_blank">Ver checklist</a><button class="b p" onclick="act({action:'mark_published',id:'${b.id}',platform:$('#mp_plat').value,url:$('#mp_url').value},this).then(()=>openBook('${b.id}'))">Marcar como publicado</button></div></div>`;
-  const files = d.files.filter(p=>/\.(md|pdf|epub|png|jpg|json)$/.test(p) && !p.startsWith("releases/")||/PUBLISHING_PACKAGE\/[^/]+$/.test(p));
-  $("#drawerIn").innerHTML = `
-  <div class="row"><div><div class="small mut mono">${esc(b.id)} · v${esc(b.version)}</div><h2 style="margin:4px 0">${esc(b.title)}</h2><div class="mut">${esc(b.subtitle||"")}</div></div><button class="b" onclick="closeDrawer()">Cerrar</button></div>
-  <div class="grid two" style="margin:14px 0;grid-template-columns:150px 1fr">
-    <div>${(d.files.includes("design/cover.png"))?`<img src="${f("design/cover.png")}?${encodeURIComponent(b.updated_at)}" style="width:100%;border-radius:6px;border:1px solid var(--line)">`:`<div class="card empty">Sin portada</div>`}</div>
-    <div class="kv"><div>Estado</div><div>${stateChip(b.status)}</div><div>Idioma / mercado</div><div>${esc(b.language)} / ${esc(b.market)}</div>
-      <div>Autor</div><div>${esc(b.author)}</div><div>QC</div><div>${esc(b.qc_status||"–")}</div><div>Páginas</div><div>${esc(b.page_count||"–")}</div>
-      <div>Precio sugerido</div><div>${esc(price)}</div><div>Riesgo</div><div>${esc(b.risk_level)}</div>
-      <div>Prioridad</div><div><select style="width:auto" onchange="act({action:'set_priority',id:'${b.id}',priority:this.value})">${["CRITICAL","HIGH","NORMAL","LOW"].map(p=>`<option ${p===b.priority?"selected":""}>${p}</option>`).join("")}</select></div>
-      <div>Otra edición</div><div class="row" style="justify-content:flex-start"><select id="tr_lang" style="width:auto">${S.languages.filter(l=>l!==b.language).map(l=>`<option>${l}</option>`).join("")}</select><button class="b" onclick="act({action:'translate',id:'${b.id}',to:$('#tr_lang').value},this)">Crear</button></div>
-      ${b.translated_from?`<div>Traducción de</div><div class="mono">${esc(b.translated_from)}</div>`:""}
-    </div></div>
-  ${actions}
-  ${b.flags.length?`<h2>Avisos</h2><div class="list">${b.flags.map(x=>`<div class="card small"><span class="chip warn">${esc(x.level)}</span> ${esc(x.message)}</div>`).join("")}</div>`:""}
-  <h2>Archivos</h2><div class="card small">${files.map(p=>`<div><a href="${f(p)}" target="_blank">${esc(p)}</a></div>`).join("")||"–"}</div>
-  ${d.review?`<h2>Ficha de revisión</h2><pre>${esc(d.review)}</pre>`:""}
-  <h2>Historial</h2><div class="card wrap"><table><tr><th>Cuándo</th><th>Cambio</th><th>Quién</th><th>Acción</th></tr>
-  ${d.history.slice().reverse().map(h=>`<tr><td class="mono">${fmt(h.ts)}</td><td>${esc(STATE_LABEL[h.from]||h.from||"–")} → ${esc(STATE_LABEL[h.to]||h.to)}</td><td class="mono">${esc(h.agent)}</td><td class="small">${esc(h.action)}${h.note?`<div class="mut">${esc(String(h.note).slice(0,140))}</div>`:""}</td></tr>`).join("")}</table></div>`;
-}
-async function decideBook(kind,id,btn){
-  const notes = $("#ap_notes").value.trim();
-  if(kind==="request_changes" && !notes){ toast("Explica en Notas qué hay que cambiar", true); return; }
-  if(kind==="reject" && !confirm("¿Rechazar este libro? Saldrá de la cadena.")) return;
-  const p = kind==="approve" ? {action:"approve",id,author:$("#ap_author").value,price:$("#ap_price").value,notes}
-          : kind==="request_changes" ? {action:"request_changes",id,notes,restart_at:$("#ap_restart").value} : {action:"reject",id,notes};
-  if(await act(p,btn)) openBook(id);
-}
-
-function orderCard(o){
-  const [lab,cls] = ORDER_STATUS[o.status]||[o.status,""];
-  return `<div class="card"><div class="row"><div><span class="chip ${cls}">${lab}</span> <span class="small mut">${esc(ORDER_KIND[o.kind]||o.kind)} · ${esc(o.id)} · ${esc(o.by)} · ${fmt(o.created_at)}</span></div>
-    ${o.status==="OPEN"?`<button class="b" onclick="act({action:'order_cancel',id:'${o.id}'},this)">Cancelar</button>`:""}</div>
-    <div style="margin-top:6px">${esc(o.text)}</div>
-    ${o.target_agent||o.book_id?`<div class="small mut" style="margin-top:4px">${o.target_agent?"Para: "+esc(o.target_agent):"Para: cualquier agente"}${o.book_id?" · Libro: "+esc(o.book_id):""}</div>`:""}
-    ${o.taken_by?`<div class="small mut">Atendida por ${esc(o.taken_by)}</div>`:""}
-    ${o.result?`<div class="small" style="margin-top:6px;border-top:1px solid var(--line);padding-top:6px"><b>Respuesta:</b> ${esc(o.result)}</div>`:""}</div>`;
-}
-function vOrders(){
-  const realAgents = S.agents.filter(a=>a.owner!=="SYSTEM"&&a.owner!=="test");
-  $("#view").innerHTML = `
-  <div class="how"><b>Cómo funcionan las órdenes.</b> Escribís aquí lo que queréis, en lenguaje normal. Se guarda en el proyecto y se sube a GitHub.
-  Cada vez que un agente empieza a trabajar, lo primero que hace es leer las órdenes pendientes, cumplirlas y dejar aquí su respuesta.
-  Las órdenes nunca pueden saltarse las reglas básicas: un agente no publicará, no comprará y no inventará datos aunque se lo pidáis.</div>
-  <div class="grid two" style="margin-top:14px">
-  <div class="card"><h2>Nueva orden</h2><div class="form">
-    <div><label>Tipo</label><select id="or_kind">${S.order_kinds.map(k=>`<option value="${k}">${esc(ORDER_KIND[k]||k)}</option>`).join("")}</select></div>
-    <div><label>Prioridad</label><select id="or_prio"><option>NORMAL</option><option>HIGH</option><option>LOW</option></select></div>
-    <div><label>Para</label><select id="or_target"><option value="">Cualquier agente</option>${realAgents.map(a=>`<option>${esc(a.agent_id)}</option>`).join("")}</select></div>
-    <div><label>Libro (opcional)</label><select id="or_book"><option value="">—</option>${S.books.map(b=>`<option value="${b.id}">${esc(b.id)} · ${esc(b.title.slice(0,40))}</option>`).join("")}</select></div>
-    <div class="full"><label>Qué queréis</label><textarea id="or_text" placeholder="Ejemplos:&#10;· Busca 3 ideas de libros para Navidad 2026 en inglés (EE. UU.)&#10;· Haz la portada de EB-000004 más llamativa&#10;· Prioriza los libros en español esta semana"></textarea></div>
-  </div><div class="row" style="justify-content:flex-end;margin-top:10px"><button class="b p" onclick="sendOrder(this)">Enviar orden</button></div></div>
-  <div><h2>Órdenes</h2><div class="list">${S.orders.length?S.orders.map(orderCard).join(""):`<div class="card empty">Todavía no hay órdenes.</div>`}</div></div></div>`;
-}
-async function sendOrder(btn){
-  const d = await act({action:"order_new",kind:$("#or_kind").value,priority:$("#or_prio").value,target:$("#or_target").value,book:$("#or_book").value,text:$("#or_text").value},btn);
-  if(d){ $("#or_text").value = ""; vOrders(); }
-}
-
-function vDec(){
-  $("#view").innerHTML = `<h2>Preguntas de los agentes</h2>
-  <p class="mut small">Cuando un agente encuentra algo que solo vosotros podéis decidir (precio, nicho dudoso, tema sensible…), os lo pregunta aquí y sigue con otra tarea.</p>
-  <div class="list">${S.decisions.length?S.decisions.map(d=>`<div class="card"><div class="small mut">${esc(d.id)} · ${esc(d.asked_by)} · ${fmt(d.asked_at)}${d.book_id?" · "+esc(d.book_id):""}</div>
-    <div style="margin:6px 0 10px"><b>${esc(d.question)}</b></div>
-    <div class="row" style="justify-content:flex-start">${(d.options||[]).map(o=>`<button class="b" onclick="act({action:'decide',id:'${d.id}',answer:${esc(JSON.stringify(o))}},this)">${esc(o)}</button>`).join("")}</div>
-    <div class="copy"><input id="ans_${d.id}" placeholder="Otra respuesta…"><button class="b p" onclick="act({action:'decide',id:'${d.id}',answer:$('#ans_${d.id}').value},this)">Responder</button></div></div>`).join(""):`<div class="card empty">No hay preguntas pendientes.</div>`}</div>`;
-}
-
-function vAgents(){
-  const human = S.agents.filter(a=>a.owner!=="SYSTEM");
+// ---------- MÁS
+function vMore(){
   const prompt = id => `Trabaja como agente ${id} de la E-Book Factory siguiendo PROMPTS/WORKER.md`;
-  $("#view").innerHTML = `
-  <div class="how"><b>Cómo se ponen a trabajar los agentes.</b> Un agente es una sesión de Claude abierta en la carpeta del proyecto.
-  <ol><li><b>A mano:</b> abre Claude Code en la carpeta del proyecto y pega la frase del agente (botón "Copiar"). Trabaja hasta vaciar la cola o hacer 12 tareas.</li>
-  <li><b>Con horario:</b> se programa una tarea en la app de Claude (p. ej. cada 3 horas) que lanza esa misma frase. Pedídselo a Claude: "programa el agente S1-CLAUDE-001 cada 3 horas".</li>
-  <li><b>Dani:</b> igual, pero en su ordenador, con su cuenta y su ID (DANI-AGENT-001). Los dos trabajáis sobre el mismo repo de GitHub.</li></ol>
-  <div class="small" style="margin-top:6px">Este panel no lanza agentes: les deja órdenes y os muestra lo que hacen. Si un agente se corta (cuota, cierre), su tarea vuelve sola a la cola.</div></div>
-  <h2>Agentes registrados</h2><div class="card wrap"><table><tr><th>Agente</th><th>De</th><th>Estado</th><th>Tarea actual</th><th>Visto por última vez</th><th>Arrancarlo a mano</th></tr>
-  ${human.map(a=>`<tr><td class="mono">${esc(a.agent_id)}</td><td>${esc(a.owner)}</td><td><span class="chip ${a.status==="BUSY"?"acc":a.status==="OFFLINE"?"":"ok"}">${esc(a.status)}</span></td><td class="mono">${esc(a.current_task||"–")}</td><td class="mono">${fmt(a.last_seen)}</td>
-  <td><button class="b" onclick="copyTxt(${esc(JSON.stringify(prompt(a.agent_id)))})">Copiar frase</button></td></tr>`).join("")}</table></div>
-  <h2>Añadir un agente nuevo (p. ej. de Dani)</h2><div class="card small">En su ordenador, dentro del proyecto: <div class="copy"><code>python factory.py agent register --id DANI-AGENT-001 --owner DANI --model claude</code><button class="b" onclick="copyTxt('python factory.py agent register --id DANI-AGENT-001 --owner DANI --model claude')">Copiar</button></div>
-  Después, en Claude Code: <div class="copy"><code>${esc(prompt("DANI-AGENT-001"))}</code><button class="b" onclick="copyTxt(${esc(JSON.stringify(prompt("DANI-AGENT-001")))})">Copiar</button></div></div>
-  <h2>Tareas en curso y en cola</h2><div class="card wrap"><table><tr><th>Tarea</th><th>Libro</th><th>Paso</th><th>Estado</th><th>Agente</th><th>Reintentos</th></tr>
-  ${S.tasks.map(t=>`<tr><td class="mono">${esc(t.task_id)}</td><td class="mono">${esc(t.book_id)}</td><td>${esc(STEP_LABEL[t.type]||t.type)}</td><td>${esc(t.status)}</td><td class="mono">${esc(t.assigned_agent||"–")}</td><td>${t.retry_count}</td></tr>`).join("")||`<tr><td colspan="6" class="empty">Cola vacía</td></tr>`}</table></div>`;
+  const st = a => a.status==="BUSY" ? ["busy","Trabajando"] : (a.minutes_ago!=null && a.minutes_ago>180) || a.status==="OFFLINE" ? ["off","Apagado"] : ["idle","Libre"];
+  const sy = S.sync;
+  $("#view").innerHTML = `<h1>Más</h1>
+    <h2>Los agentes</h2>
+    <div class="agents">${S.agents.map(a=>{ const [c,l]=st(a); const w=S.live.find(x=>x.agent===a.agent_id); return `<div class="card">
+      <div style="display:flex;gap:10px;align-items:center"><div class="avatar bot sm">🤖</div><div style="flex:1"><b>${esc(a.agent_id)}</b><div class="tiny mut">de ${esc(nameOf(a.owner))}${a.agent_id===S.main_agent?" · agente jefe":""}</div></div><span class="status ${c}">${l}</span></div>
+      <div class="small mut" style="margin-top:8px">${w?`${esc(STEP_DOING[w.step]||w.step)} «${esc(w.title)}»`:`Visto ${ago(a.last_seen)}`}</div>
+      <button class="btn small" style="margin-top:10px" onclick='copyTxt(${esc(JSON.stringify(prompt(a.agent_id)))})'>Copiar frase para encenderlo</button></div>`; }).join("") || `<div class="card mut">Todavía no hay agentes registrados.</div>`}</div>
+    <h2>Cómo se enciende un agente</h2>
+    <div class="card"><ol class="steps">
+      <li>Abre <b>Claude Code</b> en la carpeta del proyecto (la misma donde está <code>ABRIR_PANEL.bat</code>).</li>
+      <li>Pega la frase del agente (botón <i>Copiar frase</i>) y pulsa Enter.</li>
+      <li>El agente lee el chat, responde lo pendiente y se pone a fabricar libros. Lo verás aquí en directo. Para cuando acaba la cola o tras 12 tareas.</li>
+      <li><b>Para que trabaje solo con horario</b> (p. ej. cada 3 horas, también de noche): pídeselo a Claude con «programa el agente ${esc(S.main_agent)} cada 3 horas».</li>
+    </ol><div class="small mut" style="margin-top:10px"><b>Dani</b> hace lo mismo en su ordenador con su agente (DANI-AGENT-001). Primera vez, en su carpeta: <code class="copy">python factory.py agent register --id DANI-AGENT-001 --owner DANI --model claude</code></div></div>
+    <h2>Sincronización con GitHub</h2>
+    <div class="card"><div>${sy.enabled?`Estado: <b>${sy.result==="OK"?"al día":esc(sy.result)}</b> · última vez ${ago(sy.at)}`:"Desactivada (este panel no comparte cambios)."}</div>
+      <div class="small mut">El panel sube y baja los cambios cada minuto. Así ves lo que hace ${esc(nameOf(Object.keys(S.names).find(p=>p!==S.me)))} y sus agentes.</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px"><button class="btn" id="bSync">Sincronizar ahora</button>
+      <button class="btn" id="bTick" title="Recupera trabajos cortados, prepara las siguientes tareas, maqueta lo que esté listo y actualiza los informes">Poner la fábrica al día</button></div></div>
+    <h2>Mi cuenta</h2>
+    <div class="card"><div class="decide"><div><label>Mi nombre</label><div style="display:flex;gap:8px"><input id="myName" type="text" value="${esc(nameOf(S.me))}"><button class="btn" id="bName">Guardar</button></div></div>
+      <div><label>Cambiar PIN</label><div style="display:flex;gap:8px"><input id="pinOld" type="password" inputmode="numeric" placeholder="Actual"><input id="pinNew" type="password" inputmode="numeric" placeholder="Nuevo"><button class="btn" id="bPin">Cambiar</button></div></div></div></div>
+    <h2>Todo lo que ha pasado</h2>
+    <div class="card" style="overflow-x:auto"><table>${S.events.map(e=>({e,t:EVENT_TXT(e)})).filter(x=>x.t).map(x=>`<tr><td class="mut" style="white-space:nowrap">${ago(x.e.ts)}</td><td>${esc(x.t)}</td></tr>`).join("") || `<tr><td class="empty">Nada todavía</td></tr>`}</table></div>`;
+  $("#bSync").onclick = e=>act({action:"sync"}, e.target, "Sincronizado");
+  $("#bTick").onclick = e=>act({action:"tick"}, e.target, "Fábrica al día");
+  $("#bName").onclick = e=>act({action:"set_name",name:$("#myName").value}, e.target, "Nombre guardado").then(async()=>{ ME = await fetch("/api/me").then(r=>r.json()); $("#meAvatar").textContent = initials(ME.name); });
+  $("#bPin").onclick = async e=>{ if(await act({action:"change_pin",old:$("#pinOld").value,new:$("#pinNew").value}, e.target, "PIN cambiado")){ $("#pinOld").value=""; $("#pinNew").value=""; } };
 }
-function copyTxt(t){ (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast("Copiado"),()=>prompt("Copia esto:",t)); }
+function copyTxt(t){ (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(()=>toast("Copiado. Pégalo en Claude Code"), ()=>window.prompt("Copia esto:", t)); }
 
-const EV = {BOOK_CREATED:e=>`Nuevo libro ${e.book_id}: ${e.topic||""}`,STATE_CHANGE:e=>`${e.book_id}: ${STATE_LABEL[e.frm]||e.frm} → ${STATE_LABEL[e.to]||e.to}`,TASK_DONE:e=>`${e.agent} terminó ${STEP_LABEL[e.step]||e.step} de ${e.book_id}`,TASK_FAILED:e=>`Falló ${e.task_id} (${e.book_id}): ${String(e.error||"").slice(0,120)}`,TASK_BLOCKED:e=>`Bloqueada ${e.task_id} (${e.book_id})`,TASK_CLAIMED:e=>`${e.agent} empezó ${STEP_LABEL[e.step]||e.step} de ${e.book_id}`,HUMAN_DECISION:e=>`${e.by}: ${e.decision} en ${e.book_id}`,ORDER_CREATED:e=>`${e.by} dio la orden ${e.order}`,ORDER_UPDATED:e=>`${e.by} marcó ${e.order} como ${e.status}`,PACKAGE_READY:e=>`Paquete listo: ${e.book_id} v${e.version}`,DECISION_ASKED:e=>`${e.by} pregunta (${e.decision})`,DECISION_ANSWERED:e=>`${e.by} respondió ${e.decision}`};
-function vLog(){
-  $("#view").innerHTML = `<h2>Actividad reciente</h2><div class="card wrap"><table>${S.events.filter(e=>!["ORCHESTRATE","RECOVER","AGENT_REGISTERED","TASK_CREATED"].includes(e.type)).map(e=>`<tr><td class="mono" style="white-space:nowrap">${fmt(e.ts)}</td><td>${esc((EV[e.type]||(x=>x.type))(e))}</td></tr>`).join("")||`<tr><td class="empty">Sin actividad</td></tr>`}</table></div>`;
-}
-
-function openDrawer(h){ $("#drawerIn").innerHTML=h; $("#drawer").classList.add("on"); }
-function closeDrawer(){ $("#drawer").classList.remove("on"); }
-async function unblock(task,btn){ const note = prompt("Nota (qué se ha arreglado):",""); if(note===null) return; await act({action:"unblock",task,note},btn); }
-$("#drawer").addEventListener("click",e=>{ if(e.target.id==="drawer") closeDrawer(); });
-$("#who").addEventListener("change",e=>{ setMe(e.target.value); toast(e.target.value?`Hola, ${e.target.value}`:"Elige quién eres"); });
-$("#btnSync").addEventListener("click",e=>act({action:"sync"},e.target));
-$("#btnTick").addEventListener("click",e=>act({action:"tick"},e.target));
-load(); setInterval(()=>{ if(!$("#drawer").classList.contains("on")) load(true); }, 20000);
+boot();
 </script>
 </body>
 </html>
