@@ -279,14 +279,18 @@ def do_action(a, by):
         if not text:
             raise FactoryError("Escribe un mensaje")
         to = a.get("to") or "factory"
+        target_agent = to if to != "factory" else None
         msg = chat.post(by, "partner", text, to=to, book_id=a.get("book") or None)
-        if to == "factory":
-            o = orders.create(text, by, "CHAT", book_id=a.get("book") or None, chat_msg=msg["id"])
-            working = _agents_working()
-            ack = (f"Recibido. {', '.join(x['agent_id'] for x in working)} está trabajando ahora y te responderá aquí al terminar su tarea actual."
-                   if working else
-                   "Recibido. Ahora mismo no hay ningún agente encendido: tu mensaje queda en cola y el primero que arranque lo atenderá y te responderá aquí.")
-            chat.post("Fábrica", "system", ack, kind="note", order_id=o["id"], reply_to=msg["id"])
+        o = orders.create(text, by, "CHAT", target_agent=target_agent, book_id=a.get("book") or None, chat_msg=msg["id"])
+        working = _agents_working()
+        target_working = [x for x in working if not target_agent or x["agent_id"] == target_agent]
+        if target_working:
+            ack = f"Recibido. {', '.join(x['agent_id'] for x in target_working)} está trabajando ahora y te responderá aquí al terminar su tarea actual."
+        elif target_agent:
+            ack = f"Recibido. {agentLabel_(target_agent)} no está encendido ahora mismo: tu mensaje queda en cola para cuando arranque."
+        else:
+            ack = "Recibido. Ahora mismo no hay ningún agente encendido: tu mensaje queda en cola y el primero que arranque lo atenderá y te responderá aquí."
+        chat.post("Fábrica", "system", ack, kind="note", order_id=o["id"], reply_to=msg["id"])
         res = msg["id"]
     elif act == "set_target":
         n = int(a.get("target") or 0)
