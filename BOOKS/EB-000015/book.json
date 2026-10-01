@@ -18,7 +18,7 @@
   "assigned_agent": null,
   "owner_partner": null,
   "created_at": "2026-10-01T18:16:31Z",
-  "updated_at": "2026-10-01T18:22:06Z",
+  "updated_at": "2026-10-01T18:22:17Z",
   "version": "1.0",
   "parent_book": null,
   "translated_from": null,
@@ -58,11 +58,16 @@
   "flags": [],
   "qc_status": null,
   "qc_fail_count": 0,
-  "page_count": null,
-  "formats": [],
+  "page_count": 23,
+  "formats": [
+    "EPUB",
+    "PDF"
+  ],
   "files": {
     "cover": "design/cover.png",
-    "cover_jpg": "design/cover.jpg"
+    "cover_jpg": "design/cover.jpg",
+    "epub": "build/EB-000015_large-print-sudoku-for-seniors_v1.0.epub",
+    "pdf": "build/EB-000015_large-print-sudoku-for-seniors_v1.0.pdf"
   },
   "publication_status": "NOT_PUBLISHED",
   "published": [],
