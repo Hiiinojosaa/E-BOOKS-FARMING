@@ -1,4 +1,4 @@
-"""Real photo/illustration generation (Google Gemini/Imagen), stdlib-only (urllib).
+"""Real photo/illustration generation (Gemini image-generation models), stdlib-only (urllib).
 
 Optional feature, like pg_sync: everything raises a clear FactoryError if no API key is
 configured, so the rest of the factory keeps working without it. Needs GEMINI_API_KEY in
@@ -8,6 +8,9 @@ Used by the WRITE step of any book that needs real photos/illustrations embedded
 step photos, fitness pose illustrations, etc.) — generate the file, then reference it from
 the manuscript with the same `![alt](design/photos/xxx.png)` markdown convention puzzle
 books use (see build.md_to_xhtml's img_resolver, which embeds it into EPUB/PDF either way).
+
+Image generation lives on Gemini's unified `generateContent` endpoint (not a separate Imagen
+:predict endpoint): the model returns an inline base64 image part alongside any text part.
 """
 import base64
 import json
@@ -17,8 +20,7 @@ import urllib.request
 
 from .core import FactoryError, path
 
-MODEL = "imagen-4.0-generate-001"
-ENDPOINT = f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:predict"
+DEFAULT_MODEL = "gemini-3-pro-image"  # highest quality; set GEMINI_IMAGE_MODEL to override (e.g. a faster/cheaper -flash variant)
 _ENV_LOADED = False
 
 
@@ -48,22 +50,33 @@ def generate_image(prompt, out_path, aspect_ratio="1:1"):
     real, identifiable person; keep prompts to original scenes/subjects described in the brief."""
     if not enabled():
         raise FactoryError("Falta GEMINI_API_KEY (ponlo en .env) para generar imágenes")
-    body = json.dumps({"instances": [{"prompt": prompt}],
-                        "parameters": {"sampleCount": 1, "aspectRatio": aspect_ratio}}).encode("utf-8")
+    model = os.environ.get("GEMINI_IMAGE_MODEL", DEFAULT_MODEL)
+    body = json.dumps({
+        "contents": [{"parts": [{"text": prompt}]}],
+        "generationConfig": {"responseModalities": ["IMAGE"], "imageConfig": {"aspectRatio": aspect_ratio}},
+    }).encode("utf-8")
     req = urllib.request.Request(
-        f"{ENDPOINT}?key={os.environ['GEMINI_API_KEY']}", data=body, method="POST",
-        headers={"Content-Type": "application/json"})
+        f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={os.environ['GEMINI_API_KEY']}",
+        data=body, method="POST", headers={"Content-Type": "application/json"})
     try:
         with urllib.request.urlopen(req, timeout=90) as r:
             data = json.loads(r.read().decode("utf-8"))
     except urllib.error.HTTPError as e:
-        raise FactoryError(f"Gemini/Imagen error {e.code}: {e.read().decode('utf-8', 'ignore')[:300]}")
+        detail = e.read().decode("utf-8", "ignore")[:500]
+        if e.code == 429:
+            raise FactoryError(f"Gemini sin cuota para '{model}' (probablemente falta facturación activada "
+                               f"en el proyecto de Google AI Studio de esta clave): {detail}")
+        raise FactoryError(f"Gemini error {e.code} (modelo '{model}'): {detail}")
     except urllib.error.URLError as e:
-        raise FactoryError(f"no se pudo contactar con Gemini/Imagen: {e}")
-    preds = data.get("predictions") or []
-    if not preds or "bytesBase64Encoded" not in preds[0]:
-        raise FactoryError(f"respuesta inesperada de Imagen: {str(data)[:300]}")
+        raise FactoryError(f"no se pudo contactar con Gemini: {e}")
+    try:
+        parts = data["candidates"][0]["content"]["parts"]
+    except (KeyError, IndexError):
+        raise FactoryError(f"respuesta inesperada de Gemini: {str(data)[:400]}")
+    img = next((p["inlineData"] for p in parts if "inlineData" in p), None)
+    if not img:
+        raise FactoryError(f"Gemini no devolvió una imagen (puede haber bloqueado el prompt): {str(data)[:400]}")
     out_path = path(out_path)  # joinpath with an absolute path is a no-op, so this handles both
     out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_bytes(base64.b64decode(preds[0]["bytesBase64Encoded"]))
+    out_path.write_bytes(base64.b64decode(img["data"]))
     return str(out_path)
