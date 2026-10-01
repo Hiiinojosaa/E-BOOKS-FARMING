@@ -406,7 +406,7 @@ $("#logout").innerHTML=icon("logout");
 $("#logout").onclick=async()=>{ await api("/api/logout",{}).catch(()=>{}); ME=null; S=null; if(window._es) window._es.close(); showLogin(); };
 
 // ---------------------------------------------------------------- shell
-const NAV = {today:["home","Hoy"],library:["library","Librería"],chat:["chat","Chat con el jefe"],team:["team","Equipo y ajustes"]};
+const NAV = {today:["home","Hoy"],library:["library","Librería"],chat:["chat","Chat"],team:["team","Equipo y ajustes"]};
 function startApp(){
   $("#login").classList.add("hidden"); $("#app").classList.remove("hidden");
   $("#meAv").textContent=initials(ME.name); $("#meName").textContent=ME.name;
@@ -615,42 +615,65 @@ function vChat(){
   const chief=S.agents.find(a=>a.agent_id===S.main_agent);
   const chiefOn=chief && chief.status==="BUSY";
   $("#view").innerHTML=`
-    <div class="head"><div><h1>Chat con el jefe</h1><div class="sub">El jefe coordina al equipo y os responde aquí. ${esc(nameOf(other))} también lo ve todo.</div></div></div>
+    <div class="head"><div><h1>Chat</h1><div class="sub">Habláis con el jefe como con un compañero. ${esc(nameOf(other))} también lo ve todo.</div></div></div>
     <div class="chatgrid">
       <div class="card chatbox">
         <div class="chhead">${roleAv("JEFE")}<div class="grow" style="flex:1"><div style="font-weight:600">Jefe de la fábrica</div><div class="tiny mut">${chiefOn?`<span class="pill good"><span class="dotx"></span> Trabajando ahora</span>`:`Responde cuando está trabajando · visto ${chief?ago(chief.last_seen):"nunca"}`}</div></div></div>
         <div class="msgs" id="msgs"></div>
         <div class="composer">
           <div id="waiting"></div>
-          <div class="ctrl">
-            <div class="seg" id="modeSeg"><button data-m="message">${icon("chat","sm")} Mensaje</button><button data-m="directive">${icon("flag","sm")} Directriz</button></div>
-            <div class="seg" id="toSeg"><button data-to="factory">Al jefe</button><button data-to="${esc(other)}">A ${esc(nameOf(other))}</button></div>
-            <select id="aboutBook" style="width:auto;padding:6px 10px;font-size:13px"><option value="">Sin libro concreto</option>${books.map(b=>`<option value="${b.id}" ${b.id===CHAT_BOOK?"selected":""}>${esc(b.title.slice(0,46))}</option>`).join("")}</select>
-          </div>
+          <div class="optrow" id="optChips"></div>
           <div class="chips" id="chips"></div>
-          <div class="sendrow"><textarea id="msg" rows="2"></textarea><button class="btn primary lg" id="send" title="Enviar">${icon("send")}</button></div>
+          <div class="sendrow">
+            <button class="addbtn" id="addBtn" title="Más opciones: directriz, destinatario, libro">${icon("plus")}</button>
+            <div class="popover hidden" id="optsPop">
+              <div class="sec-t">Tipo de mensaje</div>
+              <div class="seg" id="modeSeg"><button data-m="message">${icon("chat","sm")} Mensaje</button><button data-m="directive">${icon("flag","sm")} Directriz</button></div>
+              <div id="toWrap"><div class="sec-t">Para</div>
+                <div class="seg" id="toSeg"><button data-to="factory">Al jefe</button><button data-to="${esc(other)}">A ${esc(nameOf(other))}</button></div></div>
+              <div id="bookWrap"><div class="sec-t">Sobre un libro (opcional)</div>
+                <select id="aboutBook"><option value="">Sin libro concreto</option>${books.map(b=>`<option value="${b.id}" ${b.id===CHAT_BOOK?"selected":""}>${esc(b.title.slice(0,46))}</option>`).join("")}</select></div>
+            </div>
+            <textarea id="msg" rows="1"></textarea>
+            <button class="btn primary sendbtn" id="send" title="Enviar">${icon("send","sm")}</button>
+          </div>
         </div>
       </div>
       <div class="chatside">
         <div class="sec" style="margin-top:0"><h3>Directrices vigentes</h3></div>
-        <div class="card dirs">${S.directives.length?S.directives.map(d=>`<div class="d">${icon("flag","sm")}<span>${esc(d.text)}<div class="tiny faint">${esc(nameOf(d.by))} · ${ago(d.created_at)}</div></span><button class="btn ghost icon x" title="Quitar" onclick="act({action:'directive_remove',id:'${d.id}'},this,'Directriz retirada')">${icon("x","sm")}</button></div>`).join(""):`<div class="empty">Aún no hay directrices. Escribe una con el modo <b>Directriz</b>: el jefe y todo el equipo la seguirán hasta que la quitéis.</div>`}</div>
+        <div class="card dirs">${S.directives.length?S.directives.map(d=>`<div class="d">${icon("flag","sm")}<span>${esc(d.text)}<div class="tiny faint">${esc(nameOf(d.by))} · ${ago(d.created_at)}</div></span><button class="btn ghost icon x" title="Quitar" onclick="act({action:'directive_remove',id:'${d.id}'},this,'Directriz retirada')">${icon("x","sm")}</button></div>`).join(""):`<div class="empty">Aún no hay directrices. Abre el «+» del chat y elige <b>Directriz</b>: el jefe y todo el equipo la seguirán hasta que la quitéis.</div>`}</div>
         <div class="sec"><h3>Equipo</h3></div>
         <div class="card">${S.team.map(t=>{ const a=t.agents.map(agentOf).filter(Boolean); const busy=a.some(x=>x.status==="BUSY");
           return `<div class="row" style="padding:9px 14px;border-bottom:1px solid var(--line)">${roleAv(t.role,true)}<div class="grow small"><b>${esc(t.label)}</b></div><span class="pill ${busy?"good":""}">${busy?"Trabajando":a.length?"En espera":"Sin agente"}</span></div>`; }).join("")}</div>
       </div>
     </div>`;
-  const setSeg=()=>{ document.querySelectorAll("#modeSeg button").forEach(b=>b.classList.toggle("on",b.dataset.m===MODE));
+  const setSeg=()=>{
+    document.querySelectorAll("#modeSeg button").forEach(b=>b.classList.toggle("on",b.dataset.m===MODE));
     document.querySelectorAll("#toSeg button").forEach(b=>b.classList.toggle("on",b.dataset.to===CHAT_TO));
-    $("#toSeg").classList.toggle("hidden",MODE==="directive"); $("#aboutBook").classList.toggle("hidden",MODE==="directive");
-    $("#msg").placeholder = MODE==="directive" ? "Ej.: Esta semana, 70 % de los libros en inglés de EE. UU. y nada de temas de salud" : "Escribe un mensaje. Enter para enviar, Mayús + Enter para nueva línea";
-    chips(); };
-  document.querySelectorAll("#modeSeg button").forEach(b=>b.onclick=()=>{ MODE=b.dataset.m; setSeg(); $("#msg").focus(); });
+    $("#toWrap").classList.toggle("hidden",MODE==="directive"); $("#bookWrap").classList.toggle("hidden",MODE==="directive");
+    $("#aboutBook").value=CHAT_BOOK||"";
+    $("#msg").placeholder = MODE==="directive" ? "Ej.: Esta semana, 70 % de los libros en inglés de EE. UU. y nada de temas de salud" : "Escribe un mensaje…";
+    renderOptChips(); chips(); };
+  function renderOptChips(){
+    const c=$("#optChips"); if(!c) return;
+    const items=[];
+    if(MODE==="directive") items.push({ic:"flag",label:"Directriz",clear:()=>{MODE="message";}});
+    if(CHAT_TO!=="factory") items.push({ic:"user",label:`Para ${nameOf(CHAT_TO)}`,clear:()=>{CHAT_TO="factory";}});
+    if(CHAT_BOOK) items.push({ic:"book",label:`Sobre «${bookTitle(CHAT_BOOK).slice(0,28)}»`,clear:()=>{CHAT_BOOK="";}});
+    c.innerHTML=items.map(it=>`<span class="optchip">${icon(it.ic,"sm")} ${esc(it.label)} <button>${icon("x","sm")}</button></span>`).join("");
+    c.querySelectorAll(".optchip button").forEach((b,i)=>b.onclick=()=>{ items[i].clear(); setSeg(); });
+  }
+  const closePop=()=>{ $("#optsPop").classList.add("hidden"); $("#addBtn").classList.remove("on"); };
+  $("#addBtn").onclick=e=>{ e.stopPropagation(); $("#optsPop").classList.toggle("hidden"); $("#addBtn").classList.toggle("on", !$("#optsPop").classList.contains("hidden")); };
+  $("#optsPop").onclick=e=>e.stopPropagation();
+  document.querySelectorAll("#modeSeg button").forEach(b=>b.onclick=()=>{ MODE=b.dataset.m; setSeg(); });
   document.querySelectorAll("#toSeg button").forEach(b=>b.onclick=()=>{ CHAT_TO=b.dataset.to; setSeg(); });
-  $("#aboutBook").onchange=e=>{ CHAT_BOOK=e.target.value; };
+  $("#aboutBook").onchange=e=>{ CHAT_BOOK=e.target.value; renderOptChips(); };
   $("#send").onclick=sendMsg;
   $("#msg").addEventListener("keydown",e=>{ if(e.key==="Enter"&&!e.shiftKey){ e.preventDefault(); sendMsg(); } });
-  setSeg(); renderMessages(true);
+  setSeg(); renderMessages(true); closePop();
 }
+document.addEventListener("click",e=>{ const p=$("#optsPop"); if(p && !p.classList.contains("hidden") && e.target!==$("#addBtn")) { p.classList.add("hidden"); $("#addBtn").classList.remove("on"); } });
 function chips(){
   const c=$("#chips"); if(!c) return;
   const s = MODE==="directive" ? ["Objetivo: 12 libros al día","Precio máximo 3,99 $","Prioridad: inglés de EE. UU.","Nada de temas de salud ni finanzas"]
@@ -688,8 +711,10 @@ function renderMessages(scroll){
 async function sendMsg(){
   const t=$("#msg"), text=t.value.trim(); if(!text) return;
   const b=$("#send"); b.disabled=true;
-  try{ await api("/api/action", MODE==="directive"?{action:"directive_add",text}:{action:"chat_send",text,to:CHAT_TO,book:$("#aboutBook").value});
-    t.value=""; if(MODE==="directive") toast("Directriz guardada: el equipo la seguirá"); await load(); renderMessages(true); }
+  const wasDirective=MODE==="directive";
+  try{ await api("/api/action", wasDirective?{action:"directive_add",text}:{action:"chat_send",text,to:CHAT_TO,book:$("#aboutBook").value});
+    t.value=""; if(wasDirective){ toast("Directriz guardada: el equipo la seguirá"); MODE="message"; const oc=$("#optChips"); if(oc) oc.innerHTML=""; }
+    await load(); renderMessages(true); }
   catch(e){ toast(e.message,true); } finally{ b.disabled=false; }
 }
 
