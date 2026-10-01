@@ -77,7 +77,8 @@ locks, cola, maquetación, QC), no la calidad editorial, y no dejan libros falso
 2. **Reintentos quemados en un solo ciclo:** `auto` reintentaba la misma tarea fallida 3 veces seguidas. Ahora cada tarea se intenta como mucho una vez por ciclo. El sistema funcionó como se diseñó: la tarea pasó a BLOCKED, se desbloqueó con `unblock` tras arreglar la causa y continuó.
 3. **Concurrencia en Windows (lo encontró la prueba de estrés):** `os.replace`/`rename` fallan con "Acceso denegado" si otro proceso lee el archivo en ese instante. Se añaden reintentos breves (`retry_io`).
 4. **Archivos vacíos visibles un instante:** las tareas y los locks se creaban vacíos y se rellenaban después. Un lector podía ver un lock vacío y darlo por caducado. Ahora se crean con el contenido completo en un solo paso atómico (tmp + hard link). Un lock ilegible y reciente nunca se considera caducado.
-5. Detalles: plantilla de portada (solape) y CSS de la página de título (centrado), detectados en revisión visual.
+5. **Rutas largas en Windows:** Git no podía indexar archivos con rutas de más de 260 caracteres. Se activó `git config core.longpaths true` en el repo; cada clon nuevo en Windows debe hacer lo mismo.
+6. Detalles: plantilla de portada (solape) y CSS de la página de título (centrado), detectados en revisión visual.
 
 ## 7. Pendiente / limitaciones conocidas
 
@@ -111,7 +112,7 @@ hasta vaciar la cola o llegar a `max_tasks_per_session` (12).
 
 ## 10. Cómo añadir los agentes de Dani
 
-1. Dani clona el repo privado (un clon por agente) y activa `"git": {"sync_enabled": true}` en `CONFIG/factory.json` (un solo commit compartido).
+1. Dani clona el repo privado (un clon por agente; en Windows, `git config core.longpaths true` en el clon) y activa `"git": {"sync_enabled": true}` en `CONFIG/factory.json` (un solo commit compartido).
 2. Registra su agente: `python factory.py agent register --id DANI-AGENT-001 --owner DANI --model <modelo> --capabilities "*"`.
    Para especializarlo: `--capabilities "EDITOR_AGENT,QC_AGENT"` (recomendado: que quien escribe no haga el QC del mismo libro).
 3. Abre Claude Code en su clon: *"Trabaja como agente DANI-AGENT-001 siguiendo PROMPTS/WORKER.md"*.
