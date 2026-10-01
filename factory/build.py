@@ -31,8 +31,17 @@ def inline(text):
     return out
 
 
-def md_to_xhtml(md, heading_offset=0):
-    """Small, strict markdown subset -> well-formed XHTML fragment."""
+_IMG_LINE = re.compile(r"^!\[([^\]]*)\]\(([^)\s]+)\)$")
+
+
+def md_to_xhtml(md, heading_offset=0, img_resolver=None):
+    """Small, strict markdown subset -> well-formed XHTML fragment.
+
+    A line that is only `![alt](path)` becomes its own image block. `path` is resolved
+    book-dir-relative; `img_resolver(path)` (if given) maps it to whatever `src` the
+    output format needs (a flat EPUB-internal name, or a PDF-relative path) and may have
+    side effects (e.g. registering the file to embed). Without a resolver, `path` is used as-is.
+    """
     lines = md.replace("\r\n", "\n").split("\n")
     out, para, i = [], [], 0
 
@@ -46,6 +55,13 @@ def md_to_xhtml(md, heading_offset=0):
         s = ln.strip()
         if not s:
             flush(); i += 1; continue
+        m = _IMG_LINE.match(s)
+        if m:
+            flush()
+            alt, src = m.group(1), m.group(2)
+            out.append(f'<div class="pgimg"><img src="{html.escape(img_resolver(src) if img_resolver else src)}" '
+                       f'alt="{html.escape(alt)}"/></div>')
+            i += 1; continue
         m = re.match(r"^(#{1,4})\s+(.*)$", s)
         if m:
             flush()
@@ -255,6 +271,8 @@ hr.break:after { content: "* * *"; }
 .copyright { font-size: .8em; margin-top: 30%; }
 .cover { margin: 0; padding: 0; text-align: center; }
 .cover img { max-width: 100%; height: auto; }
+.pgimg { text-align: center; margin: 1em 0; page-break-inside: avoid; }
+.pgimg img { max-width: 100%; height: auto; }
 nav ol { list-style: none; margin-left: 0; }
 """
 
@@ -273,6 +291,9 @@ def _xhtml(lang, title, body, cls=""):
     return XHTML.format(lang=lang, title=html.escape(title), body=body, cls=f' class="{cls}"' if cls else "")
 
 
+_IMG_MEDIA_TYPE = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".svg": "image/svg+xml"}
+
+
 def build_epub(book, out_path):
     ctx = _ctx(book)
     bdir = books.book_dir(book["id"])
@@ -283,6 +304,20 @@ def build_epub(book, out_path):
     cover = bdir / "design" / "cover.png"
     files = {}  # name -> (content, media_type, props)
     files["style.css"] = (CSS, "text/css", None)
+    img_seen = {}  # book-relative src -> flat epub filename already registered
+
+    def img_resolver(src):
+        if src in img_seen:
+            return img_seen[src]
+        p = bdir / src
+        ext = p.suffix.lower()
+        if ext not in _IMG_MEDIA_TYPE or not p.exists():
+            raise FactoryError(f"imagen no encontrada o tipo no soportado: {src}")
+        flat = f"img-{len(img_seen) + 1:03d}{ext}"
+        files[flat] = (p.read_bytes(), _IMG_MEDIA_TYPE[ext], None)
+        img_seen[src] = flat
+        return flat
+
     spine = []
     if cover.exists():
         files["cover.xhtml"] = (_xhtml(lang, "Cover", '<div class="cover"><img src="cover.png" alt="Cover"/></div>', "cover"),
@@ -304,7 +339,7 @@ def build_epub(book, out_path):
     nav_items = []
     for n, (title, body) in enumerate(chapters, 1):
         name = f"chapter-{n:02d}.xhtml"
-        content = f'<section epub:type="chapter" id="ch{n:02d}"><h1>{inline(title)}</h1>\n{md_to_xhtml(body, 1)}</section>'
+        content = f'<section epub:type="chapter" id="ch{n:02d}"><h1>{inline(title)}</h1>\n{md_to_xhtml(body, 1, img_resolver)}</section>'
         files[name] = (_xhtml(lang, title, content), "application/xhtml+xml", None)
         spine.append(name)
         nav_items.append(f'<li><a href="{name}#ch{n:02d}">{inline(title)}</a></li>')
@@ -467,6 +502,8 @@ hr.break {{ border: 0; text-align: center; margin: 1.2em 0; }} hr.break:after {{
 .toc ol {{ list-style: none; margin: 0; padding: 0; }} .toc li {{ margin: .35em 0; }}
 .toc a {{ color: #111; text-decoration: none; }}
 a {{ color: #111; }}
+.pgimg {{ text-align: center; margin: .8em 0; break-inside: avoid; }}
+.pgimg img {{ max-width: 100%; height: auto; }}
 """
 
 
