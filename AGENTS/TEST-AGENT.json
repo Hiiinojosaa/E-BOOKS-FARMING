@@ -6,9 +6,9 @@
   "capabilities": [
     "*"
   ],
-  "status": "BUSY",
-  "current_task": "TASK-000023",
-  "last_seen": "2026-10-01T18:21:39Z",
+  "status": "IDLE",
+  "current_task": null,
+  "last_seen": "2026-10-01T18:22:06Z",
   "registered_at": "2026-10-01T18:16:53Z",
   "notes": "",
   "role": null,
