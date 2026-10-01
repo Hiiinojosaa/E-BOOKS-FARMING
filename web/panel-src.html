@@ -440,7 +440,6 @@ function connectLive(){
   if(window._poll) clearInterval(window._poll);
   $("#liveDot").classList.add("on"); $("#liveTxt").textContent="En directo";
   window._poll=setInterval(()=>{ if(ME) load(true); }, 4000);
-};
 }
 setInterval(()=>{ if(ME) load(true); }, 45000);
 function typing(){

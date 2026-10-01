@@ -6,7 +6,6 @@ EventSource por un polling simple; todo lo demás debe quedar idéntico.
 
 Uso: python SCRIPTS/sync_web_panel.py   (ejecútalo cada vez que edites factory/panel.html)
 """
-import re
 from pathlib import Path
 
 ROOT = Path(__file__).parent.parent
@@ -15,32 +14,33 @@ DST = ROOT / "web" / "panel-src.html"
 
 html = SRC.read_text(encoding="utf-8")
 
-html = html.replace(
-    "ME=null; S=null; if(window._es) window._es.close(); showLogin();",
-    "ME=null; S=null; if(window._poll) clearInterval(window._poll); showLogin();",
-)
+LOGOUT_OLD = 'ME=null; S=null; if(window._es) window._es.close(); showLogin();'
+LOGOUT_NEW = 'ME=null; S=null; if(window._poll) clearInterval(window._poll); showLogin();'
 
-pattern = re.compile(
-    r'function connectLive\(\)\{\s*'
-    r'if\(window\._es\) window\._es\.close\(\);\s*'
-    r'const es=new EventSource\("/api/stream"\); window\._es=es;\s*'
-    r'es\.onopen=.*?;\s*'
-    r'es\.onmessage=.*?;\s*'
-    r'es\.onerror=.*?;\s*'
-    r'\}',
-    re.DOTALL,
+CONNECT_OLD = (
+    "function connectLive(){\n"
+    "  if(window._es) window._es.close();\n"
+    '  const es=new EventSource("/api/stream"); window._es=es;\n'
+    '  es.onopen=()=>{ $("#liveDot").classList.add("on"); $("#liveTxt").textContent="En directo"; };\n'
+    "  es.onmessage=()=>load(true);\n"
+    '  es.onerror=()=>{ $("#liveDot").classList.remove("on"); $("#liveTxt").textContent="Reconectando"; };\n'
+    "}"
 )
-replacement = (
+CONNECT_NEW = (
     "function connectLive(){\n"
     "  if(window._poll) clearInterval(window._poll);\n"
     '  $("#liveDot").classList.add("on"); $("#liveTxt").textContent="En directo";\n'
     "  window._poll=setInterval(()=>{ if(ME) load(true); }, 4000);\n"
     "}"
 )
-html, n = pattern.subn(replacement, html)
-if n != 1:
-    raise SystemExit(f"ERROR: se esperaba sustituir connectLive() una vez, se sustituyó {n}. "
-                      "Revisa manualmente factory/panel.html antes de seguir.")
+
+for old, new, label in [(LOGOUT_OLD, LOGOUT_NEW, "logout"), (CONNECT_OLD, CONNECT_NEW, "connectLive")]:
+    n = html.count(old)
+    if n != 1:
+        raise SystemExit(f"ERROR: se esperaba encontrar el bloque '{label}' exactamente una vez en "
+                          f"factory/panel.html, se encontró {n}. Revisa el archivo a mano antes de seguir "
+                          f"(puede que su código haya cambiado y este script necesite actualizarse).")
+    html = html.replace(old, new)
 
 DST.write_text(html, encoding="utf-8")
 print(f"OK: {DST} regenerado desde {SRC}")
