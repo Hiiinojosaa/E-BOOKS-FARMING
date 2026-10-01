@@ -135,3 +135,5 @@ A few quick answers to questions that tend to come up in the first couple of wee
 To recap the four zones one more time: **Top Priorities** keeps your day to three things that matter, chosen with the urgent-versus-important filter. **Time Blocks** gives your day a shape instead of a minute-by-minute schedule, with one protected block for your sharpest hours. **Client Map** replaces mental tab-switching with a five-second glance, updated once a week. **Day-Close Line** gives you a real stopping point, so the workday has an ending instead of just fading out.
 
 None of this requires an app, a subscription, or a course. It requires one page, a pen or a text file, and the five minutes it takes to fill it in before you start. Draw it tomorrow morning, before you open your inbox, and see how the day feels with four walls around it instead of none.
+
+Keep the first week simple. Don't try to perfect every zone on day one — a rough Top Priorities list and a single protected block are enough to start, and the Client Map and Day-Close Line will feel more natural once the first two are routine. The page is meant to get easier with repetition, not harder.

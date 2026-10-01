@@ -150,3 +150,7 @@
 {"ts": "2026-10-01T17:41:50Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "message", "msg": "MSG-1790876510858297300-38bbbe"}
 {"ts": "2026-10-01T17:43:30Z", "type": "STATE_CHANGE", "book_id": "EB-000001", "frm": "WRITING_PENDING", "to": "WRITING", "agent": "S1-JEFE", "action": "CLAIM WRITE", "result": "OK", "task_id": "TASK-000015"}
 {"ts": "2026-10-01T17:43:30Z", "type": "TASK_CLAIMED", "task_id": "TASK-000015", "book_id": "EB-000001", "agent": "S1-JEFE", "step": "WRITE"}
+{"ts": "2026-10-01T17:51:26Z", "type": "STATE_CHANGE", "book_id": "EB-000001", "frm": "WRITING", "to": "DRAFT_COMPLETE", "agent": "S1-JEFE", "action": "COMPLETE WRITE", "result": "OK", "task_id": "TASK-000015"}
+{"ts": "2026-10-01T17:51:26Z", "type": "TASK_DONE", "task_id": "TASK-000015", "book_id": "EB-000001", "agent": "S1-JEFE", "step": "WRITE", "warnings": 0}
+{"ts": "2026-10-01T17:51:26Z", "type": "TASK_CREATED", "task_id": "TASK-000016", "book_id": "EB-000001", "step": "EDIT", "priority": "NORMAL"}
+{"ts": "2026-10-01T17:51:26Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
