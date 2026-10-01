@@ -6,7 +6,7 @@
   "epubcheck (opcional, requiere Java)": null,
   "java (opcional)": null,
   "calibre ebook-convert (opcional, MOBI/AZW3)": null,
-  "git_sync_enabled": false,
+  "git_sync_enabled": true,
   "integrity_problems": [],
-  "checked_at": "2026-10-01T08:53:35Z"
+  "checked_at": "2026-10-01T11:47:42Z"
 }
