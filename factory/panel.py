@@ -168,6 +168,8 @@ def _attention(all_b):
             items.append({"kind": "review", "book_id": b["id"], "title": b["title"]})
         elif b["status"] == "BRIEF_READY" and not b.get("brief_approved"):
             items.append({"kind": "brief", "book_id": b["id"], "title": b["title"]})
+        elif b["status"] == "IDEA" and b.get("idea_approved", True):
+            items.append({"kind": "start", "book_id": b["id"], "title": b["title"]})
     for t in tasks.all_tasks(["BLOCKED"]):
         items.append({"kind": "blocked", "task_id": t["task_id"], "book_id": t["book_id"], "step": t["type"],
                       "error": (t.get("error") or "")[:200]})

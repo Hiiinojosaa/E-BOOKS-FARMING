@@ -459,7 +459,8 @@ function vToday(){
       <div class="tiny mut" style="margin-bottom:2px">${icon("spark","sm")} Tema recomendado por el jefe · ${esc(a.language)}</div><div class="ttl">${esc(a.title)}</div><div class="why">${esc(a.why)}</div>
       <div class="btns"><button class="btn primary" onclick='answerQ(${JSON.stringify(a.decision_id)},"Adelante",this)'>${icon("check","sm")} Adelante</button><button class="btn" onclick='answerQ(${JSON.stringify(a.decision_id)},"Descartar",this)'>Descartar</button></div></div></div></div>`;
     if(a.kind==="review") return `<div class="card act review"><div class="row"><div class="grow"><div class="ttl">«${esc(a.title)}» está terminado</div><div class="why">Léelo y decide si se publica.</div></div><button class="btn primary" onclick="openBook('${a.book_id}')">${icon("eye","sm")} Revisar</button></div></div>`;
-    if(a.kind==="brief") return `<div class="card act"><div class="row"><div class="grow"><div class="ttl">Plan de «${esc(a.title)}» pendiente</div><div class="why">Tema delicado: necesita vuestro visto bueno antes de escribirse.</div></div><button class="btn" onclick="openBook('${a.book_id}')">Ver plan</button></div></div>`;
+    if(a.kind==="brief") return `<div class="card act"><div class="row"><div class="grow"><div class="ttl">Plan de «${esc(a.title)}» pendiente</div><div class="why">Necesita vuestro visto bueno antes de escribirse.</div></div><button class="btn" onclick="openBook('${a.book_id}')">Ver plan</button></div></div>`;
+    if(a.kind==="start") return `<div class="card act rec"><div class="row"><div class="grow"><div class="ttl">«${esc(a.title)}» está en Ideas</div><div class="why">No se produce hasta que lo pongáis en marcha.</div></div><button class="btn primary" onclick="startProd('${a.book_id}',this)">${icon("check","sm")} Empezar a producir</button></div></div>`;
     if(a.kind==="question") return `<div class="card act"><div class="row" style="align-items:flex-start">${roleAv(roleOf(a.by),"sm")}<div class="grow"><div class="tiny mut">${esc(agentLabel(a.by))} pregunta</div><div class="ttl" style="font-weight:500">${esc(a.question)}</div>
       <div class="btns">${a.options.map(o=>`<button class="btn" onclick='answerQ(${JSON.stringify(a.decision_id)},${esc(JSON.stringify(o))},this)'>${esc(o)}</button>`).join("")}<button class="btn ghost" onclick="go('chat')">Responder en el chat</button></div></div></div></div>`;
     if(a.kind==="blocked") return `<div class="card act bad"><div class="row"><div class="grow"><div class="ttl">«${esc(bookTitle(a.book_id))}» se ha parado</div><div class="why">${esc(STEP_NAME[a.step]||a.step)}: ${esc(a.error)}</div></div><button class="btn" onclick="unblock('${a.task_id}',this)">${icon("refresh","sm")} Reintentar</button></div></div>`;
@@ -491,8 +492,9 @@ function vToday(){
       </div>
     </div>`;
 }
-async function answerQ(id,ans,btn){ await act({action:"answer_question",id,answer:ans},btn, ans==="Adelante"?"Tema aprobado: entra en producción":"Respuesta enviada"); }
+async function answerQ(id,ans,btn){ await act({action:"answer_question",id,answer:ans},btn, ans==="Adelante"?"Tema aprobado. Pulsa «Empezar a producir» en Ideas cuando quieras":"Respuesta enviada"); }
 async function unblock(task,btn){ await act({action:"unblock",task,note:"Reintento pedido desde el panel"},btn,"Se volverá a intentar"); }
+async function startProd(id,btn){ if(await act({action:"start_production",id},btn,"En marcha: el equipo empezará a investigarlo")) openBook(id,true); }
 
 // ---------------------------------------------------------------- LIBRERÍA
 function vLibrary(){
@@ -516,7 +518,7 @@ function vLibrary(){
 }
 function newIdea(){
   openDrawer(`<div class="dhead"><b style="flex:1">Nueva idea de libro</b><button class="btn ghost icon" onclick="closeBook()">${icon("x")}</button></div><div class="dbody">
-    <div class="mut">Escríbela tal cual. El investigador comprobará si tiene mercado antes de escribirla.</div>
+    <div class="mut">Escríbela tal cual. Se guarda en <b>Ideas</b> y no se produce hasta que pulséis «Empezar a producir».</div>
     <label>Tema del libro</label><input id="ni_topic" type="text" placeholder="Ej.: Recetas rápidas para padres con poco tiempo">
     <div class="two"><div><label>Idioma y mercado</label><select id="ni_lang"><option value="en-US">Inglés · Estados Unidos</option><option value="en-GB">Inglés · Reino Unido</option><option value="es-ES">Español · España</option><option value="es-MX">Español · México</option></select></div>
     <div><label>Prioridad</label><select id="ni_prio"><option value="NORMAL">Normal</option><option value="HIGH">Alta</option><option value="LOW">Baja</option></select></div></div>
@@ -550,6 +552,8 @@ async function openBook(id, silent){
     <label>Enlace de la tienda (cuando esté publicado)</label><div style="display:flex;gap:8px"><input id="pub_url" type="text" placeholder="https://www.amazon.com/…"><button class="btn primary" id="bPub">Marcar como publicado</button></div></div>`; }
   else if(live) main=`<div class="card box"><div class="row">${roleAv(agentOf(live.agent)?.role||STEP_ROLE[live.step])}<div class="grow"><b>${esc(agentLabel(live.agent))}</b> <span class="mut">${esc(STEP_DOING[live.step]||"")} este libro ahora mismo</span><div class="tiny mut">desde ${ago(live.started_at)}${live.words!=null?` · ${num(live.words)} palabras`:""}</div></div></div></div>`;
   else if(b.status==="IDEA"&&b.idea_approved===false) main=`<div class="card box"><h4>Recomendado por el jefe</h4><div class="small">${esc(b.recommendation||"")}</div><div class="small mut" style="margin-top:6px">Respóndelo desde Hoy o el chat (Adelante / Descartar).</div></div>`;
+  else if(b.status==="IDEA") main=`<div class="card box" style="border-color:var(--acc)"><h4>Lista para empezar</h4><div class="small mut">Esta idea está guardada pero el equipo no la toca hasta que la pongáis en marcha.</div>
+    <div style="margin-top:14px"><button class="btn primary lg" id="bStart">${icon("check","sm")} Empezar a producir</button></div></div>`;
   else if(b.status==="BLOCKED") main=`<div class="card box" style="border-color:var(--bad)"><h4>Libro parado</h4><div class="small mut">Pregunta al jefe en el chat qué ha pasado, o pide reintentarlo desde Hoy.</div></div>`;
   $("#drawer").innerHTML=`<div class="dhead"><span class="pill ${b.status==="READY_FOR_PUBLISHING"?"good":b.status==="HUMAN_REVIEW"?"acc":b.status==="BLOCKED"?"bad":""}">${esc(STATUS(b.status))}</span><span style="flex:1"></span><button class="btn ghost icon" onclick="closeBook()">${icon("x")}</button></div>
     <div class="dbody">
@@ -574,6 +578,7 @@ async function openBook(id, silent){
   on("#bSend",async e=>{ const n=$("#ch_notes").value.trim(); if(!n){ toast("Explica qué hay que cambiar",true); return; } if(await act({action:"request_changes",id,notes:n,restart_at:$("#ch_from").value},e.target,"Cambios enviados al equipo")) closeBook(); });
   on("#bReject",async e=>{ if(!confirm("¿Descartar este libro?")) return; if(await act({action:"reject",id,notes:"Descartado desde el panel"},e.target,"Libro descartado")) closeBook(); });
   on("#bBrief",async e=>{ if(await act({action:"approve_brief",id},e.target,"Plan aprobado")) openBook(id,true); });
+  on("#bStart",async e=>{ if(await act({action:"start_production",id},e.target,"En marcha: el equipo empezará a investigarlo")) openBook(id,true); });
   on("#bPub",async e=>{ if(await act({action:"mark_published",id,platform:"KDP",url:$("#pub_url").value},e.target,"Marcado como publicado")) openBook(id,true); });
   on("#bTr",async e=>act({action:"translate",id,to:$("#o_lang").value},e.target,"Edición pedida"));
   const pr=$("#o_prio"); if(pr) pr.onchange=()=>act({action:"set_priority",id,priority:pr.value},null,"Prioridad cambiada");
