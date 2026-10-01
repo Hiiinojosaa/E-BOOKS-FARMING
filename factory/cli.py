@@ -5,7 +5,7 @@ import shutil
 import subprocess
 import sys
 
-from . import agents, books, build, chat, decisions, directives, gitsync, orchestrator, orders, pg_sync, publishing, qc, reports, states, tasks
+from . import agents, books, build, chat, decisions, directives, gitsync, orchestrator, orders, pg_sync, publishing, puzzles, qc, reports, states, tasks
 from .core import FactoryError, all_events, load_config, log_event, now_iso, path, read_json, utcnow, write_json, write_text
 
 DIRS = ["AGENTS", "BOOKS", "COLLECTIONS", "CONFIG", "DECISIONS", "LOCKS", "LOGS/events", "METRICS", "PROMPTS",
@@ -254,6 +254,10 @@ def cmd_orchestrate(a):
 
 def cmd_cover(a):
     out(build.render_cover(a.id))
+
+
+def cmd_puzzles(a):
+    out(puzzles.generate_book(a.id, a.agent, seed=a.seed))
 
 
 def cmd_build(a):
@@ -516,6 +520,8 @@ def parser():
     s.add_argument("--reason", default="released")
     s = add("unblock", cmd_unblock, "desbloquear tarea (humano)"); s.add_argument("task"); s.add_argument("--by", required=True); s.add_argument("--note")
     s = add("cover", cmd_cover, "renderizar portada"); s.add_argument("id")
+    s = add("puzzles", cmd_puzzles, "generar puzzles (paso WRITE de libros PUZZLE_*)"); s.add_argument("id")
+    s.add_argument("--agent", default="HUMAN"); s.add_argument("--seed")
     s = add("build", cmd_build, "generar EPUB+PDF"); s.add_argument("id")
     s = add("qc", cmd_qc, "QC automático independiente"); s.add_argument("id"); s.add_argument("--no-build", action="store_true")
     s = add("approve", cmd_approve, "aprobar (socio)"); s.add_argument("id"); s.add_argument("--by", required=True)

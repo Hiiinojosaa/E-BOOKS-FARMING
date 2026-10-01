@@ -5,7 +5,7 @@ apply(step, book, agent) -> (done_state, output) side effects after a valid comp
 """
 import re
 
-from . import books
+from . import books, puzzles
 from .build import split_chapters
 from .core import read_json, read_text, word_count, write_json, write_text
 from .qc import qc_markdown, run_auto_qc, text_issues
@@ -109,6 +109,8 @@ def validate(step, book):
         txt = _need(e, _f(book, "manuscript", "draft.md"), 300, "manuscript/draft.md")
         if txt:
             _manuscript_checks(e, w, book, txt, 0.6)
+        if book.get("kind") in puzzles.KINDS:
+            e.extend(puzzles.verify_book_puzzles(book["id"]))
         if step == "TRANSLATE":
             notes = _need(e, _f(book, "reports", "translation_notes.md"), 50, "reports/translation_notes.md")
             for key in ("source_language", "target_language", "adaptation_notes"):
@@ -118,11 +120,15 @@ def validate(step, book):
         txt = _need(e, _f(book, "manuscript", "edited.md"), 300, "manuscript/edited.md")
         if txt:
             _manuscript_checks(e, w, book, txt, 0.6)
+        if book.get("kind") in puzzles.KINDS:
+            e.extend(puzzles.verify_book_puzzles(book["id"]))
         _need(e, _f(book, "reports", "editing_report.md"), 80, "reports/editing_report.md")
     elif step == "FACT_CHECK":
         txt = _need(e, _f(book, "manuscript", "final.md"), 300, "manuscript/final.md")
         if txt:
             _manuscript_checks(e, w, book, txt, 0.6)
+        if book.get("kind") in puzzles.KINDS:
+            e.extend(puzzles.verify_book_puzzles(book["id"]))
         rep = _need(e, _f(book, "reports", "factcheck_report.md"), 50, "reports/factcheck_report.md")
         if rep and not re.search(r"^VERDICT:\s*(PASS|FLAGS)\s*$", rep, re.MULTILINE):
             e.append("factcheck_report.md necesita una línea 'VERDICT: PASS' o 'VERDICT: FLAGS'")
