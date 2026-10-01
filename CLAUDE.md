@@ -53,6 +53,14 @@ repetir hasta que `next` diga que no hay tareas o alcances max_tasks_per_session
 ```
 Sesión autónoma: `PROMPTS/WORKER.md` es el prompt completo del trabajador.
 
+## 4b. El equipo
+
+`python factory.py team setup --owner <SOCIO> --prefix <S1|DANI>` crea 7 agentes: JEFE (habla con los socios, recomienda
+temas con `recommend`, sigue las directrices, coordina; puede hacer cualquier tarea), INVESTIGADOR, ESCRITOR, EDITOR,
+DISENADOR, EMPAQUETADOR y CALIDAD (cada uno solo recibe las tareas de su oficio). Arranque: el jefe con `PROMPTS/CHIEF.md`,
+el resto con `PROMPTS/WORKER.md`. Directrices de los socios: `python factory.py directives` (obligatorio leerlas).
+Objetivo diario: `daily_target` en CONFIG; `python factory.py status` → `capacidad` dice cuántos temas recomendar.
+
 ## 5. Reglas fundamentales
 
 1. **Una tarea a la vez por agente; un agente a la vez por libro** (lo garantiza el lock). No toques archivos de un libro sin tener su tarea RUNNING.

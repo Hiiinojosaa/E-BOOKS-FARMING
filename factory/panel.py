@@ -298,6 +298,7 @@ def do_action(a, by):
         res = n
     elif act == "answer_question":
         res = decisions.answer(a["id"], by, a["answer"])["id"]
+        orchestrator.orchestrate(by)  # an approved recommendation enters the queue right away
     elif act == "new_book":
         langs = [l for l in (a.get("target_languages") or []) if l]
         b = books.create(a["topic"], a.get("language", "en-US"), agent=by, priority=a.get("priority", "NORMAL"),
