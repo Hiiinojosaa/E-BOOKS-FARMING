@@ -673,7 +673,7 @@ function vChat(){
   $("#msg").addEventListener("keydown",e=>{ if(e.key==="Enter"&&!e.shiftKey){ e.preventDefault(); sendMsg(); } });
   setSeg(); renderMessages(true); closePop();
 }
-document.addEventListener("click",e=>{ const p=$("#optsPop"); if(p && !p.classList.contains("hidden") && e.target!==$("#addBtn")) { p.classList.add("hidden"); $("#addBtn").classList.remove("on"); } });
+document.addEventListener("click",e=>{ const p=$("#optsPop"), a=$("#addBtn"); if(p && !p.classList.contains("hidden") && a && !a.contains(e.target)) { p.classList.add("hidden"); a.classList.remove("on"); } });
 function chips(){
   const c=$("#chips"); if(!c) return;
   const s = MODE==="directive" ? ["Objetivo: 12 libros al día","Precio máximo 3,99 $","Prioridad: inglés de EE. UU.","Nada de temas de salud ni finanzas"]
