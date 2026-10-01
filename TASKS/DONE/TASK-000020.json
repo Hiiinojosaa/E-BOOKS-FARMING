@@ -5,12 +5,12 @@
   "role": "EDITOR_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "TEST-AGENT",
   "created_by": "TEST-AGENT",
   "created_at": "2026-10-01T18:20:13Z",
   "started_at": "2026-10-01T18:20:29Z",
-  "completed_at": null,
+  "completed_at": "2026-10-01T18:20:45Z",
   "claimed_from_state": "DRAFT_COMPLETE",
   "dependencies": [],
   "prompt": "PROMPTS/EDIT.md",
@@ -23,7 +23,12 @@
   "attempts": [
     {
       "agent": "TEST-AGENT",
-      "started_at": "2026-10-01T18:20:29Z"
+      "started_at": "2026-10-01T18:20:29Z",
+      "ended_at": "2026-10-01T18:20:45Z",
+      "result": "DONE",
+      "note": "copyedit ligero, estructura e imagenes verificadas",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }
