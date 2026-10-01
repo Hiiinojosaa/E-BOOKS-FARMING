@@ -426,6 +426,7 @@ setInterval(()=>{ if(ME) load(true); }, 45000);
 function typing(){
   const a=document.activeElement;
   if(a && ["INPUT","TEXTAREA","SELECT"].includes(a.tagName)) return true;
+  const pop=$("#optsPop"); if(pop && !pop.classList.contains("hidden")) return true;
   return [...document.querySelectorAll("#view textarea,#drawer textarea,#drawer input[type=text]")].some(el=>el.value.trim());
 }
 async function load(soft){
