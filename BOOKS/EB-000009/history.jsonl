@@ -1,1 +1,2 @@
 {"ts": "2026-10-01T17:41:50Z", "from": null, "to": "IDEA", "agent": "ADMIN", "action": "CREATE", "result": "OK", "note": "Recetario Navideño: 50 Recetas y Menus Listos para Toda la Temporada"}
+{"ts": "2026-10-01T23:05:36Z", "from": "IDEA", "to": "RESEARCH_PENDING", "agent": "ADMIN", "action": "PROMOTE_IDEA", "result": "OK", "note": "Producción iniciada por ADMIN"}

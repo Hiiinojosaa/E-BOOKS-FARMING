@@ -210,3 +210,6 @@
 {"ts": "2026-10-01T18:22:06Z", "type": "ORCHESTRATE", "agent": "TEST-AGENT", "actions": 1}
 {"ts": "2026-10-01T22:27:16Z", "type": "AGENT_REGISTERED", "agent": "PG-BRIDGE", "owner": "SYSTEM", "model": "factory"}
 {"ts": "2026-10-01T22:53:01Z", "type": "SYNC_CONFLICT", "agent": "PANEL", "error": "error: cannot rebase: You have unstaged changes.\nerror: Please commit or stash them."}
+{"ts": "2026-10-01T23:05:36Z", "type": "STATE_CHANGE", "book_id": "EB-000009", "frm": "IDEA", "to": "RESEARCH_PENDING", "agent": "ADMIN", "action": "PROMOTE_IDEA", "result": "OK"}
+{"ts": "2026-10-01T23:05:36Z", "type": "TASK_CREATED", "task_id": "TASK-000025", "book_id": "EB-000009", "step": "RESEARCH", "priority": "HIGH"}
+{"ts": "2026-10-01T23:05:36Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 1}
