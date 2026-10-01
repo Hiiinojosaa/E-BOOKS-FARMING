@@ -279,6 +279,7 @@ table{width:100%;border-collapse:collapse;font-size:13.5px} td{padding:10px 16px
     <div class="brand"><div class="wordmark">E-Book Factory<small>Addless Motions</small></div></div>
     <button class="nav" data-t="today"></button>
     <button class="nav" data-t="library"></button>
+    <button class="nav" data-t="mercado"></button>
     <button class="nav" data-t="chat"></button>
     <button class="nav" data-t="team"></button>
     <div class="foot">
@@ -426,7 +427,7 @@ $("#logout").innerHTML=icon("logout");
 $("#logout").onclick=async()=>{ await api("/api/logout",{}).catch(()=>{}); ME=null; S=null; if(window._es) window._es.close(); showLogin(); };
 
 // ---------------------------------------------------------------- shell
-const NAV = {today:["home","Hoy"],library:["library","Librería"],chat:["chat","Chat"],team:["team","Equipo y ajustes"]};
+const NAV = {today:["home","Hoy"],library:["library","Librería"],mercado:["package","Mercado"],chat:["chat","Chat"],team:["team","Equipo y ajustes"]};
 function startApp(){
   $("#login").classList.add("hidden"); $("#app").classList.remove("hidden");
   $("#meAv").textContent=initials(ME.name); $("#meName").textContent=ME.name;
@@ -466,7 +467,7 @@ function renderNav(){
     b.innerHTML=icon(ic)+`<span>${l}</span>`+(n?`<span class="badge">${n}</span>`:"");
   });
 }
-function render(){ if(!S) return; renderNav(); ({today:vToday,library:vLibrary,chat:vChat,team:vTeam})[TAB](); }
+function render(){ if(!S) return; renderNav(); ({today:vToday,library:vLibrary,mercado:vMercado,chat:vChat,team:vTeam})[TAB](); }
 
 // ---------------------------------------------------------------- notifications
 function notify(prev){
@@ -555,6 +556,14 @@ function vLibrary(){
         ${b.shelf==="production"?`<div class="track"><i style="width:${p}%"></i></div>`:""}</button>`; }).join("")}</div>`:
       `<div class="card empty" style="margin-top:22px">No hay libros aquí. Pulsa <b>Nueva idea</b> o pide al jefe que te recomiende temas.</div>`}`;
   const s=$("#search"); s.oninput=()=>{ SEARCH=s.value; const p=s.selectionStart; vLibrary(); const n=$("#search"); n.focus(); n.setSelectionRange(p,p); };
+}
+function vMercado(){
+  const list=S.books.filter(b=>b.shelf==="ready"||b.shelf==="published");
+  $("#view").innerHTML=`
+    <div class="head"><div><h1>Mercado</h1><div class="sub">El catálogo que vais acumulando: libros aprobados, listos o ya publicados.</div></div></div>
+    ${list.length?`<div class="shelf">${list.map(b=>`<button class="bk" onclick="openBook('${b.id}')">${coverHTML(b)}<div class="t">${esc(b.title)}</div>
+        <div class="m">${b.shelf==="published"?`<span class="pill good">Publicado</span>`:`<span class="pill acc">Listo para publicar</span>`}${b.price?` · ${esc(b.price)} USD`:""}</div></button>`).join("")}</div>`:
+      `<div class="card empty" style="margin-top:22px">Todavía no hay libros aprobados. En cuanto deis el OK a uno en Librería, aparece aquí.</div>`}`;
 }
 function newIdea(){
   openDrawer(`<div class="dhead"><b style="flex:1">Nueva idea de libro</b><button class="btn ghost icon" onclick="closeBook()">${icon("x")}</button></div><div class="dbody">
