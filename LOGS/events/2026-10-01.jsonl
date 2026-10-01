@@ -148,3 +148,5 @@
 {"ts": "2026-10-01T17:41:50Z", "type": "BOOK_CREATED", "book_id": "EB-000013", "agent": "ADMIN", "topic": "Black Friday y Navidad sin Sustos: Guia para Comprar Mejor y Gastar Menos", "language": "es-ES"}
 {"ts": "2026-10-01T17:41:50Z", "type": "BOOK_CREATED", "book_id": "EB-000014", "agent": "ADMIN", "topic": "Hanukkah en Familia: Actividades, Recetas y Tradiciones", "language": "es-ES"}
 {"ts": "2026-10-01T17:41:50Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "message", "msg": "MSG-1790876510858297300-38bbbe"}
+{"ts": "2026-10-01T17:43:30Z", "type": "STATE_CHANGE", "book_id": "EB-000001", "frm": "WRITING_PENDING", "to": "WRITING", "agent": "S1-JEFE", "action": "CLAIM WRITE", "result": "OK", "task_id": "TASK-000015"}
+{"ts": "2026-10-01T17:43:30Z", "type": "TASK_CLAIMED", "task_id": "TASK-000015", "book_id": "EB-000001", "agent": "S1-JEFE", "step": "WRITE"}
