@@ -1,0 +1,8 @@
+[build]
+  publish = "netlify-demo"
+  command = "echo 'static demo, nothing to build'"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
