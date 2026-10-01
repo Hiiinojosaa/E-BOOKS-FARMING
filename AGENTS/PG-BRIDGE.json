@@ -1,0 +1,17 @@
+{
+  "agent_id": "PG-BRIDGE",
+  "owner": "SYSTEM",
+  "provider": "script",
+  "model": "factory",
+  "capabilities": [
+    "FORMAT_AGENT"
+  ],
+  "status": "IDLE",
+  "current_task": null,
+  "last_seen": "2026-10-01T22:27:16Z",
+  "registered_at": "2026-10-01T22:27:16Z",
+  "notes": "Agente de sistema para tareas automáticas (maquetación)",
+  "role": null,
+  "label": null,
+  "prompt": "PROMPTS/WORKER.md"
+}
