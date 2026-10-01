@@ -258,20 +258,23 @@ table{width:100%;border-collapse:collapse;font-size:13.5px} td{padding:10px 16px
 <body>
 
 <section id="login" class="hidden">
-  <div class="loginbrand"><div class="wordmark" style="color:#fff"><span class="hl">E-Book</span> Factory<small style="color:#dfe1f5">Addless Motions</small></div></div>
-  <div class="logintag"><h1>Tu editorial, trabajando mientras tú decides.</h1><p>Investiga, escribe, edita, diseña y empaqueta. Tú das el visto bueno de cada libro.</p></div>
-  <div class="logincard"><div class="loginbox">
-    <h2>Iniciar sesión</h2><div class="mut" id="loginSub">Elige tu perfil</div>
-    <div id="profiles"></div>
-    <div id="pinStep" class="hidden" style="margin-top:6px">
-      <div id="nameRow" class="hidden"><label>Tu nombre</label><input id="loginName" maxlength="40" autocomplete="off"></div>
-      <label id="pinLabel">Contraseña</label>
-      <input id="pin" class="pin" type="password" maxlength="40" autocomplete="current-password">
-      <div class="tiny mut" id="pinHelp" style="margin-top:7px"></div>
-      <button class="btn primary lg" style="width:100%;margin-top:16px" id="loginBtn">Entrar</button>
+  <div class="loginpane">
+    <div class="loginbrand"><div class="wordmark"><span class="hl">E-Book</span> Factory<small>Addless Motions</small></div></div>
+    <div class="logintag"><h1>Tu editorial, trabajando mientras tú decides.</h1><p>Investiga, escribe, edita, diseña y empaqueta. Tú das el visto bueno de cada libro.</p></div>
+    <div class="loginbox">
+      <h2>Iniciar sesión</h2><div class="mut" id="loginSub">Elige tu perfil</div>
+      <div id="profiles"></div>
+      <div id="pinStep" class="hidden" style="margin-top:6px">
+        <div id="nameRow" class="hidden"><label>Tu nombre</label><input id="loginName" maxlength="40" autocomplete="off"></div>
+        <label id="pinLabel">Contraseña</label>
+        <input id="pin" class="pin" type="password" maxlength="40" autocomplete="current-password">
+        <div class="tiny mut" id="pinHelp" style="margin-top:7px"></div>
+        <button class="btn primary lg" style="width:100%;margin-top:16px" id="loginBtn">Entrar</button>
+      </div>
+      <div class="privbadge" style="margin-top:22px"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg> La contraseña se guarda cifrada solo en este ordenador. Nunca se sube a GitHub.</div>
     </div>
-    <div class="privbadge" style="margin-top:22px"><svg class="i sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20 6v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="m9 12 2 2 4-4"/></svg> La contraseña se guarda cifrada solo en este ordenador. Nunca se sube a GitHub.</div>
-  </div></div>
+  </div>
+  <div class="loginart" aria-hidden="true"></div>
 </section>
 
 <section id="app" class="hidden">
