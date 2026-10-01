@@ -5,7 +5,7 @@ import shutil
 import subprocess
 import sys
 
-from . import agents, books, build, chat, decisions, directives, gitsync, orchestrator, orders, publishing, qc, reports, states, tasks
+from . import agents, books, build, chat, decisions, directives, gitsync, orchestrator, orders, pg_sync, publishing, qc, reports, states, tasks
 from .core import FactoryError, all_events, load_config, log_event, now_iso, path, read_json, utcnow, write_json, write_text
 
 DIRS = ["AGENTS", "BOOKS", "COLLECTIONS", "CONFIG", "DECISIONS", "LOCKS", "LOGS/events", "METRICS", "PROMPTS",
@@ -41,6 +41,28 @@ def _after(agent, msg):
         r = gitsync.sync(agent, msg)
         if r.get("sync") != "OK":
             out(r)
+    if pg_sync.enabled():
+        _pg_drain(agent)
+
+
+def _pg_drain(agent):
+    """Apply actions queued from the remote (Vercel) panel, then push fresh state to it."""
+    from . import panel  # lazy: panel imports cli lazily too, avoids a circular import at module load
+    try:
+        for row in pg_sync.pull_pending_actions():
+            try:
+                result = panel.do_action(row["payload"], row["partner"])
+                pg_sync.mark_action_done(row["id"], result)
+            except FactoryError as e:
+                pg_sync.mark_action_error(row["id"], str(e))
+            except Exception as e:  # noqa: BLE001
+                pg_sync.mark_action_error(row["id"], f"{type(e).__name__}: {e}")
+        pg_sync.push_users()
+        pg_sync.push_state(panel.state(agent))
+        for b in books.all_books():
+            pg_sync.push_book_details(b["id"], panel.book_detail(b["id"]))
+    except Exception as e:  # noqa: BLE001 - the remote bridge must never break a local CLI command
+        print(f"[pg_sync] fallo: {e}")
 
 
 # ------------------------------------------------------------------ commands
