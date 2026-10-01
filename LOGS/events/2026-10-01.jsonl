@@ -190,3 +190,5 @@
 {"ts": "2026-10-01T18:20:45Z", "type": "TASK_DONE", "task_id": "TASK-000020", "book_id": "EB-000015", "agent": "TEST-AGENT", "step": "EDIT", "warnings": 0}
 {"ts": "2026-10-01T18:20:45Z", "type": "TASK_CREATED", "task_id": "TASK-000021", "book_id": "EB-000015", "step": "FACT_CHECK", "priority": "NORMAL"}
 {"ts": "2026-10-01T18:20:45Z", "type": "ORCHESTRATE", "agent": "TEST-AGENT", "actions": 1}
+{"ts": "2026-10-01T18:20:58Z", "type": "STATE_CHANGE", "book_id": "EB-000015", "frm": "EDITED", "to": "FACT_CHECKING", "agent": "TEST-AGENT", "action": "CLAIM FACT_CHECK", "result": "OK", "task_id": "TASK-000021"}
+{"ts": "2026-10-01T18:20:58Z", "type": "TASK_CLAIMED", "task_id": "TASK-000021", "book_id": "EB-000015", "agent": "TEST-AGENT", "step": "FACT_CHECK"}
