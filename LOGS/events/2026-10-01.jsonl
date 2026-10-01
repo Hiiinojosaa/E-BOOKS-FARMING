@@ -165,3 +165,7 @@
 {"ts": "2026-10-01T18:17:43Z", "type": "TASK_FAILED", "task_id": "TASK-000017", "book_id": "EB-000015", "agent": "TEST-AGENT", "error": "Validación fallida: research/research.md demasiado corto (353 < 400 palabras)", "retry_count": 1}
 {"ts": "2026-10-01T18:18:09Z", "type": "STATE_CHANGE", "book_id": "EB-000015", "frm": "RESEARCH_PENDING", "to": "RESEARCHING", "agent": "TEST-AGENT", "action": "CLAIM RESEARCH", "result": "OK", "task_id": "TASK-000017"}
 {"ts": "2026-10-01T18:18:09Z", "type": "TASK_CLAIMED", "task_id": "TASK-000017", "book_id": "EB-000015", "agent": "TEST-AGENT", "step": "RESEARCH"}
+{"ts": "2026-10-01T18:18:12Z", "type": "STATE_CHANGE", "book_id": "EB-000015", "frm": "RESEARCHING", "to": "RESEARCH_COMPLETE", "agent": "TEST-AGENT", "action": "COMPLETE RESEARCH", "result": "OK", "task_id": "TASK-000017"}
+{"ts": "2026-10-01T18:18:12Z", "type": "TASK_DONE", "task_id": "TASK-000017", "book_id": "EB-000015", "agent": "TEST-AGENT", "step": "RESEARCH", "warnings": 0}
+{"ts": "2026-10-01T18:18:12Z", "type": "TASK_CREATED", "task_id": "TASK-000018", "book_id": "EB-000015", "step": "BRIEF", "priority": "NORMAL"}
+{"ts": "2026-10-01T18:18:12Z", "type": "ORCHESTRATE", "agent": "TEST-AGENT", "actions": 1}

@@ -3,3 +3,4 @@
 {"ts": "2026-10-01T18:17:13Z", "from": "RESEARCH_PENDING", "to": "RESEARCHING", "agent": "TEST-AGENT", "action": "CLAIM RESEARCH", "result": "OK", "task_id": "TASK-000017"}
 {"ts": "2026-10-01T18:17:43Z", "from": "RESEARCHING", "to": "RESEARCH_PENDING", "agent": "TEST-AGENT", "action": "FAIL RESEARCH", "result": "RETRY", "task_id": "TASK-000017", "note": "Validación fallida: research/research.md demasiado corto (353 < 400 palabras)"}
 {"ts": "2026-10-01T18:18:09Z", "from": "RESEARCH_PENDING", "to": "RESEARCHING", "agent": "TEST-AGENT", "action": "CLAIM RESEARCH", "result": "OK", "task_id": "TASK-000017"}
+{"ts": "2026-10-01T18:18:12Z", "from": "RESEARCHING", "to": "RESEARCH_COMPLETE", "agent": "TEST-AGENT", "action": "COMPLETE RESEARCH", "result": "OK", "task_id": "TASK-000017", "note": "investigacion completada (pipeline de validacion)"}
