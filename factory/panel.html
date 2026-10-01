@@ -253,7 +253,7 @@ table{width:100%;border-collapse:collapse;font-size:13.5px} td{padding:10px 16px
 
 <section id="login" class="hidden">
   <div class="loginbrand"><div class="mark" id="lmark"></div><div class="wordmark" style="color:#fff">E-Book Factory<small style="color:#dfe1f5">Addless Motions</small></div></div>
-  <div class="logintag"><span class="eyebrow">PANEL DE SOCIOS</span><h1>Vuestra editorial, trabajando mientras vosotros decidís.</h1><p>Investiga, escribe, edita, diseña y empaqueta. Vosotros dais el visto bueno de cada libro.</p></div>
+  <div class="logintag"><span class="eyebrow">PANEL PRIVADO</span><h1>Tu editorial, trabajando mientras tú decides.</h1><p>Investiga, escribe, edita, diseña y empaqueta. Tú das el visto bueno de cada libro.</p></div>
   <div class="logincard"><div class="loginbox">
     <h2>Iniciar sesión</h2><div class="mut" id="loginSub">Elige tu perfil</div>
     <div id="profiles"></div>
@@ -345,7 +345,7 @@ const personAv = (id, sm) => `<div class="av person ${sm?"sm":""}">${esc(initial
 const STEP_DOING = {RESEARCH:"investiga el mercado de",BRIEF:"prepara el plan de",WRITE:"escribe",TRANSLATE:"traduce",EDIT:"edita",FACT_CHECK:"comprueba los datos de",METADATA:"pone título y descripción a",DESIGN:"diseña la portada de",FORMAT:"maqueta",QC:"revisa la calidad de",FIX:"corrige"};
 const STEP_NAME = {RESEARCH:"Investigación",BRIEF:"Plan del libro",WRITE:"Escritura",TRANSLATE:"Traducción",EDIT:"Edición",FACT_CHECK:"Comprobación de datos",METADATA:"Título y descripción",DESIGN:"Portada",FORMAT:"Maquetación",QC:"Control de calidad",FIX:"Corrección"};
 const SHELVES = [["review","Para revisar"],["ready","Listos para publicar"],["production","En producción"],["ideas","Ideas"],["published","Publicados"],["stopped","Parados"],["discarded","Descartados"]];
-const STATUS = s => ({IDEA:"Idea en reserva",RESEARCH_PENDING:"En cola para investigar",RESEARCHING:"Investigando el mercado",RESEARCH_COMPLETE:"Investigación terminada",BRIEFING:"Preparando el plan",BRIEF_READY:"Plan listo",WRITING_PENDING:"En cola para escribir",WRITING:"Escribiéndose",DRAFT_COMPLETE:"Borrador terminado",TRANSLATION_PENDING:"En cola para traducir",TRANSLATING:"Traduciéndose",TRANSLATED:"Traducido",EDITING:"En edición",EDITED:"Editado",FACT_CHECKING:"Comprobando datos",FACT_CHECKED:"Datos comprobados",METADATA_IN_PROGRESS:"Título y descripción",DESIGN_PENDING:"En cola para portada",DESIGNING:"Diseñando portada",DESIGN_COMPLETE:"Portada terminada",FORMATTING:"Maquetando",QC_PENDING:"En cola para calidad",QC:"Control de calidad",QC_FAILED:"Corrigiendo fallos de calidad",FIXING:"Corrigiendo",QC_PASSED:"Calidad superada",HUMAN_REVIEW:"Pendiente de vuestra revisión",CHANGES_REQUIRED:"Cambios pedidos",APPROVED:"Aprobado",REJECTED:"Descartado",READY_FOR_PUBLISHING:"Listo para publicar",PUBLISHED:"Publicado",BLOCKED:"Parado: necesita ayuda"}[s]||s);
+const STATUS = s => ({IDEA:"Idea en reserva",RESEARCH_PENDING:"En cola para investigar",RESEARCHING:"Investigando el mercado",RESEARCH_COMPLETE:"Investigación terminada",BRIEFING:"Preparando el plan",BRIEF_READY:"Plan listo",WRITING_PENDING:"En cola para escribir",WRITING:"Escribiéndose",DRAFT_COMPLETE:"Borrador terminado",TRANSLATION_PENDING:"En cola para traducir",TRANSLATING:"Traduciéndose",TRANSLATED:"Traducido",EDITING:"En edición",EDITED:"Editado",FACT_CHECKING:"Comprobando datos",FACT_CHECKED:"Datos comprobados",METADATA_IN_PROGRESS:"Título y descripción",DESIGN_PENDING:"En cola para portada",DESIGNING:"Diseñando portada",DESIGN_COMPLETE:"Portada terminada",FORMATTING:"Maquetando",QC_PENDING:"En cola para calidad",QC:"Control de calidad",QC_FAILED:"Corrigiendo fallos de calidad",FIXING:"Corrigiendo",QC_PASSED:"Calidad superada",HUMAN_REVIEW:"Pendiente de tu revisión",CHANGES_REQUIRED:"Cambios pedidos",APPROVED:"Aprobado",REJECTED:"Descartado",READY_FOR_PUBLISHING:"Listo para publicar",PUBLISHED:"Publicado",BLOCKED:"Parado: necesita ayuda"}[s]||s);
 const EVENT_TXT = e => { const b = e.book_id ? bookTitle(e.book_id) : "";
   switch(e.type){
     case "TASK_DONE": return [STEP_ROLE[e.step]||"", `${agentLabel(e.agent)} terminó ${(STEP_NAME[e.step]||e.step).toLowerCase()} de «${b}»`];
@@ -498,7 +498,7 @@ function vToday(){
   $("#view").innerHTML=`
     <div class="head"><div><h1>${hello}, ${esc(nameOf(S.me))}</h1><div class="sub">${new Date().toLocaleDateString("es-ES",{weekday:"long",day:"numeric",month:"long"})} · ${S.live.length?`${S.live.length} ${S.live.length===1?"agente trabajando":"agentes trabajando"} ahora`:"Ningún agente trabajando ahora"}</div></div>
       <button class="btn" onclick="go('chat')">${icon("chat","sm")} Hablar con el jefe</button></div>
-    ${noti?`<div class="notice">${icon("bell")}<div style="flex:1">Activa los avisos para enteraros al momento cuando el jefe os escriba o un libro esté listo.</div><button class="btn primary" onclick="enableNotifications(this)">Activar avisos</button></div>`:""}
+    ${noti?`<div class="notice">${icon("bell")}<div style="flex:1">Activa los avisos para enterarte al momento cuando el jefe te escriba o un libro esté listo.</div><button class="btn primary" onclick="enableNotifications(this)">Activar avisos</button></div>`:""}
     <div class="kpis">
       <button class="card kpi" onclick="go('library')"><div class="l">${icon("target","sm")} Terminados hoy</div><div class="v">${cap.terminados_hoy} <small>de ${cap.objetivo_diario}</small></div><div class="track"><i style="width:${pct}%"></i></div></button>
       <button class="card kpi" onclick="SHELF='production';go('library')"><div class="l">${icon("layers","sm")} En producción</div><div class="v">${cnt("production")}</div></button>
@@ -514,7 +514,7 @@ function vToday(){
       </div>
       <div>
         <div class="sec"><h3>Directrices vigentes</h3><button class="btn ghost small" onclick="go('chat')">${icon("plus","sm")} Añadir</button></div>
-        <div class="card dirs">${S.directives.length?S.directives.slice(0,6).map(d=>`<div class="d">${icon("flag","sm")}<span>${esc(d.text)}</span></div>`).join(""):`<div class="empty">Sin directrices. Añadidlas en el chat tras cada reunión.</div>`}</div>
+        <div class="card dirs">${S.directives.length?S.directives.slice(0,6).map(d=>`<div class="d">${icon("flag","sm")}<span>${esc(d.text)}</span></div>`).join(""):`<div class="empty">Sin directrices. Añádelas en el chat tras cada reunión.</div>`}</div>
         <div class="sec"><h3>Actividad</h3></div>
         <div class="card feed">${feed.map(x=>`<div class="it"><span class="when">${ago(x.e.ts)}</span><span>${esc(x.t[1])}</span></div>`).join("")||`<div class="empty">Sin actividad todavía</div>`}</div>
       </div>
@@ -541,7 +541,7 @@ function vLibrary(){
       return `<button class="bk" onclick="openBook('${b.id}')">${coverHTML(b)}<div class="t">${esc(b.title)}</div>
         <div class="m">${b.shelf==="production"?esc(S.journey[b.stage]||""):b.shelf==="review"?`<span class="pill acc">Revisar</span>`:esc(STATUS(b.status))}</div>
         ${b.shelf==="production"?`<div class="track"><i style="width:${p}%"></i></div>`:""}</button>`; }).join("")}</div>`:
-      `<div class="card empty" style="margin-top:22px">No hay libros aquí. Pulsa <b>Nueva idea</b> o pide al jefe que os recomiende temas.</div>`}`;
+      `<div class="card empty" style="margin-top:22px">No hay libros aquí. Pulsa <b>Nueva idea</b> o pide al jefe que te recomiende temas.</div>`}`;
   const s=$("#search"); s.oninput=()=>{ SEARCH=s.value; const p=s.selectionStart; vLibrary(); const n=$("#search"); n.focus(); n.setSelectionRange(p,p); };
 }
 function newIdea(){
@@ -735,7 +735,7 @@ function vTeam(){
   const noAgents = !S.team.some(t=>t.agents.length);
   const noti = ("Notification" in window) ? Notification.permission : "unsupported";
   $("#view").innerHTML=`
-    <div class="head"><div><h1>Equipo y ajustes</h1><div class="sub">Quién hace cada cosa, cómo ponerlos a trabajar y vuestras preferencias.</div></div></div>
+    <div class="head"><div><h1>Equipo y ajustes</h1><div class="sub">Quién hace cada cosa, cómo ponerlos a trabajar y tus preferencias.</div></div></div>
     ${noAgents?`<div class="notice">${icon("team")}<div style="flex:1">Todavía no has creado el equipo. En la carpeta del proyecto, ejecuta una vez: <code class="cmd">python factory.py team setup --owner ${esc(S.me)} --prefix S1</code></div></div>`:""}
     <div class="sec"><h3>El equipo</h3></div>
     <div class="team">${S.team.map(t=>{ const as=t.agents.map(agentOf).filter(Boolean);
@@ -745,7 +745,7 @@ function vTeam(){
         ${as.map(a=>`<button class="btn" style="width:100%" onclick='copyTxt(${esc(JSON.stringify(phrase(a.agent_id,t.prompt)))})'>${icon("copy","sm")} Copiar orden de arranque</button>`).join("")}</div>`; }).join("")}</div>
     <div class="sec"><h3>Cómo se ponen a trabajar</h3></div>
     <div class="card pad small" style="line-height:1.7">
-      Cada miembro del equipo es una sesión de <b>Claude Code</b> abierta en la carpeta del proyecto. Para arrancar uno, abre Claude Code y pega su orden de arranque (botón de arriba). Pueden trabajar varios a la vez: cada uno coge solo las tareas de su oficio, y el jefe además os atiende en el chat.<br>
+      Cada miembro del equipo es una sesión de <b>Claude Code</b> abierta en la carpeta del proyecto. Para arrancar uno, abre Claude Code y pega su orden de arranque (botón de arriba). Pueden trabajar varios a la vez: cada uno coge solo las tareas de su oficio, y el jefe además te atiende en el chat.<br>
       <b>Para que trabajen solos con horario</b> (también de noche), pide a Claude: «programa el equipo cada 2 horas».<br>
       <span class="mut">Ritmo realista: cada libro consume bastante trabajo de agente y todos los agentes comparten tu cuota de Claude. Más libros al día = más agentes en marcha y más cuota.</span>
     </div>
@@ -760,14 +760,14 @@ function vTeam(){
       <button class="btn" id="bSync">${icon("refresh","sm")} Sincronizar</button><button class="btn" id="bTick" title="Recupera trabajos cortados, prepara las siguientes tareas y maqueta lo que esté listo">Poner al día</button></div></div>
     <div class="sec"><h3>Mi cuenta</h3></div>
     <div class="card pad"><div class="two"><div><label style="margin-top:0">Nombre</label><div style="display:flex;gap:8px"><input id="myName" type="text" value="${esc(nameOf(S.me))}"><button class="btn" id="bName">Guardar</button></div></div>
-      <div><label style="margin-top:0">Cambiar PIN</label><div style="display:flex;gap:8px"><input id="pinOld" type="password" inputmode="numeric" placeholder="Actual"><input id="pinNew" type="password" inputmode="numeric" placeholder="Nuevo"><button class="btn" id="bPin">Cambiar</button></div></div></div></div>
+      <div><label style="margin-top:0">Cambiar contraseña</label><div style="display:flex;gap:8px"><input id="pinOld" type="password" placeholder="Actual"><input id="pinNew" type="password" placeholder="Nueva"><button class="btn" id="bPin">Cambiar</button></div></div></div></div>
     <div class="sec"><h3>Historial</h3></div>
     <div class="card"><table>${S.events.map(e=>({e,t:EVENT_TXT(e)})).filter(x=>x.t).map(x=>`<tr><td class="faint" style="white-space:nowrap;width:110px">${ago(x.e.ts)}</td><td>${esc(x.t[1])}</td></tr>`).join("")||`<tr><td class="empty">Sin actividad</td></tr>`}</table></div>`;
   $("#bTarget").onclick=e=>act({action:"set_target",target:$("#target").value},e.target,"Objetivo guardado");
   $("#bSync").onclick=e=>act({action:"sync"},e.target,"Sincronizado");
   $("#bTick").onclick=e=>act({action:"tick"},e.target,"Fábrica al día");
   $("#bName").onclick=async e=>{ if(await act({action:"set_name",name:$("#myName").value},e.target,"Nombre guardado")){ ME=await fetch("/api/me").then(r=>r.json()); $("#meName").textContent=ME.name; $("#meAv").textContent=initials(ME.name); } };
-  $("#bPin").onclick=async e=>{ if(await act({action:"change_pin",old:$("#pinOld").value,new:$("#pinNew").value},e.target,"PIN cambiado")){ $("#pinOld").value=""; $("#pinNew").value=""; } };
+  $("#bPin").onclick=async e=>{ if(await act({action:"change_pin",old:$("#pinOld").value,new:$("#pinNew").value},e.target,"Contraseña cambiada")){ $("#pinOld").value=""; $("#pinNew").value=""; } };
 }
 function copyTxt(t){ (navigator.clipboard?navigator.clipboard.writeText(t):Promise.reject()).then(()=>toast("Copiado. Pégalo en Claude Code"),()=>window.prompt("Copia esto:",t)); }
 
