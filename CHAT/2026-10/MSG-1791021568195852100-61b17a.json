@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791021568195852100-61b17a",
+  "ts": "2026-10-03T09:59:28Z",
+  "from": "ADMIN",
+  "role": "partner",
+  "kind": "message",
+  "to": "factory",
+  "text": "activate",
+  "book_id": "EB-TEST-001",
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}

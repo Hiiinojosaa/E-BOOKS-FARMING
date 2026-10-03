@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791021568202100700-9deb1c",
+  "ts": "2026-10-03T09:59:28Z",
+  "from": "Fábrica",
+  "role": "system",
+  "kind": "note",
+  "to": null,
+  "text": "Recibido. Ahora mismo no hay ningún agente encendido: tu mensaje queda en cola y el primero que arranque lo atenderá y te responderá aquí.",
+  "book_id": null,
+  "order_id": "ORD-00002",
+  "decision_id": null,
+  "options": [],
+  "reply_to": "MSG-1791021568195852100-61b17a"
+}
