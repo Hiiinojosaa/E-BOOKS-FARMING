@@ -16,3 +16,6 @@
 {"ts": "2026-10-03T10:01:33Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "answer", "msg": "MSG-1791021693876740900-5c134e"}
 {"ts": "2026-10-03T10:02:13Z", "type": "STATE_CHANGE", "book_id": "EB-000009", "frm": "RESEARCH_PENDING", "to": "RESEARCHING", "agent": "S1-JEFE", "action": "CLAIM RESEARCH", "result": "OK", "task_id": "TASK-000025"}
 {"ts": "2026-10-03T10:02:13Z", "type": "TASK_CLAIMED", "task_id": "TASK-000025", "book_id": "EB-000009", "agent": "S1-JEFE", "step": "RESEARCH"}
+{"ts": "2026-10-03T10:03:08Z", "type": "STATE_CHANGE", "book_id": "EB-000003", "frm": "IDEA", "to": "RESEARCH_PENDING", "agent": "ADMIN", "action": "PROMOTE_IDEA", "result": "OK"}
+{"ts": "2026-10-03T10:03:08Z", "type": "TASK_CREATED", "task_id": "TASK-000028", "book_id": "EB-000003", "step": "RESEARCH", "priority": "NORMAL"}
+{"ts": "2026-10-03T10:03:08Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 1}
