@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791021578565830600-725275",
+  "ts": "2026-10-03T09:59:38Z",
+  "from": "ADMIN",
+  "role": "partner",
+  "kind": "message",
+  "to": "S1-JEFE",
+  "text": "hola",
+  "book_id": "EB-TEST-001",
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
