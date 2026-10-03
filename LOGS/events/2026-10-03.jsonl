@@ -34,3 +34,5 @@
 {"ts": "2026-10-03T10:06:33Z", "type": "STATE_CHANGE", "book_id": "EB-000005", "frm": "IDEA", "to": "RESEARCH_PENDING", "agent": "ADMIN", "action": "PROMOTE_IDEA", "result": "OK"}
 {"ts": "2026-10-03T10:06:33Z", "type": "TASK_CREATED", "task_id": "TASK-000031", "book_id": "EB-000005", "step": "RESEARCH", "priority": "NORMAL"}
 {"ts": "2026-10-03T10:06:33Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 1}
+{"ts": "2026-10-03T10:06:47Z", "type": "STATE_CHANGE", "book_id": "EB-000009", "frm": "RESEARCH_COMPLETE", "to": "BRIEFING", "agent": "S1-JEFE", "action": "CLAIM BRIEF", "result": "OK", "task_id": "TASK-000030"}
+{"ts": "2026-10-03T10:06:47Z", "type": "TASK_CLAIMED", "task_id": "TASK-000030", "book_id": "EB-000009", "agent": "S1-JEFE", "step": "BRIEF"}
