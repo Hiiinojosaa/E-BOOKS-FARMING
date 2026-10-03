@@ -7,10 +7,18 @@
   "priority": "NORMAL",
   "target_agent": null,
   "book_id": null,
-  "status": "OPEN",
-  "taken_by": null,
-  "updated_at": "2026-10-03T10:03:18Z",
+  "status": "IN_PROGRESS",
+  "taken_by": "S1-JEFE",
+  "updated_at": "2026-10-03T10:05:23Z",
   "result": null,
-  "history": [],
+  "history": [
+    {
+      "at": "2026-10-03T10:05:23Z",
+      "by": "S1-JEFE",
+      "from": "OPEN",
+      "to": "IN_PROGRESS",
+      "note": ""
+    }
+  ],
   "chat_msg": "MSG-1791021798327410000-cad9ca"
 }
