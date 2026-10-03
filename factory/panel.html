@@ -349,6 +349,11 @@ const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt
 const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 const nameOf = id => (S && S.names[id]) || id;
 const agentOf = id => S && S.agents.find(a=>a.agent_id===id);
+// The chief runs on a Windows schedule and covers every specialist role, so the team is "on" whenever the chief is.
+const autoInfo = () => S && S.automation && S.automation.state && S.automation.state!=="Disabled" ? S.automation : null;
+const hhmm = iso => iso ? new Date(iso).toLocaleTimeString("es-ES",{hour:"2-digit",minute:"2-digit"}) : "";
+const chiefAlive = () => { const c=S&&S.agents.find(a=>a.agent_id===S.main_agent); return !!autoInfo() || !!(c && (c.status==="BUSY" || (c.minutes_ago!=null && c.minutes_ago<=180))); };
+const nextTurn = () => { const au=autoInfo(); return au&&au.next ? `próximo turno a las ${hhmm(au.next)}` : ""; };
 const roleOf = id => { const a = agentOf(id); return (a && a.role) || (String(id).split("-").pop()); };
 const agentLabel = id => { const a = agentOf(id); return a && a.label ? a.label : id; };
 const bookTitle = id => { const b = S && S.books.find(x=>x.id===id); return b ? b.title : id; };
@@ -767,7 +772,9 @@ async function sendMsg(){
 // ---------------------------------------------------------------- EQUIPO Y AJUSTES
 function vTeam(){
   const phrase=(id,prompt)=>`Trabaja como ${id} de la E-Book Factory siguiendo ${prompt||"PROMPTS/WORKER.md"}`;
-  const st=a=>a.status==="BUSY"?["good","Trabajando"]:(a.minutes_ago!=null&&a.minutes_ago>180)||a.status==="OFFLINE"?["","Apagado"]:["acc","En espera"];
+  const st=(a,role)=>a.status==="BUSY"?["good","Trabajando"]
+    :role==="JEFE"?(autoInfo()?["acc","Automático"]:chiefAlive()?["acc","En espera"]:["","Apagado"])
+    :chiefAlive()?["acc","Cubierto por el jefe"]:["","Apagado"];
   const sy=S.sync;
   const noAgents = !S.team.some(t=>t.agents.length);
   const noti = ("Notification" in window) ? Notification.permission : "unsupported";

@@ -481,8 +481,20 @@ def cmd_pg_setup(a):
 
 
 def cmd_pg_status(a):
-    out({"enabled": pg_sync.enabled(),
-         "pending": len(pg_sync.pull_pending_actions()) if pg_sync.enabled() else None})
+    out({"enabled": pg_sync.enabled(), "pending": pg_sync.count_pending()})
+
+
+def cmd_bridge(a):
+    """Keeps the Vercel panel alive without the local web panel: applies its queued actions and
+    refreshes the mirror every few seconds. Meant to run permanently (see ACTIVAR_AGENTES.bat)."""
+    import time
+    if not pg_sync.enabled():
+        raise FactoryError("Falta DATABASE_URL en .env")
+    agents.ensure_system("PG-BRIDGE")
+    print("Puente con el panel de Vercel activo (Ctrl+C para parar).", flush=True)
+    while True:
+        _pg_drain("PG-BRIDGE")
+        time.sleep(a.every)
 
 
 # ------------------------------------------------------------------ parser
@@ -571,6 +583,7 @@ def parser():
     s = add("sync", cmd_sync, "git pull --rebase + push"); s.add_argument("--agent", default="HUMAN"); s.add_argument("--message")
     s = add("pg-setup", cmd_pg_setup, "crear tablas del panel remoto (Postgres) y enviar el estado actual"); s.add_argument("--agent", default="HUMAN")
     add("pg-status", cmd_pg_status, "ver si el puente con el panel remoto está activo")
+    s = add("bridge", cmd_bridge, "mantener al día el panel de Vercel (bucle permanente)"); s.add_argument("--every", type=int, default=8)
     return p
 
 
