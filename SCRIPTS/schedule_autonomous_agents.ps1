@@ -34,8 +34,23 @@ try {
     Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -Principal $principal `
       -Settings $settings -Description "E-Book Factory: S1-JEFE trabaja solo cada $IntervalHours horas" | Out-Null
 
+    # Puente con el panel de Vercel: proceso permanente (se relanza solo cada 10 min si se cae).
+    $bridgeName = "EBookFactory-Puente"
+    $bridgeAction = New-ScheduledTaskAction -Execute "powershell.exe" `
+      -Argument "-NoProfile -WindowStyle Hidden -Command `"Set-Location '$root'; python factory.py bridge`"" `
+      -WorkingDirectory $root
+    $bridgeTrigger = New-ScheduledTaskTrigger -Once -At (Get-Date) `
+      -RepetitionInterval (New-TimeSpan -Minutes 10) -RepetitionDuration (New-TimeSpan -Days 3650)
+    $bridgeSettings = New-ScheduledTaskSettingsSet -StartWhenAvailable -MultipleInstances IgnoreNew `
+      -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Seconds 0)
+    Unregister-ScheduledTask -TaskName $bridgeName -Confirm:$false -ErrorAction SilentlyContinue
+    Register-ScheduledTask -TaskName $bridgeName -Action $bridgeAction -Trigger $bridgeTrigger -Principal $principal `
+      -Settings $bridgeSettings -Description "E-Book Factory: mantiene al dia el panel web de Vercel" | Out-Null
+    Start-ScheduledTask -TaskName $bridgeName
+
     Write-Host ""
     Write-Host "LISTO: tarea '$taskName' programada cada $IntervalHours horas." -ForegroundColor Green
+    Write-Host "LISTO: tarea '$bridgeName' (panel web siempre al dia) en marcha." -ForegroundColor Green
     Write-Host "Trabaja mientras tu usuario de Windows tenga la sesion iniciada (el PC puede estar bloqueado)."
     Write-Host "Ver:    Get-ScheduledTask -TaskName '$taskName'"
     Write-Host "Quitar: Unregister-ScheduledTask -TaskName '$taskName' -Confirm:`$false"

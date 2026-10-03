@@ -5,15 +5,21 @@ cd /d "%~dp0"
 chcp 65001 >nul
 
 echo.
-echo ===== PASO 1/3: iniciar sesion en Claude =====
-echo Se abrira el navegador. Pulsa "Autorizar" con tu cuenta (hiiinojosaa@gmail.com).
-echo.
-call claude auth login
+echo ===== PASO 1/3: acceso de Claude =====
+for /f "delims=" %%i in ('claude -p "Responde solo con la palabra PONG" 2^>^&1') do set RESP0=%%i
+echo %RESP0% | findstr /i "PONG" >nul
 if errorlevel 1 (
+  echo Hace falta iniciar sesion. Se abrira el navegador: pulsa "Autorizar" con tu cuenta.
   echo.
-  echo No se pudo iniciar sesion. Vuelve a ejecutar este archivo.
-  pause
-  exit /b 1
+  call claude auth login
+  if errorlevel 1 (
+    echo.
+    echo No se pudo iniciar sesion. Vuelve a ejecutar este archivo.
+    pause
+    exit /b 1
+  )
+) else (
+  echo Ya estaba iniciada la sesion, no hace falta repetirlo.
 )
 
 echo.

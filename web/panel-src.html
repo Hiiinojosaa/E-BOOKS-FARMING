@@ -349,6 +349,10 @@ const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt
 const store = {get(k){try{return localStorage.getItem(k)}catch(e){return null}}, set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
 const nameOf = id => (S && S.names[id]) || id;
 const agentOf = id => S && S.agents.find(a=>a.agent_id===id);
+// The chief runs on a Windows schedule and covers every specialist role, so the team is "on" whenever the chief is.
+const autoInfo = () => S && S.automation && S.automation.state && S.automation.state!=="Disabled" ? S.automation : null;
+const chiefAlive = () => { const c=S&&S.agents.find(a=>a.agent_id===S.main_agent); return !!autoInfo() || !!(c && (c.status==="BUSY" || (c.minutes_ago!=null && c.minutes_ago<=180))); };
+const nextTurn = () => { const au=autoInfo(); return au&&au.next ? `próximo turno a las ${hhmm(au.next)}` : ""; };
 const roleOf = id => { const a = agentOf(id); return (a && a.role) || (String(id).split("-").pop()); };
 const agentLabel = id => { const a = agentOf(id); return a && a.label ? a.label : id; };
 const bookTitle = id => { const b = S && S.books.find(x=>x.id===id); return b ? b.title : id; };
@@ -511,7 +515,7 @@ function vToday(){
   const feed=S.events.map(e=>({e,t:EVENT_TXT(e)})).filter(x=>x.t).slice(0,9);
   const noti = ("Notification" in window) && Notification.permission==="default";
   $("#view").innerHTML=`
-    <div class="head"><div><h1>${hello}, ${esc(nameOf(S.me))}</h1><div class="sub">${new Date().toLocaleDateString("es-ES",{weekday:"long",day:"numeric",month:"long"})} · ${S.live.length?`${S.live.length} ${S.live.length===1?"agente trabajando":"agentes trabajando"} ahora`:"Ningún agente trabajando ahora"}</div></div>
+    <div class="head"><div><h1>${hello}, ${esc(nameOf(S.me))}</h1><div class="sub">${new Date().toLocaleDateString("es-ES",{weekday:"long",day:"numeric",month:"long"})} · ${S.live.length?`${S.live.length} ${S.live.length===1?"agente trabajando":"agentes trabajando"} ahora`:autoInfo()?`Equipo en automático · ${nextTurn()}`:"Ningún agente trabajando ahora"}</div></div>
       <button class="btn" onclick="go('chat')">${icon("chat","sm")} Hablar con el jefe</button></div>
     ${noti?`<div class="notice">${icon("bell")}<div style="flex:1">Activa los avisos para enterarte al momento cuando el jefe te escriba o un libro esté listo.</div><button class="btn primary" onclick="enableNotifications(this)">Activar avisos</button></div>`:""}
     <div class="kpis">
@@ -662,7 +666,7 @@ function vChat(){
     <div class="head"><div><h1>Chat</h1><div class="sub">Habla con el jefe o con un especialista en concreto. Todo el equipo lo ve.</div></div></div>
     <div class="chatgrid">
       <div class="card chatbox">
-        <div class="chhead">${roleAv("JEFE")}<div class="grow" style="flex:1"><div style="font-weight:600">Jefe de la fábrica</div><div class="tiny mut">${chiefOn?`<span class="pill good"><span class="dotx"></span> Trabajando ahora</span>`:`Responde cuando está trabajando · visto ${chief?ago(chief.last_seen):"nunca"}`}</div></div></div>
+        <div class="chhead">${roleAv("JEFE")}<div class="grow" style="flex:1"><div style="font-weight:600">Jefe de la fábrica</div><div class="tiny mut">${chiefOn?`<span class="pill good"><span class="dotx"></span> Trabajando ahora</span>`:autoInfo()?`Te responde en su turno · ${nextTurn()}`:`Responde cuando está trabajando · visto ${chief?ago(chief.last_seen):"nunca"}`}</div></div></div>
         <div class="msgs" id="msgs"></div>
         <div class="composer">
           <div id="waiting"></div>
@@ -688,7 +692,7 @@ function vChat(){
         <div class="card dirs">${S.directives.length?S.directives.map(d=>`<div class="d">${icon("flag","sm")}<span>${esc(d.text)}<div class="tiny faint">${esc(nameOf(d.by))} · ${ago(d.created_at)}</div></span><button class="btn ghost icon x" title="Quitar" onclick="act({action:'directive_remove',id:'${d.id}'},this,'Directriz retirada')">${icon("x","sm")}</button></div>`).join(""):`<div class="empty">Aún no hay directrices. Abre el «+» del chat y elige <b>Directriz</b>: el jefe y todo el equipo la seguirán hasta que la quitéis.</div>`}</div>
         <div class="sec"><h3>Equipo</h3></div>
         <div class="card">${S.team.map(t=>{ const a=t.agents.map(agentOf).filter(Boolean); const busy=a.some(x=>x.status==="BUSY");
-          return `<button class="row" style="padding:9px 14px;border-bottom:1px solid var(--line);width:100%;background:none;border-left:0;border-right:0;border-top:0;cursor:pointer;text-align:left" onclick="CHAT_TO='${esc(t.agents[0]||t.role)}';vChat()">${roleAv(t.role,true)}<div class="grow small"><b>${esc(t.label)}</b></div><span class="pill ${busy?"good":""}">${busy?"Trabajando":a.length?"En espera":"Sin agente"}</span></button>`; }).join("")}</div>
+          return `<button class="row" style="padding:9px 14px;border-bottom:1px solid var(--line);width:100%;background:none;border-left:0;border-right:0;border-top:0;cursor:pointer;text-align:left" onclick="CHAT_TO='${esc(t.agents[0]||t.role)}';vChat()">${roleAv(t.role,true)}<div class="grow small"><b>${esc(t.label)}</b></div><span class="pill ${busy?"good":a.length&&chiefAlive()?"acc":""}">${busy?"Trabajando":a.length?(chiefAlive()?(t.role==="JEFE"?"Automático":"Cubierto"):"Apagado"):"Sin agente"}</span></button>`; }).join("")}</div>
       </div>
     </div>`;
   const setSeg=()=>{
@@ -765,7 +769,9 @@ async function sendMsg(){
 // ---------------------------------------------------------------- EQUIPO Y AJUSTES
 function vTeam(){
   const phrase=(id,prompt)=>`Trabaja como ${id} de la E-Book Factory siguiendo ${prompt||"PROMPTS/WORKER.md"}`;
-  const st=a=>a.status==="BUSY"?["good","Trabajando"]:(a.minutes_ago!=null&&a.minutes_ago>180)||a.status==="OFFLINE"?["","Apagado"]:["acc","En espera"];
+  const st=(a,role)=>a.status==="BUSY"?["good","Trabajando"]
+    :role==="JEFE"?(autoInfo()?["acc","Automático"]:chiefAlive()?["acc","En espera"]:["","Apagado"])
+    :chiefAlive()?["acc","Cubierto por el jefe"]:["","Apagado"];
   const sy=S.sync;
   const noAgents = !S.team.some(t=>t.agents.length);
   const noti = ("Notification" in window) ? Notification.permission : "unsupported";
@@ -774,8 +780,8 @@ function vTeam(){
     ${noAgents?`<div class="notice">${icon("team")}<div style="flex:1">Todavía no has creado el equipo. En la carpeta del proyecto, ejecuta una vez: <code class="cmd">python factory.py team setup --owner ${esc(S.me)} --prefix S1</code></div></div>`:""}
     <div class="sec"><h3>El equipo</h3></div>
     <div class="team">${S.team.map(t=>{ const as=t.agents.map(agentOf).filter(Boolean);
-      return `<div class="card member"><div class="row">${roleAv(t.role)}<div class="grow"><div style="font-weight:600">${esc(t.label)}</div><div class="tiny mut">${as.length?as.map(a=>esc(a.agent_id)).join(", "):"Sin agente asignado"}</div></div>
-        ${as.length?(()=>{ const [c,l]=st(as[0]); return `<span class="pill ${c}">${c==="good"?'<span class="dotx"></span> ':""}${l}</span>`; })():""}</div>
+      return `<div class="card member"><div class="row">${roleAv(t.role)}<div class="grow"><div style="font-weight:600">${esc(t.label)}</div><div class="tiny mut">${as.length?as.map(a=>esc(a.agent_id)).join(", "):"Sin agente asignado"}${t.role==="JEFE"&&autoInfo()?` · trabaja solo cada 2 h, ${esc(nextTurn())}`:""}${t.role!=="JEFE"&&as.length&&chiefAlive()?" · lo hace el jefe en su turno":""}</div></div>
+        ${as.length?(()=>{ const [c,l]=st(as[0],t.role); return `<span class="pill ${c}">${c==="good"?'<span class="dotx"></span> ':""}${l}</span>`; })():""}</div>
         <div class="desc">${esc(t.desc)}</div>
         ${as.map(a=>`<button class="btn" style="width:100%" onclick='copyTxt(${esc(JSON.stringify(phrase(a.agent_id,t.prompt)))})'>${icon("copy","sm")} Copiar orden de arranque</button>`).join("")}</div>`; }).join("")}</div>
     <div class="sec"><h3>Cómo se ponen a trabajar</h3></div>
