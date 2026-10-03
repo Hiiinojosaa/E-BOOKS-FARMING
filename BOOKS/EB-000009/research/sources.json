@@ -1,0 +1,74 @@
+[
+  {
+    "id": "S1",
+    "title": "Cookpad España — búsqueda 'comidas navideñas de España'",
+    "url": "https://cookpad.com/es/buscar/comidas%20navide%C3%B1as%20de%20espa%C3%B1a",
+    "accessed": "2026-10-03",
+    "used_for": "Volumen de recetas navideñas compartidas por usuarios en España (3.300+), señal de demanda activa",
+    "reliability": "medium"
+  },
+  {
+    "id": "S2",
+    "title": "El Mueble — '40 menús de Navidad 2026 fáciles y deliciosos'",
+    "url": "https://www.elmueble.com/recetas/menus-navidad-faciles-y-sencillos-que-triunfaras_44193",
+    "accessed": "2026-10-03",
+    "used_for": "Tendencias de menús navideños en España 2026; perfil del cocinero doméstico navideño",
+    "reliability": "medium"
+  },
+  {
+    "id": "S3",
+    "title": "Amazon.es — resultados de búsqueda 'recetas navidad' (Kindle)",
+    "url": "https://www.amazon.es/recetas-navidad/s?k=recetas+navidad",
+    "accessed": "2026-10-03",
+    "used_for": "Competencia directa en Kindle España; títulos existentes y sus enfoques",
+    "reliability": "high"
+  },
+  {
+    "id": "S4",
+    "title": "Viviralmaximo.net — 'Cómo generar ingresos pasivos escribiendo libros de no ficción para Kindle'",
+    "url": "https://viviralmaximo.net/ingresos-pasivos-escribir-libros-kindle/",
+    "accessed": "2026-10-03",
+    "used_for": "Contexto del mercado de ebooks en español en Kindle; tamaño y características del mercado",
+    "reliability": "low"
+  },
+  {
+    "id": "S5",
+    "title": "Directo al Paladar — 'Recetas de comidas para Navidad: 107 ideas navideñas que nunca fallan'",
+    "url": "https://www.directoalpaladar.com/directo-al-paladar/comidas-navidad-67-recetas-que-nunca-fallan",
+    "accessed": "2026-10-03",
+    "used_for": "Preguntas frecuentes del cocinero navideño español; platos más buscados; dolor de organización",
+    "reliability": "high"
+  },
+  {
+    "id": "S6",
+    "title": "Delivinosweb — '3 Platos Típicos de Comida y Cena de Navidad en España'",
+    "url": "https://www.delivinosweb.com/platos-tipicos-comida-navidad-espana/",
+    "accessed": "2026-10-03",
+    "used_for": "Platos tradicionales navideños españoles: besugo, cordero, cochinillo, mariscos",
+    "reliability": "medium"
+  },
+  {
+    "id": "S7",
+    "title": "Planeta de Libros — '13 libros con recetas deliciosas para Navidad'",
+    "url": "https://www.planetadelibros.com/blog/actualidad/15/articulo/libros-de-recetas-navidad/565",
+    "accessed": "2026-10-03",
+    "used_for": "Libros de cocina navideña recomendados; qué valoran los lectores en este tipo de libros",
+    "reliability": "medium"
+  },
+  {
+    "id": "S8",
+    "title": "Amazon.es — 'Libro de cocina navideña 150 recetas para una Navidad culinaria perfecta' (The German Kitchen)",
+    "url": "https://www.amazon.es/navide%C3%B1a-recetas-Navidad-culinaria-perfecta-ebook/dp/B08NW737RQ",
+    "accessed": "2026-10-03",
+    "used_for": "Análisis de competencia directa: título, enfoque (traducción alemana), volumen de recetas",
+    "reliability": "high"
+  },
+  {
+    "id": "S9",
+    "title": "Guía Repsol — '¡Viva la tradición! 9 platos clásicos para Navidad'",
+    "url": "https://www.guiarepsol.com/es/comer/nuestros-favoritos/platos-tradicionales-navidad/",
+    "accessed": "2026-10-03",
+    "used_for": "Validación de platos navideños clásicos españoles; diversidad regional",
+    "reliability": "high"
+  }
+]
