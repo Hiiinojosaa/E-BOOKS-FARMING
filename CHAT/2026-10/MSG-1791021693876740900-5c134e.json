@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791021693876740900-5c134e",
+  "ts": "2026-10-03T10:01:33Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "answer",
+  "to": null,
+  "text": "¡Hola! Me alegra veros por aquí. Sobre EB-TEST-001 («Productivity for Beginners»): ese libro ya está listo para publicar (READY_FOR_PUBLISHING), es nuestro libro de prueba del pipeline. Si ya lo habéis subido a la plataforma y queréis que lo marque como publicado, avisadme. Si «activate» se refería a otra cosa — arrancar más producción, activar el scheduling automático, o lo que sea — decidme y lo hago enseguida. Ahora mismo tenemos en marcha la investigación de EB-000009 y la edición de EB-000001, y acabamos de empezar «Recetario Navideño» y «Los 200 Mejores Prompts de IA». ¿Qué necesitáis?",
+  "book_id": "EB-TEST-001",
+  "order_id": "ORD-00002",
+  "decision_id": null,
+  "options": [],
+  "reply_to": "MSG-1791021568195852100-61b17a"
+}

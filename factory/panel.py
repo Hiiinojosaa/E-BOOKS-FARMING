@@ -11,6 +11,7 @@ import json
 import mimetypes
 import os
 import secrets
+import subprocess
 import threading
 import time
 import traceback
@@ -198,6 +199,30 @@ def _team(ags):
             for m in agents.TEAM]
 
 
+_SCHED = {"at": 0.0, "val": None}
+
+
+def automation():
+    """Windows scheduled task that runs the chief unattended (cached 60 s; PowerShell is slow)."""
+    if time.time() - _SCHED["at"] < 60:
+        return _SCHED["val"]
+    val = None
+    if os.name == "nt":
+        ps = ("$t=Get-ScheduledTask -TaskName 'EBookFactory-S1-JEFE' -ErrorAction Stop;$i=$t|Get-ScheduledTaskInfo;"
+              "[pscustomobject]@{state=[string]$t.State;last=$i.LastRunTime.ToUniversalTime().ToString('o');"
+              "next=$i.NextRunTime.ToUniversalTime().ToString('o');result=$i.LastTaskResult}|ConvertTo-Json -Compress")
+        try:
+            r = subprocess.run(["powershell", "-NoProfile", "-Command", ps], capture_output=True, text=True, timeout=20)
+            if r.returncode == 0 and r.stdout.strip():
+                val = json.loads(r.stdout)
+                if str(val.get("last", "")).startswith(("1999", "1601")):
+                    val["last"] = None  # never ran yet
+        except Exception:  # noqa: BLE001 - purely informational
+            val = None
+    _SCHED.update(at=time.time(), val=val)
+    return val
+
+
 def state(partner):
     from .cli import capacity
     all_b = books.all_books()
@@ -224,6 +249,7 @@ def state(partner):
         "capacity": capacity(), "directives": directives.active(), "team": _team(ags),
         "week": reports._week_stats(all_b),
         "sync": SYNC, "steps": list(states.STEPS), "languages": ["en-US", "en-GB", "es-ES", "es-MX"],
+        "automation": automation(),
     }
 
 

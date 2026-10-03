@@ -12,3 +12,5 @@
 {"ts": "2026-10-03T09:59:32Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 1}
 {"ts": "2026-10-03T09:59:38Z", "type": "CHAT", "by": "ADMIN", "role": "partner", "kind": "message", "msg": "MSG-1791021578565830600-725275"}
 {"ts": "2026-10-03T10:00:54Z", "type": "ORDER_UPDATED", "order": "ORD-00002", "by": "S1-JEFE", "status": "IN_PROGRESS"}
+{"ts": "2026-10-03T10:01:33Z", "type": "ORDER_UPDATED", "order": "ORD-00002", "by": "S1-JEFE", "status": "DONE"}
+{"ts": "2026-10-03T10:01:33Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "answer", "msg": "MSG-1791021693876740900-5c134e"}

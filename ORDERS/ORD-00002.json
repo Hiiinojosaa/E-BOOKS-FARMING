@@ -7,10 +7,10 @@
   "priority": "NORMAL",
   "target_agent": null,
   "book_id": "EB-TEST-001",
-  "status": "IN_PROGRESS",
+  "status": "DONE",
   "taken_by": "S1-JEFE",
-  "updated_at": "2026-10-03T10:00:54Z",
-  "result": null,
+  "updated_at": "2026-10-03T10:01:33Z",
+  "result": "¡Hola! Me alegra veros por aquí. Sobre EB-TEST-001 («Productivity for Beginners»): ese libro ya está listo para publicar (READY_FOR_PUBLISHING), es nuestro libro de prueba del pipeline. Si ya lo habéis subido a la plataforma y queréis que lo marque como publicado, avisadme. Si «activate» se refería a otra cosa — arrancar más producción, activar el scheduling automático, o lo que sea — decidme y lo hago enseguida. Ahora mismo tenemos en marcha la investigación de EB-000009 y la edición de EB-000001, y acabamos de empezar «Recetario Navideño» y «Los 200 Mejores Prompts de IA». ¿Qué necesitáis?",
   "history": [
     {
       "at": "2026-10-03T10:00:54Z",
@@ -18,6 +18,13 @@
       "from": "OPEN",
       "to": "IN_PROGRESS",
       "note": ""
+    },
+    {
+      "at": "2026-10-03T10:01:33Z",
+      "by": "S1-JEFE",
+      "from": "IN_PROGRESS",
+      "to": "DONE",
+      "note": "¡Hola! Me alegra veros por aquí. Sobre EB-TEST-001 («Productivity for Beginners»): ese libro ya está listo para publicar (READY_FOR_PUBLISHING), es nuestro libro de prueba del pipeline. Si ya lo habéis subido a la plataforma y queréis que lo marque como publicado, avisadme. Si «activate» se refería a otra cosa — arrancar más producción, activar el scheduling automático, o lo que sea — decidme y lo hago enseguida. Ahora mismo tenemos en marcha la investigación de EB-000009 y la edición de EB-000001, y acabamos de empezar «Recetario Navideño» y «Los 200 Mejores Prompts de IA». ¿Qué necesitáis?"
     }
   ],
   "chat_msg": "MSG-1791021568195852100-61b17a"

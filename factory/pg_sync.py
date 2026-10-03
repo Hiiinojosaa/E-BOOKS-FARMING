@@ -121,12 +121,28 @@ def push_users():
 
 
 def pull_pending_actions():
+    """Atomically claim queued actions (two bridges/agents can run at once without double-applying).
+    A claim older than 2 minutes is treated as abandoned and picked up again."""
     if not enabled():
         return []
     with _connect() as conn, conn.cursor() as cur:
-        cur.execute("select id, partner, payload from pending_actions where status = 'pending' order by created_at")
+        cur.execute(
+            "update pending_actions set status = 'processing', processed_at = now() where id in ("
+            " select id from pending_actions where status = 'pending'"
+            "  or (status = 'processing' and processed_at < now() - interval '2 minutes')"
+            " order by created_at for update skip locked)"
+            " returning id, partner, payload, created_at")
         cols = [d.name for d in cur.description]
-        return [dict(zip(cols, row)) for row in cur.fetchall()]
+        rows = [dict(zip(cols, row)) for row in cur.fetchall()]
+    return sorted(rows, key=lambda r: r["created_at"])
+
+
+def count_pending():
+    if not enabled():
+        return None
+    with _connect() as conn, conn.cursor() as cur:
+        cur.execute("select count(*) from pending_actions where status in ('pending','processing')")
+        return cur.fetchone()[0]
 
 
 def mark_action_done(action_id, result):
