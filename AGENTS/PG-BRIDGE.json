@@ -6,7 +6,7 @@
   "capabilities": [
     "FORMAT_AGENT"
   ],
-  "status": "IDLE",
+  "status": "OFFLINE",
   "current_task": null,
   "last_seen": "2026-10-01T22:27:16Z",
   "registered_at": "2026-10-01T22:27:16Z",

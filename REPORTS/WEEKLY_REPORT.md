@@ -1,6 +1,6 @@
 # WEEKLY REPORT 2026-W40
 
-_Periodo: últimos 7 día(s) hasta 2026-10-01T22:15:21Z_
+_Periodo: últimos 7 día(s) hasta 2026-10-03T09:59:22Z_
 
 ## Trabajo realizado
 
@@ -26,11 +26,13 @@ _Periodo: últimos 7 día(s) hasta 2026-10-01T22:15:21Z_
 - 2026-10-01T18:21 TEST-AGENT completó **FACT_CHECK** de EB-000015 (TASK-000021)
 - 2026-10-01T18:21 TEST-AGENT completó **METADATA** de EB-000015 (TASK-000022)
 - 2026-10-01T18:22 TEST-AGENT completó **DESIGN** de EB-000015 (TASK-000023)
+- 2026-10-03T09:59 S1-JEFE completó **FORMAT** de EB-000015 (TASK-000024)
 
 ## Libros avanzados
 
 - EB-000001: ahora en **DRAFT_COMPLETE**
-- EB-000015: ahora en **DESIGN_COMPLETE**
+- EB-000009: ahora en **RESEARCH_PENDING**
+- EB-000015: ahora en **QC_PENDING**
 - EB-TEST-001: ahora en **READY_FOR_PUBLISHING**
 
 ## Libros terminados (listos para publicar)
@@ -53,5 +55,6 @@ _Periodo: últimos 7 día(s) hasta 2026-10-01T22:15:21Z_
 
 ## Próximas tareas
 
+- TASK-000025 RESEARCH EB-000009 (HIGH)
 - TASK-000016 EDIT EB-000001 (NORMAL)
-- TASK-000024 FORMAT EB-000015 (NORMAL)
+- TASK-000026 QC EB-000015 (NORMAL)
