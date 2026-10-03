@@ -7,3 +7,6 @@
 {"ts": "2026-10-03T09:59:22Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
 {"ts": "2026-10-03T09:59:28Z", "type": "CHAT", "by": "ADMIN", "role": "partner", "kind": "message", "msg": "MSG-1791021568195852100-61b17a"}
 {"ts": "2026-10-03T09:59:28Z", "type": "ORDER_CREATED", "order": "ORD-00002", "by": "ADMIN", "kind": "CHAT"}
+{"ts": "2026-10-03T09:59:32Z", "type": "STATE_CHANGE", "book_id": "EB-000002", "frm": "IDEA", "to": "RESEARCH_PENDING", "agent": "ADMIN", "action": "PROMOTE_IDEA", "result": "OK"}
+{"ts": "2026-10-03T09:59:32Z", "type": "TASK_CREATED", "task_id": "TASK-000027", "book_id": "EB-000002", "step": "RESEARCH", "priority": "NORMAL"}
+{"ts": "2026-10-03T09:59:32Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 1}
