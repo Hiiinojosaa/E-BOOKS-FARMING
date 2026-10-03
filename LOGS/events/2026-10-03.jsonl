@@ -11,3 +11,4 @@
 {"ts": "2026-10-03T09:59:32Z", "type": "TASK_CREATED", "task_id": "TASK-000027", "book_id": "EB-000002", "step": "RESEARCH", "priority": "NORMAL"}
 {"ts": "2026-10-03T09:59:32Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 1}
 {"ts": "2026-10-03T09:59:38Z", "type": "CHAT", "by": "ADMIN", "role": "partner", "kind": "message", "msg": "MSG-1791021578565830600-725275"}
+{"ts": "2026-10-03T10:00:54Z", "type": "ORDER_UPDATED", "order": "ORD-00002", "by": "S1-JEFE", "status": "IN_PROGRESS"}
