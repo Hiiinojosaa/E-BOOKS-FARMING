@@ -1,0 +1,37 @@
+{
+  "task_id": "TASK-000030",
+  "book_id": "EB-000009",
+  "type": "BRIEF",
+  "role": "RESEARCH_AGENT",
+  "auto": false,
+  "priority": "HIGH",
+  "status": "DONE",
+  "assigned_agent": "S1-JEFE",
+  "created_by": "S1-JEFE",
+  "created_at": "2026-10-03T10:04:32Z",
+  "started_at": "2026-10-03T10:06:47Z",
+  "completed_at": "2026-10-03T10:08:32Z",
+  "claimed_from_state": "RESEARCH_COMPLETE",
+  "dependencies": [],
+  "prompt": "PROMPTS/BRIEF.md",
+  "notes": "",
+  "output": {
+    "brief_chapters": 5,
+    "word_count_target": 6000
+  },
+  "error": null,
+  "errors": [],
+  "retry_count": 0,
+  "last_attempt": "2026-10-03T10:06:47Z",
+  "attempts": [
+    {
+      "agent": "S1-JEFE",
+      "started_at": "2026-10-03T10:06:47Z",
+      "ended_at": "2026-10-03T10:08:32Z",
+      "result": "DONE",
+      "note": "Brief completo: 11 secciones, 50 recetas distribuidas en 8 capítulos temáticos (aperitivos, sopas, pescados, carnes, mariscos, guarniciones, postres, Reyes) + capítulo de 5 menús completos por celebración con guía de preparación anticipada. Ángulo diferencial claro (único en Kindle ES). Nota: capítulos de recetas son más cortos que los 800 palabras por capítulo de no ficción narrativa — es formato recetario, eso es correcto y esperado.",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}
