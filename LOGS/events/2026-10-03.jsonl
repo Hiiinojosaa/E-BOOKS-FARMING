@@ -22,3 +22,5 @@
 {"ts": "2026-10-03T10:03:13Z", "type": "STATE_CHANGE", "book_id": "EB-000004", "frm": "IDEA", "to": "RESEARCH_PENDING", "agent": "ADMIN", "action": "PROMOTE_IDEA", "result": "OK"}
 {"ts": "2026-10-03T10:03:13Z", "type": "TASK_CREATED", "task_id": "TASK-000029", "book_id": "EB-000004", "step": "RESEARCH", "priority": "NORMAL"}
 {"ts": "2026-10-03T10:03:13Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 1}
+{"ts": "2026-10-03T10:03:18Z", "type": "CHAT", "by": "ADMIN", "role": "partner", "kind": "message", "msg": "MSG-1791021798327410000-cad9ca"}
+{"ts": "2026-10-03T10:03:18Z", "type": "ORDER_CREATED", "order": "ORD-00003", "by": "ADMIN", "kind": "CHAT"}

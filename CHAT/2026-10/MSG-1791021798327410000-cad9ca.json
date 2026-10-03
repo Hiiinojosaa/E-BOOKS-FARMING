@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791021798327410000-cad9ca",
+  "ts": "2026-10-03T10:03:18Z",
+  "from": "ADMIN",
+  "role": "partner",
+  "kind": "message",
+  "to": "factory",
+  "text": "activa todos los agentes y empieza a producirlo",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}

@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791021798333805300-67e73b",
+  "ts": "2026-10-03T10:03:18Z",
+  "from": "Fábrica",
+  "role": "system",
+  "kind": "note",
+  "to": null,
+  "text": "Recibido. S1-JEFE está trabajando ahora y te responderá aquí al terminar su tarea actual.",
+  "book_id": null,
+  "order_id": "ORD-00003",
+  "decision_id": null,
+  "options": [],
+  "reply_to": "MSG-1791021798327410000-cad9ca"
+}
