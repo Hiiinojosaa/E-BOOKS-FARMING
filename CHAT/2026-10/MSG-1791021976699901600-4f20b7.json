@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791021976699901600-4f20b7",
+  "ts": "2026-10-03T10:06:16Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "answer",
+  "to": null,
+  "text": "Entendido. Dos cosas: (1) Para que el jefe (yo) arranque solo cada 2 horas sin que hagáis nada, ejecutad ACTIVAR_AGENTES.bat con doble clic — comprueba la sesión de Claude y programa el ciclo automático. (2) La producción ya está en marcha: acabo de terminar la investigación del recetario navideño (listo para el brief), y en cola hay 6 tareas listas — investigaciones de otros libros, la edición de EB-000001 y el QC de EB-000015. Como jefe puedo con todas ellas, así que me pongo a ello ahora. Si queréis que los agentes especialistas trabajen en paralelo, hay que abrir sesiones de Claude Code adicionales con PROMPTS/WORKER.md para cada uno.",
+  "book_id": null,
+  "order_id": "ORD-00003",
+  "decision_id": null,
+  "options": [],
+  "reply_to": "MSG-1791021798327410000-cad9ca"
+}

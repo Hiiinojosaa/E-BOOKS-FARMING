@@ -29,3 +29,5 @@
 {"ts": "2026-10-03T10:04:32Z", "type": "TASK_CREATED", "task_id": "TASK-000030", "book_id": "EB-000009", "step": "BRIEF", "priority": "HIGH"}
 {"ts": "2026-10-03T10:04:32Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
 {"ts": "2026-10-03T10:05:23Z", "type": "ORDER_UPDATED", "order": "ORD-00003", "by": "S1-JEFE", "status": "IN_PROGRESS"}
+{"ts": "2026-10-03T10:06:16Z", "type": "ORDER_UPDATED", "order": "ORD-00003", "by": "S1-JEFE", "status": "DONE"}
+{"ts": "2026-10-03T10:06:16Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "answer", "msg": "MSG-1791021976699901600-4f20b7"}
