@@ -783,8 +783,8 @@ function vTeam(){
     ${noAgents?`<div class="notice">${icon("team")}<div style="flex:1">Todavía no has creado el equipo. En la carpeta del proyecto, ejecuta una vez: <code class="cmd">python factory.py team setup --owner ${esc(S.me)} --prefix S1</code></div></div>`:""}
     <div class="sec"><h3>El equipo</h3></div>
     <div class="team">${S.team.map(t=>{ const as=t.agents.map(agentOf).filter(Boolean);
-      return `<div class="card member"><div class="row">${roleAv(t.role)}<div class="grow"><div style="font-weight:600">${esc(t.label)}</div><div class="tiny mut">${as.length?as.map(a=>esc(a.agent_id)).join(", "):"Sin agente asignado"}</div></div>
-        ${as.length?(()=>{ const [c,l]=st(as[0]); return `<span class="pill ${c}">${c==="good"?'<span class="dotx"></span> ':""}${l}</span>`; })():""}</div>
+      return `<div class="card member"><div class="row">${roleAv(t.role)}<div class="grow"><div style="font-weight:600">${esc(t.label)}</div><div class="tiny mut">${as.length?as.map(a=>esc(a.agent_id)).join(", "):"Sin agente asignado"}${t.role==="JEFE"&&autoInfo()?` · trabaja solo cada 2 h, ${esc(nextTurn())}`:""}${t.role!=="JEFE"&&as.length&&chiefAlive()?" · lo hace el jefe en su turno":""}</div></div>
+        ${as.length?(()=>{ const [c,l]=st(as[0],t.role); return `<span class="pill ${c}">${c==="good"?'<span class="dotx"></span> ':""}${l}</span>`; })():""}</div>
         <div class="desc">${esc(t.desc)}</div>
         ${as.map(a=>`<button class="btn" style="width:100%" onclick='copyTxt(${esc(JSON.stringify(phrase(a.agent_id,t.prompt)))})'>${icon("copy","sm")} Copiar orden de arranque</button>`).join("")}</div>`; }).join("")}</div>
     <div class="sec"><h3>Cómo se ponen a trabajar</h3></div>
