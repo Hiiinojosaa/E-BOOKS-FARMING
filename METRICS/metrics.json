@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-10-03T09:59:22Z",
+  "generated_at": "2026-10-03T10:14:00Z",
   "books_total": 16,
-  "books_started": 4,
+  "books_started": 8,
   "books_completed": 1,
   "books_failed": 0,
   "average_completion_time_hours": 0.12,
   "time_per_book_hours": {
     "EB-TEST-001": 0.12
   },
-  "tasks_total": 26,
-  "tasks_completed": 23,
+  "tasks_total": 32,
+  "tasks_completed": 25,
   "tasks_failed": 4,
   "tasks_blocked": 0,
   "retries": 1,
@@ -20,9 +20,9 @@
       "busy_hours": 0.1
     },
     "S1-JEFE": {
-      "tasks_done": 4,
+      "tasks_done": 6,
       "tasks_failed": 0,
-      "busy_hours": 0.16
+      "busy_hours": 0.23
     },
     "TEST-AGENT": {
       "tasks_done": 7,

@@ -42,3 +42,4 @@
 {"ts": "2026-10-03T10:10:20Z", "type": "STATE_CHANGE", "book_id": "EB-000009", "frm": "BRIEF_READY", "to": "WRITING_PENDING", "agent": "ADMIN", "action": "BRIEF_GATE", "result": "APPROVED"}
 {"ts": "2026-10-03T10:10:20Z", "type": "TASK_CREATED", "task_id": "TASK-000032", "book_id": "EB-000009", "step": "WRITE", "priority": "HIGH"}
 {"ts": "2026-10-03T10:10:20Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 2}
+{"ts": "2026-10-03T10:14:00Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
