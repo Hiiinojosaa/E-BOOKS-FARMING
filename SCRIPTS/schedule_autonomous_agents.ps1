@@ -1,31 +1,51 @@
 # Programa el jefe (S1-JEFE) para que trabaje solo, sin que nadie abra Claude Code a mano.
 #
-# El jefe puede hacer cualquier tarea (investigar, escribir, editar, maquetar...), así que basta
-# con programar uno: cada vez que corre, atiende el chat, revisa directrices, y si hay capacidad
-# (daily_target en CONFIG/factory.json) saca libros adelante solo. Usa SCRIPTS/run_worker.ps1,
-# que ya existía pero nunca se había programado ni probado desatendido.
+# El jefe puede hacer cualquier tarea (investigar, escribir, editar, maquetar...), asi que basta
+# con programar uno: cada vez que corre atiende el chat, revisa directrices y saca adelante las
+# ideas que ya hayais puesto en marcha. Usa SCRIPTS\run_worker.ps1 (claude -p, sin supervision).
 #
-# Uso (como ADMIN, una vez): powershell -ExecutionPolicy Bypass -File SCRIPTS\schedule_autonomous_agents.ps1
+# Normalmente se lanza con ACTIVAR_AGENTES.bat (doble clic). A mano:
+#   powershell -ExecutionPolicy Bypass -File "<ruta completa>\SCRIPTS\schedule_autonomous_agents.ps1"
 # Para quitarlo: Unregister-ScheduledTask -TaskName "EBookFactory-S1-JEFE" -Confirm:$false
 
 param([int]$IntervalHours = 2)
 
+$ErrorActionPreference = "Stop"
 $root = Split-Path -Parent $PSScriptRoot
 $taskName = "EBookFactory-S1-JEFE"
+$worker = Join-Path $root "SCRIPTS\run_worker.ps1"
 
-$action = New-ScheduledTaskAction -Execute "powershell.exe" `
-  -Argument "-NoProfile -ExecutionPolicy Bypass -File `"$root\SCRIPTS\run_worker.ps1`" -AgentId S1-JEFE" `
-  -WorkingDirectory $root
+try {
+    if (-not (Test-Path $worker)) { throw "No encuentro $worker" }
 
-$trigger = New-ScheduledTaskTrigger -Once -At (Get-Date) `
-  -RepetitionInterval (New-TimeSpan -Hours $IntervalHours) -RepetitionDuration (New-TimeSpan -Days 3650)
+    $action = New-ScheduledTaskAction -Execute "powershell.exe" `
+      -Argument "-NoProfile -WindowStyle Hidden -ExecutionPolicy Bypass -File `"$worker`" -AgentId S1-JEFE" `
+      -WorkingDirectory $root
 
-$settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -DontStopOnIdleEnd -ExecutionTimeLimit (New-TimeSpan -Hours 1)
+    $trigger = New-ScheduledTaskTrigger -Once -At (Get-Date) `
+      -RepetitionInterval (New-TimeSpan -Hours $IntervalHours) -RepetitionDuration (New-TimeSpan -Days 3650)
 
-Unregister-ScheduledTask -TaskName $taskName -Confirm:$false -ErrorAction SilentlyContinue
-Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -Settings $settings `
-  -Description "E-Book Factory: S1-JEFE trabaja solo cada $IntervalHours horas (claude -p, sin supervision)"
+    $principal = New-ScheduledTaskPrincipal -UserId "$env:USERDOMAIN\$env:USERNAME" -LogonType Interactive -RunLevel Limited
 
-Write-Host "Tarea '$taskName' programada cada $IntervalHours horas. Primera ejecucion: ahora mismo."
-Write-Host "Para verla:    Get-ScheduledTask -TaskName '$taskName'"
-Write-Host "Para quitarla: Unregister-ScheduledTask -TaskName '$taskName' -Confirm:`$false"
+    $settings = New-ScheduledTaskSettingsSet -StartWhenAvailable -DontStopOnIdleEnd `
+      -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit (New-TimeSpan -Hours 1)
+
+    Unregister-ScheduledTask -TaskName $taskName -Confirm:$false -ErrorAction SilentlyContinue
+    Register-ScheduledTask -TaskName $taskName -Action $action -Trigger $trigger -Principal $principal `
+      -Settings $settings -Description "E-Book Factory: S1-JEFE trabaja solo cada $IntervalHours horas" | Out-Null
+
+    Write-Host ""
+    Write-Host "LISTO: tarea '$taskName' programada cada $IntervalHours horas." -ForegroundColor Green
+    Write-Host "Trabaja mientras tu usuario de Windows tenga la sesion iniciada (el PC puede estar bloqueado)."
+    Write-Host "Ver:    Get-ScheduledTask -TaskName '$taskName'"
+    Write-Host "Quitar: Unregister-ScheduledTask -TaskName '$taskName' -Confirm:`$false"
+}
+catch {
+    Write-Host ""
+    Write-Host "ERROR al programar la tarea:" -ForegroundColor Red
+    Write-Host $_.Exception.Message -ForegroundColor Red
+    if ($_.Exception.Message -match "denied|denegado|0x80070005") {
+        Write-Host "Solucion: cierra esta ventana, haz clic derecho en ACTIVAR_AGENTES.bat y elige 'Ejecutar como administrador'." -ForegroundColor Yellow
+    }
+    exit 1
+}
