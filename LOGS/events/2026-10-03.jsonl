@@ -19,3 +19,6 @@
 {"ts": "2026-10-03T10:03:08Z", "type": "STATE_CHANGE", "book_id": "EB-000003", "frm": "IDEA", "to": "RESEARCH_PENDING", "agent": "ADMIN", "action": "PROMOTE_IDEA", "result": "OK"}
 {"ts": "2026-10-03T10:03:08Z", "type": "TASK_CREATED", "task_id": "TASK-000028", "book_id": "EB-000003", "step": "RESEARCH", "priority": "NORMAL"}
 {"ts": "2026-10-03T10:03:08Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 1}
+{"ts": "2026-10-03T10:03:13Z", "type": "STATE_CHANGE", "book_id": "EB-000004", "frm": "IDEA", "to": "RESEARCH_PENDING", "agent": "ADMIN", "action": "PROMOTE_IDEA", "result": "OK"}
+{"ts": "2026-10-03T10:03:13Z", "type": "TASK_CREATED", "task_id": "TASK-000029", "book_id": "EB-000004", "step": "RESEARCH", "priority": "NORMAL"}
+{"ts": "2026-10-03T10:03:13Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 1}
