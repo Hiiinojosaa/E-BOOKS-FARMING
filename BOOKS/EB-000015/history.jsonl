@@ -22,3 +22,5 @@
 {"ts": "2026-10-05T10:24:32Z", "from": "QC_PENDING", "to": "QC", "agent": "S1-JEFE", "action": "CLAIM QC", "result": "OK", "task_id": "TASK-000026"}
 {"ts": "2026-10-05T10:31:19Z", "from": "QC", "to": "QC_PENDING", "agent": "S1-JEFE", "action": "FAIL QC", "result": "RETRY", "task_id": "TASK-000026", "note": "Validación fallida: qc_report.md necesita 'VERDICT: PASS|WARN|FAIL|HUMAN_REVIEW'"}
 {"ts": "2026-10-05T10:31:52Z", "from": "QC_PENDING", "to": "QC", "agent": "S1-JEFE", "action": "CLAIM QC", "result": "OK", "task_id": "TASK-000026"}
+{"ts": "2026-10-05T10:31:57Z", "from": "QC", "to": "QC_PASSED", "agent": "S1-JEFE", "action": "COMPLETE QC", "result": "OK", "task_id": "TASK-000026", "note": "QC PASS: 25/25 auto checks, 1145 words, 27 pages. Extended puzzle section intros to meet 150-word threshold. All formats valid. Ready for HUMAN_REVIEW."}
+{"ts": "2026-10-05T10:31:57Z", "from": "QC_PASSED", "to": "HUMAN_REVIEW", "agent": "S1-JEFE", "action": "REVIEW_PACK", "result": "OK"}
