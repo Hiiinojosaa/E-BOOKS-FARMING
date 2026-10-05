@@ -5,12 +5,12 @@
   "role": "RESEARCH_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "S1-JEFE",
   "created_by": "ADMIN",
   "created_at": "2026-10-03T10:03:13Z",
   "started_at": "2026-10-05T10:36:41Z",
-  "completed_at": null,
+  "completed_at": "2026-10-05T10:37:48Z",
   "claimed_from_state": "RESEARCH_PENDING",
   "dependencies": [],
   "prompt": "PROMPTS/RESEARCH.md",
@@ -23,7 +23,12 @@
   "attempts": [
     {
       "agent": "S1-JEFE",
-      "started_at": "2026-10-05T10:36:41Z"
+      "started_at": "2026-10-05T10:36:41Z",
+      "ended_at": "2026-10-05T10:37:48Z",
+      "result": "DONE",
+      "note": "GO: nicho journaling guiado en español infraabastecido, 100 preguntas organizadas temáticamente sin equivalente directo en Kindle ES. Contenido perenne, riesgo muy bajo. Formato: guía de lectura + cuaderno físico aparte. Precio objetivo 2,99-4,99 EUR.",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }

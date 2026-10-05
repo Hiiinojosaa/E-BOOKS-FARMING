@@ -1,0 +1,26 @@
+[
+  {
+    "id": "S1",
+    "title": "Amazon.es — categoría Kindle Autoayuda y desarrollo personal",
+    "url": "https://www.amazon.es/s?k=diario+autoconocimiento&i=digital-text",
+    "accessed": "2026-10-05",
+    "used_for": "Presencia de libros de journaling guiado y desarrollo personal en rankings Kindle ES. No verificado con acceso web en vivo — ESTIMATE basado en knowledge base hasta agosto 2025.",
+    "reliability": "medium"
+  },
+  {
+    "id": "S2",
+    "title": "Amazon.es — búsqueda 'preguntas autoconocimiento' y '100 preguntas diario' en Kindle Store",
+    "url": "https://www.amazon.es/s?k=100+preguntas+diario&i=digital-text",
+    "accessed": "2026-10-05",
+    "used_for": "Exploración de competencia directa en Kindle ES para formato de preguntas de reflexión. No verificado con acceso web en vivo — etiquetado HYPOTHESIS.",
+    "reliability": "medium"
+  },
+  {
+    "id": "S3",
+    "title": "Conocimiento de entrenamiento — tendencias de desarrollo personal y journaling en España 2022-2025",
+    "url": "internal://training-data-cutoff-2025-08",
+    "accessed": "2026-10-05",
+    "used_for": "Tendencias de búsqueda, perfiles de audiencia, lenguaje de redes sociales (Instagram/TikTok) en España sobre autoconocimiento y journaling.",
+    "reliability": "medium"
+  }
+]
