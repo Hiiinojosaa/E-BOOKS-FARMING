@@ -1,0 +1,37 @@
+{
+  "task_id": "TASK-000040",
+  "book_id": "EB-000003",
+  "type": "BRIEF",
+  "role": "RESEARCH_AGENT",
+  "auto": false,
+  "priority": "NORMAL",
+  "status": "DONE",
+  "assigned_agent": "S1-JEFE",
+  "created_by": "S1-JEFE",
+  "created_at": "2026-10-05T10:36:17Z",
+  "started_at": "2026-10-05T10:43:35Z",
+  "completed_at": "2026-10-05T10:44:53Z",
+  "claimed_from_state": "RESEARCH_COMPLETE",
+  "dependencies": [],
+  "prompt": "PROMPTS/BRIEF.md",
+  "notes": "",
+  "output": {
+    "brief_chapters": 9,
+    "word_count_target": 500
+  },
+  "error": null,
+  "errors": [],
+  "retry_count": 0,
+  "last_attempt": "2026-10-05T10:43:35Z",
+  "attempts": [
+    {
+      "agent": "S1-JEFE",
+      "started_at": "2026-10-05T10:43:35Z",
+      "ended_at": "2026-10-05T10:44:53Z",
+      "result": "DONE",
+      "note": "Brief completo para libro HIGH risk (finanzas). 8 capítulos + planner 12 meses, 6500 palabras. Disclaimer obligatorio doble incluido. Sin tipos impositivos exactos ni recomendaciones de producto. Pendiente aprobación humana antes de escribir.",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}

@@ -90,3 +90,5 @@
 {"ts": "2026-10-05T10:43:11Z", "type": "TASK_DONE", "task_id": "TASK-000039", "book_id": "EB-000002", "agent": "S1-JEFE", "step": "BRIEF", "warnings": 0}
 {"ts": "2026-10-05T10:43:35Z", "type": "STATE_CHANGE", "book_id": "EB-000003", "frm": "RESEARCH_COMPLETE", "to": "BRIEFING", "agent": "S1-JEFE", "action": "CLAIM BRIEF", "result": "OK", "task_id": "TASK-000040"}
 {"ts": "2026-10-05T10:43:35Z", "type": "TASK_CLAIMED", "task_id": "TASK-000040", "book_id": "EB-000003", "agent": "S1-JEFE", "step": "BRIEF"}
+{"ts": "2026-10-05T10:44:53Z", "type": "STATE_CHANGE", "book_id": "EB-000003", "frm": "BRIEFING", "to": "BRIEF_READY", "agent": "S1-JEFE", "action": "COMPLETE BRIEF", "result": "OK", "task_id": "TASK-000040"}
+{"ts": "2026-10-05T10:44:53Z", "type": "TASK_DONE", "task_id": "TASK-000040", "book_id": "EB-000003", "agent": "S1-JEFE", "step": "BRIEF", "warnings": 0}
