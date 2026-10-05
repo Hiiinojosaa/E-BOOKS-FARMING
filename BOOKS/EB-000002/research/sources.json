@@ -1,0 +1,34 @@
+[
+  {
+    "id": "S1",
+    "title": "ChatGPT 100 million users milestone — Reuters / various press coverage",
+    "url": "https://www.reuters.com/technology/chatgpt-sets-record-fastest-growing-user-base-analyst-note-2023-02-01/",
+    "accessed": "2026-10-05",
+    "used_for": "Hito de 100 millones de usuarios en 2 meses tras el lanzamiento de ChatGPT (noviembre 2022). Base del argumento de demanda masiva.",
+    "reliability": "high"
+  },
+  {
+    "id": "S2",
+    "title": "Amazon.es — búsqueda 'prompts ChatGPT' en Kindle Store",
+    "url": "https://www.amazon.es/s?k=prompts+chatgpt&rh=n%3A1275708031",
+    "accessed": "2026-10-05",
+    "used_for": "Exploración de competencia directa en Kindle ES para colecciones de prompts en español. No verificado con acceso web en vivo — etiquetado HYPOTHESIS.",
+    "reliability": "medium"
+  },
+  {
+    "id": "S3",
+    "title": "Google Trends — 'prompts ChatGPT' España 2023-2025",
+    "url": "https://trends.google.es/trends/explore?q=prompts+chatgpt&geo=ES",
+    "accessed": "2026-10-05",
+    "used_for": "Tendencia de búsqueda del término en España. No verificado con acceso web en vivo — etiquetado ESTIMATE.",
+    "reliability": "medium"
+  },
+  {
+    "id": "S4",
+    "title": "Conocimiento de entrenamiento — mercado español de productividad IA (hasta agosto 2025)",
+    "url": "",
+    "accessed": "2026-10-05",
+    "used_for": "Caracterización del mercado laboral español, perfil del usuario de IA, tendencias de LinkedIn y redes sociales en España respecto a productividad y prompts.",
+    "reliability": "medium"
+  }
+]
