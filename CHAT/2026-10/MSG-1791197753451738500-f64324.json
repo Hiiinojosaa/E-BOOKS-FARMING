@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791197753451738500-f64324",
+  "ts": "2026-10-05T10:55:53Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión completada. Resumen del día: (1) EB-000015 Sudoku → QC PASS, en HUMAN_REVIEW. (2) EB-000009 Navidad en la Mesa → QC PASS, en HUMAN_REVIEW. (3) EB-000001 One-Page System → QC WARN (21 pág. PDF, bajo mínimo KDP Print de 24), en HUMAN_REVIEW — ver qc_report para opciones. (4) Investigación completada para EB-000002 (prompts IA), EB-000003 (finanzas autónomos), EB-000004 (diario autoconocimiento), EB-000005 (planner eventos). (5) Briefs completos y en BRIEF_READY para EB-000002, EB-000004 y EB-000005. EB-000003 (finanzas, risk HIGH) también tiene brief listo pero necesita aprobación explícita antes de escribir. Acción necesaria por los socios: aprobar los 4 briefs y revisar los 3 libros en HUMAN_REVIEW. Sin tareas pendientes en cola.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
