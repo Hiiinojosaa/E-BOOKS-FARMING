@@ -1,0 +1,21 @@
+{
+  "id": "DEC-00005",
+  "book_id": "EB-000020",
+  "question": "Te recomiendo «Guía Completa de ChatGPT y IA Generativa para No Técnicos» (es-ES). Complementa EB-000002 (prompts de IA) con un enfoque tutorial/guía práctica. Demanda altísima en español: muchos lectores quieren entender y usar la IA sin conocimientos técnicos. Nicho en expansión rápida, baja competencia de calidad en es-ES.",
+  "options": [
+    "Adelante",
+    "Descartar"
+  ],
+  "asked_by": "S1-JEFE",
+  "asked_at": "2026-10-05T14:09:17Z",
+  "urgency": "NORMAL",
+  "status": "OPEN",
+  "answer": null,
+  "answered_by": null,
+  "action": {
+    "type": "approve_idea",
+    "book_id": "EB-000020",
+    "yes": "Adelante",
+    "no": "Descartar"
+  }
+}

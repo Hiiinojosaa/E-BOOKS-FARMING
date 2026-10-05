@@ -153,3 +153,6 @@
 {"ts": "2026-10-05T14:08:51Z", "type": "BOOK_CREATED", "book_id": "EB-000019", "agent": "S1-JEFE", "topic": "30-Day Morning Routine Challenge: Journal & Tracker", "language": "en-US"}
 {"ts": "2026-10-05T14:08:51Z", "type": "DECISION_ASKED", "decision": "DEC-00004", "book_id": "EB-000019", "by": "S1-JEFE"}
 {"ts": "2026-10-05T14:08:51Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "question", "msg": "MSG-1791209331412336700-183704"}
+{"ts": "2026-10-05T14:09:17Z", "type": "BOOK_CREATED", "book_id": "EB-000020", "agent": "S1-JEFE", "topic": "Guía Completa de ChatGPT y IA Generativa para No Técnicos", "language": "es-ES"}
+{"ts": "2026-10-05T14:09:17Z", "type": "DECISION_ASKED", "decision": "DEC-00005", "book_id": "EB-000020", "by": "S1-JEFE"}
+{"ts": "2026-10-05T14:09:17Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "question", "msg": "MSG-1791209357413743900-ab563d"}

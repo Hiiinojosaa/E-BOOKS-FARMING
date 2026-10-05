@@ -1,0 +1,17 @@
+{
+  "id": "MSG-1791209357413743900-ab563d",
+  "ts": "2026-10-05T14:09:17Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "question",
+  "to": null,
+  "text": "Te recomiendo «Guía Completa de ChatGPT y IA Generativa para No Técnicos» (es-ES). Complementa EB-000002 (prompts de IA) con un enfoque tutorial/guía práctica. Demanda altísima en español: muchos lectores quieren entender y usar la IA sin conocimientos técnicos. Nicho en expansión rápida, baja competencia de calidad en es-ES.",
+  "book_id": "EB-000020",
+  "order_id": null,
+  "decision_id": "DEC-00005",
+  "options": [
+    "Adelante",
+    "Descartar"
+  ],
+  "reply_to": null
+}
