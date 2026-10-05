@@ -150,3 +150,6 @@
 {"ts": "2026-10-05T14:08:27Z", "type": "BOOK_CREATED", "book_id": "EB-000018", "agent": "S1-JEFE", "topic": "Large Print Word Search for Seniors: 100 Puzzles", "language": "en-US"}
 {"ts": "2026-10-05T14:08:27Z", "type": "DECISION_ASKED", "decision": "DEC-00003", "book_id": "EB-000018", "by": "S1-JEFE"}
 {"ts": "2026-10-05T14:08:27Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "question", "msg": "MSG-1791209307857543800-6551b5"}
+{"ts": "2026-10-05T14:08:51Z", "type": "BOOK_CREATED", "book_id": "EB-000019", "agent": "S1-JEFE", "topic": "30-Day Morning Routine Challenge: Journal & Tracker", "language": "en-US"}
+{"ts": "2026-10-05T14:08:51Z", "type": "DECISION_ASKED", "decision": "DEC-00004", "book_id": "EB-000019", "by": "S1-JEFE"}
+{"ts": "2026-10-05T14:08:51Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "question", "msg": "MSG-1791209331412336700-183704"}

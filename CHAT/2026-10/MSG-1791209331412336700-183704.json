@@ -1,0 +1,17 @@
+{
+  "id": "MSG-1791209331412336700-183704",
+  "ts": "2026-10-05T14:08:51Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "question",
+  "to": null,
+  "text": "Te recomiendo «30-Day Morning Routine Challenge: Journal & Tracker» (en-US). Nicho evergreen de journals/hábitos que complementa la productividad (EB-TEST-001, EB-000001) y los diarios (EB-000004). Alta demanda constante en KDP, bajo coste de producción. Formato probado: tracker diario + reflexiones.",
+  "book_id": "EB-000019",
+  "order_id": null,
+  "decision_id": "DEC-00004",
+  "options": [
+    "Adelante",
+    "Descartar"
+  ],
+  "reply_to": null
+}
