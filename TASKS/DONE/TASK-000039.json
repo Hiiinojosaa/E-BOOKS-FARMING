@@ -5,17 +5,20 @@
   "role": "RESEARCH_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "S1-JEFE",
   "created_by": "S1-JEFE",
   "created_at": "2026-10-05T10:34:34Z",
   "started_at": "2026-10-05T10:43:05Z",
-  "completed_at": null,
+  "completed_at": "2026-10-05T10:43:11Z",
   "claimed_from_state": "RESEARCH_COMPLETE",
   "dependencies": [],
   "prompt": "PROMPTS/BRIEF.md",
   "notes": "",
-  "output": null,
+  "output": {
+    "brief_chapters": 10,
+    "word_count_target": 0
+  },
   "error": null,
   "errors": [
     {
@@ -36,7 +39,12 @@
     },
     {
       "agent": "S1-JEFE",
-      "started_at": "2026-10-05T10:43:05Z"
+      "started_at": "2026-10-05T10:43:05Z",
+      "ended_at": "2026-10-05T10:43:11Z",
+      "result": "DONE",
+      "note": "Brief completo: 8 capítulos + intro/conclusión, 200 prompts por caso de uso laboral, formato copy-paste con corchetes, 12.000 palabras. LOW risk. Listo para approve_brief.",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }
