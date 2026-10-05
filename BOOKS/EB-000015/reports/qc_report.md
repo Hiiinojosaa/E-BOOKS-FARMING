@@ -70,6 +70,8 @@ None.
 
 ---
 
-## VERDICT: PASS
+## Verdict
+
+VERDICT: PASS
 
 The book is ready for HUMAN_REVIEW. No blocking issues found by automatic checks or content review.
