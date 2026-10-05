@@ -130,3 +130,5 @@
 {"ts": "2026-10-05T10:53:41Z", "type": "TASK_DONE", "task_id": "TASK-000047", "book_id": "EB-000009", "agent": "S1-JEFE", "step": "QC", "warnings": 0}
 {"ts": "2026-10-05T10:53:41Z", "type": "STATE_CHANGE", "book_id": "EB-000009", "frm": "QC_PASSED", "to": "HUMAN_REVIEW", "agent": "S1-JEFE", "action": "REVIEW_PACK", "result": "OK"}
 {"ts": "2026-10-05T10:53:41Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
+{"ts": "2026-10-05T10:54:06Z", "type": "STATE_CHANGE", "book_id": "EB-000001", "frm": "QC_PENDING", "to": "QC", "agent": "S1-JEFE", "action": "CLAIM QC", "result": "OK", "task_id": "TASK-000046"}
+{"ts": "2026-10-05T10:54:06Z", "type": "TASK_CLAIMED", "task_id": "TASK-000046", "book_id": "EB-000001", "agent": "S1-JEFE", "step": "QC"}

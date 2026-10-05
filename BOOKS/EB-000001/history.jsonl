@@ -17,3 +17,4 @@
 {"ts": "2026-10-05T10:50:48Z", "from": "DESIGNING", "to": "DESIGN_COMPLETE", "agent": "S1-JEFE", "action": "COMPLETE DESIGN", "result": "OK", "task_id": "TASK-000044", "note": "Portada generada: paleta pizarra oscura/crema/ámbar, 'One-Page' / 'System' (title_line1/2), tagline 'The daily method for freelancers'. 1600x2560px. Legible en miniatura, contraste alto."}
 {"ts": "2026-10-05T10:51:22Z", "from": "DESIGN_COMPLETE", "to": "FORMATTING", "agent": "S1-JEFE", "action": "CLAIM FORMAT", "result": "OK", "task_id": "TASK-000045"}
 {"ts": "2026-10-05T10:51:24Z", "from": "FORMATTING", "to": "QC_PENDING", "agent": "S1-JEFE", "action": "COMPLETE FORMAT", "result": "OK", "task_id": "TASK-000045", "note": "21 págs, 7 caps, 5003 palabras"}
+{"ts": "2026-10-05T10:54:06Z", "from": "QC_PENDING", "to": "QC", "agent": "S1-JEFE", "action": "CLAIM QC", "result": "OK", "task_id": "TASK-000046"}
