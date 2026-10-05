@@ -5,12 +5,12 @@
   "role": "EDITOR_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "S1-JEFE",
   "created_by": "S1-JEFE",
   "created_at": "2026-10-01T17:51:26Z",
   "started_at": "2026-10-05T10:19:53Z",
-  "completed_at": null,
+  "completed_at": "2026-10-05T10:24:04Z",
   "claimed_from_state": "DRAFT_COMPLETE",
   "dependencies": [],
   "prompt": "PROMPTS/EDIT.md",
@@ -23,7 +23,12 @@
   "attempts": [
     {
       "agent": "S1-JEFE",
-      "started_at": "2026-10-05T10:19:53Z"
+      "started_at": "2026-10-05T10:19:53Z",
+      "ended_at": "2026-10-05T10:24:04Z",
+      "result": "DONE",
+      "note": "Edición ligera: sin cambios estructurales; 7 capítulos verificados contra el brief; ejemplo del desarrollador en Cap.4 recortado ~80 palabras (mantiene el punto, menos relleno); '10am' → '10 am' (en-US); referencia a app en Cap.2 eliminada (mantiene libro tool-agnostic). Sin placeholders ni referencias internas.",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }

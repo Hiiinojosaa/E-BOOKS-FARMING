@@ -32,3 +32,7 @@
 {"ts": "2026-10-05T10:19:24Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
 {"ts": "2026-10-05T10:19:53Z", "type": "STATE_CHANGE", "book_id": "EB-000001", "frm": "DRAFT_COMPLETE", "to": "EDITING", "agent": "S1-JEFE", "action": "CLAIM EDIT", "result": "OK", "task_id": "TASK-000016"}
 {"ts": "2026-10-05T10:19:53Z", "type": "TASK_CLAIMED", "task_id": "TASK-000016", "book_id": "EB-000001", "agent": "S1-JEFE", "step": "EDIT"}
+{"ts": "2026-10-05T10:24:04Z", "type": "STATE_CHANGE", "book_id": "EB-000001", "frm": "EDITING", "to": "EDITED", "agent": "S1-JEFE", "action": "COMPLETE EDIT", "result": "OK", "task_id": "TASK-000016"}
+{"ts": "2026-10-05T10:24:04Z", "type": "TASK_DONE", "task_id": "TASK-000016", "book_id": "EB-000001", "agent": "S1-JEFE", "step": "EDIT", "warnings": 0}
+{"ts": "2026-10-05T10:24:04Z", "type": "TASK_CREATED", "task_id": "TASK-000038", "book_id": "EB-000001", "step": "FACT_CHECK", "priority": "NORMAL"}
+{"ts": "2026-10-05T10:24:04Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
