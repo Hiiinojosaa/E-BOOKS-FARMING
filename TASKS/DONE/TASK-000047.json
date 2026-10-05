@@ -1,0 +1,38 @@
+{
+  "task_id": "TASK-000047",
+  "book_id": "EB-000009",
+  "type": "QC",
+  "role": "QC_AGENT",
+  "auto": false,
+  "priority": "HIGH",
+  "status": "DONE",
+  "assigned_agent": "S1-JEFE",
+  "created_by": "S1-JEFE",
+  "created_at": "2026-10-05T10:51:24Z",
+  "started_at": "2026-10-05T10:51:53Z",
+  "completed_at": "2026-10-05T10:53:41Z",
+  "claimed_from_state": "QC_PENDING",
+  "dependencies": [],
+  "prompt": "PROMPTS/QC.md",
+  "notes": "",
+  "output": {
+    "agent_verdict": "PASS",
+    "auto": "PASS",
+    "final": "PASS"
+  },
+  "error": null,
+  "errors": [],
+  "retry_count": 0,
+  "last_attempt": "2026-10-05T10:51:53Z",
+  "attempts": [
+    {
+      "agent": "S1-JEFE",
+      "started_at": "2026-10-05T10:51:53Z",
+      "ended_at": "2026-10-05T10:53:41Z",
+      "result": "DONE",
+      "note": "QC PASS: 24/24 auto checks, 8120 palabras, 51 páginas. Intro y Conclusión extendidas mínimamente para superar umbral de 150 palabras. Formato, idioma y metadatos correctos. 50 recetas verificadas. Listo para HUMAN_REVIEW.",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}

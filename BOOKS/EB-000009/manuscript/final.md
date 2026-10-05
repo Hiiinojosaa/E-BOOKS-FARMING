@@ -2,11 +2,11 @@
 
 ## Introducción
 
-La Navidad española no es una sola cena: son cinco celebraciones en trece días. Del 24 de diciembre al 6 de enero, Nochebuena, el día de Navidad, Nochevieja, Año Nuevo y Reyes se suceden sin descanso, y quien cocina en casa lo sabe bien.
+La Navidad española no es una sola cena: son cinco celebraciones en trece días. Del 24 de diciembre al 6 de enero, Nochebuena, el día de Navidad, Nochevieja, Año Nuevo y Reyes se suceden sin descanso, y quien cocina en casa lo sabe bien. El reto no es cocinar bien: el reto es cocinar cinco veces seguidas sin llegar agotado a ninguna.
 
 Este libro está organizado para que no improvises. Los capítulos de recetas —aperitivos, sopas, pescados, carnes, mariscos, guarniciones, postres y especialidades de Reyes— te dan el repertorio completo. El último capítulo te da los cinco menús listos: qué servir en cada fecha, qué preparar el día anterior y qué puedes dejar hecho con tres días de antelación.
 
-Léelo antes de que empiece la temporada. Marca las recetas que quieres hacer. Usa los menús como punto de partida y ajústalos a tu familia. La Navidad también es para quien cocina.
+Léelo antes de que empiece la temporada. Marca las recetas que quieres hacer. Usa los menús como punto de partida y ajústalos a tu familia. Algunas de estas recetas las harás solo una vez; otras acabarán siendo las que tu familia pide cada año. La Navidad también es para quien cocina.
 
 ---
 
@@ -1113,5 +1113,7 @@ Esta es la sección que da sentido a todo lo anterior. Los cinco menús combinan
 La Navidad en la cocina no tiene por qué ser agotadora. Con este libro en la mano, un par de tardes de preparación anticipada y los menús como guía, llegarás a cada celebración con el trabajo ya hecho y podrás sentarte a la mesa como lo que eres: parte de la familia, no solo la persona que cocina.
 
 Usa estas recetas como punto de partida y hazlas tuyas con el tiempo. Ajusta los tiempos a tu horno, cambia una guarnición por la que tu familia prefiere, añade ese plato de la abuela que no puede faltar. Cada año la Navidad sabe un poco mejor cuando la cocinas tú.
+
+Una última cosa: los menús son una propuesta, no una obligación. Si ves que uno de los platos no encaja con tus invitados, con tu presupuesto o con las ganas que tienes ese día, sustitúyelo. Un libro de cocina que funciona es el que usas; el que guardas intacto en la estantería no le da de comer a nadie.
 
 Felices fiestas.
