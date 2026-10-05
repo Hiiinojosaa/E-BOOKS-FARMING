@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791193988472159100-e3c3a6",
+  "ts": "2026-10-05T09:53:08Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Buenos días. Hoy arrancamos con 16 libros en marcha: 1 listo para que lo publiquéis (EB-TEST-001), 1 pasando QC, 2 en escritura/edición y 4 en investigación. Prioridad de hoy: escribir el Recetario Navideño (alta prioridad, brief aprobado) y avanzar el resto. No hay nada bloqueado ni esperando vuestra revisión. Me pongo.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
