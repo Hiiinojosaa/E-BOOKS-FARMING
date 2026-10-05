@@ -18,3 +18,5 @@
 {"ts": "2026-10-05T10:16:22Z", "type": "TASK_DONE", "task_id": "TASK-000034", "book_id": "EB-000009", "agent": "S1-JEFE", "step": "FACT_CHECK", "warnings": 0}
 {"ts": "2026-10-05T10:16:22Z", "type": "TASK_CREATED", "task_id": "TASK-000035", "book_id": "EB-000009", "step": "METADATA", "priority": "HIGH"}
 {"ts": "2026-10-05T10:16:22Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
+{"ts": "2026-10-05T10:16:54Z", "type": "STATE_CHANGE", "book_id": "EB-000009", "frm": "FACT_CHECKED", "to": "METADATA_IN_PROGRESS", "agent": "S1-JEFE", "action": "CLAIM METADATA", "result": "OK", "task_id": "TASK-000035"}
+{"ts": "2026-10-05T10:16:54Z", "type": "TASK_CLAIMED", "task_id": "TASK-000035", "book_id": "EB-000009", "agent": "S1-JEFE", "step": "METADATA"}
