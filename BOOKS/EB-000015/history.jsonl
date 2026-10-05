@@ -21,3 +21,4 @@
 {"ts": "2026-10-03T09:59:22Z", "from": "FORMATTING", "to": "QC_PENDING", "agent": "S1-JEFE", "action": "COMPLETE FORMAT", "result": "OK", "task_id": "TASK-000024", "note": "23 págs, 6 caps, 420 palabras"}
 {"ts": "2026-10-05T10:24:32Z", "from": "QC_PENDING", "to": "QC", "agent": "S1-JEFE", "action": "CLAIM QC", "result": "OK", "task_id": "TASK-000026"}
 {"ts": "2026-10-05T10:31:19Z", "from": "QC", "to": "QC_PENDING", "agent": "S1-JEFE", "action": "FAIL QC", "result": "RETRY", "task_id": "TASK-000026", "note": "Validación fallida: qc_report.md necesita 'VERDICT: PASS|WARN|FAIL|HUMAN_REVIEW'"}
+{"ts": "2026-10-05T10:31:52Z", "from": "QC_PENDING", "to": "QC", "agent": "S1-JEFE", "action": "CLAIM QC", "result": "OK", "task_id": "TASK-000026"}
