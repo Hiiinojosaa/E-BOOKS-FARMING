@@ -1,0 +1,17 @@
+{
+  "id": "MSG-1791209307857543800-6551b5",
+  "ts": "2026-10-05T14:08:27Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "question",
+  "to": null,
+  "text": "Te recomiendo «Large Print Word Search for Seniors: 100 Puzzles» (en-US). Mismo nicho que EB-000015 (Sudoku seniors, QC PASS). Los libros de puzzles para mayores son un bestseller perenne en KDP, con poca escritura requerida y alta cadencia de ventas. Diversifica el catálogo de puzzles en inglés.",
+  "book_id": "EB-000018",
+  "order_id": null,
+  "decision_id": "DEC-00003",
+  "options": [
+    "Adelante",
+    "Descartar"
+  ],
+  "reply_to": null
+}

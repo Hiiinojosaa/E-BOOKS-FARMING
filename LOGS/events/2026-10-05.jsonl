@@ -147,3 +147,6 @@
 {"ts": "2026-10-05T14:08:03Z", "type": "BOOK_CREATED", "book_id": "EB-000017", "agent": "S1-JEFE", "topic": "Thanksgiving Recipes & Holiday Menu Planner", "language": "en-US"}
 {"ts": "2026-10-05T14:08:03Z", "type": "DECISION_ASKED", "decision": "DEC-00002", "book_id": "EB-000017", "by": "S1-JEFE"}
 {"ts": "2026-10-05T14:08:03Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "question", "msg": "MSG-1791209283787928800-52ea78"}
+{"ts": "2026-10-05T14:08:27Z", "type": "BOOK_CREATED", "book_id": "EB-000018", "agent": "S1-JEFE", "topic": "Large Print Word Search for Seniors: 100 Puzzles", "language": "en-US"}
+{"ts": "2026-10-05T14:08:27Z", "type": "DECISION_ASKED", "decision": "DEC-00003", "book_id": "EB-000018", "by": "S1-JEFE"}
+{"ts": "2026-10-05T14:08:27Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "question", "msg": "MSG-1791209307857543800-6551b5"}
