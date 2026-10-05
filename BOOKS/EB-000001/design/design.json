@@ -1,0 +1,14 @@
+{
+  "template": "minimal",
+  "title_line1": "One-Page",
+  "title_line2": "System",
+  "tagline": "The daily method for freelancers",
+  "badge": "",
+  "palette": {
+    "bg": "#2B3A4A",
+    "fg": "#F5F5F0",
+    "accent": "#E8A030",
+    "muted": "#5A6E82"
+  },
+  "rationale": "Dark slate blue conveys focus and professionalism — the feeling of a clear, uncluttered workspace. Cream text reads cleanly at thumbnail size. Amber accent on the tagline draws the eye without being loud. The overall palette signals 'serious productivity' rather than 'self-help motivation' — appropriate for a practical method book targeting working freelancers, not an aspirational lifestyle audience."
+}

@@ -5,17 +5,19 @@
   "role": "DESIGN_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "S1-JEFE",
   "created_by": "S1-JEFE",
   "created_at": "2026-10-05T10:49:01Z",
   "started_at": "2026-10-05T10:49:25Z",
-  "completed_at": null,
+  "completed_at": "2026-10-05T10:50:48Z",
   "claimed_from_state": "DESIGN_PENDING",
   "dependencies": [],
   "prompt": "PROMPTS/DESIGN.md",
   "notes": "",
-  "output": null,
+  "output": {
+    "cover": "design/cover.png"
+  },
   "error": null,
   "errors": [],
   "retry_count": 0,
@@ -23,7 +25,12 @@
   "attempts": [
     {
       "agent": "S1-JEFE",
-      "started_at": "2026-10-05T10:49:25Z"
+      "started_at": "2026-10-05T10:49:25Z",
+      "ended_at": "2026-10-05T10:50:48Z",
+      "result": "DONE",
+      "note": "Portada generada: paleta pizarra oscura/crema/ámbar, 'One-Page' / 'System' (title_line1/2), tagline 'The daily method for freelancers'. 1600x2560px. Legible en miniatura, contraste alto.",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }
