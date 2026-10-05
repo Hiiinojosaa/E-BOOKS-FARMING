@@ -5,17 +5,20 @@
   "role": "RESEARCH_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "S1-JEFE",
   "created_by": "S1-JEFE",
   "created_at": "2026-10-05T10:37:48Z",
   "started_at": "2026-10-05T10:45:16Z",
-  "completed_at": null,
+  "completed_at": "2026-10-05T10:46:21Z",
   "claimed_from_state": "RESEARCH_COMPLETE",
   "dependencies": [],
   "prompt": "PROMPTS/BRIEF.md",
   "notes": "",
-  "output": null,
+  "output": {
+    "brief_chapters": 8,
+    "word_count_target": 0
+  },
   "error": null,
   "errors": [],
   "retry_count": 0,
@@ -23,7 +26,12 @@
   "attempts": [
     {
       "agent": "S1-JEFE",
-      "started_at": "2026-10-05T10:45:16Z"
+      "started_at": "2026-10-05T10:45:16Z",
+      "ended_at": "2026-10-05T10:46:21Z",
+      "result": "DONE",
+      "note": "Brief completo: 100 preguntas en 6 secciones temáticas, formato pregunta+contexto+invitación al cuaderno, 9000 palabras. LOW risk. Lenguaje accesible sin jerga clínica. Listo para approve_brief.",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }
