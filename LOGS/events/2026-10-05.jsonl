@@ -102,3 +102,7 @@
 {"ts": "2026-10-05T10:47:52Z", "type": "TASK_DONE", "task_id": "TASK-000042", "book_id": "EB-000005", "agent": "S1-JEFE", "step": "BRIEF", "warnings": 0}
 {"ts": "2026-10-05T10:48:16Z", "type": "STATE_CHANGE", "book_id": "EB-000001", "frm": "FACT_CHECKED", "to": "METADATA_IN_PROGRESS", "agent": "S1-JEFE", "action": "CLAIM METADATA", "result": "OK", "task_id": "TASK-000043"}
 {"ts": "2026-10-05T10:48:16Z", "type": "TASK_CLAIMED", "task_id": "TASK-000043", "book_id": "EB-000001", "agent": "S1-JEFE", "step": "METADATA"}
+{"ts": "2026-10-05T10:49:01Z", "type": "STATE_CHANGE", "book_id": "EB-000001", "frm": "METADATA_IN_PROGRESS", "to": "DESIGN_PENDING", "agent": "S1-JEFE", "action": "COMPLETE METADATA", "result": "OK", "task_id": "TASK-000043"}
+{"ts": "2026-10-05T10:49:01Z", "type": "TASK_DONE", "task_id": "TASK-000043", "book_id": "EB-000001", "agent": "S1-JEFE", "step": "METADATA", "warnings": 0}
+{"ts": "2026-10-05T10:49:01Z", "type": "TASK_CREATED", "task_id": "TASK-000044", "book_id": "EB-000001", "step": "DESIGN", "priority": "NORMAL"}
+{"ts": "2026-10-05T10:49:01Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}

@@ -5,17 +5,19 @@
   "role": "MARKET_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "S1-JEFE",
   "created_by": "S1-JEFE",
   "created_at": "2026-10-05T10:40:20Z",
   "started_at": "2026-10-05T10:48:16Z",
-  "completed_at": null,
+  "completed_at": "2026-10-05T10:49:01Z",
   "claimed_from_state": "FACT_CHECKED",
   "dependencies": [],
   "prompt": "PROMPTS/METADATA.md",
   "notes": "",
-  "output": null,
+  "output": {
+    "title": "The One-Page System"
+  },
   "error": null,
   "errors": [],
   "retry_count": 0,
@@ -23,7 +25,12 @@
   "attempts": [
     {
       "agent": "S1-JEFE",
-      "started_at": "2026-10-05T10:48:16Z"
+      "started_at": "2026-10-05T10:48:16Z",
+      "ended_at": "2026-10-05T10:49:01Z",
+      "result": "DONE",
+      "note": "Metadata completo: título limpio 'The One-Page System', 7 keywords, 3 categorías KDP, precio 3,99 USD, descripción ~1500 chars con los 4 zones explicados, posicionamiento diferenciado frente a guías genéricas.",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }
