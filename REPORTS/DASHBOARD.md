@@ -1,6 +1,6 @@
 # DASHBOARD — E-Book Factory
 
-_Generado 2026-10-05T12:08:34Z_
+_Generado 2026-10-05T12:09:06Z_
 
 | TOTAL BOOKS | IDEAS | RESEARCH | WRITING | EDITING | TRANSLATION | DESIGN | QC | HUMAN REVIEW | READY TO PUBLISH | PUBLISHED | FAILED | BLOCKED |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
