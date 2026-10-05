@@ -2,3 +2,4 @@
 {"ts": "2026-10-03T09:59:32Z", "from": "IDEA", "to": "RESEARCH_PENDING", "agent": "ADMIN", "action": "PROMOTE_IDEA", "result": "OK", "note": "Producción iniciada por ADMIN"}
 {"ts": "2026-10-05T10:32:21Z", "from": "RESEARCH_PENDING", "to": "RESEARCHING", "agent": "S1-JEFE", "action": "CLAIM RESEARCH", "result": "OK", "task_id": "TASK-000027"}
 {"ts": "2026-10-05T10:33:55Z", "from": "RESEARCHING", "to": "RESEARCH_PENDING", "agent": "S1-JEFE", "action": "FAIL RESEARCH", "result": "RETRY", "task_id": "TASK-000027", "note": "Validación fallida: fuente #3 sin title y url/citation"}
+{"ts": "2026-10-05T10:34:29Z", "from": "RESEARCH_PENDING", "to": "RESEARCHING", "agent": "S1-JEFE", "action": "CLAIM RESEARCH", "result": "OK", "task_id": "TASK-000027"}

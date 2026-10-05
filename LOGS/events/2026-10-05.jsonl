@@ -50,3 +50,5 @@
 {"ts": "2026-10-05T10:32:21Z", "type": "TASK_CLAIMED", "task_id": "TASK-000027", "book_id": "EB-000002", "agent": "S1-JEFE", "step": "RESEARCH"}
 {"ts": "2026-10-05T10:33:55Z", "type": "STATE_CHANGE", "book_id": "EB-000002", "frm": "RESEARCHING", "to": "RESEARCH_PENDING", "agent": "S1-JEFE", "action": "FAIL RESEARCH", "result": "RETRY", "task_id": "TASK-000027"}
 {"ts": "2026-10-05T10:33:55Z", "type": "TASK_FAILED", "task_id": "TASK-000027", "book_id": "EB-000002", "agent": "S1-JEFE", "error": "Validación fallida: fuente #3 sin title y url/citation", "retry_count": 1}
+{"ts": "2026-10-05T10:34:29Z", "type": "STATE_CHANGE", "book_id": "EB-000002", "frm": "RESEARCH_PENDING", "to": "RESEARCHING", "agent": "S1-JEFE", "action": "CLAIM RESEARCH", "result": "OK", "task_id": "TASK-000027"}
+{"ts": "2026-10-05T10:34:29Z", "type": "TASK_CLAIMED", "task_id": "TASK-000027", "book_id": "EB-000002", "agent": "S1-JEFE", "step": "RESEARCH"}
