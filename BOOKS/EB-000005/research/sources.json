@@ -1,0 +1,26 @@
+[
+  {
+    "id": "S1",
+    "title": "Google Trends España — 'organizar boda', 'organizar eventos', 'checklist boda'",
+    "url": "https://trends.google.es/trends/explore?q=organizar+boda,organizar+eventos&geo=ES",
+    "accessed": "2026-10-05",
+    "used_for": "Demanda de búsqueda en España para términos de organización de eventos. No verificado con acceso web en vivo — ESTIMATE basado en knowledge base hasta agosto 2025.",
+    "reliability": "medium"
+  },
+  {
+    "id": "S2",
+    "title": "Amazon.es — categoría Kindle Hogar y jardín > Organización del hogar > Bodas y celebraciones",
+    "url": "https://www.amazon.es/s?k=organizar+boda+libro&i=digital-text",
+    "accessed": "2026-10-05",
+    "used_for": "Presencia y volumen de libros de planificación de bodas y eventos en Kindle ES. No verificado con acceso web en vivo — etiquetado ESTIMATE.",
+    "reliability": "medium"
+  },
+  {
+    "id": "S3",
+    "title": "Amazon.es — búsqueda 'planner eventos' y 'organizar celebracion' en Kindle Store",
+    "url": "https://www.amazon.es/s?k=planner+eventos+celebracion&i=digital-text",
+    "accessed": "2026-10-05",
+    "used_for": "Exploración de competencia directa en Kindle ES para planners multi-evento en español. No verificado con acceso web en vivo — etiquetado HYPOTHESIS.",
+    "reliability": "medium"
+  }
+]
