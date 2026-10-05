@@ -38,3 +38,5 @@
 {"ts": "2026-10-05T10:24:04Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
 {"ts": "2026-10-05T10:24:32Z", "type": "STATE_CHANGE", "book_id": "EB-000015", "frm": "QC_PENDING", "to": "QC", "agent": "S1-JEFE", "action": "CLAIM QC", "result": "OK", "task_id": "TASK-000026"}
 {"ts": "2026-10-05T10:24:32Z", "type": "TASK_CLAIMED", "task_id": "TASK-000026", "book_id": "EB-000015", "agent": "S1-JEFE", "step": "QC"}
+{"ts": "2026-10-05T10:31:19Z", "type": "STATE_CHANGE", "book_id": "EB-000015", "frm": "QC", "to": "QC_PENDING", "agent": "S1-JEFE", "action": "FAIL QC", "result": "RETRY", "task_id": "TASK-000026"}
+{"ts": "2026-10-05T10:31:19Z", "type": "TASK_FAILED", "task_id": "TASK-000026", "book_id": "EB-000015", "agent": "S1-JEFE", "error": "Validación fallida: qc_report.md necesita 'VERDICT: PASS|WARN|FAIL|HUMAN_REVIEW'", "retry_count": 1}
