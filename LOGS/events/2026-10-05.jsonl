@@ -100,3 +100,5 @@
 {"ts": "2026-10-05T10:46:45Z", "type": "TASK_CLAIMED", "task_id": "TASK-000042", "book_id": "EB-000005", "agent": "S1-JEFE", "step": "BRIEF"}
 {"ts": "2026-10-05T10:47:52Z", "type": "STATE_CHANGE", "book_id": "EB-000005", "frm": "BRIEFING", "to": "BRIEF_READY", "agent": "S1-JEFE", "action": "COMPLETE BRIEF", "result": "OK", "task_id": "TASK-000042"}
 {"ts": "2026-10-05T10:47:52Z", "type": "TASK_DONE", "task_id": "TASK-000042", "book_id": "EB-000005", "agent": "S1-JEFE", "step": "BRIEF", "warnings": 0}
+{"ts": "2026-10-05T10:48:16Z", "type": "STATE_CHANGE", "book_id": "EB-000001", "frm": "FACT_CHECKED", "to": "METADATA_IN_PROGRESS", "agent": "S1-JEFE", "action": "CLAIM METADATA", "result": "OK", "task_id": "TASK-000043"}
+{"ts": "2026-10-05T10:48:16Z", "type": "TASK_CLAIMED", "task_id": "TASK-000043", "book_id": "EB-000001", "agent": "S1-JEFE", "step": "METADATA"}
