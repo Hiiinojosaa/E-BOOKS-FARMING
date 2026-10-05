@@ -1,0 +1,36 @@
+{
+  "task_id": "TASK-000035",
+  "book_id": "EB-000009",
+  "type": "METADATA",
+  "role": "MARKET_AGENT",
+  "auto": false,
+  "priority": "HIGH",
+  "status": "DONE",
+  "assigned_agent": "S1-JEFE",
+  "created_by": "S1-JEFE",
+  "created_at": "2026-10-05T10:16:22Z",
+  "started_at": "2026-10-05T10:16:54Z",
+  "completed_at": "2026-10-05T10:17:53Z",
+  "claimed_from_state": "FACT_CHECKED",
+  "dependencies": [],
+  "prompt": "PROMPTS/METADATA.md",
+  "notes": "",
+  "output": {
+    "title": "Navidad en la Mesa: 50 Recetas Españolas y 5 Menús Completos para Toda la Temporada"
+  },
+  "error": null,
+  "errors": [],
+  "retry_count": 0,
+  "last_attempt": "2026-10-05T10:16:54Z",
+  "attempts": [
+    {
+      "agent": "S1-JEFE",
+      "started_at": "2026-10-05T10:16:54Z",
+      "ended_at": "2026-10-05T10:17:53Z",
+      "result": "DONE",
+      "note": "Metadatos completos para Amazon.es Kindle: título diferenciador, subtítulo con promesa concreta, descripción 1.300 caracteres con gancho + contenido + audiencia, 7 keywords de búsqueda, 3 categorías, precio 2,99 € (ESTIMATE), posicionamiento único vs competencia.",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}
