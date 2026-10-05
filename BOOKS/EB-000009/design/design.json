@@ -1,0 +1,14 @@
+{
+  "template": "minimal",
+  "title_line1": "Navidad",
+  "title_line2": "en la Mesa",
+  "tagline": "50 recetas · 5 menús completos",
+  "badge": "",
+  "palette": {
+    "bg": "#7B1818",
+    "fg": "#F8F0E3",
+    "accent": "#C8A84B",
+    "muted": "#4A1F1F"
+  },
+  "rationale": "Rojo Burdeos profundo (tradicional español + evoca vino, calidez y celebración) con crema cálida para el texto y dorado para acentos. Paleta de alto contraste legible en miniatura de 150 px. El fondo oscuro recoge la vista y da presencia en las listas de Amazon. Sin imágenes de stock: la fuerza visual viene del color y la tipografía."
+}
