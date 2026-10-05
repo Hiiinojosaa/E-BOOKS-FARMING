@@ -112,3 +112,15 @@
 {"ts": "2026-10-05T10:50:48Z", "type": "TASK_DONE", "task_id": "TASK-000044", "book_id": "EB-000001", "agent": "S1-JEFE", "step": "DESIGN", "warnings": 0}
 {"ts": "2026-10-05T10:50:48Z", "type": "TASK_CREATED", "task_id": "TASK-000045", "book_id": "EB-000001", "step": "FORMAT", "priority": "NORMAL"}
 {"ts": "2026-10-05T10:50:48Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
+{"ts": "2026-10-05T10:51:20Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
+{"ts": "2026-10-05T10:51:20Z", "type": "STATE_CHANGE", "book_id": "EB-000009", "frm": "DESIGN_COMPLETE", "to": "FORMATTING", "agent": "S1-JEFE", "action": "CLAIM FORMAT", "result": "OK", "task_id": "TASK-000037"}
+{"ts": "2026-10-05T10:51:20Z", "type": "TASK_CLAIMED", "task_id": "TASK-000037", "book_id": "EB-000009", "agent": "S1-JEFE", "step": "FORMAT"}
+{"ts": "2026-10-05T10:51:22Z", "type": "STATE_CHANGE", "book_id": "EB-000009", "frm": "FORMATTING", "to": "QC_PENDING", "agent": "S1-JEFE", "action": "COMPLETE FORMAT", "result": "OK", "task_id": "TASK-000037"}
+{"ts": "2026-10-05T10:51:22Z", "type": "TASK_DONE", "task_id": "TASK-000037", "book_id": "EB-000009", "agent": "S1-JEFE", "step": "FORMAT", "warnings": 0}
+{"ts": "2026-10-05T10:51:22Z", "type": "STATE_CHANGE", "book_id": "EB-000001", "frm": "DESIGN_COMPLETE", "to": "FORMATTING", "agent": "S1-JEFE", "action": "CLAIM FORMAT", "result": "OK", "task_id": "TASK-000045"}
+{"ts": "2026-10-05T10:51:22Z", "type": "TASK_CLAIMED", "task_id": "TASK-000045", "book_id": "EB-000001", "agent": "S1-JEFE", "step": "FORMAT"}
+{"ts": "2026-10-05T10:51:24Z", "type": "STATE_CHANGE", "book_id": "EB-000001", "frm": "FORMATTING", "to": "QC_PENDING", "agent": "S1-JEFE", "action": "COMPLETE FORMAT", "result": "OK", "task_id": "TASK-000045"}
+{"ts": "2026-10-05T10:51:24Z", "type": "TASK_DONE", "task_id": "TASK-000045", "book_id": "EB-000001", "agent": "S1-JEFE", "step": "FORMAT", "warnings": 0}
+{"ts": "2026-10-05T10:51:24Z", "type": "TASK_CREATED", "task_id": "TASK-000046", "book_id": "EB-000001", "step": "QC", "priority": "NORMAL"}
+{"ts": "2026-10-05T10:51:24Z", "type": "TASK_CREATED", "task_id": "TASK-000047", "book_id": "EB-000009", "step": "QC", "priority": "HIGH"}
+{"ts": "2026-10-05T10:51:24Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 2}

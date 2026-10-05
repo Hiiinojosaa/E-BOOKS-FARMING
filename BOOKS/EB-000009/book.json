@@ -9,13 +9,13 @@
   "genre": "non-fiction",
   "niche": "recetas navideñas",
   "target_audience": "Adulto de 35-60 años, responsable de organizar las comidas familiares en Navidad. Cocinero casero de nivel medio, familiarizado con los platos navideños españoles pero que busca un plan de preparación anticipada para no acumular todo el trabajo en el último momento. También válido para jóvenes adultos de 25-35 que organizan su primera Nochevieja o su primera Navidad como familia.",
-  "status": "DESIGN_COMPLETE",
+  "status": "QC_PENDING",
   "blocked_from": null,
   "priority": "HIGH",
   "assigned_agent": null,
   "owner_partner": null,
   "created_at": "2026-10-01T17:41:50Z",
-  "updated_at": "2026-10-05T10:19:24Z",
+  "updated_at": "2026-10-05T10:51:22Z",
   "version": "1.0",
   "parent_book": null,
   "translated_from": null,
@@ -60,11 +60,16 @@
   "flags": [],
   "qc_status": null,
   "qc_fail_count": 0,
-  "page_count": null,
-  "formats": [],
+  "page_count": 51,
+  "formats": [
+    "EPUB",
+    "PDF"
+  ],
   "files": {
     "cover": "design/cover.png",
-    "cover_jpg": "design/cover.jpg"
+    "cover_jpg": "design/cover.jpg",
+    "epub": "build/EB-000009_navidad-en-la-mesa-50-recetas-espanolas_v1.0.epub",
+    "pdf": "build/EB-000009_navidad-en-la-mesa-50-recetas-espanolas_v1.0.pdf"
   },
   "publication_status": "NOT_PUBLISHED",
   "published": [],
