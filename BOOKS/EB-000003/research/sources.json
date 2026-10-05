@@ -1,0 +1,34 @@
+[
+  {
+    "id": "S1",
+    "title": "Amazon.es — categoría Kindle Economía y empresa > Finanzas personales",
+    "url": "https://www.amazon.es/s?k=finanzas+personales&i=digital-text",
+    "accessed": "2026-10-05",
+    "used_for": "Referencia a libros líderes del mercado español de finanzas personales (Galán, Samsó, clásicos traducidos). No verificado con acceso web en vivo — etiquetado FACT con base en knowledge base hasta agosto 2025.",
+    "reliability": "medium"
+  },
+  {
+    "id": "S2",
+    "title": "Seguridad Social España — Estadísticas de trabajadores afiliados al RETA (Régimen Especial de Trabajadores Autónomos)",
+    "url": "https://www.seg-social.es/wps/portal/wss/internet/EstadisticasPresupuestosEstudios/Estadisticas/EST8",
+    "accessed": "2026-10-05",
+    "used_for": "Cifra de +3 millones de trabajadores autónomos en España como indicador del tamaño del mercado objetivo. Dato FACT de registros oficiales 2024.",
+    "reliability": "high"
+  },
+  {
+    "id": "S3",
+    "title": "Amazon.es — búsqueda 'planner finanzas personales' y 'finanzas autónomos' en Kindle Store",
+    "url": "https://www.amazon.es/s?k=planner+finanzas+personales&i=digital-text",
+    "accessed": "2026-10-05",
+    "used_for": "Exploración de competencia directa en Kindle ES para planners financieros y guías para autónomos. No verificado con acceso web en vivo — etiquetado HYPOTHESIS.",
+    "reliability": "medium"
+  },
+  {
+    "id": "S4",
+    "title": "Agencia Tributaria España — información sobre IRPF y IVA para autónomos",
+    "url": "https://www.agenciatributaria.es/AEAT.internet/Inicio/La_Agencia_Tributaria/Campanas/Autonomos/Autonomos.shtml",
+    "accessed": "2026-10-05",
+    "used_for": "Referencia para la estructura fiscal española básica (IRPF trimestral, IVA). Fuente oficial para cualquier afirmación fiscal que se incluya en el libro.",
+    "reliability": "high"
+  }
+]
