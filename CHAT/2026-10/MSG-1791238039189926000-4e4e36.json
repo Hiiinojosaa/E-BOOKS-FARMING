@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791238039189926000-4e4e36",
+  "ts": "2026-10-05T22:07:19Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Buenos días. La fábrica está al día: informes actualizados. No hay tareas pendientes en cola — todo espera vuestras aprobaciones. Resumen de lo que necesitáis hacer: (1) Aprobar o rechazar los 4 briefs listos: EB-000002 Prompts IA, EB-000003 Finanzas (riesgo ALTO), EB-000004 Diario Autoconocimiento, EB-000005 Planner Eventos. (2) Revisar los 3 libros en HUMAN_REVIEW: EB-000015 Sudoku (QC PASS), EB-000009 Recetario Navideño (QC PASS), EB-000001 One-Page System (QC WARN: 21 pág, por debajo mín KDP Print de 24 — ver qc_report). (3) EB-TEST-001 sigue listo para publicar cuando queráis. (4) 5 recomendaciones esperando respuesta en Librería. En cuanto aprobéis los briefs, la escritura arranca sola.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
