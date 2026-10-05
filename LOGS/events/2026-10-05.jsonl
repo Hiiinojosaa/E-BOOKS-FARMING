@@ -82,3 +82,5 @@
 {"ts": "2026-10-05T10:40:20Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
 {"ts": "2026-10-05T10:40:44Z", "type": "STATE_CHANGE", "book_id": "EB-000002", "frm": "RESEARCH_COMPLETE", "to": "BRIEFING", "agent": "S1-JEFE", "action": "CLAIM BRIEF", "result": "OK", "task_id": "TASK-000039"}
 {"ts": "2026-10-05T10:40:44Z", "type": "TASK_CLAIMED", "task_id": "TASK-000039", "book_id": "EB-000002", "agent": "S1-JEFE", "step": "BRIEF"}
+{"ts": "2026-10-05T10:42:11Z", "type": "STATE_CHANGE", "book_id": "EB-000002", "frm": "BRIEFING", "to": "RESEARCH_COMPLETE", "agent": "S1-JEFE", "action": "FAIL BRIEF", "result": "RETRY", "task_id": "TASK-000039"}
+{"ts": "2026-10-05T10:42:11Z", "type": "TASK_FAILED", "task_id": "TASK-000039", "book_id": "EB-000002", "agent": "S1-JEFE", "error": "Validación fallida: outline con 0 capítulos (mínimo 3, formato '1. Título' o '### Título')", "retry_count": 1}

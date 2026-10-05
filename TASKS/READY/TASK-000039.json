@@ -1,0 +1,38 @@
+{
+  "task_id": "TASK-000039",
+  "book_id": "EB-000002",
+  "type": "BRIEF",
+  "role": "RESEARCH_AGENT",
+  "auto": false,
+  "priority": "NORMAL",
+  "status": "READY",
+  "assigned_agent": "S1-JEFE",
+  "created_by": "S1-JEFE",
+  "created_at": "2026-10-05T10:34:34Z",
+  "started_at": "2026-10-05T10:40:44Z",
+  "completed_at": null,
+  "claimed_from_state": "RESEARCH_COMPLETE",
+  "dependencies": [],
+  "prompt": "PROMPTS/BRIEF.md",
+  "notes": "",
+  "output": null,
+  "error": "Validación fallida: outline con 0 capítulos (mínimo 3, formato '1. Título' o '### Título')",
+  "errors": [
+    {
+      "at": "2026-10-05T10:42:11Z",
+      "agent": "S1-JEFE",
+      "error": "Validación fallida: outline con 0 capítulos (mínimo 3, formato '1. Título' o '### Título')"
+    }
+  ],
+  "retry_count": 1,
+  "last_attempt": "2026-10-05T10:40:44Z",
+  "attempts": [
+    {
+      "agent": "S1-JEFE",
+      "started_at": "2026-10-05T10:40:44Z",
+      "ended_at": "2026-10-05T10:42:11Z",
+      "result": "FAILED",
+      "error": "Validación fallida: outline con 0 capítulos (mínimo 3, formato '1. Título' o '### Título')"
+    }
+  ]
+}
