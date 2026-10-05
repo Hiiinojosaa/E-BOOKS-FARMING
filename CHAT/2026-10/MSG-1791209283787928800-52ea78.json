@@ -1,0 +1,17 @@
+{
+  "id": "MSG-1791209283787928800-52ea78",
+  "ts": "2026-10-05T14:08:03Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "question",
+  "to": null,
+  "text": "Te recomiendo «Thanksgiving Recipes & Holiday Menu Planner» (en-US). Nicho estacional de alta conversión en KDP (octubre-noviembre). El recetario navideño español (EB-000009) ya pasó QC con éxito — mismo formato probado aplicado al mercado anglófono para Thanksgiving. Ventana corta pero pico de ventas muy alto.",
+  "book_id": "EB-000017",
+  "order_id": null,
+  "decision_id": "DEC-00002",
+  "options": [
+    "Adelante",
+    "Descartar"
+  ],
+  "reply_to": null
+}
