@@ -5,12 +5,12 @@
   "role": "RESEARCH_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "S1-JEFE",
   "created_by": "ADMIN",
   "created_at": "2026-10-03T09:59:32Z",
   "started_at": "2026-10-05T10:34:29Z",
-  "completed_at": null,
+  "completed_at": "2026-10-05T10:34:34Z",
   "claimed_from_state": "RESEARCH_PENDING",
   "dependencies": [],
   "prompt": "PROMPTS/RESEARCH.md",
@@ -36,7 +36,12 @@
     },
     {
       "agent": "S1-JEFE",
-      "started_at": "2026-10-05T10:34:29Z"
+      "started_at": "2026-10-05T10:34:29Z",
+      "ended_at": "2026-10-05T10:34:34Z",
+      "result": "DONE",
+      "note": "GO: mercado de prompts IA en español infraabastecido, título actual muy fuerte, 200 prompts por caso de uso laboral tiene diferenciación clara. Investigación desde knowledge base hasta ago-2025 (sin web en vivo). Precio objetivo 3,99-5,99 EUR.",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }
