@@ -4,6 +4,8 @@
 
 ## APROBAR (listos, QC superado)
 
+- **EB-000001** — The One-Page System (en-US) · QC WARN · 21 págs · precio sugerido 3.99 → `BOOKS/EB-000001/review/HUMAN_REVIEW.md`
+- **EB-000009** — Navidad en la Mesa: 50 Recetas Españolas y 5 Menús Completos para Toda la Temporada (es-ES) · QC PASS · 51 págs · precio sugerido 2.99 → `BOOKS/EB-000009/review/HUMAN_REVIEW.md`
 - **EB-000015** — Large Print Sudoku for Seniors (en-US) · QC PASS · 27 págs · precio sugerido 6.99 → `BOOKS/EB-000015/review/HUMAN_REVIEW.md`
 
 ## REVISAR (bloqueados o esperando a un humano)
@@ -19,10 +21,12 @@
 
 ## DECISIONES
 
+- EB-000001: ¿crear versiones es-ES, en-GB? (`python factory.py translate EB-000001 --to <lang>`)
+- EB-000009: ¿crear versiones en-US, en-GB? (`python factory.py translate EB-000009 --to <lang>`)
 - EB-000015: ¿crear versiones es-ES, en-GB? (`python factory.py translate EB-000015 --to <lang>`)
 - EB-TEST-001: ¿crear versiones es-ES, en-GB? (`python factory.py translate EB-TEST-001 --to <lang>`)
 
 ## Estado de la fábrica
 
-TOTAL BOOKS: 16 · IDEAS: 8 · RESEARCH: 4 · QC: 2 · HUMAN REVIEW: 1 · READY TO PUBLISH: 1
+TOTAL BOOKS: 16 · IDEAS: 8 · RESEARCH: 4 · HUMAN REVIEW: 3 · READY TO PUBLISH: 1
 

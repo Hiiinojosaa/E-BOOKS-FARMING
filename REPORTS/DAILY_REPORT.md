@@ -1,6 +1,6 @@
 # DAILY REPORT 2026-10-05
 
-_Periodo: últimos 1 día(s) hasta 2026-10-05T10:51:24Z_
+_Periodo: últimos 1 día(s) hasta 2026-10-05T10:55:21Z_
 
 ## Trabajo realizado
 
@@ -24,15 +24,17 @@ _Periodo: últimos 1 día(s) hasta 2026-10-05T10:51:24Z_
 - 2026-10-05T10:50 S1-JEFE completó **DESIGN** de EB-000001 (TASK-000044)
 - 2026-10-05T10:51 S1-JEFE completó **FORMAT** de EB-000009 (TASK-000037)
 - 2026-10-05T10:51 S1-JEFE completó **FORMAT** de EB-000001 (TASK-000045)
+- 2026-10-05T10:53 S1-JEFE completó **QC** de EB-000009 (TASK-000047)
+- 2026-10-05T10:54 S1-JEFE completó **QC** de EB-000001 (TASK-000046)
 
 ## Libros avanzados
 
-- EB-000001: ahora en **QC_PENDING**
+- EB-000001: ahora en **HUMAN_REVIEW**
 - EB-000002: ahora en **BRIEF_READY**
 - EB-000003: ahora en **BRIEF_READY**
 - EB-000004: ahora en **BRIEF_READY**
 - EB-000005: ahora en **BRIEF_READY**
-- EB-000009: ahora en **QC_PENDING**
+- EB-000009: ahora en **HUMAN_REVIEW**
 - EB-000015: ahora en **HUMAN_REVIEW**
 
 ## Libros terminados (listos para publicar)
@@ -51,9 +53,10 @@ _Periodo: últimos 1 día(s) hasta 2026-10-05T10:51:24Z_
 
 ## Decisiones necesarias
 
+- EB-000001 The One-Page System: HUMAN_REVIEW
+- EB-000009 Navidad en la Mesa: 50 Recetas Españolas y 5 Menús Completos para Toda la Temporada: HUMAN_REVIEW
 - EB-000015 Large Print Sudoku for Seniors: HUMAN_REVIEW
 
 ## Próximas tareas
 
-- TASK-000047 QC EB-000009 (HIGH)
-- TASK-000046 QC EB-000001 (NORMAL)
+- Cola vacía
