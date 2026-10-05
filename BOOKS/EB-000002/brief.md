@@ -45,53 +45,53 @@
 
 ## Outline
 
-**Introducción — Cómo usar este libro** (~600 palabras)
+0. Introducción — Cómo usar este libro (~600 palabras)
 - Objetivo: explicar el formato del libro y el patrón de un buen prompt antes de dar ninguno.
 - Puntos clave: qué es un prompt copy-paste, cómo rellenar los `[corchetes]`, cómo adaptar el tono al tuyo, cuándo no usar IA (para que el lector no se decepcione con los casos que no aplican).
 - No hay ejercicio, pero sí una instrucción de uso: "Lee el capítulo que más necesites hoy, no necesariamente en orden."
 
-**1. Comunicación y correos** — 30 prompts (~1500 palabras)
+1. Comunicación y correos — 30 prompts (~1500 palabras)
 - Objetivo: cubrir los tipos de correo más frecuentes del trabajo: redactar, resumir, responder, adaptar tono, rechazar educadamente.
 - Puntos clave: corchetes para remitente/destinatario/asunto; prompt de "adapta el tono a [formal/cercano/breve]"; prompt para "responde a este correo sin comprometerte a nada".
 - Subtemas: correo inicial a cliente, seguimiento sin parecer pesado, respuesta a queja, resumen de hilo largo, correo de solicitud interna.
 
-**2. Reuniones y presentaciones** — 25 prompts (~1250 palabras)
+2. Reuniones y presentaciones — 25 prompts (~1250 palabras)
 - Objetivo: cubrir antes, durante y después de una reunión: agenda, guión de presentación, acta, puntos de acción.
 - Puntos clave: prompt para "genera la agenda de una reunión sobre [tema] con [participantes] en [duración]"; prompt de acta estructurada; prompt para preparar respuestas a preguntas difíciles.
 - Subtemas: agenda de reunión, email previo, diapositivas clave, acta y seguimiento, presentación a cliente nuevo.
 
-**3. Gestión de proyectos y tareas** — 25 prompts (~1250 palabras)
+3. Gestión de proyectos y tareas — 25 prompts (~1250 palabras)
 - Objetivo: ayudar al lector a planificar, priorizar y revisar proyectos y tareas con IA.
 - Puntos clave: prompt para desglosar un proyecto en pasos; prompt para identificar riesgos; prompt para reformular una tarea vaga en pasos accionables.
 - Subtemas: planificación de proyecto, lista de tareas ordenada, revisión de avance, resolución de bloqueos, cierre de proyecto.
 
-**4. Escritura y contenido** — 30 prompts (~1500 palabras)
+4. Escritura y contenido — 30 prompts (~1500 palabras)
 - Objetivo: cubrir la producción de texto escrito en contexto profesional: informes, artículos, posts, bios, textos web.
 - Puntos clave: prompt de "reescribe esto en [tono] sin cambiar el significado"; prompt para titular con gancho; prompt para primer borrador de [tipo de texto] en [número de palabras].
 - Subtemas: informe ejecutivo, artículo de blog, bio profesional, texto de landing page, post de LinkedIn, newsletter.
 
-**5. Investigación y síntesis** — 25 prompts (~1250 palabras)
+5. Investigación y síntesis — 25 prompts (~1250 palabras)
 - Objetivo: usar IA para procesar información rápido: resumir documentos, extraer puntos clave, comparar opciones, generar índices.
 - Puntos clave: prompt para "extrae los 5 puntos más importantes de este texto"; prompt de comparación estructurada; prompt para "explícame [concepto] como si no supiera nada de [campo]".
 - Subtemas: resumen de documento, comparación de opciones, explicación de concepto nuevo, mapa mental, índice de contenidos.
 
-**6. Aprendizaje rápido** — 20 prompts (~1000 palabras)
+6. Aprendizaje rápido — 20 prompts (~1000 palabras)
 - Objetivo: usar IA como tutor personal para aprender un tema nuevo, preparar un examen o ponerse al día rápido.
 - Puntos clave: prompt de "actúa como tutor de [tema] y empieza por los conceptos más importantes"; prompt de preguntas de repaso; prompt de "dame un plan de 7 días para entender [tema]".
 - Subtemas: plan de aprendizaje, explicación escalonada, preguntas de repaso, resumen de libro/artículo, vocabulario esencial.
 
-**7. Gestión administrativa para autónomos** — 25 prompts (~1250 palabras)
+7. Gestión administrativa para autónomos — 25 prompts (~1250 palabras)
 - Objetivo: cubrir el papeleo habitual del autónomo: propuestas, presupuestos, contratos básicos, facturas, seguimiento de cobro.
 - Puntos clave: prompt para "genera una propuesta de servicio para [cliente] con estos elementos: [lista]"; prompt para correo de seguimiento de factura; prompt para cláusulas básicas de contrato de prestación de servicios.
 - Subtemas: propuesta de proyecto, presupuesto, contrato básico, seguimiento de cobro, respuesta a negociación de precio.
 - *Nota al escritor: ningún prompt de este capítulo debe presentarse como asesoramiento legal o fiscal. Incluir al inicio del capítulo: "Estos prompts generan borradores de trabajo. Revisa siempre cualquier documento legal o fiscal con un profesional antes de enviarlo."*
 
-**8. Creatividad e ideas** — 20 prompts (~1000 palabras)
+8. Creatividad e ideas — 20 prompts (~1000 palabras)
 - Objetivo: usar IA para generar ideas, salir de bloqueos creativos y encontrar ángulos nuevos.
 - Puntos clave: prompt de "dame 10 ideas de [tipo] sobre [tema], sin repetir las obvias"; prompt para "¿cuál sería el punto de vista contrario a [posición]?"; prompt de nombres y titulares.
 - Subtemas: brainstorming de ideas, nombres para proyecto/producto, titulares alternativos, ángulos inesperados, soluciones fuera de la caja.
 
-**Conclusión — El siguiente paso** (~400 palabras)
+9. Conclusión — El siguiente paso (~400 palabras)
 - Objetivo: animare al lector a adaptar estos prompts y crear los suyos con el mismo patrón.
 - Puntos clave: el patrón de un prompt que funciona = [contexto] + [tarea] + [formato] + [limitaciones]; cómo guardar los prompts que más usa; llamada a dejar reseña.
 - Sin ejercicio.
