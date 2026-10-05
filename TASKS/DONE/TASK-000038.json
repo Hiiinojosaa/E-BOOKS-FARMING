@@ -5,17 +5,19 @@
   "role": "FACT_CHECK_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "S1-JEFE",
   "created_by": "S1-JEFE",
   "created_at": "2026-10-05T10:24:04Z",
   "started_at": "2026-10-05T10:39:42Z",
-  "completed_at": null,
+  "completed_at": "2026-10-05T10:40:20Z",
   "claimed_from_state": "EDITED",
   "dependencies": [],
   "prompt": "PROMPTS/FACT_CHECK.md",
   "notes": "",
-  "output": null,
+  "output": {
+    "flags": 0
+  },
   "error": null,
   "errors": [],
   "retry_count": 0,
@@ -23,7 +25,12 @@
   "attempts": [
     {
       "agent": "S1-JEFE",
-      "started_at": "2026-10-05T10:39:42Z"
+      "started_at": "2026-10-05T10:39:42Z",
+      "ended_at": "2026-10-05T10:40:20Z",
+      "result": "DONE",
+      "note": "VERDICT: PASS — manuscript is entirely practical advice and fictional scenarios, no verifiable factual claims found. final.md is identical copy of edited.md.",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }
