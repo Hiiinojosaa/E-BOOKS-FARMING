@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791223659144265000-11d4f0",
+  "ts": "2026-10-05T18:07:39Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión iniciada. No hay tareas pendientes en cola — la fábrica espera vuestras aprobaciones. Estado: 3 libros en revisión humana (EB-000001, EB-000009, EB-000015), 4 briefs listos para aprobar (EB-000002 Prompts IA, EB-000003 Finanzas, EB-000004 Diario, EB-000005 Eventos), 1 libro listo para publicar (EB-TEST-001), 5 recomendaciones sin responder. Informes actualizados.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
