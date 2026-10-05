@@ -7,3 +7,4 @@
 {"ts": "2026-10-01T17:36:58Z", "from": "BRIEF_READY", "to": "WRITING_PENDING", "agent": "SOCIO-1", "action": "BRIEF_GATE", "result": "APPROVED", "note": "SOCIO-1"}
 {"ts": "2026-10-01T17:43:30Z", "from": "WRITING_PENDING", "to": "WRITING", "agent": "S1-JEFE", "action": "CLAIM WRITE", "result": "OK", "task_id": "TASK-000015"}
 {"ts": "2026-10-01T17:51:26Z", "from": "WRITING", "to": "DRAFT_COMPLETE", "agent": "S1-JEFE", "action": "COMPLETE WRITE", "result": "OK", "task_id": "TASK-000015", "note": "Manuscrito completo: 7 capitulos, 5152 palabras (85%+ del objetivo de 6000). Sigue el brief y las fuentes citadas, sin estadisticas prestadas, sin placeholders."}
+{"ts": "2026-10-05T10:19:53Z", "from": "DRAFT_COMPLETE", "to": "EDITING", "agent": "S1-JEFE", "action": "CLAIM EDIT", "result": "OK", "task_id": "TASK-000016"}

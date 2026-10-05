@@ -30,3 +30,5 @@
 {"ts": "2026-10-05T10:19:24Z", "type": "TASK_DONE", "task_id": "TASK-000036", "book_id": "EB-000009", "agent": "S1-JEFE", "step": "DESIGN", "warnings": 0}
 {"ts": "2026-10-05T10:19:24Z", "type": "TASK_CREATED", "task_id": "TASK-000037", "book_id": "EB-000009", "step": "FORMAT", "priority": "HIGH"}
 {"ts": "2026-10-05T10:19:24Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
+{"ts": "2026-10-05T10:19:53Z", "type": "STATE_CHANGE", "book_id": "EB-000001", "frm": "DRAFT_COMPLETE", "to": "EDITING", "agent": "S1-JEFE", "action": "CLAIM EDIT", "result": "OK", "task_id": "TASK-000016"}
+{"ts": "2026-10-05T10:19:53Z", "type": "TASK_CLAIMED", "task_id": "TASK-000016", "book_id": "EB-000001", "agent": "S1-JEFE", "step": "EDIT"}
