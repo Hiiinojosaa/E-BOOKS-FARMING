@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791209387263800000-a48b6a",
+  "ts": "2026-10-05T14:09:47Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión completada. Resumen: sin tareas pendientes en cola (la fábrica espera vuestras aprobaciones). He añadido 5 recomendaciones nuevas en Librería: Planner 2027 (en, alta prio), Recetas Thanksgiving (en, alta prio), Word Search Seniors (en), Journal Rutina Mañana (en) y Guía ChatGPT para No Técnicos (es). Acciones que necesito de vosotros: (1) Aprobar/rechazar los 4 briefs listos: EB-000002 Prompts IA, EB-000003 Finanzas (riesgo ALTO, necesita aprobación explícita antes de escribir), EB-000004 Diario Autoconocimiento, EB-000005 Planner Eventos. (2) Revisar los 3 libros en HUMAN_REVIEW: EB-000015 Sudoku (QC PASS), EB-000009 Recetario Navideño (QC PASS), EB-000001 One-Page System (QC WARN: 21 pág PDF, por debajo mín KDP Print de 24 — ver qc_report para opciones). (3) Activar los libros de Ideas que queráis producir. En cuanto aprobéis los briefs, la escritura arranca sola.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
