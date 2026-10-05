@@ -1,14 +1,14 @@
 # DASHBOARD — E-Book Factory
 
-_Generado 2026-10-05T14:06:56Z_
+_Generado 2026-10-05T14:10:32Z_
 
 | TOTAL BOOKS | IDEAS | RESEARCH | WRITING | EDITING | TRANSLATION | DESIGN | QC | HUMAN REVIEW | READY TO PUBLISH | PUBLISHED | FAILED | BLOCKED |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 16 | 8 | 4 | 0 | 0 | 0 | 0 | 0 | 3 | 1 | 0 | 0 | 0 |
+| 21 | 13 | 4 | 0 | 0 | 0 | 0 | 0 | 3 | 1 | 0 | 0 | 0 |
 
 ## Últimos 7 días
 
-- books created: **16**
+- books created: **21**
 - books completed: **1**
 - books awaiting approval: **3**
 - tasks completed: **47**
@@ -34,6 +34,11 @@ _Generado 2026-10-05T14:06:56Z_
 | EB-000013 | Black Friday y Navidad sin Sustos: Guia para Comprar Mejor y Gastar Menos | es-ES | IDEA | HIGH | - | 2026-10-01T22:53:13Z |
 | EB-000014 | Hanukkah en Familia: Actividades, Recetas y Tradiciones | es-ES | IDEA | HIGH | - | 2026-10-01T22:53:13Z |
 | EB-000015 | Large Print Sudoku for Seniors | en-US | HUMAN_REVIEW | NORMAL | - | 2026-10-05T10:31:57Z |
+| EB-000016 | New Year 2027 Goal Planner & Annual Review Journal | en-US | IDEA | HIGH | - | 2026-10-05T14:07:39Z |
+| EB-000017 | Thanksgiving Recipes & Holiday Menu Planner | en-US | IDEA | HIGH | - | 2026-10-05T14:08:03Z |
+| EB-000018 | Large Print Word Search for Seniors: 100 Puzzles | en-US | IDEA | NORMAL | - | 2026-10-05T14:08:27Z |
+| EB-000019 | 30-Day Morning Routine Challenge: Journal & Tracker | en-US | IDEA | NORMAL | - | 2026-10-05T14:08:51Z |
+| EB-000020 | Guía Completa de ChatGPT y IA Generativa para No Técnicos | es-ES | IDEA | NORMAL | - | 2026-10-05T14:09:17Z |
 | EB-TEST-001 | Productivity for Beginners | en-US | READY_FOR_PUBLISHING | HIGH | - | 2026-10-01T22:53:49Z |
 
 ## Agentes
