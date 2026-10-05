@@ -5,17 +5,20 @@
   "role": "RESEARCH_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "S1-JEFE",
   "created_by": "S1-JEFE",
   "created_at": "2026-10-05T10:39:18Z",
   "started_at": "2026-10-05T10:46:45Z",
-  "completed_at": null,
+  "completed_at": "2026-10-05T10:47:52Z",
   "claimed_from_state": "RESEARCH_COMPLETE",
   "dependencies": [],
   "prompt": "PROMPTS/BRIEF.md",
   "notes": "",
-  "output": null,
+  "output": {
+    "brief_chapters": 9,
+    "word_count_target": 0
+  },
   "error": null,
   "errors": [],
   "retry_count": 0,
@@ -23,7 +26,12 @@
   "attempts": [
     {
       "agent": "S1-JEFE",
-      "started_at": "2026-10-05T10:46:45Z"
+      "started_at": "2026-10-05T10:46:45Z",
+      "ended_at": "2026-10-05T10:47:52Z",
+      "result": "DONE",
+      "note": "Brief completo: método cronograma inverso + 5 tipos de evento con checklists específicos, 7000 palabras. LOW risk. Sin precios exactos ni tendencias visuales. Listo para approve_brief.",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }

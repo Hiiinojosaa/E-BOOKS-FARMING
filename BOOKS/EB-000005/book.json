@@ -9,13 +9,13 @@
   "genre": "non-fiction",
   "niche": "planners de eventos",
   "target_audience": "personas organizando bodas, mudanzas, viajes o fiestas",
-  "status": "BRIEFING",
+  "status": "BRIEF_READY",
   "blocked_from": null,
   "priority": "NORMAL",
-  "assigned_agent": "S1-JEFE",
+  "assigned_agent": null,
   "owner_partner": null,
   "created_at": "2026-10-01T17:41:50Z",
-  "updated_at": "2026-10-05T10:46:45Z",
+  "updated_at": "2026-10-05T10:47:52Z",
   "version": "1.0",
   "parent_book": null,
   "translated_from": null,
@@ -30,7 +30,7 @@
   "price_suggested": null,
   "risk_level": "LOW",
   "risk_reasons": [],
-  "word_count_target": 6000,
+  "word_count_target": 0,
   "brief_approved": false,
   "brief_approved_by": null,
   "human_approval": {
@@ -52,5 +52,6 @@
   "recommended_by": null,
   "recommendation": "",
   "idea_approved": true,
-  "idea_approved_by": "ADMIN"
+  "idea_approved_by": "ADMIN",
+  "brief_chapters": 9
 }
