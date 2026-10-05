@@ -1,0 +1,38 @@
+{
+  "task_id": "TASK-000046",
+  "book_id": "EB-000001",
+  "type": "QC",
+  "role": "QC_AGENT",
+  "auto": false,
+  "priority": "NORMAL",
+  "status": "DONE",
+  "assigned_agent": "S1-JEFE",
+  "created_by": "S1-JEFE",
+  "created_at": "2026-10-05T10:51:24Z",
+  "started_at": "2026-10-05T10:54:06Z",
+  "completed_at": "2026-10-05T10:54:50Z",
+  "claimed_from_state": "QC_PENDING",
+  "dependencies": [],
+  "prompt": "PROMPTS/QC.md",
+  "notes": "",
+  "output": {
+    "agent_verdict": "WARN",
+    "auto": "WARN",
+    "final": "WARN"
+  },
+  "error": null,
+  "errors": [],
+  "retry_count": 0,
+  "last_attempt": "2026-10-05T10:54:06Z",
+  "attempts": [
+    {
+      "agent": "S1-JEFE",
+      "started_at": "2026-10-05T10:54:06Z",
+      "ended_at": "2026-10-05T10:54:50Z",
+      "result": "DONE",
+      "note": "QC WARN: 21 páginas PDF (bajo el mínimo de 24 para KDP Print), 5045 palabras. Contenido completo y correcto. EPUB publicable sin cambios. Para KDP Print: añadir Quick Reference o publicar solo EPUB. Decisión a socios en HUMAN_REVIEW.",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}
