@@ -1,0 +1,21 @@
+{
+  "id": "DEC-00001",
+  "book_id": "EB-000016",
+  "question": "Te recomiendo «New Year 2027 Goal Planner & Annual Review Journal» (en-US). Q4 pico: los planners anuales dominan el top de ventas KDP en noviembre-diciembre. Nicho validado con el Sudoku y la productividad en inglés. Bajo riesgo, alta demanda recurrente. Complementa EB-TEST-001 (productividad) y diversifica hacia inglés.",
+  "options": [
+    "Adelante",
+    "Descartar"
+  ],
+  "asked_by": "S1-JEFE",
+  "asked_at": "2026-10-05T14:07:39Z",
+  "urgency": "NORMAL",
+  "status": "OPEN",
+  "answer": null,
+  "answered_by": null,
+  "action": {
+    "type": "approve_idea",
+    "book_id": "EB-000016",
+    "yes": "Adelante",
+    "no": "Descartar"
+  }
+}
