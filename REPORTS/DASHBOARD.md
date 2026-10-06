@@ -1,14 +1,14 @@
 # DASHBOARD — E-Book Factory
 
-_Generado 2026-10-06T22:08:03Z_
+_Generado 2026-10-06T22:13:03Z_
 
 | TOTAL BOOKS | IDEAS | RESEARCH | WRITING | EDITING | TRANSLATION | DESIGN | QC | HUMAN REVIEW | READY TO PUBLISH | PUBLISHED | FAILED | BLOCKED |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 21 | 13 | 4 | 0 | 0 | 0 | 0 | 0 | 3 | 1 | 0 | 0 | 0 |
+| 25 | 16 | 4 | 0 | 0 | 0 | 0 | 0 | 3 | 1 | 0 | 1 | 0 |
 
 ## Últimos 7 días
 
-- books created: **21**
+- books created: **25**
 - books completed: **1**
 - books awaiting approval: **3**
 - tasks completed: **47**
@@ -39,6 +39,10 @@ _Generado 2026-10-06T22:08:03Z_
 | EB-000018 | Large Print Word Search for Seniors: 100 Puzzles | en-US | IDEA | NORMAL | - | 2026-10-05T14:08:27Z |
 | EB-000019 | 30-Day Morning Routine Challenge: Journal & Tracker | en-US | IDEA | NORMAL | - | 2026-10-05T14:08:51Z |
 | EB-000020 | Guía Completa de ChatGPT y IA Generativa para No Técnicos | es-ES | IDEA | NORMAL | - | 2026-10-05T14:09:17Z |
+| EB-000021 | Christmas Activity Book for Kids: Coloring, Puzzles and Fun | en-US | IDEA | HIGH | - | 2026-10-06T22:09:06Z |
+| EB-000022 | Meal Prep and Healthy Eating Weekly Planner | en-US | IDEA | NORMAL | - | 2026-10-06T22:09:41Z |
+| EB-000023 | Mi Libro de Recetas: Cuaderno Personal de Cocina en Blanco | es-ES | IDEA | NORMAL | - | 2026-10-06T22:10:12Z |
+| EB-000024 | Mi Libro de Recetas: Cuaderno Personal de Cocina en Blanco | es-ES | REJECTED | NORMAL | - | 2026-10-06T22:11:48Z |
 | EB-TEST-001 | Productivity for Beginners | en-US | READY_FOR_PUBLISHING | HIGH | - | 2026-10-01T22:53:49Z |
 
 ## Agentes

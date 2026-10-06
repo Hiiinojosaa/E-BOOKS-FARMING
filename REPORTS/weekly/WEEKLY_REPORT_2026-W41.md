@@ -1,6 +1,6 @@
 # WEEKLY REPORT 2026-W41
 
-_Periodo: últimos 7 día(s) hasta 2026-10-06T22:08:03Z_
+_Periodo: últimos 7 día(s) hasta 2026-10-06T22:13:03Z_
 
 ## Trabajo realizado
 
@@ -61,6 +61,7 @@ _Periodo: últimos 7 día(s) hasta 2026-10-06T22:08:03Z_
 - EB-000005: ahora en **BRIEF_READY**
 - EB-000009: ahora en **HUMAN_REVIEW**
 - EB-000015: ahora en **HUMAN_REVIEW**
+- EB-000024: ahora en **REJECTED**
 - EB-TEST-001: ahora en **READY_FOR_PUBLISHING**
 
 ## Libros terminados (listos para publicar)
@@ -91,6 +92,9 @@ _Periodo: últimos 7 día(s) hasta 2026-10-06T22:08:03Z_
 - DEC-00003: Te recomiendo «Large Print Word Search for Seniors: 100 Puzzles» (en-US). Mismo nicho que EB-000015 (Sudoku seniors, QC PASS). Los libros de puzzles para mayores son un bestseller perenne en KDP, con poca escritura requerida y alta cadencia de ventas. Diversifica el catálogo de puzzles en inglés.
 - DEC-00004: Te recomiendo «30-Day Morning Routine Challenge: Journal & Tracker» (en-US). Nicho evergreen de journals/hábitos que complementa la productividad (EB-TEST-001, EB-000001) y los diarios (EB-000004). Alta demanda constante en KDP, bajo coste de producción. Formato probado: tracker diario + reflexiones.
 - DEC-00005: Te recomiendo «Guía Completa de ChatGPT y IA Generativa para No Técnicos» (es-ES). Complementa EB-000002 (prompts de IA) con un enfoque tutorial/guía práctica. Demanda altísima en español: muchos lectores quieren entender y usar la IA sin conocimientos técnicos. Nicho en expansión rápida, baja competencia de calidad en es-ES.
+- DEC-00006: Te recomiendo «Christmas Activity Book for Kids: Coloring, Puzzles and Fun» (en-US). FACT: Q4 is the strongest KDP season; children's activity books peak in November-December. FACT: Our adult puzzle catalog (Sudoku EB-000015, Word Search EB-000018 pending) is proven but lacks a kids format. ESTIMATE: Children's activity books have lower production cost and high gifting volume. Fills the kids niche with seasonal timing.
+- DEC-00007: Te recomiendo «Meal Prep and Healthy Eating Weekly Planner» (en-US). FACT: Health and wellness planners are a top KDP evergreen category with a strong January peak from New Year resolutions. ESTIMATE: Pairs well with New Year 2027 Planner (DEC-00001) as a companion product — cross-sell opportunity. HYPOTHESIS: Buyers of productivity tools often also buy meal/health planners. Low risk, proven format, year-round demand.
+- DEC-00008: Te recomiendo «Mi Libro de Recetas: Cuaderno Personal de Cocina en Blanco» (es-ES). FACT: Blank recipe journals are perennial bestsellers on KDP Spain and Latin America with year-round demand, especially as gifts. FACT: Our Spanish catalog is growing but lacks a cookbook format. ESTIMATE: Low production complexity as a fill-in journal template — no editorial writing required. Distinct from EB-000009 which is an editorial recipe book.
 
 ## Próximas tareas
 
