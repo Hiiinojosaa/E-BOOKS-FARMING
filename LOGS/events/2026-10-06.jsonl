@@ -47,3 +47,4 @@
 {"ts": "2026-10-06T22:11:48Z", "type": "CHAT", "by": "S1-JEFE", "role": "partner", "kind": "answer", "msg": "MSG-1791324708258842700-8a7826"}
 {"ts": "2026-10-06T22:11:48Z", "type": "STATE_CHANGE", "book_id": "EB-000024", "frm": "IDEA", "to": "REJECTED", "agent": "S1-JEFE", "action": "IDEA_REJECTED", "result": "OK"}
 {"ts": "2026-10-06T22:12:27Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "progress", "msg": "MSG-1791324747200575400-9bd989"}
+{"ts": "2026-10-06T22:13:30Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
