@@ -1,0 +1,21 @@
+{
+  "id": "DEC-00006",
+  "book_id": "EB-000021",
+  "question": "Te recomiendo «Christmas Activity Book for Kids: Coloring, Puzzles and Fun» (en-US). FACT: Q4 is the strongest KDP season; children's activity books peak in November-December. FACT: Our adult puzzle catalog (Sudoku EB-000015, Word Search EB-000018 pending) is proven but lacks a kids format. ESTIMATE: Children's activity books have lower production cost and high gifting volume. Fills the kids niche with seasonal timing.",
+  "options": [
+    "Adelante",
+    "Descartar"
+  ],
+  "asked_by": "S1-JEFE",
+  "asked_at": "2026-10-06T22:09:06Z",
+  "urgency": "NORMAL",
+  "status": "OPEN",
+  "answer": null,
+  "answered_by": null,
+  "action": {
+    "type": "approve_idea",
+    "book_id": "EB-000021",
+    "yes": "Adelante",
+    "no": "Descartar"
+  }
+}
