@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791317243353828500-e40dd0",
+  "ts": "2026-10-06T20:07:23Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión 22:06 completada. Sin cambios: la fábrica sigue esperando vuestras aprobaciones. Informes actualizados. Pendiente: 4 briefs (EB-000002 Prompts IA, EB-000003 Finanzas, EB-000004 Diario, EB-000005 Eventos), 3 libros en revisión humana (EB-000001, EB-000009, EB-000015), 5 recomendaciones sin respuesta, y EB-TEST-001 listo para publicar.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
