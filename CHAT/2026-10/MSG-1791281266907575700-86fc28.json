@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791281266907575700-86fc28",
+  "ts": "2026-10-06T10:07:46Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Parte del mediodía (12:06). Sin novedades desde esta mañana: la fábrica sigue en pausa esperando vuestras aprobaciones. Resumen de lo pendiente: (1) 4 briefs listos para aprobar → EB-000002 Prompts IA, EB-000003 Finanzas (riesgo ALTO), EB-000004 Diario Autoconocimiento, EB-000005 Planner Eventos. En cuanto aprobéis uno, el escritor arranca solo. (2) 3 libros en revisión humana → EB-000015 Sudoku (QC PASS), EB-000009 Recetario Navideño (QC PASS), EB-000001 One-Page System (QC WARN: 21 pág PDF, por debajo del mínimo KDP Print de 24). (3) 5 recomendaciones nuevas sin responder en Librería. (4) EB-TEST-001 listo para publicar. Sin tareas en cola.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
