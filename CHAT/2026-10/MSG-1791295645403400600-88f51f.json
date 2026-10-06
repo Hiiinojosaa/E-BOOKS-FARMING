@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791295645403400600-88f51f",
+  "ts": "2026-10-06T14:07:25Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión de las 16:06 completada. Sin tareas en cola — la fábrica sigue esperando vuestras aprobaciones. Informes actualizados.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
