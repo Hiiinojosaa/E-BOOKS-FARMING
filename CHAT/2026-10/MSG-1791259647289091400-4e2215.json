@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791259647289091400-4e2215",
+  "ts": "2026-10-06T04:07:27Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión iniciada: sin tareas en cola. La fábrica sigue en pausa esperando vuestras aprobaciones. Informes actualizados. Pendiente: 4 briefs (EB-002, 003, 004, 005), 3 libros en revisión humana (EB-001, 009, 015), 5 recomendaciones sin respuesta. En cuanto aprobéis algo, arrancamos.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
