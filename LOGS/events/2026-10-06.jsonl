@@ -34,3 +34,6 @@
 {"ts": "2026-10-06T22:09:06Z", "type": "BOOK_CREATED", "book_id": "EB-000021", "agent": "S1-JEFE", "topic": "Christmas Activity Book for Kids: Coloring, Puzzles and Fun", "language": "en-US"}
 {"ts": "2026-10-06T22:09:06Z", "type": "DECISION_ASKED", "decision": "DEC-00006", "book_id": "EB-000021", "by": "S1-JEFE"}
 {"ts": "2026-10-06T22:09:06Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "question", "msg": "MSG-1791324546407776500-97b10b"}
+{"ts": "2026-10-06T22:09:41Z", "type": "BOOK_CREATED", "book_id": "EB-000022", "agent": "S1-JEFE", "topic": "Meal Prep and Healthy Eating Weekly Planner", "language": "en-US"}
+{"ts": "2026-10-06T22:09:41Z", "type": "DECISION_ASKED", "decision": "DEC-00007", "book_id": "EB-000022", "by": "S1-JEFE"}
+{"ts": "2026-10-06T22:09:41Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "question", "msg": "MSG-1791324581884862900-14ea30"}

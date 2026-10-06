@@ -1,0 +1,17 @@
+{
+  "id": "MSG-1791324581884862900-14ea30",
+  "ts": "2026-10-06T22:09:41Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "question",
+  "to": null,
+  "text": "Te recomiendo «Meal Prep and Healthy Eating Weekly Planner» (en-US). FACT: Health and wellness planners are a top KDP evergreen category with a strong January peak from New Year resolutions. ESTIMATE: Pairs well with New Year 2027 Planner (DEC-00001) as a companion product — cross-sell opportunity. HYPOTHESIS: Buyers of productivity tools often also buy meal/health planners. Low risk, proven format, year-round demand.",
+  "book_id": "EB-000022",
+  "order_id": null,
+  "decision_id": "DEC-00007",
+  "options": [
+    "Adelante",
+    "Descartar"
+  ],
+  "reply_to": null
+}
