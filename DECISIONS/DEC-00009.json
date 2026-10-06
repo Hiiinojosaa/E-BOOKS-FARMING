@@ -9,13 +9,14 @@
   "asked_by": "S1-JEFE",
   "asked_at": "2026-10-06T22:10:51Z",
   "urgency": "NORMAL",
-  "status": "OPEN",
-  "answer": null,
-  "answered_by": null,
+  "status": "ANSWERED",
+  "answer": "Descartar",
+  "answered_by": "S1-JEFE",
   "action": {
     "type": "approve_idea",
     "book_id": "EB-000024",
     "yes": "Adelante",
     "no": "Descartar"
-  }
+  },
+  "answered_at": "2026-10-06T22:11:48Z"
 }

@@ -1,1 +1,2 @@
 {"ts": "2026-10-06T22:10:51Z", "from": null, "to": "IDEA", "agent": "S1-JEFE", "action": "CREATE", "result": "OK", "note": "Mi Libro de Recetas: Cuaderno Personal de Cocina en Blanco"}
+{"ts": "2026-10-06T22:11:48Z", "from": "IDEA", "to": "REJECTED", "agent": "S1-JEFE", "action": "IDEA_REJECTED", "result": "OK", "note": "Descartada desde una recomendación"}
