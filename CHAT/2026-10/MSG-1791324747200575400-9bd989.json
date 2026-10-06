@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791324747200575400-9bd989",
+  "ts": "2026-10-06T22:12:27Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión iniciada (7 oct). Sin tareas en cola: la fábrica sigue esperando vuestras aprobaciones. He añadido 3 nuevas recomendaciones para el catálogo: Christmas Activity Book for Kids (en-US, alta prioridad para Q4), Meal Prep Weekly Planner (en-US) y Cuaderno Personal de Recetas (es-ES). Total de recomendaciones pendientes: 8. Acciones necesarias: (1) Aprobar o rechazar los 4 briefs listos — EB-000002 Prompts IA, EB-000003 Finanzas (riesgo ALTO), EB-000004 Diario, EB-000005 Planner Eventos. (2) Revisar los 3 libros en revisión humana — EB-000015 Sudoku (QC PASS), EB-000009 Recetario Navideño (QC PASS), EB-000001 One-Page System (QC WARN: 21 págs). En cuanto aprobéis algo, arrancamos.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
