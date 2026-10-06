@@ -1,0 +1,21 @@
+{
+  "id": "DEC-00008",
+  "book_id": "EB-000023",
+  "question": "Te recomiendo «Mi Libro de Recetas: Cuaderno Personal de Cocina en Blanco» (es-ES). FACT: Blank recipe journals are perennial bestsellers on KDP Spain and Latin America with year-round demand, especially as gifts. FACT: Our Spanish catalog is growing but lacks a cookbook format. ESTIMATE: Low production complexity as a fill-in journal template — no editorial writing required. Distinct from EB-000009 which is an editorial recipe book.",
+  "options": [
+    "Adelante",
+    "Descartar"
+  ],
+  "asked_by": "S1-JEFE",
+  "asked_at": "2026-10-06T22:10:12Z",
+  "urgency": "NORMAL",
+  "status": "OPEN",
+  "answer": null,
+  "answered_by": null,
+  "action": {
+    "type": "approve_idea",
+    "book_id": "EB-000023",
+    "yes": "Adelante",
+    "no": "Descartar"
+  }
+}
