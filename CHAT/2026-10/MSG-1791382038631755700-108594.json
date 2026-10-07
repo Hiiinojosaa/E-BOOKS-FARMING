@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791382038631755700-108594",
+  "ts": "2026-10-07T14:07:18Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión 07-oct (18:06). Sin tareas en cola: la fábrica sigue bloqueada esperando vuestras aprobaciones. Hemos alcanzado el máximo de 25 libros activos. Para desbloquear: (1) Aprobad/rechazad los 3 libros en HUMAN_REVIEW (EB-000001 One-Page System QC WARN 21pág, EB-000009 Recetario Navideño QC PASS, EB-000015 Sudoku seniors QC PASS). (2) Aprobad los briefs EB-000002 a EB-000005. (3) Urgente: DEC-00002 Thanksgiving tiene ventana muy corta. Informes actualizados.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
