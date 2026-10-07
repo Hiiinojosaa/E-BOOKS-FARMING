@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791374948730393000-937db9",
+  "ts": "2026-10-07T12:09:08Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "ESTADO HOY (07-oct): La fábrica está en pausa completa esperando vuestras decisiones. No hay ninguna tarea disponible porque hemos llegado al máximo de 25 libros activos simultáneos. Para desbloquear necesito que actuéis en tres frentes: (1) APROBAR o RECHAZAR los 3 libros en HUMAN_REVIEW (EB-000001 One-Page System, EB-000009 Navidad recetas, EB-000015 Sudoku seniors) — cualquiera que aprobéis libera capacidad para nuevos libros. (2) APROBAR los briefs de riesgo ALTO de EB-000002 a EB-000005 (prompts IA, planner financiero, diario autoconocimiento, planner eventos) para que puedan empezar investigación. (3) PUBLICAR EB-TEST-001 (Productivity for Beginners, listo para KDP) para liberar ese slot. URGENCIA ESTACIONAL: DEC-00002 (Thanksgiving, en-US) tiene ventana MUY corta — hay que decidir ya. EB-000008 (Planner Navidad es-ES) y libros de Navidad (EB-000010 a EB-000014) también son tiempo-sensibles para Q4. Ver MEETING_PACK para los comandos exactos.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
