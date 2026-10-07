@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791346102267720600-4b8723",
+  "ts": "2026-10-07T04:08:22Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Hola! Sesion completa. La fabrica necesita vuestra atencion en el panel para avanzar: (1) 4 briefs con riesgo alto esperando approve-brief (EB-000002 a EB-000005), (2) 8 decisiones de recomendaciones pendientes (DEC-00001 a DEC-00008), (3) 3 libros listos para que los aprobeis o pidais cambios (EB-000001, EB-000009, EB-000015). Sin estas decisiones no puedo crear mas tareas. El estado general es bueno: 47 tareas completadas, 1 libro ready-to-publish. Cuando respondais en el panel, arrancad una nueva sesion de agente y el trabajo continuara automaticamente.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
