@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791331671322974800-28d479",
+  "ts": "2026-10-07T00:07:51Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Buenos días (7 oct). Sesión en marcha: informes actualizados. Sin cambios desde ayer — la fábrica sigue esperando vuestras aprobaciones para avanzar. Pendiente: (1) 4 briefs listos — EB-000002 Prompts IA, EB-000003 Finanzas (riesgo ALTO), EB-000004 Diario, EB-000005 Planner Eventos. (2) 3 libros en revisión humana — EB-000015 Sudoku (QC PASS), EB-000009 Recetario Navideño (QC PASS), EB-000001 One-Page System (QC WARN: 21 págs). (3) 8 recomendaciones sin respuesta en Librería. En cuanto aprobéis algo, el escritor arranca solo.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
