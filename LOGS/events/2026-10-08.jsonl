@@ -45,3 +45,7 @@
 {"ts": "2026-10-08T18:18:48Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
 {"ts": "2026-10-08T18:19:44Z", "type": "STATE_CHANGE", "book_id": "EB-000011", "frm": "RESEARCH_PENDING", "to": "RESEARCHING", "agent": "S1-JEFE", "action": "CLAIM RESEARCH", "result": "OK", "task_id": "TASK-000050"}
 {"ts": "2026-10-08T18:19:44Z", "type": "TASK_CLAIMED", "task_id": "TASK-000050", "book_id": "EB-000011", "agent": "S1-JEFE", "step": "RESEARCH"}
+{"ts": "2026-10-08T18:21:53Z", "type": "STATE_CHANGE", "book_id": "EB-000011", "frm": "RESEARCHING", "to": "RESEARCH_COMPLETE", "agent": "S1-JEFE", "action": "COMPLETE RESEARCH", "result": "OK", "task_id": "TASK-000050"}
+{"ts": "2026-10-08T18:21:53Z", "type": "TASK_DONE", "task_id": "TASK-000050", "book_id": "EB-000011", "agent": "S1-JEFE", "step": "RESEARCH", "warnings": 0}
+{"ts": "2026-10-08T18:21:53Z", "type": "TASK_CREATED", "task_id": "TASK-000057", "book_id": "EB-000011", "step": "BRIEF", "priority": "HIGH"}
+{"ts": "2026-10-08T18:21:53Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
