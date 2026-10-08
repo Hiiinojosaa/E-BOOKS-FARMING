@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791484658999086900-dbceb9",
+  "ts": "2026-10-08T18:37:38Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Escribiendo manuscrito de El Planner Definitivo de Eventos (EB-000005). Objetivo: 7000 palabras.",
+  "book_id": "EB-000005",
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
