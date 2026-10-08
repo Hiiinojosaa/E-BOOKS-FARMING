@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791482942763812700-a2ca1c",
+  "ts": "2026-10-08T18:09:02Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "answer",
+  "to": null,
+  "text": "Todo va bien, sin bloqueos. Resumen rápido: hay 1 libro listo para que lo publiques (Productivity for Beginners, EB-TEST-001). Otros 3 están en revisión humana esperando tu aprobación: The One-Page System (en inglés), Navidad en la Mesa (alta prioridad, ideal publicarlo antes de Navidad), y Large Print Sudoku for Seniors. En la cola tenemos 7 tareas listas: 4 investigaciones de alta prioridad y 3 escrituras. También tienes 8 decisiones pendientes en el panel. La fábrica está funcionando, sin atascos.",
+  "book_id": null,
+  "order_id": "ORD-00004",
+  "decision_id": null,
+  "options": [],
+  "reply_to": "MSG-1791471817104277800-4a3f01"
+}
