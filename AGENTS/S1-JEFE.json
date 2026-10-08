@@ -6,9 +6,9 @@
   "capabilities": [
     "*"
   ],
-  "status": "IDLE",
-  "current_task": null,
-  "last_seen": "2026-10-08T18:34:08Z",
+  "status": "BUSY",
+  "current_task": "TASK-000058",
+  "last_seen": "2026-10-08T18:35:06Z",
   "registered_at": "2026-10-01T12:32:31Z",
   "notes": "Habla con vosotros en el chat, os recomienda temas, sigue vuestras directrices y coordina al equipo.",
   "role": "JEFE",
