@@ -1,21 +1,9 @@
 # WEEKLY REPORT 2026-W41
 
-_Periodo: últimos 7 día(s) hasta 2026-10-07T14:08:33Z_
+_Periodo: últimos 7 día(s) hasta 2026-10-08T14:38:55Z_
 
 ## Trabajo realizado
 
-- 2026-10-01T08:41 S1-CLAUDE-001 completó **RESEARCH** de EB-TEST-001 (TASK-000001)
-- 2026-10-01T08:42 S1-CLAUDE-001 completó **BRIEF** de EB-TEST-001 (TASK-000002)
-- 2026-10-01T08:44 S1-CLAUDE-001 completó **WRITE** de EB-TEST-001 (TASK-000003)
-- 2026-10-01T08:44 S1-CLAUDE-001 completó **EDIT** de EB-TEST-001 (TASK-000004)
-- 2026-10-01T08:45 S1-CLAUDE-001 completó **FACT_CHECK** de EB-TEST-001 (TASK-000005)
-- 2026-10-01T08:45 S1-CLAUDE-001 completó **METADATA** de EB-TEST-001 (TASK-000006)
-- 2026-10-01T08:46 S1-CLAUDE-001 completó **DESIGN** de EB-TEST-001 (TASK-000007)
-- 2026-10-01T08:46 S1-CLAUDE-001 completó **FORMAT** de EB-TEST-001 (TASK-000008)
-- 2026-10-01T08:47 S1-CLAUDE-001 completó **QC** de EB-TEST-001 (TASK-000009)
-- 2026-10-01T08:47 S1-CLAUDE-001 completó **FIX** de EB-TEST-001 (TASK-000010)
-- 2026-10-01T08:47 S1-CLAUDE-001 completó **FORMAT** de EB-TEST-001 (TASK-000011)
-- 2026-10-01T08:48 S1-CLAUDE-001 completó **QC** de EB-TEST-001 (TASK-000012)
 - 2026-10-01T17:19 S1-JEFE completó **RESEARCH** de EB-000001 (TASK-000013)
 - 2026-10-01T17:20 S1-JEFE completó **BRIEF** de EB-000001 (TASK-000014)
 - 2026-10-01T17:51 S1-JEFE completó **WRITE** de EB-000001 (TASK-000015)
@@ -62,17 +50,13 @@ _Periodo: últimos 7 día(s) hasta 2026-10-07T14:08:33Z_
 - EB-000009: ahora en **HUMAN_REVIEW**
 - EB-000015: ahora en **HUMAN_REVIEW**
 - EB-000024: ahora en **REJECTED**
-- EB-TEST-001: ahora en **READY_FOR_PUBLISHING**
 
 ## Libros terminados (listos para publicar)
 
-- EB-TEST-001
+- Ninguno
 
 ## Errores
 
-- 2026-10-01T08:46 TASK-000008 EB-TEST-001: FactoryError: Chrome no generó el PDF: mand_handler\headless_command_handler.cc:266] Failed to write file C:\Users\DAW\AppData\Local\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\Claude\scratch-wor
-- 2026-10-01T08:46 TASK-000008 EB-TEST-001: FactoryError: Chrome no generó el PDF: mand_handler\headless_command_handler.cc:266] Failed to write file C:\Users\DAW\AppData\Local\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\Claude\scratch-wor
-- 2026-10-01T08:46 TASK-000008 EB-TEST-001: FactoryError: Chrome no generó el PDF: mand_handler\headless_command_handler.cc:266] Failed to write file C:\Users\DAW\AppData\Local\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\Claude\scratch-wor
 - 2026-10-01T18:17 TASK-000017 EB-000015: Validación fallida: research/research.md demasiado corto (353 < 400 palabras)
 - 2026-10-05T10:31 TASK-000026 EB-000015: Validación fallida: qc_report.md necesita 'VERDICT: PASS|WARN|FAIL|HUMAN_REVIEW'
 - 2026-10-05T10:33 TASK-000027 EB-000002: Validación fallida: fuente #3 sin title y url/citation

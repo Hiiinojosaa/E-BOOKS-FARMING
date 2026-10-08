@@ -1,1 +1,4 @@
 {"ts": "2026-10-08T14:38:07Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 1}
+{"ts": "2026-10-08T14:57:52Z", "type": "STATE_CHANGE", "book_id": "EB-000014", "frm": "IDEA", "to": "RESEARCH_PENDING", "agent": "ADMIN", "action": "PROMOTE_IDEA", "result": "OK"}
+{"ts": "2026-10-08T14:57:52Z", "type": "TASK_CREATED", "task_id": "TASK-000048", "book_id": "EB-000014", "step": "RESEARCH", "priority": "HIGH"}
+{"ts": "2026-10-08T14:57:52Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 1}
