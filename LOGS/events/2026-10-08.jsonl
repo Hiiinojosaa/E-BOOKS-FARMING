@@ -105,3 +105,4 @@
 {"ts": "2026-10-08T19:02:55Z", "type": "TASK_DONE", "task_id": "TASK-000059", "book_id": "EB-000005", "agent": "S1-JEFE", "step": "EDIT", "warnings": 0}
 {"ts": "2026-10-08T19:02:55Z", "type": "TASK_CREATED", "task_id": "TASK-000062", "book_id": "EB-000005", "step": "FACT_CHECK", "priority": "NORMAL"}
 {"ts": "2026-10-08T19:02:55Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
+{"ts": "2026-10-08T19:03:50Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}

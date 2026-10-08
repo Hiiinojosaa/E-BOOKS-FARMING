@@ -11,6 +11,10 @@
 ## REVISAR (bloqueados o esperando a un humano)
 
 - **EB-000002** — Los 200 Mejores Prompts de IA para Trabajar Menos y Rendir Más: brief de riesgo ALTO pendiente de aprobar (`approve-brief`)
+- **EB-000010** — Diciembre en Familia: Calendario de Adviento, Actividades y Recuerdos: brief de riesgo ALTO pendiente de aprobar (`approve-brief`)
+- **EB-000011** — Guia de Regalos de Navidad: Ideas para Todos sin Gastar de Mas: brief de riesgo ALTO pendiente de aprobar (`approve-brief`)
+- **EB-000012** — Cierra el Año y Diseña el Siguiente: Guia de Revision y Metas: brief de riesgo ALTO pendiente de aprobar (`approve-brief`)
+- **EB-000014** — Hanukkah en Familia: Actividades, Recetas y Tradiciones: brief de riesgo ALTO pendiente de aprobar (`approve-brief`)
 
 ## DESCARTAR (candidatos)
 
@@ -33,5 +37,5 @@
 
 ## Estado de la fábrica
 
-TOTAL BOOKS: 25 · IDEAS: 12 · RESEARCH: 5 · WRITING: 3 · HUMAN REVIEW: 3 · READY TO PUBLISH: 1 · FAILED: 1
+TOTAL BOOKS: 25 · IDEAS: 12 · RESEARCH: 5 · WRITING: 2 · EDITING: 1 · HUMAN REVIEW: 3 · READY TO PUBLISH: 1 · FAILED: 1
 
