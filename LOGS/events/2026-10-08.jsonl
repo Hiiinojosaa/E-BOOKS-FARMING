@@ -59,3 +59,5 @@
 {"ts": "2026-10-08T18:26:14Z", "type": "TASK_CLAIMED", "task_id": "TASK-000055", "book_id": "EB-000014", "agent": "S1-JEFE", "step": "BRIEF"}
 {"ts": "2026-10-08T18:27:42Z", "type": "STATE_CHANGE", "book_id": "EB-000014", "frm": "BRIEFING", "to": "RESEARCH_COMPLETE", "agent": "S1-JEFE", "action": "FAIL BRIEF", "result": "RETRY", "task_id": "TASK-000055"}
 {"ts": "2026-10-08T18:27:42Z", "type": "TASK_FAILED", "task_id": "TASK-000055", "book_id": "EB-000014", "agent": "S1-JEFE", "error": "Validación fallida: outline con 0 capítulos (mínimo 3, formato '1. Título' o '### Título')", "retry_count": 1}
+{"ts": "2026-10-08T18:29:10Z", "type": "STATE_CHANGE", "book_id": "EB-000014", "frm": "RESEARCH_COMPLETE", "to": "BRIEFING", "agent": "S1-JEFE", "action": "CLAIM BRIEF", "result": "OK", "task_id": "TASK-000055"}
+{"ts": "2026-10-08T18:29:10Z", "type": "TASK_CLAIMED", "task_id": "TASK-000055", "book_id": "EB-000014", "agent": "S1-JEFE", "step": "BRIEF"}
