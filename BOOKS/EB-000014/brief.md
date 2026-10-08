@@ -68,11 +68,7 @@ Un Hanukkah memorable, organizado y auténtico: que sus hijos entiendan por qué
 
 6. Hanukkah en Familia Mixta o No Judía (~600 palabras) — guía para familias donde no todos son judíos; respuesta directa a si se puede celebrar; cómo explicar a familiares no judíos; Hanukkah y Navidad en la misma familia; rol del progenitor no judío
 
-7. Conclusión: Hacer de Hanukkah una Tradición Propia (~300 palabras) — cierre emocional; las tradiciones se construyen con repetición; invitación a adaptar el libro al propio hogar; la luz como metáfora  
-*Objetivo: cierre emocional y apertura al futuro.*  
-- Las tradiciones se construyen con repetición: cada Hanukkah suma  
-- Invitación a adaptar el libro al propio hogar: no existe una única forma correcta  
-- Frase de cierre sobre la luz como metáfora de lo pequeño que persiste  
+7. Conclusión: Hacer de Hanukkah una Tradición Propia (~300 palabras) — cierre emocional; las tradiciones se construyen con repetición; invitación a adaptar el libro al propio hogar; la luz como metáfora
 
 ---
 
