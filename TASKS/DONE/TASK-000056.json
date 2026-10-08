@@ -1,0 +1,37 @@
+{
+  "task_id": "TASK-000056",
+  "book_id": "EB-000010",
+  "type": "BRIEF",
+  "role": "RESEARCH_AGENT",
+  "auto": false,
+  "priority": "HIGH",
+  "status": "DONE",
+  "assigned_agent": "S1-JEFE",
+  "created_by": "S1-JEFE",
+  "created_at": "2026-10-08T18:18:48Z",
+  "started_at": "2026-10-08T18:30:36Z",
+  "completed_at": "2026-10-08T18:31:54Z",
+  "claimed_from_state": "RESEARCH_COMPLETE",
+  "dependencies": [],
+  "prompt": "PROMPTS/BRIEF.md",
+  "notes": "",
+  "output": {
+    "brief_chapters": 7,
+    "word_count_target": 0
+  },
+  "error": null,
+  "errors": [],
+  "retry_count": 0,
+  "last_attempt": "2026-10-08T18:30:36Z",
+  "attempts": [
+    {
+      "agent": "S1-JEFE",
+      "started_at": "2026-10-08T18:30:36Z",
+      "ended_at": "2026-10-08T18:31:54Z",
+      "result": "DONE",
+      "note": "Brief completado para Diciembre en Familia. 7 capitulos (0-6): intro slow December, historia del Adviento, tradiciones españolas auténticas (Belén, Reyes, Olentzero, Tió de Nadal), 24 actividades agrupadas por tipo, recetas sencillas con niños, cuaderno de recuerdos (diferenciador clave), cierre de diciembre. 6000 palabras. Fuera de alcance: recetas de cena (EB-000009), regalos (EB-000011), revisión de año (EB-000012).",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}
