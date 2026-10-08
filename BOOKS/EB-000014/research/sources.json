@@ -1,0 +1,58 @@
+[
+  {
+    "id": "S1",
+    "title": "Chanukah 2026 – Hebcal Jewish Calendar",
+    "url": "https://www.hebcal.com/holidays/chanukah-2026",
+    "accessed": "2026-10-08",
+    "used_for": "Fechas exactas de Hanukkah 2026 (4–12 diciembre 2026)",
+    "reliability": "high"
+  },
+  {
+    "id": "S2",
+    "title": "La comunidad judía en España alcanza los 70.000 miembros, según la FCJE – Enfoque Judío",
+    "url": "https://enfoquejudio.es/la-comunidad-judia-en-espana-alcanza-los-70-000-miembros-segun-la-fcje/",
+    "accessed": "2026-10-08",
+    "used_for": "Estimación de la comunidad judía en España (50.000–70.000 según FCJE)",
+    "reliability": "high"
+  },
+  {
+    "id": "S3",
+    "title": "La mayor comunidad judía de América latina está en la Argentina – Diario Uno",
+    "url": "https://www.diariouno.com.ar/pais/la-mayor-comunidad-judia-de-america-latina-esta-en-la-argentina--09272016_HkXwfUS-B7",
+    "accessed": "2026-10-08",
+    "used_for": "Tamaño de la comunidad judía argentina (~200.000, séptima del mundo)",
+    "reliability": "medium"
+  },
+  {
+    "id": "S4",
+    "title": "¿Qué es Janucá y cómo lo festejan los judíos? – Milenio / datos INEGI",
+    "url": "https://www.milenio.com/internacional/que-es-januca-y-como-lo-festejan-los-judios",
+    "accessed": "2026-10-08",
+    "used_for": "Tamaño comunidad judía México (~59.000 según INEGI 2020) y descripción de Janucá",
+    "reliability": "high"
+  },
+  {
+    "id": "S5",
+    "title": "LIBRO DE COCINA DE HANUKKAH – Michelle Lee (Kindle, Amazon)",
+    "url": "https://www.amazon.com/-/es/Michelle-Lee-ebook/dp/B09M45XRMH",
+    "accessed": "2026-10-08",
+    "used_for": "Análisis del principal competidor directo en español: recetario de 60 recetas, 2 reseñas, 4.5 estrellas, producción masiva",
+    "reliability": "high"
+  },
+  {
+    "id": "S6",
+    "title": "Resultados de búsqueda Amazon.com: libros Hanukkah en español",
+    "url": "https://www.amazon.com/Hanukkah/s?k=Hanukkah",
+    "accessed": "2026-10-08",
+    "used_for": "Mapeo general de la competencia en español; confirmación del gap de mercado (sin guía familiar completa en español)",
+    "reliability": "high"
+  },
+  {
+    "id": "S7",
+    "title": "When Is Hanukkah 2026? – The Old Farmer's Almanac",
+    "url": "https://www.almanac.com/content/when-is-hanukkah",
+    "accessed": "2026-10-08",
+    "used_for": "Confirmación de fecha de inicio de Hanukkah 2026 (atardecer del 4 de diciembre)",
+    "reliability": "high"
+  }
+]
