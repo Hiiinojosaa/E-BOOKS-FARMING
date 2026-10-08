@@ -1,0 +1,37 @@
+{
+  "task_id": "TASK-000057",
+  "book_id": "EB-000011",
+  "type": "BRIEF",
+  "role": "RESEARCH_AGENT",
+  "auto": false,
+  "priority": "HIGH",
+  "status": "DONE",
+  "assigned_agent": "S1-JEFE",
+  "created_by": "S1-JEFE",
+  "created_at": "2026-10-08T18:21:53Z",
+  "started_at": "2026-10-08T18:32:50Z",
+  "completed_at": "2026-10-08T18:34:08Z",
+  "claimed_from_state": "RESEARCH_COMPLETE",
+  "dependencies": [],
+  "prompt": "PROMPTS/BRIEF.md",
+  "notes": "",
+  "output": {
+    "brief_chapters": 9,
+    "word_count_target": 0
+  },
+  "error": null,
+  "errors": [],
+  "retry_count": 0,
+  "last_attempt": "2026-10-08T18:32:50Z",
+  "attempts": [
+    {
+      "agent": "S1-JEFE",
+      "started_at": "2026-10-08T18:32:50Z",
+      "ended_at": "2026-10-08T18:34:08Z",
+      "result": "DONE",
+      "note": "Brief completado para Guia de Regalos. 9 capitulos (0-8): sistema de presupuesto, regalos por destinatario (niños/adultos/trabajo), sección de menos de 10€ (diferenciador clave), DIY, y Reyes Magos como capítulo propio. Sin marcas ni precios exactos para que no quede obsoleto. 6000 palabras.",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}
