@@ -4,7 +4,7 @@
 
 ---
 
-## Introducción — Cómo usar este libro
+# 0. Introducción — Cómo usar este libro
 
 La mayoría de los libros de autoayuda te dicen lo que tienes que hacer. Este no lo hace.
 
@@ -870,7 +870,7 @@ Esta es la última pregunta y también la más importante. No lo que aprendiste 
 
 ---
 
-## Conclusión — Lo que has descubierto
+# 7. Conclusión — Lo que has descubierto
 
 Has llegado al final de las preguntas. Eso no significa que hayas terminado.
 

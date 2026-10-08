@@ -5,12 +5,12 @@
   "role": "WRITER_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "S1-JEFE",
   "created_by": "ADMIN",
   "created_at": "2026-10-08T14:59:13Z",
   "started_at": "2026-10-08T18:51:33Z",
-  "completed_at": null,
+  "completed_at": "2026-10-08T18:51:45Z",
   "claimed_from_state": "WRITING_PENDING",
   "dependencies": [],
   "prompt": "PROMPTS/WRITE.md",
@@ -36,7 +36,12 @@
     },
     {
       "agent": "S1-JEFE",
-      "started_at": "2026-10-08T18:51:33Z"
+      "started_at": "2026-10-08T18:51:33Z",
+      "ended_at": "2026-10-08T18:51:45Z",
+      "result": "DONE",
+      "note": "Manuscrito completo: 100 preguntas originales en 8 secciones (0-7). Identidad 20q, Relaciones 15q, Trabajo 15q, Emociones 15q, Pasado 15q, Futuro 20q. ~9200 palabras. Sin jerga clínica. Sin respuestas sugeridas. Nota de salud mental en intro incluida.",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }
