@@ -7,3 +7,4 @@
 {"ts": "2026-10-08T14:59:13Z", "from": "BRIEF_READY", "to": "WRITING_PENDING", "agent": "ADMIN", "action": "BRIEF_GATE", "result": "APPROVED", "note": "ADMIN"}
 {"ts": "2026-10-08T18:42:26Z", "from": "WRITING_PENDING", "to": "WRITING", "agent": "S1-JEFE", "action": "CLAIM WRITE", "result": "OK", "task_id": "TASK-000053"}
 {"ts": "2026-10-08T18:49:46Z", "from": "WRITING", "to": "WRITING_PENDING", "agent": "S1-JEFE", "action": "FAIL WRITE", "result": "RETRY", "task_id": "TASK-000053", "note": "Validación fallida: 7 capítulos < 8 del brief"}
+{"ts": "2026-10-08T18:51:33Z", "from": "WRITING_PENDING", "to": "WRITING", "agent": "S1-JEFE", "action": "CLAIM WRITE", "result": "OK", "task_id": "TASK-000053"}
