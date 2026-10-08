@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791483173230947900-9cefb7",
+  "ts": "2026-10-08T18:12:53Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Investigando Hanukkah en Familia (EB-000014): analizando mercado hispanohablante, competencia en Kindle y audiencia. Redactando informe.",
+  "book_id": "EB-000014",
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
