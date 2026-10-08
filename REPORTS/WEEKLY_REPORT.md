@@ -1,6 +1,6 @@
 # WEEKLY REPORT 2026-W41
 
-_Periodo: últimos 7 día(s) hasta 2026-10-08T14:38:55Z_
+_Periodo: últimos 7 día(s) hasta 2026-10-08T16:07:04Z_
 
 ## Trabajo realizado
 
@@ -44,10 +44,14 @@ _Periodo: últimos 7 día(s) hasta 2026-10-08T14:38:55Z_
 
 - EB-000001: ahora en **HUMAN_REVIEW**
 - EB-000002: ahora en **BRIEF_READY**
-- EB-000003: ahora en **BRIEF_READY**
-- EB-000004: ahora en **BRIEF_READY**
-- EB-000005: ahora en **BRIEF_READY**
+- EB-000003: ahora en **WRITING_PENDING**
+- EB-000004: ahora en **WRITING_PENDING**
+- EB-000005: ahora en **WRITING_PENDING**
 - EB-000009: ahora en **HUMAN_REVIEW**
+- EB-000010: ahora en **RESEARCH_PENDING**
+- EB-000011: ahora en **RESEARCH_PENDING**
+- EB-000012: ahora en **RESEARCH_PENDING**
+- EB-000014: ahora en **RESEARCH_PENDING**
 - EB-000015: ahora en **HUMAN_REVIEW**
 - EB-000024: ahora en **REJECTED**
 
@@ -82,4 +86,10 @@ _Periodo: últimos 7 día(s) hasta 2026-10-08T14:38:55Z_
 
 ## Próximas tareas
 
-- Cola vacía
+- TASK-000048 RESEARCH EB-000014 (HIGH)
+- TASK-000049 RESEARCH EB-000010 (HIGH)
+- TASK-000050 RESEARCH EB-000011 (HIGH)
+- TASK-000051 RESEARCH EB-000012 (HIGH)
+- TASK-000052 WRITE EB-000005 (NORMAL)
+- TASK-000053 WRITE EB-000004 (NORMAL)
+- TASK-000054 WRITE EB-000003 (NORMAL)

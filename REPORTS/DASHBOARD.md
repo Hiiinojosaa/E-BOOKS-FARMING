@@ -1,10 +1,10 @@
 # DASHBOARD — E-Book Factory
 
-_Generado 2026-10-08T14:38:54Z_
+_Generado 2026-10-08T16:07:04Z_
 
 | TOTAL BOOKS | IDEAS | RESEARCH | WRITING | EDITING | TRANSLATION | DESIGN | QC | HUMAN REVIEW | READY TO PUBLISH | PUBLISHED | FAILED | BLOCKED |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 25 | 16 | 4 | 0 | 0 | 0 | 0 | 0 | 3 | 1 | 0 | 1 | 0 |
+| 25 | 12 | 5 | 3 | 0 | 0 | 0 | 0 | 3 | 1 | 0 | 1 | 0 |
 
 ## Últimos 7 días
 
@@ -21,18 +21,18 @@ _Generado 2026-10-08T14:38:54Z_
 |---|---|---|---|---|---|---|
 | EB-000001 | The One-Page System | en-US | HUMAN_REVIEW | NORMAL | - | 2026-10-05T10:54:50Z |
 | EB-000002 | Los 200 Mejores Prompts de IA para Trabajar Menos y Rendir Más | es-ES | BRIEF_READY | NORMAL | - | 2026-10-05T10:43:11Z |
-| EB-000003 | Tu Primer Año de Orden Financiero: Guía y Planner Completo | es-ES | BRIEF_READY | NORMAL | - | 2026-10-05T10:44:53Z |
-| EB-000004 | Diario de Autoconocimiento: 100 Preguntas para Conocerte y Reordenar tu Vida | es-ES | BRIEF_READY | NORMAL | - | 2026-10-05T10:46:21Z |
-| EB-000005 | El Planner Definitivo de Eventos: Organiza Cualquier Celebracion sin Estres | es-ES | BRIEF_READY | NORMAL | - | 2026-10-05T10:47:52Z |
+| EB-000003 | Tu Primer Año de Orden Financiero: Guía y Planner Completo | es-ES | WRITING_PENDING | NORMAL | - | 2026-10-08T14:59:20Z |
+| EB-000004 | Diario de Autoconocimiento: 100 Preguntas para Conocerte y Reordenar tu Vida | es-ES | WRITING_PENDING | NORMAL | - | 2026-10-08T14:59:13Z |
+| EB-000005 | El Planner Definitivo de Eventos: Organiza Cualquier Celebracion sin Estres | es-ES | WRITING_PENDING | NORMAL | - | 2026-10-08T14:59:06Z |
 | EB-000006 | Guia Completa para el Primer Año con tu Mascota | es-ES | IDEA | NORMAL | - | 2026-10-01T22:53:13Z |
 | EB-000007 | Ponte en Forma en Casa: Plan de 12 Semanas | es-ES | IDEA | NORMAL | - | 2026-10-01T22:53:13Z |
 | EB-000008 | El Planner de Navidad Completo: Organiza Regalos, Menus y Presupuesto sin Estres | es-ES | IDEA | HIGH | - | 2026-10-01T22:53:13Z |
 | EB-000009 | Navidad en la Mesa: 50 Recetas Españolas y 5 Menús Completos para Toda la Temporada | es-ES | HUMAN_REVIEW | HIGH | - | 2026-10-05T10:53:41Z |
-| EB-000010 | Diciembre en Familia: Calendario de Adviento, Actividades y Recuerdos | es-ES | IDEA | HIGH | - | 2026-10-01T22:53:13Z |
-| EB-000011 | Guia de Regalos de Navidad: Ideas para Todos sin Gastar de Mas | es-ES | IDEA | HIGH | - | 2026-10-01T22:53:13Z |
-| EB-000012 | Cierra el Año y Diseña el Siguiente: Guia de Revision y Metas | es-ES | IDEA | HIGH | - | 2026-10-01T22:53:13Z |
+| EB-000010 | Diciembre en Familia: Calendario de Adviento, Actividades y Recuerdos | es-ES | RESEARCH_PENDING | HIGH | - | 2026-10-08T14:58:01Z |
+| EB-000011 | Guia de Regalos de Navidad: Ideas para Todos sin Gastar de Mas | es-ES | RESEARCH_PENDING | HIGH | - | 2026-10-08T14:58:09Z |
+| EB-000012 | Cierra el Año y Diseña el Siguiente: Guia de Revision y Metas | es-ES | RESEARCH_PENDING | HIGH | - | 2026-10-08T14:58:19Z |
 | EB-000013 | Black Friday y Navidad sin Sustos: Guia para Comprar Mejor y Gastar Menos | es-ES | IDEA | HIGH | - | 2026-10-01T22:53:13Z |
-| EB-000014 | Hanukkah en Familia: Actividades, Recetas y Tradiciones | es-ES | IDEA | HIGH | - | 2026-10-01T22:53:13Z |
+| EB-000014 | Hanukkah en Familia: Actividades, Recetas y Tradiciones | es-ES | RESEARCH_PENDING | HIGH | - | 2026-10-08T14:57:52Z |
 | EB-000015 | Large Print Sudoku for Seniors | en-US | HUMAN_REVIEW | NORMAL | - | 2026-10-05T10:31:57Z |
 | EB-000016 | New Year 2027 Goal Planner & Annual Review Journal | en-US | IDEA | HIGH | - | 2026-10-05T14:07:39Z |
 | EB-000017 | Thanksgiving Recipes & Holiday Menu Planner | en-US | IDEA | HIGH | - | 2026-10-05T14:08:03Z |

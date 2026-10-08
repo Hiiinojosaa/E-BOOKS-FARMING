@@ -11,9 +11,6 @@
 ## REVISAR (bloqueados o esperando a un humano)
 
 - **EB-000002** — Los 200 Mejores Prompts de IA para Trabajar Menos y Rendir Más: brief de riesgo ALTO pendiente de aprobar (`approve-brief`)
-- **EB-000003** — Tu Primer Año de Orden Financiero: Guía y Planner Completo: brief de riesgo ALTO pendiente de aprobar (`approve-brief`)
-- **EB-000004** — Diario de Autoconocimiento: 100 Preguntas para Conocerte y Reordenar tu Vida: brief de riesgo ALTO pendiente de aprobar (`approve-brief`)
-- **EB-000005** — El Planner Definitivo de Eventos: Organiza Cualquier Celebracion sin Estres: brief de riesgo ALTO pendiente de aprobar (`approve-brief`)
 
 ## DESCARTAR (candidatos)
 
@@ -36,5 +33,5 @@
 
 ## Estado de la fábrica
 
-TOTAL BOOKS: 25 · IDEAS: 16 · RESEARCH: 4 · HUMAN REVIEW: 3 · READY TO PUBLISH: 1 · FAILED: 1
+TOTAL BOOKS: 25 · IDEAS: 12 · RESEARCH: 5 · WRITING: 3 · HUMAN REVIEW: 3 · READY TO PUBLISH: 1 · FAILED: 1
 

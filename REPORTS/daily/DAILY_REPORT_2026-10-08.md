@@ -1,6 +1,6 @@
 # DAILY REPORT 2026-10-08
 
-_Periodo: últimos 1 día(s) hasta 2026-10-08T14:38:54Z_
+_Periodo: últimos 1 día(s) hasta 2026-10-08T16:07:04Z_
 
 ## Trabajo realizado
 
@@ -8,7 +8,13 @@ _Periodo: últimos 1 día(s) hasta 2026-10-08T14:38:54Z_
 
 ## Libros avanzados
 
-- Ninguno
+- EB-000003: ahora en **WRITING_PENDING**
+- EB-000004: ahora en **WRITING_PENDING**
+- EB-000005: ahora en **WRITING_PENDING**
+- EB-000010: ahora en **RESEARCH_PENDING**
+- EB-000011: ahora en **RESEARCH_PENDING**
+- EB-000012: ahora en **RESEARCH_PENDING**
+- EB-000014: ahora en **RESEARCH_PENDING**
 
 ## Libros terminados (listos para publicar)
 
@@ -38,4 +44,10 @@ _Periodo: últimos 1 día(s) hasta 2026-10-08T14:38:54Z_
 
 ## Próximas tareas
 
-- Cola vacía
+- TASK-000048 RESEARCH EB-000014 (HIGH)
+- TASK-000049 RESEARCH EB-000010 (HIGH)
+- TASK-000050 RESEARCH EB-000011 (HIGH)
+- TASK-000051 RESEARCH EB-000012 (HIGH)
+- TASK-000052 WRITE EB-000005 (NORMAL)
+- TASK-000053 WRITE EB-000004 (NORMAL)
+- TASK-000054 WRITE EB-000003 (NORMAL)
