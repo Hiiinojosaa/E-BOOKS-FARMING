@@ -19,3 +19,7 @@
 {"ts": "2026-10-08T14:59:13Z", "type": "STATE_CHANGE", "book_id": "EB-000004", "frm": "BRIEF_READY", "to": "WRITING_PENDING", "agent": "ADMIN", "action": "BRIEF_GATE", "result": "APPROVED"}
 {"ts": "2026-10-08T14:59:13Z", "type": "TASK_CREATED", "task_id": "TASK-000053", "book_id": "EB-000004", "step": "WRITE", "priority": "NORMAL"}
 {"ts": "2026-10-08T14:59:13Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 2}
+{"ts": "2026-10-08T14:59:20Z", "type": "BRIEF_APPROVED", "book_id": "EB-000003", "by": "ADMIN"}
+{"ts": "2026-10-08T14:59:20Z", "type": "STATE_CHANGE", "book_id": "EB-000003", "frm": "BRIEF_READY", "to": "WRITING_PENDING", "agent": "ADMIN", "action": "BRIEF_GATE", "result": "APPROVED"}
+{"ts": "2026-10-08T14:59:20Z", "type": "TASK_CREATED", "task_id": "TASK-000054", "book_id": "EB-000003", "step": "WRITE", "priority": "NORMAL"}
+{"ts": "2026-10-08T14:59:21Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 2}
