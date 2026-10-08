@@ -1,0 +1,42 @@
+[
+  {
+    "id": "S1",
+    "title": "Historia de los judíos en España / Datos demográficos España – Wikipedia",
+    "url": "https://es.wikipedia.org/wiki/Historia_de_los_jud%C3%ADos_en_Espa%C3%B1a",
+    "accessed": "2026-10-08",
+    "used_for": "Contexto demográfico y cultural de España; práctica de tradiciones navideñas",
+    "reliability": "medium"
+  },
+  {
+    "id": "S2",
+    "title": "Amazon.com – Resultados búsqueda 'calendario adviento familias español'",
+    "url": "https://www.amazon.com/-/es/Calendario-adviento-retos-para-familia/dp/B0BLR5HZ3Y",
+    "accessed": "2026-10-08",
+    "used_for": "Mapeo de la competencia directa: libros de Adviento en español disponibles en Amazon",
+    "reliability": "high"
+  },
+  {
+    "id": "S3",
+    "title": "Amazon.es Best Sellers – Children's Books on Christmas",
+    "url": "https://www.amazon.es/gp/bestsellers/books/13356191031",
+    "accessed": "2026-10-08",
+    "used_for": "Confirmación de la actividad del mercado navideño infantil/familiar en Amazon España",
+    "reliability": "high"
+  },
+  {
+    "id": "S4",
+    "title": "Infobae – Libros más populares Amazon España noviembre 2025",
+    "url": "https://www.infobae.com/espana/2025/11/24/libros-de-amazon-espana-estos-son-los-titulos-mas-populares-este-24-de-noviembre/",
+    "accessed": "2026-10-08",
+    "used_for": "Contexto general de ventas de libros en España en temporada navideña",
+    "reliability": "medium"
+  },
+  {
+    "id": "S5",
+    "title": "Planetadelibros – Libros para regalar en Navidad 2025",
+    "url": "https://www.planetadelibros.com/seleccion-editorial/libros-para-regalar-en-navidad/127",
+    "accessed": "2026-10-08",
+    "used_for": "Tendencias de títulos navideños en España 2025–2026; contexto del mercado navideño",
+    "reliability": "medium"
+  }
+]
