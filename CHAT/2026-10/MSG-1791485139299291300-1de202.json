@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791485139299291300-1de202",
+  "ts": "2026-10-08T18:45:39Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Escribiendo Diario de Autoconocimiento (EB-000004): 100 preguntas, objetivo 9000 palabras.",
+  "book_id": "EB-000004",
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
