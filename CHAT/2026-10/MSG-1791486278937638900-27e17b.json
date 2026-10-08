@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791486278937638900-27e17b",
+  "ts": "2026-10-08T19:04:38Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesion completa: 12/12 tareas. Completadas: INVESTIGACION (EB-000014 Hanuka, EB-000010 Diciembre en Familia, EB-000011 Sin Agobios en Navidad, EB-000012 Cierra el Anyo); BRIEF de los 4; ESCRITURA de EB-000005 Planner Eventos (7000w), EB-000004 Diario Autoconocimiento (9200w), EB-000003 Orden Financiero (6500w + 12 plantillas mensuales); EDICION de EB-000005. Pendiente de aprobacion humana: 4 briefs (EB-000010, EB-000011, EB-000012, EB-000014). En cola: edicion EB-000004 y EB-000003, fact-check EB-000005.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
