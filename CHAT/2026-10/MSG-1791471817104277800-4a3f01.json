@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791471817104277800-4a3f01",
+  "ts": "2026-10-08T15:03:37Z",
+  "from": "ADMIN",
+  "role": "partner",
+  "kind": "message",
+  "to": "factory",
+  "text": "¿Cómo va todo?",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
