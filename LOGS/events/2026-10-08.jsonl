@@ -85,3 +85,5 @@
 {"ts": "2026-10-08T18:42:26Z", "type": "STATE_CHANGE", "book_id": "EB-000004", "frm": "WRITING_PENDING", "to": "WRITING", "agent": "S1-JEFE", "action": "CLAIM WRITE", "result": "OK", "task_id": "TASK-000053"}
 {"ts": "2026-10-08T18:42:26Z", "type": "TASK_CLAIMED", "task_id": "TASK-000053", "book_id": "EB-000004", "agent": "S1-JEFE", "step": "WRITE"}
 {"ts": "2026-10-08T18:45:39Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "progress", "msg": "MSG-1791485139299291300-1de202"}
+{"ts": "2026-10-08T18:49:46Z", "type": "STATE_CHANGE", "book_id": "EB-000004", "frm": "WRITING", "to": "WRITING_PENDING", "agent": "S1-JEFE", "action": "FAIL WRITE", "result": "RETRY", "task_id": "TASK-000053"}
+{"ts": "2026-10-08T18:49:46Z", "type": "TASK_FAILED", "task_id": "TASK-000053", "book_id": "EB-000004", "agent": "S1-JEFE", "error": "Validación fallida: 7 capítulos < 8 del brief", "retry_count": 1}
