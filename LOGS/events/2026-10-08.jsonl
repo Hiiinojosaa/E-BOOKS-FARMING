@@ -5,3 +5,6 @@
 {"ts": "2026-10-08T14:58:01Z", "type": "STATE_CHANGE", "book_id": "EB-000010", "frm": "IDEA", "to": "RESEARCH_PENDING", "agent": "ADMIN", "action": "PROMOTE_IDEA", "result": "OK"}
 {"ts": "2026-10-08T14:58:01Z", "type": "TASK_CREATED", "task_id": "TASK-000049", "book_id": "EB-000010", "step": "RESEARCH", "priority": "HIGH"}
 {"ts": "2026-10-08T14:58:01Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 1}
+{"ts": "2026-10-08T14:58:09Z", "type": "STATE_CHANGE", "book_id": "EB-000011", "frm": "IDEA", "to": "RESEARCH_PENDING", "agent": "ADMIN", "action": "PROMOTE_IDEA", "result": "OK"}
+{"ts": "2026-10-08T14:58:09Z", "type": "TASK_CREATED", "task_id": "TASK-000050", "book_id": "EB-000011", "step": "RESEARCH", "priority": "HIGH"}
+{"ts": "2026-10-08T14:58:09Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 1}
