@@ -54,69 +54,21 @@ Un Hanukkah memorable, organizado y auténtico: que sus hijos entiendan por qué
 
 ## Outline
 
-**Introducción: El Festival de las Luces** (~500 palabras)  
-*Objetivo: situar al lector y crear expectativa.*  
-- Por qué Hanukkah importa — el milagro como historia y como metáfora  
-- Cómo usar este libro: la estructura de cada noche  
-- Una nota sobre variaciones (ashkenazí / sefardí / reformada): el libro respeta todas  
+0. Introducción: El Festival de las Luces (~500 palabras) — situar al lector y crear expectativa; por qué Hanukkah importa; cómo usar este libro; nota sobre variaciones (ashkenazí / sefardí / reformada)
 
-**1. La Historia de Hanukkah: Los Macabeos y el Milagro del Aceite** (~800 palabras)  
-*Objetivo: explicar el origen histórico y espiritual de forma clara, sin simplificar.*  
-- El contexto histórico: Antioco IV, el Templo y la revuelta de los Macabeos  
-- El milagro del aceite: qué ocurrió y qué significa  
-- Por qué Hanukkah es una fiesta menor en el calendario judío pero mayor en los hogares modernos  
-- Cómo explicar la historia a niños de distintas edades (3–6, 7–10, 11+)  
+1. La Historia de Hanukkah: Los Macabeos y el Milagro del Aceite (~800 palabras) — explicar el origen histórico y espiritual; el contexto: Antioco IV, el Templo y los Macabeos; el milagro del aceite; por qué Hanukkah es festiva menor pero mayor en hogares modernos; cómo explicar la historia a niños de distintas edades (3–6, 7–10, 11+)
 
-**2. Los Rituales: Hanukkiah, Bendiciones y Canciones** (~900 palabras)  
-*Objetivo: el lector sabe exactamente cómo realizar el ritual de encendido correctamente.*  
-- La hanukkiah y el menorá: diferencia y uso correcto  
-- El shamash: su papel y por qué existe  
-- El orden de encendido noche a noche (de derecha a izquierda, añadiendo una vela cada noche)  
-- Las tres bendiciones: texto en hebreo, transliteración y traducción al español  
-- Hanerot Halalu: qué se dice después de encender  
-- Canciones: "Maoz Tzur", "Sevivon Sov Sov Sov" — letra con transliteración y contexto  
-- El dreidel: los cuatro símbolos (Nun, Gimel, He, Shin) y su significado  
+2. Los Rituales: Hanukkiah, Bendiciones y Canciones (~900 palabras) — el lector sabe cómo realizar el ritual de encendido correctamente; la hanukkiah y el menorá (diferencia); el shamash; orden de encendido noche a noche; las tres bendiciones (hebreo, transliteración, traducción); Hanerot Halalu; canciones "Maoz Tzur" y "Sevivon Sov Sov Sov" con transliteración; el dreidel y sus cuatro símbolos
 
-**3. La Mesa de Hanukkah: Recetas Ashkenazíes y Sefardíes** (~1.100 palabras)  
-*Objetivo: el lector tiene recetas concretas, auténticas y realizables para preparar durante la festividad.*  
-- Por qué se come frito en Hanukkah: el aceite como símbolo  
-- **Recetas ashkenazíes:**  
-  - Latkes (tortitas de patata): receta base, variantes dulce y salada, salsas  
-  - Sufganiyot (berlinas de mermelada): masa, relleno, fritura  
-  - Kugel de fideos: receta de acompañamiento  
-- **Recetas sefardíes:**  
-  - Bimuelos (buñuelos de Hanukkah): masa líquida, fritura en aceite, con miel  
-  - Leche frita con canela y limón  
-  - Borekas de queso o patata como aperitivo de la cena  
-- Menú sugerido para la cena de Hanukkah familiar  
+3. La Mesa de Hanukkah: Recetas Ashkenazíes y Sefardíes (~1.100 palabras) — recetas concretas y realizables; por qué se come frito (el aceite como símbolo); recetas ashkenazíes: latkes, sufganiyot, kugel; recetas sefardíes: bimuelos, leche frita, borekas; menú sugerido para cena familiar
 
-**4. Actividades para Cada Noche: Tradiciones y Juegos** (~800 palabras)  
-*Objetivo: el lector tiene una actividad diferente para cada una de las ocho noches.*  
-- El gelt: monedas de chocolate, su origen y cómo usarlo en juegos  
-- El dreidel: reglas completas del juego, cómo hacerlo en casa con materiales simples  
-- Noche de manualidades: hacer una hanukkiah con materiales reciclados (tubo de cartón, barro, madera)  
-- Noche de canciones: karaoke de Hanukkah con las canciones del libro  
-- Noche de tzedaká (caridad): cómo implicar a los niños en un acto solidario  
-- Noche de historias: cuentos de Hanukkah para leer en voz alta  
-- Noche de cine: películas y cortometrajes recomendados sobre Hanukkah  
-- Noche de recetas: hacer latkes o sufganiyot juntos en la cocina  
+4. Actividades para Cada Noche: Tradiciones y Juegos (~800 palabras) — una actividad diferente por noche; gelt y dreidel; noche de manualidades (hanukkiah con materiales reciclados); noche de canciones; noche de tzedaká; noche de historias; noche de cine; noche de cocina en familia
 
-**5. La Conexión Sefardí: Hanukkah en España y el Mediterráneo** (~700 palabras)  
-*Objetivo: ofrecer un ángulo único e históricamente relevante para lectores en España.*  
-- Breve historia de los judíos en España: llegada, convivencia y expulsión de 1492  
-- El legado sefardí: el judeoespañol (ladino), las tradiciones culinarias y la música  
-- Cómo celebraban Hanukkah las comunidades sefardíes del Mediterráneo  
-- La diáspora sefardí hoy: comunidades en España, Israel, Turquía, Marruecos y Latinoamérica  
-- Para familias con apellidos sefardíes: cómo conectar con esta herencia a través de Hanukkah  
+5. La Conexión Sefardí: Hanukkah en España y el Mediterráneo (~700 palabras) — ángulo histórico único para lectores en España; judíos en España y la expulsión de 1492; legado sefardí (ladino, tradiciones, música); Hanukkah en comunidades sefardíes del Mediterráneo; la diáspora sefardí hoy; cómo conectar con esta herencia
 
-**6. Hanukkah en Familia Mixta o No Judía** (~600 palabras)  
-*Objetivo: facilitar la celebración a familias donde no todos son judíos, sin restar autenticidad.*  
-- ¿Puede una familia mixta celebrar Hanukkah? Respuesta directa y clara  
-- Cómo explicar la festividad a abuelos o familiares no judíos  
-- Hanukkah y Navidad en la misma familia: cómo convivir sin conflicto ni sincretismo forzado  
-- Para el progenitor no judío: cómo participar activamente en los rituales  
+6. Hanukkah en Familia Mixta o No Judía (~600 palabras) — guía para familias donde no todos son judíos; respuesta directa a si se puede celebrar; cómo explicar a familiares no judíos; Hanukkah y Navidad en la misma familia; rol del progenitor no judío
 
-**Conclusión: Hacer de Hanukkah una Tradición Propia** (~300 palabras)  
+7. Conclusión: Hacer de Hanukkah una Tradición Propia (~300 palabras) — cierre emocional; las tradiciones se construyen con repetición; invitación a adaptar el libro al propio hogar; la luz como metáfora  
 *Objetivo: cierre emocional y apertura al futuro.*  
 - Las tradiciones se construyen con repetición: cada Hanukkah suma  
 - Invitación a adaptar el libro al propio hogar: no existe una única forma correcta  
