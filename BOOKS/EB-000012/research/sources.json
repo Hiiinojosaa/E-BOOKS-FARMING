@@ -1,0 +1,34 @@
+[
+  {
+    "id": "S1",
+    "title": "Almanac.com – When Is Hanukkah / New Year's Day calendar reference",
+    "url": "https://www.almanac.com/content/when-is-hanukkah",
+    "accessed": "2026-10-08",
+    "used_for": "Referencia de timing estacional; ventana de compra de contenido de fin de año",
+    "reliability": "medium"
+  },
+  {
+    "id": "S2",
+    "title": "Amazon.com – 'Propósitos año nuevo' / 'revisión anual' en español",
+    "url": "https://www.amazon.com/-/es/Prop%C3%B3sitos-a%C3%B1o-nuevo-nueva-Spanish/dp/B0BPL8JR1B",
+    "accessed": "2026-10-08",
+    "used_for": "Mapeo de la competencia directa en español: libros sobre propósitos de año nuevo y revisión anual",
+    "reliability": "high"
+  },
+  {
+    "id": "S3",
+    "title": "Amazon.com – Planificador de Metas (Pixel Print) en español",
+    "url": "https://www.amazon.com/Planificador-Metas-objetivos-mensuales-semanales/dp/B0GXL9SXS2",
+    "accessed": "2026-10-08",
+    "used_for": "Referencia del tipo de competencia existente: planificadores vs. guías metodológicas",
+    "reliability": "high"
+  },
+  {
+    "id": "S4",
+    "title": "Amazon.es / Kindle tendencias 2025 – lectores españoles",
+    "url": "https://www.aboutamazon.es/noticias/dispositivos/como-es-el-lector-espanol-kindle-tendencias-2025",
+    "accessed": "2026-10-08",
+    "used_for": "Contexto sobre hábitos de lectura en Kindle España; demanda de no ficción práctica",
+    "reliability": "high"
+  }
+]

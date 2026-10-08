@@ -1,0 +1,34 @@
+{
+  "task_id": "TASK-000051",
+  "book_id": "EB-000012",
+  "type": "RESEARCH",
+  "role": "RESEARCH_AGENT",
+  "auto": false,
+  "priority": "HIGH",
+  "status": "DONE",
+  "assigned_agent": "S1-JEFE",
+  "created_by": "ADMIN",
+  "created_at": "2026-10-08T14:58:19Z",
+  "started_at": "2026-10-08T18:22:40Z",
+  "completed_at": "2026-10-08T18:25:12Z",
+  "claimed_from_state": "RESEARCH_PENDING",
+  "dependencies": [],
+  "prompt": "PROMPTS/RESEARCH.md",
+  "notes": "",
+  "output": null,
+  "error": null,
+  "errors": [],
+  "retry_count": 0,
+  "last_attempt": "2026-10-08T18:22:40Z",
+  "attempts": [
+    {
+      "agent": "S1-JEFE",
+      "started_at": "2026-10-08T18:22:40Z",
+      "ended_at": "2026-10-08T18:25:12Z",
+      "result": "DONE",
+      "note": "Investigacion completada: GO. Nicho de revisión anual como método en español está vacío en Kindle. Competencia son planners físicos y libros de propósitos genéricos. Diferenciación clave: método estructurado en dos fases (revisión retrospectiva + diseño prospectivo), ejecutable en una tarde, atemporal. Posible competidor: Tu Mejor Año de Hyatt (verificar disponibilidad en Kindle ES). Timing crítico: publicar antes del 1 de diciembre para capturar ventana de fin de año.",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}
