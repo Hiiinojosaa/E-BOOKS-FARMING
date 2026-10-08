@@ -82,3 +82,5 @@
 {"ts": "2026-10-08T18:41:14Z", "type": "TASK_DONE", "task_id": "TASK-000052", "book_id": "EB-000005", "agent": "S1-JEFE", "step": "WRITE", "warnings": 0}
 {"ts": "2026-10-08T18:41:14Z", "type": "TASK_CREATED", "task_id": "TASK-000059", "book_id": "EB-000005", "step": "EDIT", "priority": "NORMAL"}
 {"ts": "2026-10-08T18:41:14Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
+{"ts": "2026-10-08T18:42:26Z", "type": "STATE_CHANGE", "book_id": "EB-000004", "frm": "WRITING_PENDING", "to": "WRITING", "agent": "S1-JEFE", "action": "CLAIM WRITE", "result": "OK", "task_id": "TASK-000053"}
+{"ts": "2026-10-08T18:42:26Z", "type": "TASK_CLAIMED", "task_id": "TASK-000053", "book_id": "EB-000004", "agent": "S1-JEFE", "step": "WRITE"}
