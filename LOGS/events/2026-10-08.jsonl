@@ -15,3 +15,7 @@
 {"ts": "2026-10-08T14:59:06Z", "type": "STATE_CHANGE", "book_id": "EB-000005", "frm": "BRIEF_READY", "to": "WRITING_PENDING", "agent": "ADMIN", "action": "BRIEF_GATE", "result": "APPROVED"}
 {"ts": "2026-10-08T14:59:06Z", "type": "TASK_CREATED", "task_id": "TASK-000052", "book_id": "EB-000005", "step": "WRITE", "priority": "NORMAL"}
 {"ts": "2026-10-08T14:59:06Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 2}
+{"ts": "2026-10-08T14:59:13Z", "type": "BRIEF_APPROVED", "book_id": "EB-000004", "by": "ADMIN"}
+{"ts": "2026-10-08T14:59:13Z", "type": "STATE_CHANGE", "book_id": "EB-000004", "frm": "BRIEF_READY", "to": "WRITING_PENDING", "agent": "ADMIN", "action": "BRIEF_GATE", "result": "APPROVED"}
+{"ts": "2026-10-08T14:59:13Z", "type": "TASK_CREATED", "task_id": "TASK-000053", "book_id": "EB-000004", "step": "WRITE", "priority": "NORMAL"}
+{"ts": "2026-10-08T14:59:13Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 2}
