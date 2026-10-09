@@ -1,0 +1,163 @@
+{
+  "book_id": "EB-000003",
+  "version": "1.0",
+  "at": "2026-10-09T14:09:56Z",
+  "overall": "HUMAN_REVIEW",
+  "counts": {
+    "PASS": 23,
+    "WARN": 1,
+    "HUMAN_REVIEW": 1
+  },
+  "checks": [
+    {
+      "category": "CONTENT",
+      "check": "manuscript_exists",
+      "result": "PASS",
+      "detail": "final.md"
+    },
+    {
+      "category": "CONTENT",
+      "check": "chapters",
+      "result": "PASS",
+      "detail": "9 capítulos"
+    },
+    {
+      "category": "CONTENT",
+      "check": "chapters_complete",
+      "result": "PASS",
+      "detail": "todos ≥150 palabras"
+    },
+    {
+      "category": "CONTENT",
+      "check": "length",
+      "result": "PASS",
+      "detail": "4189 palabras"
+    },
+    {
+      "category": "CONTENT",
+      "check": "no_placeholders",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "category": "CONTENT",
+      "check": "no_internal_instructions",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "category": "CONTENT",
+      "check": "no_duplicate_paragraphs",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "category": "CONTENT",
+      "check": "unique_chapter_titles",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "category": "LANGUAGE",
+      "check": "language_matches",
+      "result": "PASS",
+      "detail": "detectado=es esperado=es"
+    },
+    {
+      "category": "LANGUAGE",
+      "check": "repeated_words",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "category": "LANGUAGE",
+      "check": "spacing",
+      "result": "WARN",
+      "detail": "12 dobles espacios"
+    },
+    {
+      "category": "FORMAT",
+      "check": "epub_valid",
+      "result": "PASS",
+      "detail": "14 docs, 28 enlaces"
+    },
+    {
+      "category": "CONSISTENCY",
+      "check": "epub_title_matches",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "category": "FORMAT",
+      "check": "pdf_pages",
+      "result": "PASS",
+      "detail": "28 páginas"
+    },
+    {
+      "category": "FORMAT",
+      "check": "cover",
+      "result": "PASS",
+      "detail": "1600x2560px"
+    },
+    {
+      "category": "FORMAT",
+      "check": "cover_jpg",
+      "result": "PASS",
+      "detail": "1600x2560"
+    },
+    {
+      "category": "METADATA",
+      "check": "title",
+      "result": "PASS",
+      "detail": "Tu Primer Año de Orden Financiero: Guía y Planner Completo"
+    },
+    {
+      "category": "METADATA",
+      "check": "subtitle",
+      "result": "PASS",
+      "detail": "Para autónomos, freelancers y personas con ingresos variables"
+    },
+    {
+      "category": "METADATA",
+      "check": "author",
+      "result": "PASS",
+      "detail": "E-Book Factory"
+    },
+    {
+      "category": "METADATA",
+      "check": "language",
+      "result": "PASS",
+      "detail": "es-ES"
+    },
+    {
+      "category": "METADATA",
+      "check": "keywords",
+      "result": "PASS",
+      "detail": "7 keywords"
+    },
+    {
+      "category": "METADATA",
+      "check": "categories",
+      "result": "PASS",
+      "detail": "3"
+    },
+    {
+      "category": "METADATA",
+      "check": "description",
+      "result": "PASS",
+      "detail": "1661 caracteres"
+    },
+    {
+      "category": "METADATA",
+      "check": "metadata_clean",
+      "result": "PASS",
+      "detail": ""
+    },
+    {
+      "category": "RISK",
+      "check": "sensitive_topic",
+      "result": "HUMAN_REVIEW",
+      "detail": "Tema sensible: finanz, financ"
+    }
+  ]
+}

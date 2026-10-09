@@ -1,5 +1,3 @@
-# Tu Primer Año de Orden Financiero: Guía y Planner Completo
-
 *Para autónomos, freelancers y estudiantes con ingresos variables*
 
 ---
@@ -294,13 +292,13 @@ No saltes un mes aunque no lo hayas rellenado al día. Mejor un mes relleno con 
 
 ## Mes 1
 
-| Ingresos | Importe |
+| Ingresos — Mes 1 | Importe |
 |----------|---------|
 | Facturación del mes | |
 | Otros ingresos | |
 | **TOTAL INGRESOS** | |
 
-| Gastos | Importe |
+| Gastos — Mes 1 | Importe |
 |--------|---------|
 | Vivienda | |
 | Transporte | |
@@ -313,7 +311,7 @@ No saltes un mes aunque no lo hayas rellenado al día. Mejor un mes relleno con 
 | Otros | |
 | **TOTAL GASTOS** | |
 
-| Balance |  |
+| Balance — Mes 1 |  |
 |---------|--|
 | TOTAL INGRESOS | |
 | TOTAL GASTOS | |
@@ -321,20 +319,20 @@ No saltes un mes aunque no lo hayas rellenado al día. Mejor un mes relleno con 
 | Reserva fiscal acumulada (total) | |
 | Fondo de emergencia (total) | |
 
-**Nota de cierre del mes:**  
+**Nota de cierre — Mes 1:**
 ¿Qué funcionó? ¿Qué cambiarías? ¿Cómo avanzaron tus objetivos del año?
 
 ---
 
 ## Mes 2
 
-| Ingresos | Importe |
+| Ingresos — Mes 2 | Importe |
 |----------|---------|
 | Facturación del mes | |
 | Otros ingresos | |
 | **TOTAL INGRESOS** | |
 
-| Gastos | Importe |
+| Gastos — Mes 2 | Importe |
 |--------|---------|
 | Vivienda | |
 | Transporte | |
@@ -347,7 +345,7 @@ No saltes un mes aunque no lo hayas rellenado al día. Mejor un mes relleno con 
 | Otros | |
 | **TOTAL GASTOS** | |
 
-| Balance |  |
+| Balance — Mes 2 |  |
 |---------|--|
 | TOTAL INGRESOS | |
 | TOTAL GASTOS | |
@@ -355,20 +353,20 @@ No saltes un mes aunque no lo hayas rellenado al día. Mejor un mes relleno con 
 | Reserva fiscal acumulada (total) | |
 | Fondo de emergencia (total) | |
 
-**Nota de cierre del mes:**  
+**Nota de cierre — Mes 2:**
 ¿Qué funcionó? ¿Qué cambiarías? ¿Cómo avanzaron tus objetivos del año?
 
 ---
 
 ## Mes 3 *(Fin del primer trimestre — Pago a Hacienda)*
 
-| Ingresos | Importe |
+| Ingresos — Mes 3 | Importe |
 |----------|---------|
 | Facturación del mes | |
 | Otros ingresos | |
 | **TOTAL INGRESOS** | |
 
-| Gastos | Importe |
+| Gastos — Mes 3 | Importe |
 |--------|---------|
 | Vivienda | |
 | Transporte | |
@@ -382,7 +380,7 @@ No saltes un mes aunque no lo hayas rellenado al día. Mejor un mes relleno con 
 | Otros | |
 | **TOTAL GASTOS** | |
 
-| Balance |  |
+| Balance — Mes 3 |  |
 |---------|--|
 | TOTAL INGRESOS | |
 | TOTAL GASTOS | |
@@ -390,20 +388,20 @@ No saltes un mes aunque no lo hayas rellenado al día. Mejor un mes relleno con 
 | Reserva fiscal acumulada (total tras pago) | |
 | Fondo de emergencia (total) | |
 
-**Nota de cierre del mes y del trimestre:**  
+**Nota de cierre del mes y del trimestre:**
 ¿Tenías la reserva fiscal preparada? ¿Qué ajustas para el siguiente trimestre?
 
 ---
 
 ## Mes 4
 
-| Ingresos | Importe |
+| Ingresos — Mes 4 | Importe |
 |----------|---------|
 | Facturación del mes | |
 | Otros ingresos | |
 | **TOTAL INGRESOS** | |
 
-| Gastos | Importe |
+| Gastos — Mes 4 | Importe |
 |--------|---------|
 | Vivienda | |
 | Transporte | |
@@ -416,7 +414,7 @@ No saltes un mes aunque no lo hayas rellenado al día. Mejor un mes relleno con 
 | Otros | |
 | **TOTAL GASTOS** | |
 
-| Balance |  |
+| Balance — Mes 4 |  |
 |---------|--|
 | TOTAL INGRESOS | |
 | TOTAL GASTOS | |
@@ -424,20 +422,20 @@ No saltes un mes aunque no lo hayas rellenado al día. Mejor un mes relleno con 
 | Reserva fiscal acumulada (total) | |
 | Fondo de emergencia (total) | |
 
-**Nota de cierre del mes:**  
+**Nota de cierre — Mes 4:**
 ¿Qué funcionó? ¿Qué cambiarías? ¿Cómo avanzaron tus objetivos del año?
 
 ---
 
 ## Mes 5
 
-| Ingresos | Importe |
+| Ingresos — Mes 5 | Importe |
 |----------|---------|
 | Facturación del mes | |
 | Otros ingresos | |
 | **TOTAL INGRESOS** | |
 
-| Gastos | Importe |
+| Gastos — Mes 5 | Importe |
 |--------|---------|
 | Vivienda | |
 | Transporte | |
@@ -450,7 +448,7 @@ No saltes un mes aunque no lo hayas rellenado al día. Mejor un mes relleno con 
 | Otros | |
 | **TOTAL GASTOS** | |
 
-| Balance |  |
+| Balance — Mes 5 |  |
 |---------|--|
 | TOTAL INGRESOS | |
 | TOTAL GASTOS | |
@@ -458,20 +456,20 @@ No saltes un mes aunque no lo hayas rellenado al día. Mejor un mes relleno con 
 | Reserva fiscal acumulada (total) | |
 | Fondo de emergencia (total) | |
 
-**Nota de cierre del mes:**  
+**Nota de cierre — Mes 5:**
 ¿Qué funcionó? ¿Qué cambiarías? ¿Cómo avanzaron tus objetivos del año?
 
 ---
 
 ## Mes 6 *(Fin del segundo trimestre — Pago a Hacienda)*
 
-| Ingresos | Importe |
+| Ingresos — Mes 6 | Importe |
 |----------|---------|
 | Facturación del mes | |
 | Otros ingresos | |
 | **TOTAL INGRESOS** | |
 
-| Gastos | Importe |
+| Gastos — Mes 6 | Importe |
 |--------|---------|
 | Vivienda | |
 | Transporte | |
@@ -485,7 +483,7 @@ No saltes un mes aunque no lo hayas rellenado al día. Mejor un mes relleno con 
 | Otros | |
 | **TOTAL GASTOS** | |
 
-| Balance |  |
+| Balance — Mes 6 |  |
 |---------|--|
 | TOTAL INGRESOS | |
 | TOTAL GASTOS | |
@@ -494,20 +492,20 @@ No saltes un mes aunque no lo hayas rellenado al día. Mejor un mes relleno con 
 | Reserva fiscal acumulada (total tras pago) | |
 | Fondo de emergencia (total) | |
 
-**Nota de cierre del semestre:**  
+**Nota de cierre del semestre:**
 A mitad de año: ¿cómo van tus objetivos? ¿Necesitas ajustar el presupuesto?
 
 ---
 
 ## Mes 7
 
-| Ingresos | Importe |
+| Ingresos — Mes 7 | Importe |
 |----------|---------|
 | Facturación del mes | |
 | Otros ingresos | |
 | **TOTAL INGRESOS** | |
 
-| Gastos | Importe |
+| Gastos — Mes 7 | Importe |
 |--------|---------|
 | Vivienda | |
 | Transporte | |
@@ -520,7 +518,7 @@ A mitad de año: ¿cómo van tus objetivos? ¿Necesitas ajustar el presupuesto?
 | Otros | |
 | **TOTAL GASTOS** | |
 
-| Balance |  |
+| Balance — Mes 7 |  |
 |---------|--|
 | TOTAL INGRESOS | |
 | TOTAL GASTOS | |
@@ -528,20 +526,20 @@ A mitad de año: ¿cómo van tus objetivos? ¿Necesitas ajustar el presupuesto?
 | Reserva fiscal acumulada (total) | |
 | Fondo de emergencia (total) | |
 
-**Nota de cierre del mes:**  
+**Nota de cierre — Mes 7:**
 ¿Qué funcionó? ¿Qué cambiarías? ¿Cómo avanzaron tus objetivos del año?
 
 ---
 
 ## Mes 8
 
-| Ingresos | Importe |
+| Ingresos — Mes 8 | Importe |
 |----------|---------|
 | Facturación del mes | |
 | Otros ingresos | |
 | **TOTAL INGRESOS** | |
 
-| Gastos | Importe |
+| Gastos — Mes 8 | Importe |
 |--------|---------|
 | Vivienda | |
 | Transporte | |
@@ -554,7 +552,7 @@ A mitad de año: ¿cómo van tus objetivos? ¿Necesitas ajustar el presupuesto?
 | Otros | |
 | **TOTAL GASTOS** | |
 
-| Balance |  |
+| Balance — Mes 8 |  |
 |---------|--|
 | TOTAL INGRESOS | |
 | TOTAL GASTOS | |
@@ -562,20 +560,20 @@ A mitad de año: ¿cómo van tus objetivos? ¿Necesitas ajustar el presupuesto?
 | Reserva fiscal acumulada (total) | |
 | Fondo de emergencia (total) | |
 
-**Nota de cierre del mes:**  
+**Nota de cierre — Mes 8:**
 ¿Qué funcionó? ¿Qué cambiarías? ¿Cómo avanzaron tus objetivos del año?
 
 ---
 
 ## Mes 9 *(Fin del tercer trimestre — Pago a Hacienda)*
 
-| Ingresos | Importe |
+| Ingresos — Mes 9 | Importe |
 |----------|---------|
 | Facturación del mes | |
 | Otros ingresos | |
 | **TOTAL INGRESOS** | |
 
-| Gastos | Importe |
+| Gastos — Mes 9 | Importe |
 |--------|---------|
 | Vivienda | |
 | Transporte | |
@@ -589,7 +587,7 @@ A mitad de año: ¿cómo van tus objetivos? ¿Necesitas ajustar el presupuesto?
 | Otros | |
 | **TOTAL GASTOS** | |
 
-| Balance |  |
+| Balance — Mes 9 |  |
 |---------|--|
 | TOTAL INGRESOS | |
 | TOTAL GASTOS | |
@@ -597,20 +595,20 @@ A mitad de año: ¿cómo van tus objetivos? ¿Necesitas ajustar el presupuesto?
 | Reserva fiscal acumulada (total tras pago) | |
 | Fondo de emergencia (total) | |
 
-**Nota de cierre del mes:**  
+**Nota de cierre del mes:**
 Tercer pago trimestral completado. ¿Llegaste con la reserva preparada?
 
 ---
 
 ## Mes 10
 
-| Ingresos | Importe |
+| Ingresos — Mes 10 | Importe |
 |----------|---------|
 | Facturación del mes | |
 | Otros ingresos | |
 | **TOTAL INGRESOS** | |
 
-| Gastos | Importe |
+| Gastos — Mes 10 | Importe |
 |--------|---------|
 | Vivienda | |
 | Transporte | |
@@ -623,7 +621,7 @@ Tercer pago trimestral completado. ¿Llegaste con la reserva preparada?
 | Otros | |
 | **TOTAL GASTOS** | |
 
-| Balance |  |
+| Balance — Mes 10 |  |
 |---------|--|
 | TOTAL INGRESOS | |
 | TOTAL GASTOS | |
@@ -631,20 +629,20 @@ Tercer pago trimestral completado. ¿Llegaste con la reserva preparada?
 | Reserva fiscal acumulada (total) | |
 | Fondo de emergencia (total) | |
 
-**Nota de cierre del mes:**  
+**Nota de cierre — Mes 10:**
 ¿Qué funcionó? ¿Qué cambiarías? ¿Cómo avanzaron tus objetivos del año?
 
 ---
 
 ## Mes 11
 
-| Ingresos | Importe |
+| Ingresos — Mes 11 | Importe |
 |----------|---------|
 | Facturación del mes | |
 | Otros ingresos | |
 | **TOTAL INGRESOS** | |
 
-| Gastos | Importe |
+| Gastos — Mes 11 | Importe |
 |--------|---------|
 | Vivienda | |
 | Transporte | |
@@ -657,7 +655,7 @@ Tercer pago trimestral completado. ¿Llegaste con la reserva preparada?
 | Otros | |
 | **TOTAL GASTOS** | |
 
-| Balance |  |
+| Balance — Mes 11 |  |
 |---------|--|
 | TOTAL INGRESOS | |
 | TOTAL GASTOS | |
@@ -665,20 +663,20 @@ Tercer pago trimestral completado. ¿Llegaste con la reserva preparada?
 | Reserva fiscal acumulada (total) | |
 | Fondo de emergencia (total) | |
 
-**Nota de cierre del mes:**  
+**Nota de cierre — Mes 11:**
 ¿Qué funcionó? ¿Qué cambiarías? Quedan 30 días para cerrar el año.
 
 ---
 
 ## Mes 12 *(Cierre del año y cuarto trimestre — Pago a Hacienda)*
 
-| Ingresos | Importe |
+| Ingresos — Mes 12 | Importe |
 |----------|---------|
 | Facturación del mes | |
 | Otros ingresos | |
 | **TOTAL INGRESOS** | |
 
-| Gastos | Importe |
+| Gastos — Mes 12 | Importe |
 |--------|---------|
 | Vivienda | |
 | Transporte | |
@@ -703,7 +701,7 @@ Tercer pago trimestral completado. ¿Llegaste con la reserva preparada?
 | Fondo de emergencia (total final) | |
 | Objetivos del año: ¿cuántos alcanzados? | / |
 
-**Nota de cierre del año:**  
+**Nota de cierre del año:**
 ¿Qué sistema funcionó? ¿Qué cambiarías para el año siguiente? ¿Qué aprendiste sobre tu economía que no sabías hace doce meses?
 
 ---
