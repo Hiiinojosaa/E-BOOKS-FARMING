@@ -1,0 +1,14 @@
+{
+  "template": "minimal",
+  "title_line1": "Primer Año",
+  "title_line2": "Financiero",
+  "tagline": "Guía + Planner",
+  "badge": "",
+  "palette": {
+    "bg": "#0F2540",
+    "fg": "#F0EDE4",
+    "accent": "#2BB673",
+    "muted": "#5E7A9A"
+  },
+  "rationale": "Azul marino + verde vibrante: azul marino transmite autoridad y confianza (finanzas); verde activo comunica crecimiento y dinero sin resultar corporativo. Paleta claramente diferenciada de los otros libros del catálogo (verde oscuro para eventos, carbón para journaling). El tagline 'Guía + Planner' señala el doble formato del libro. 'Primer Año / Financiero' capta la promesa temporal y la categoría en dos líneas cortas y legibles en miniatura."
+}

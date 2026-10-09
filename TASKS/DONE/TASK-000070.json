@@ -5,17 +5,19 @@
   "role": "DESIGN_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "S1-JEFE",
   "created_by": "S1-JEFE",
   "created_at": "2026-10-09T13:52:15Z",
   "started_at": "2026-10-09T13:56:41Z",
-  "completed_at": null,
+  "completed_at": "2026-10-09T13:57:36Z",
   "claimed_from_state": "DESIGN_PENDING",
   "dependencies": [],
   "prompt": "PROMPTS/DESIGN.md",
   "notes": "",
-  "output": null,
+  "output": {
+    "cover": "design/cover.png"
+  },
   "error": null,
   "errors": [],
   "retry_count": 0,
@@ -23,7 +25,12 @@
   "attempts": [
     {
       "agent": "S1-JEFE",
-      "started_at": "2026-10-09T13:56:41Z"
+      "started_at": "2026-10-09T13:56:41Z",
+      "ended_at": "2026-10-09T13:57:36Z",
+      "result": "DONE",
+      "note": "Portada EB-000003: plantilla minimal, azul marino + verde vibrante, 'Primer Año / Financiero', tagline 'Guía + Planner'. Diferenciada de los otros dos libros del catálogo. Subtitle señala autónomos/freelancers en portada.",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }
