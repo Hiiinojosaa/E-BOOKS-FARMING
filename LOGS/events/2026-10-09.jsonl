@@ -37,3 +37,5 @@
 {"ts": "2026-10-09T13:46:30Z", "type": "TASK_DONE", "task_id": "TASK-000065", "book_id": "EB-000005", "agent": "S1-JEFE", "step": "METADATA", "warnings": 0}
 {"ts": "2026-10-09T13:46:30Z", "type": "TASK_CREATED", "task_id": "TASK-000068", "book_id": "EB-000005", "step": "DESIGN", "priority": "NORMAL"}
 {"ts": "2026-10-09T13:46:30Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
+{"ts": "2026-10-09T13:47:16Z", "type": "STATE_CHANGE", "book_id": "EB-000004", "frm": "FACT_CHECKED", "to": "METADATA_IN_PROGRESS", "agent": "S1-JEFE", "action": "CLAIM METADATA", "result": "OK", "task_id": "TASK-000066"}
+{"ts": "2026-10-09T13:47:16Z", "type": "TASK_CLAIMED", "task_id": "TASK-000066", "book_id": "EB-000004", "agent": "S1-JEFE", "step": "METADATA"}
