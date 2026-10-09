@@ -1,5 +1,3 @@
-# El Planner Definitivo de Eventos: Organiza Cualquier Celebración sin Estrés
-
 *El método paso a paso para bodas, fiestas, viajes y más*
 
 ---
@@ -515,6 +513,8 @@ Tu trabajo más importante el día del evento es estar presente. Para eso has pl
 Cada evento que organizas te enseña algo. Descubres qué proveedor es más puntual de lo que esperabas, qué tipo de decisión nunca debes dejar para el último momento, qué elemento fue el más valorado por los invitados y cuál apenas nadie notó.
 
 El cronograma inverso, los checklists y el sistema de delegación que has leído en este libro son herramientas. Las herramientas mejoran con el uso.
+
+Una práctica que marca la diferencia: justo después de que termine el evento, antes de que se olvide el detalle que casi lo arruina o el proveedor que llegó demasiado tarde, dedica diez minutos a anotar qué salió bien, qué cambiarías y qué confirmaste demasiado tarde. Esas notas, acumuladas evento tras evento en el propio libro o en un documento aparte, son el archivo de experiencia que convierte a un organizador ocasional en alguien de confianza.
 
 La próxima vez que tengas un evento entre manos, abre el capítulo correspondiente, adapta el checklist a tu situación y empieza por el principio: escribe la fecha, identifica los hitos, trabaja hacia atrás.
 
