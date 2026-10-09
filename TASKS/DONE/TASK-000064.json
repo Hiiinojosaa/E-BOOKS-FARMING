@@ -1,0 +1,36 @@
+{
+  "task_id": "TASK-000064",
+  "book_id": "EB-000003",
+  "type": "FACT_CHECK",
+  "role": "FACT_CHECK_AGENT",
+  "auto": false,
+  "priority": "NORMAL",
+  "status": "DONE",
+  "assigned_agent": "S1-JEFE",
+  "created_by": "S1-JEFE",
+  "created_at": "2026-10-09T13:35:11Z",
+  "started_at": "2026-10-09T13:43:32Z",
+  "completed_at": "2026-10-09T13:44:36Z",
+  "claimed_from_state": "EDITED",
+  "dependencies": [],
+  "prompt": "PROMPTS/FACT_CHECK.md",
+  "notes": "",
+  "output": {
+    "flags": 0
+  },
+  "error": null,
+  "errors": [],
+  "retry_count": 0,
+  "last_attempt": "2026-10-09T13:43:32Z",
+  "attempts": [
+    {
+      "agent": "S1-JEFE",
+      "started_at": "2026-10-09T13:43:32Z",
+      "ended_at": "2026-10-09T13:44:36Z",
+      "result": "DONE",
+      "note": "Fact-check completado (HIGH risk): VERDICT PASS. Todos los claims fiscales verificados contra S4 (AEAT): Modelo 130, Modelo 303, plazos trimestrales, IVA 21% estándar con tipos reducidos, funcionamiento del IVA repercutido. Distinción régimen módulos/estimación directa correcta. Sin tipos IRPF exactos, sin recomendaciones de productos. final.md = copia de edited.md sin cambios.",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}

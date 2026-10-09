@@ -27,3 +27,7 @@
 {"ts": "2026-10-09T13:42:43Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
 {"ts": "2026-10-09T13:43:32Z", "type": "STATE_CHANGE", "book_id": "EB-000003", "frm": "EDITED", "to": "FACT_CHECKING", "agent": "S1-JEFE", "action": "CLAIM FACT_CHECK", "result": "OK", "task_id": "TASK-000064"}
 {"ts": "2026-10-09T13:43:32Z", "type": "TASK_CLAIMED", "task_id": "TASK-000064", "book_id": "EB-000003", "agent": "S1-JEFE", "step": "FACT_CHECK"}
+{"ts": "2026-10-09T13:44:36Z", "type": "STATE_CHANGE", "book_id": "EB-000003", "frm": "FACT_CHECKING", "to": "FACT_CHECKED", "agent": "S1-JEFE", "action": "COMPLETE FACT_CHECK", "result": "OK", "task_id": "TASK-000064"}
+{"ts": "2026-10-09T13:44:36Z", "type": "TASK_DONE", "task_id": "TASK-000064", "book_id": "EB-000003", "agent": "S1-JEFE", "step": "FACT_CHECK", "warnings": 0}
+{"ts": "2026-10-09T13:44:36Z", "type": "TASK_CREATED", "task_id": "TASK-000067", "book_id": "EB-000003", "step": "METADATA", "priority": "NORMAL"}
+{"ts": "2026-10-09T13:44:36Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
