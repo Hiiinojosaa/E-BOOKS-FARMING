@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791555142124628500-88c66a",
+  "ts": "2026-10-09T14:12:22Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión completada (12/12 tareas). Resumen: METADATA EB-000003 (HIGH risk, finanzas autónomos) ✓; DISEÑO portadas EB-000003 (azul marino + verde), EB-000004 (carbón + terracota '100 Preguntas'), EB-000005 (verde oscuro + oro) ✓; QC EB-000003 (corrección planner duplicado + H1, HUMAN_REVIEW por HIGH risk) → QC_PASSED → HUMAN_REVIEW ✓; QC EB-000004 (LOW risk, corrección H1 redundante) → QC_PASSED → HUMAN_REVIEW ✓. EB-000005 QC pendiente para la próxima sesión. 3 libros en HUMAN_REVIEW esperando vuestra aprobación.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}

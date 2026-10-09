@@ -96,3 +96,4 @@
 {"ts": "2026-10-09T14:11:30Z", "type": "TASK_DONE", "task_id": "TASK-000075", "book_id": "EB-000004", "agent": "S1-JEFE", "step": "QC", "warnings": 0}
 {"ts": "2026-10-09T14:11:30Z", "type": "STATE_CHANGE", "book_id": "EB-000004", "frm": "QC_PASSED", "to": "HUMAN_REVIEW", "agent": "S1-JEFE", "action": "REVIEW_PACK", "result": "OK"}
 {"ts": "2026-10-09T14:11:30Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
+{"ts": "2026-10-09T14:12:22Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "progress", "msg": "MSG-1791555142124628500-88c66a"}
