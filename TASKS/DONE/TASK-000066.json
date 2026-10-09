@@ -1,0 +1,36 @@
+{
+  "task_id": "TASK-000066",
+  "book_id": "EB-000004",
+  "type": "METADATA",
+  "role": "MARKET_AGENT",
+  "auto": false,
+  "priority": "NORMAL",
+  "status": "DONE",
+  "assigned_agent": "S1-JEFE",
+  "created_by": "S1-JEFE",
+  "created_at": "2026-10-09T13:42:43Z",
+  "started_at": "2026-10-09T13:47:16Z",
+  "completed_at": "2026-10-09T13:48:12Z",
+  "claimed_from_state": "FACT_CHECKED",
+  "dependencies": [],
+  "prompt": "PROMPTS/METADATA.md",
+  "notes": "",
+  "output": {
+    "title": "Diario de Autoconocimiento: 100 Preguntas para Conocerte y Reordenar tu Vida"
+  },
+  "error": null,
+  "errors": [],
+  "retry_count": 0,
+  "last_attempt": "2026-10-09T13:47:16Z",
+  "attempts": [
+    {
+      "agent": "S1-JEFE",
+      "started_at": "2026-10-09T13:47:16Z",
+      "ended_at": "2026-10-09T13:48:12Z",
+      "result": "DONE",
+      "note": "Metadata completada. Descripción ~1.500 chars con gancho, qué incluye y perfil de lector. 7 keywords sin repetir palabras del título (journaling guiado, reflexión personal, desarrollo personal interactivo, etc.). Precio 3,99 EUR ESTIMATE (rango investigado 2,99-4,99 EUR). 3 categorías: desarrollo personal, bienestar mental, autoestima. Posicionamiento: único diario en español con 100 preguntas temáticas organizadas (no aleatorias, no de gratitud genérica).",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}
