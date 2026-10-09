@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791583952118305300-ec77cd",
+  "ts": "2026-10-09T22:12:32Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión de hoy (10 oct): informes actualizados, sin tareas disponibles. La fábrica sigue esperando vuestras aprobaciones. He añadido 3 nuevas recomendaciones: (1) Valentine's Day Couples Journal (en-US, prioridad alta — hay que publicarlo antes de enero), (2) Planificador y Agenda Anual 2027 en español (es-ES, alta prioridad estacional), (3) Daily Gratitude Journal (en-US, evergreen). Pendiente urgente: DEC-00002 Thanksgiving tiene ventana MUY corta. Estado: 6 libros en HUMAN_REVIEW, 5 briefs pendientes de approve-brief, 11 recomendaciones sin respuesta.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
