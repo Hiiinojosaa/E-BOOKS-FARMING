@@ -1,19 +1,19 @@
 # DASHBOARD — E-Book Factory
 
-_Generado 2026-10-09T13:21:21Z_
+_Generado 2026-10-09T13:58:40Z_
 
 | TOTAL BOOKS | IDEAS | RESEARCH | WRITING | EDITING | TRANSLATION | DESIGN | QC | HUMAN REVIEW | READY TO PUBLISH | PUBLISHED | FAILED | BLOCKED |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 25 | 12 | 5 | 2 | 1 | 0 | 0 | 0 | 3 | 1 | 0 | 1 | 0 |
+| 25 | 12 | 5 | 0 | 0 | 0 | 0 | 3 | 3 | 1 | 0 | 1 | 0 |
 
 ## Últimos 7 días
 
 - books created: **9**
 - books completed: **0**
 - books awaiting approval: **3**
-- tasks completed: **37**
+- tasks completed: **51**
 - tasks failed: **5**
-- agent activity: **{'S1-JEFE': 37}**
+- agent activity: **{'S1-JEFE': 51}**
 
 ## Libros
 
@@ -21,9 +21,9 @@ _Generado 2026-10-09T13:21:21Z_
 |---|---|---|---|---|---|---|
 | EB-000001 | The One-Page System | en-US | HUMAN_REVIEW | NORMAL | - | 2026-10-05T10:54:50Z |
 | EB-000002 | Los 200 Mejores Prompts de IA para Trabajar Menos y Rendir Más | es-ES | BRIEF_READY | NORMAL | - | 2026-10-05T10:43:11Z |
-| EB-000003 | Tu Primer Año de Orden Financiero: Guía y Planner Completo | es-ES | DRAFT_COMPLETE | NORMAL | - | 2026-10-08T18:57:25Z |
-| EB-000004 | Diario de Autoconocimiento: 100 Preguntas para Conocerte y Reordenar tu Vida | es-ES | DRAFT_COMPLETE | NORMAL | - | 2026-10-08T18:51:45Z |
-| EB-000005 | El Planner Definitivo de Eventos: Organiza Cualquier Celebracion sin Estres | es-ES | EDITED | NORMAL | - | 2026-10-08T19:02:55Z |
+| EB-000003 | Tu Primer Año de Orden Financiero: Guía y Planner Completo | es-ES | QC_PENDING | NORMAL | - | 2026-10-09T13:58:40Z |
+| EB-000004 | Diario de Autoconocimiento: 100 Preguntas para Conocerte y Reordenar tu Vida | es-ES | QC_PENDING | NORMAL | - | 2026-10-09T13:58:38Z |
+| EB-000005 | El Planner Definitivo de Eventos: Organiza Cualquier Celebración sin Estrés | es-ES | QC_PENDING | NORMAL | - | 2026-10-09T13:58:35Z |
 | EB-000006 | Guia Completa para el Primer Año con tu Mascota | es-ES | IDEA | NORMAL | - | 2026-10-01T22:53:13Z |
 | EB-000007 | Ponte en Forma en Casa: Plan de 12 Semanas | es-ES | IDEA | NORMAL | - | 2026-10-01T22:53:13Z |
 | EB-000008 | El Planner de Navidad Completo: Organiza Regalos, Menus y Presupuesto sin Estres | es-ES | IDEA | HIGH | - | 2026-10-01T22:53:13Z |
@@ -57,5 +57,5 @@ _Generado 2026-10-09T13:21:21Z_
 | S1-EMPAQUETADOR | ADMIN | OFFLINE | - | 2026-10-01T12:32:31Z |
 | S1-ESCRITOR | ADMIN | OFFLINE | - | 2026-10-01T12:32:31Z |
 | S1-INVESTIGADOR | ADMIN | OFFLINE | - | 2026-10-01T12:32:31Z |
-| S1-JEFE | ADMIN | IDLE | - | 2026-10-09T13:21:21Z |
+| S1-JEFE | ADMIN | IDLE | - | 2026-10-09T13:58:40Z |
 | TEST-AGENT | ADMIN | OFFLINE | - | 2026-10-01T18:22:06Z |

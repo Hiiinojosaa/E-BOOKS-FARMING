@@ -67,3 +67,20 @@
 {"ts": "2026-10-09T13:57:36Z", "type": "TASK_DONE", "task_id": "TASK-000070", "book_id": "EB-000003", "agent": "S1-JEFE", "step": "DESIGN", "warnings": 0}
 {"ts": "2026-10-09T13:57:36Z", "type": "TASK_CREATED", "task_id": "TASK-000073", "book_id": "EB-000003", "step": "FORMAT", "priority": "NORMAL"}
 {"ts": "2026-10-09T13:57:36Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
+{"ts": "2026-10-09T13:58:30Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
+{"ts": "2026-10-09T13:58:30Z", "type": "STATE_CHANGE", "book_id": "EB-000005", "frm": "DESIGN_COMPLETE", "to": "FORMATTING", "agent": "S1-JEFE", "action": "CLAIM FORMAT", "result": "OK", "task_id": "TASK-000071"}
+{"ts": "2026-10-09T13:58:30Z", "type": "TASK_CLAIMED", "task_id": "TASK-000071", "book_id": "EB-000005", "agent": "S1-JEFE", "step": "FORMAT"}
+{"ts": "2026-10-09T13:58:35Z", "type": "STATE_CHANGE", "book_id": "EB-000005", "frm": "FORMATTING", "to": "QC_PENDING", "agent": "S1-JEFE", "action": "COMPLETE FORMAT", "result": "OK", "task_id": "TASK-000071"}
+{"ts": "2026-10-09T13:58:35Z", "type": "TASK_DONE", "task_id": "TASK-000071", "book_id": "EB-000005", "agent": "S1-JEFE", "step": "FORMAT", "warnings": 0}
+{"ts": "2026-10-09T13:58:35Z", "type": "STATE_CHANGE", "book_id": "EB-000004", "frm": "DESIGN_COMPLETE", "to": "FORMATTING", "agent": "S1-JEFE", "action": "CLAIM FORMAT", "result": "OK", "task_id": "TASK-000072"}
+{"ts": "2026-10-09T13:58:35Z", "type": "TASK_CLAIMED", "task_id": "TASK-000072", "book_id": "EB-000004", "agent": "S1-JEFE", "step": "FORMAT"}
+{"ts": "2026-10-09T13:58:38Z", "type": "STATE_CHANGE", "book_id": "EB-000004", "frm": "FORMATTING", "to": "QC_PENDING", "agent": "S1-JEFE", "action": "COMPLETE FORMAT", "result": "OK", "task_id": "TASK-000072"}
+{"ts": "2026-10-09T13:58:38Z", "type": "TASK_DONE", "task_id": "TASK-000072", "book_id": "EB-000004", "agent": "S1-JEFE", "step": "FORMAT", "warnings": 0}
+{"ts": "2026-10-09T13:58:38Z", "type": "STATE_CHANGE", "book_id": "EB-000003", "frm": "DESIGN_COMPLETE", "to": "FORMATTING", "agent": "S1-JEFE", "action": "CLAIM FORMAT", "result": "OK", "task_id": "TASK-000073"}
+{"ts": "2026-10-09T13:58:38Z", "type": "TASK_CLAIMED", "task_id": "TASK-000073", "book_id": "EB-000003", "agent": "S1-JEFE", "step": "FORMAT"}
+{"ts": "2026-10-09T13:58:40Z", "type": "STATE_CHANGE", "book_id": "EB-000003", "frm": "FORMATTING", "to": "QC_PENDING", "agent": "S1-JEFE", "action": "COMPLETE FORMAT", "result": "OK", "task_id": "TASK-000073"}
+{"ts": "2026-10-09T13:58:40Z", "type": "TASK_DONE", "task_id": "TASK-000073", "book_id": "EB-000003", "agent": "S1-JEFE", "step": "FORMAT", "warnings": 0}
+{"ts": "2026-10-09T13:58:40Z", "type": "TASK_CREATED", "task_id": "TASK-000074", "book_id": "EB-000003", "step": "QC", "priority": "NORMAL"}
+{"ts": "2026-10-09T13:58:40Z", "type": "TASK_CREATED", "task_id": "TASK-000075", "book_id": "EB-000004", "step": "QC", "priority": "NORMAL"}
+{"ts": "2026-10-09T13:58:40Z", "type": "TASK_CREATED", "task_id": "TASK-000076", "book_id": "EB-000005", "step": "QC", "priority": "NORMAL"}
+{"ts": "2026-10-09T13:58:40Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 3}
