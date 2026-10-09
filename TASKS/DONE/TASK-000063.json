@@ -1,0 +1,36 @@
+{
+  "task_id": "TASK-000063",
+  "book_id": "EB-000004",
+  "type": "FACT_CHECK",
+  "role": "FACT_CHECK_AGENT",
+  "auto": false,
+  "priority": "NORMAL",
+  "status": "DONE",
+  "assigned_agent": "S1-JEFE",
+  "created_by": "S1-JEFE",
+  "created_at": "2026-10-09T13:29:45Z",
+  "started_at": "2026-10-09T13:41:48Z",
+  "completed_at": "2026-10-09T13:42:43Z",
+  "claimed_from_state": "EDITED",
+  "dependencies": [],
+  "prompt": "PROMPTS/FACT_CHECK.md",
+  "notes": "",
+  "output": {
+    "flags": 0
+  },
+  "error": null,
+  "errors": [],
+  "retry_count": 0,
+  "last_attempt": "2026-10-09T13:41:48Z",
+  "attempts": [
+    {
+      "agent": "S1-JEFE",
+      "started_at": "2026-10-09T13:41:48Z",
+      "ended_at": "2026-10-09T13:42:43Z",
+      "result": "DONE",
+      "note": "Fact-check completado: VERDICT PASS. El libro es íntegramente preguntas reflexivas e insights presentados como tales, sin afirmaciones de hechos verificables. Ninguna fuente de sources.json aparece en el texto del libro (como indica el brief). final.md = copia idéntica de edited.md.",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}
