@@ -122,3 +122,6 @@
 {"ts": "2026-10-09T22:10:27Z", "type": "BOOK_CREATED", "book_id": "EB-000026", "agent": "S1-JEFE", "topic": "Planificador y Agenda Anual 2027: Organiza tu Año con Intención", "language": "es-ES"}
 {"ts": "2026-10-09T22:10:27Z", "type": "DECISION_ASKED", "decision": "DEC-00011", "book_id": "EB-000026", "by": "S1-JEFE"}
 {"ts": "2026-10-09T22:10:27Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "question", "msg": "MSG-1791583827879177700-165333"}
+{"ts": "2026-10-09T22:11:31Z", "type": "BOOK_CREATED", "book_id": "EB-000027", "agent": "S1-JEFE", "topic": "Daily Gratitude Journal: 365 Days of Mindfulness and Reflection", "language": "en-US"}
+{"ts": "2026-10-09T22:11:31Z", "type": "DECISION_ASKED", "decision": "DEC-00012", "book_id": "EB-000027", "by": "S1-JEFE"}
+{"ts": "2026-10-09T22:11:31Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "question", "msg": "MSG-1791583891967479100-801165"}

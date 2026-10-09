@@ -1,0 +1,17 @@
+{
+  "id": "MSG-1791583891967479100-801165",
+  "ts": "2026-10-09T22:11:31Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "question",
+  "to": null,
+  "text": "Te recomiendo «Daily Gratitude Journal: 365 Days of Mindfulness and Reflection» (en-US). FACT: Gratitude journals are a perennial top-10 KDP category in self-help, with Q4 being the strongest season as they are popular Christmas gifts. FACT: Our English-language catalog focuses on productivity (EB-TEST-001, EB-000001) and puzzles but has no mindfulness/wellness entry — this fills the gap. ESTIMATE: High gift potential with a low production cost relative to editorial complexity. HYPOTHESIS: Buyers of productivity planners often also seek mindfulness companions — cross-sell with EB-TEST-001 and New Year 2027 planner.",
+  "book_id": "EB-000027",
+  "order_id": null,
+  "decision_id": "DEC-00012",
+  "options": [
+    "Adelante",
+    "Descartar"
+  ],
+  "reply_to": null
+}
