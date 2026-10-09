@@ -1,0 +1,14 @@
+{
+  "template": "minimal",
+  "title_line1": "El Planner",
+  "title_line2": "de Eventos",
+  "tagline": "Organiza sin estrés",
+  "badge": "",
+  "palette": {
+    "bg": "#1B2D1F",
+    "fg": "#F5EFE0",
+    "accent": "#C8A24A",
+    "muted": "#6E8E74"
+  },
+  "rationale": "Verde oscuro + oro: evoca elegancia, celebración y organización profesional. Paleta popularizada en el mercado nupcial y de eventos 2023–2026. Alta legibilidad en miniatura (ivory sobre verde oscuro). El acento oro en la segunda línea del título destaca 'de Eventos' frente a 'El Planner', jerarquía visual clara. El tagline en muted-sage se integra sin competir con el título."
+}
