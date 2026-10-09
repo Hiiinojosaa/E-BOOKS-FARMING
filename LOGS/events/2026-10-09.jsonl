@@ -61,3 +61,5 @@
 {"ts": "2026-10-09T13:55:56Z", "type": "TASK_DONE", "task_id": "TASK-000069", "book_id": "EB-000004", "agent": "S1-JEFE", "step": "DESIGN", "warnings": 0}
 {"ts": "2026-10-09T13:55:56Z", "type": "TASK_CREATED", "task_id": "TASK-000072", "book_id": "EB-000004", "step": "FORMAT", "priority": "NORMAL"}
 {"ts": "2026-10-09T13:55:56Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
+{"ts": "2026-10-09T13:56:41Z", "type": "STATE_CHANGE", "book_id": "EB-000003", "frm": "DESIGN_PENDING", "to": "DESIGNING", "agent": "S1-JEFE", "action": "CLAIM DESIGN", "result": "OK", "task_id": "TASK-000070"}
+{"ts": "2026-10-09T13:56:41Z", "type": "TASK_CLAIMED", "task_id": "TASK-000070", "book_id": "EB-000003", "agent": "S1-JEFE", "step": "DESIGN"}
