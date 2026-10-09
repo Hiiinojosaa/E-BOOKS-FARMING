@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791562349045574500-4d6b8c",
+  "ts": "2026-10-09T16:12:29Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión completada. QC de EB-000005 (El Planner Definitivo de Eventos) pasado: corregí H1 de título duplicado en manuscrito y expandí conclusión a 200 palabras. El libro pasa a HUMAN_REVIEW. Ahora tenéis 6 libros esperando vuestra aprobación en el panel.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}

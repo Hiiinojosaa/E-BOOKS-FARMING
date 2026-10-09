@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T16:06:28Z",
+  "generated_at": "2026-10-09T16:12:25Z",
   "books_total": 25,
   "books_started": 12,
   "books_completed": 1,
@@ -9,7 +9,7 @@
     "EB-TEST-001": 0.12
   },
   "tasks_total": 76,
-  "tasks_completed": 75,
+  "tasks_completed": 76,
   "tasks_failed": 9,
   "tasks_blocked": 0,
   "retries": 6,
@@ -20,9 +20,9 @@
       "busy_hours": 0.1
     },
     "S1-JEFE": {
-      "tasks_done": 56,
+      "tasks_done": 57,
       "tasks_failed": 5,
-      "busy_hours": 2.35
+      "busy_hours": 2.42
     },
     "TEST-AGENT": {
       "tasks_done": 7,

@@ -1,19 +1,19 @@
 # DASHBOARD — E-Book Factory
 
-_Generado 2026-10-09T16:06:28Z_
+_Generado 2026-10-09T16:12:25Z_
 
 | TOTAL BOOKS | IDEAS | RESEARCH | WRITING | EDITING | TRANSLATION | DESIGN | QC | HUMAN REVIEW | READY TO PUBLISH | PUBLISHED | FAILED | BLOCKED |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 25 | 12 | 5 | 0 | 0 | 0 | 0 | 1 | 5 | 1 | 0 | 1 | 0 |
+| 25 | 12 | 5 | 0 | 0 | 0 | 0 | 0 | 6 | 1 | 0 | 1 | 0 |
 
 ## Últimos 7 días
 
 - books created: **9**
 - books completed: **0**
-- books awaiting approval: **5**
-- tasks completed: **53**
+- books awaiting approval: **6**
+- tasks completed: **54**
 - tasks failed: **5**
-- agent activity: **{'S1-JEFE': 53}**
+- agent activity: **{'S1-JEFE': 54}**
 
 ## Libros
 
@@ -23,7 +23,7 @@ _Generado 2026-10-09T16:06:28Z_
 | EB-000002 | Los 200 Mejores Prompts de IA para Trabajar Menos y Rendir Más | es-ES | BRIEF_READY | NORMAL | - | 2026-10-05T10:43:11Z |
 | EB-000003 | Tu Primer Año de Orden Financiero: Guía y Planner Completo | es-ES | HUMAN_REVIEW | NORMAL | - | 2026-10-09T14:09:56Z |
 | EB-000004 | Diario de Autoconocimiento: 100 Preguntas para Conocerte y Reordenar tu Vida | es-ES | HUMAN_REVIEW | NORMAL | - | 2026-10-09T14:11:30Z |
-| EB-000005 | El Planner Definitivo de Eventos: Organiza Cualquier Celebración sin Estrés | es-ES | QC_PENDING | NORMAL | - | 2026-10-09T13:58:35Z |
+| EB-000005 | El Planner Definitivo de Eventos: Organiza Cualquier Celebración sin Estrés | es-ES | HUMAN_REVIEW | NORMAL | - | 2026-10-09T16:11:30Z |
 | EB-000006 | Guia Completa para el Primer Año con tu Mascota | es-ES | IDEA | NORMAL | - | 2026-10-01T22:53:13Z |
 | EB-000007 | Ponte en Forma en Casa: Plan de 12 Semanas | es-ES | IDEA | NORMAL | - | 2026-10-01T22:53:13Z |
 | EB-000008 | El Planner de Navidad Completo: Organiza Regalos, Menus y Presupuesto sin Estres | es-ES | IDEA | HIGH | - | 2026-10-01T22:53:13Z |
@@ -57,5 +57,5 @@ _Generado 2026-10-09T16:06:28Z_
 | S1-EMPAQUETADOR | ADMIN | OFFLINE | - | 2026-10-01T12:32:31Z |
 | S1-ESCRITOR | ADMIN | OFFLINE | - | 2026-10-01T12:32:31Z |
 | S1-INVESTIGADOR | ADMIN | OFFLINE | - | 2026-10-01T12:32:31Z |
-| S1-JEFE | ADMIN | IDLE | - | 2026-10-09T16:06:26Z |
+| S1-JEFE | ADMIN | IDLE | - | 2026-10-09T16:12:21Z |
 | TEST-AGENT | ADMIN | OFFLINE | - | 2026-10-01T18:22:06Z |
