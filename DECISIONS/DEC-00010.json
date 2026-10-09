@@ -1,0 +1,21 @@
+{
+  "id": "DEC-00010",
+  "book_id": "EB-000025",
+  "question": "Te recomiendo «Valentine's Day Couples Journal: 52 Questions to Deepen Your Love» (en-US). FACT: Valentine's Day is the #2 gifting season on KDP after Christmas, with peak demand in January-February. FACT: Couples journals and question books consistently appear in KDP bestseller lists year-round, spiking 3x in Q1. ESTIMATE: Production lead time from now ensures the book is live before January, capturing pre-Valentine buyer search traffic. Fills a clear gap — we have no couples/relationship content and no Q1 2027 seasonal title in English.",
+  "options": [
+    "Adelante",
+    "Descartar"
+  ],
+  "asked_by": "S1-JEFE",
+  "asked_at": "2026-10-09T22:09:23Z",
+  "urgency": "NORMAL",
+  "status": "OPEN",
+  "answer": null,
+  "answered_by": null,
+  "action": {
+    "type": "approve_idea",
+    "book_id": "EB-000025",
+    "yes": "Adelante",
+    "no": "Descartar"
+  }
+}
