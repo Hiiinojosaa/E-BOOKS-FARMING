@@ -1,0 +1,46 @@
+{
+  "title": "El Planner Definitivo de Eventos: Organiza Cualquier Celebración sin Estrés",
+  "subtitle": "El método paso a paso para bodas, fiestas, viajes y más",
+  "description": "¿Has organizado alguna vez un evento y llegado al día con la sensación de que algo importante se te había pasado por alto? Llevas semanas coordinando proveedores, confirmando asistentes y tomando decisiones, pero sin un sistema claro, los detalles se escapan y el estrés se acumula.\n\nEl Planner Definitivo de Eventos te da ese sistema.\n\nEl método central del libro es el cronograma inverso: empezar desde la fecha del evento y trabajar hacia atrás, asignando cada tarea a la semana exacta en que debe estar hecha. Es la misma lógica que usan los organizadores profesionales, y funciona igual de bien para una boda de doscientas personas que para una escapada de fin de semana con amigos.\n\nQué encontrarás en el libro:\n- Un método reutilizable para cualquier evento, con una sola curva de aprendizaje\n- Cronograma completo de 12 meses para bodas, con checklists por etapa\n- Guía para fiestas familiares: cumpleaños redondos, comuniones y graduaciones\n- Cómo coordinar eventos de grupo sin perder la amistad en el intento\n- Checklist de mudanza y trámites administrativos paso a paso\n- Organización de viajes y escapadas en grupo, de las fechas al reparto de gastos\n- Cómo disfrutar tú también del evento que has organizado — delegando con claridad\n\nEste libro es para ti si:\n- Estás organizando una boda y no sabes por dónde empezar\n- Te toca siempre organizar los eventos del grupo y quieres un sistema fiable\n- Quieres llegar al día de tu evento sabiendo que todo está controlado\n- Buscas una guía práctica con checklists integrados, sin relleno — solo herramientas\n\nNo hacen falta apps ni materiales adicionales. Los checklists y cronogramas están integrados en el libro.",
+  "keywords": [
+    "checklist boda completo",
+    "cómo organizar fiesta familiar",
+    "planner fiesta cumpleaños",
+    "guía mudanza checklist",
+    "organizar viaje grupo",
+    "cronograma boda 12 meses",
+    "sistema organización eventos"
+  ],
+  "categories": [
+    "Tienda Kindle > No Ficción > Hogar, familia y estilo de vida > Planificación de eventos",
+    "Tienda Kindle > No Ficción > Hogar, familia y estilo de vida > Bodas",
+    "Tienda Kindle > No Ficción > Autoayuda y superación personal > Gestión del tiempo"
+  ],
+  "price": {
+    "amount": 3.99,
+    "currency": "EUR",
+    "basis": "ESTIMATE",
+    "rationale": "Precio de compra impulsiva para el perfil que organiza una boda o evento importante. En línea con guías prácticas de organización en Kindle ES (3,49–4,99 EUR típico). La investigación sugiere 3,99 EUR como punto óptimo: accesible como compra sin pensar pero superior al umbral de 0,99–2,99 que genera dudas de calidad. Rango validado: 3,49–4,49 EUR."
+  },
+  "target_audience": "Personas de 25-50 años que organizan eventos: novias y novios planificando su boda, organizadores habituales de celebraciones familiares (cumpleaños, comuniones, graduaciones), coordinadores de grupos de amigos para escapadas y viajes, y cualquier persona que afronte una mudanza u otro 'evento complejo'. El perfil más probable es femenino en el segmento bodas y celebraciones; mixto en viajes y mudanzas.",
+  "positioning": "El único planner multi-evento en español con metodología central reutilizable (cronograma inverso) aplicada a bodas, fiestas, viajes, mudanzas y más — en lugar de guías monoespecíficas. Una compra, un sistema, aplicable a todos los eventos del año.",
+  "claims": [
+    {
+      "text": "Las búsquedas de organización de bodas y eventos tienen demanda sostenida y picos estacionales en España.",
+      "type": "FACT",
+      "source": "S1"
+    },
+    {
+      "text": "En Amazon.es los libros de planificación de eventos tienen ventas constantes; puede venderse también como regalo.",
+      "type": "HYPOTHESIS",
+      "source": "S2"
+    },
+    {
+      "text": "La oferta en español de guías multi-evento con metodología clara es limitada en Kindle ES.",
+      "type": "HYPOTHESIS",
+      "source": "S3"
+    }
+  ],
+  "author": "E-Book Factory",
+  "language": "es-ES"
+}

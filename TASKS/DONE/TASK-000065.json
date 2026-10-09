@@ -1,0 +1,36 @@
+{
+  "task_id": "TASK-000065",
+  "book_id": "EB-000005",
+  "type": "METADATA",
+  "role": "MARKET_AGENT",
+  "auto": false,
+  "priority": "NORMAL",
+  "status": "DONE",
+  "assigned_agent": "S1-JEFE",
+  "created_by": "S1-JEFE",
+  "created_at": "2026-10-09T13:40:16Z",
+  "started_at": "2026-10-09T13:45:23Z",
+  "completed_at": "2026-10-09T13:46:30Z",
+  "claimed_from_state": "FACT_CHECKED",
+  "dependencies": [],
+  "prompt": "PROMPTS/METADATA.md",
+  "notes": "",
+  "output": {
+    "title": "El Planner Definitivo de Eventos: Organiza Cualquier Celebración sin Estrés"
+  },
+  "error": null,
+  "errors": [],
+  "retry_count": 0,
+  "last_attempt": "2026-10-09T13:45:23Z",
+  "attempts": [
+    {
+      "agent": "S1-JEFE",
+      "started_at": "2026-10-09T13:45:23Z",
+      "ended_at": "2026-10-09T13:46:30Z",
+      "result": "DONE",
+      "note": "Metadata completada. Título con tildes correctas (Celebración, Estrés). Descripción ~1.400 chars con gancho, lista de contenidos y perfil de lector. 7 keywords específicas evitando repetir palabras del título. Precio 3,99 EUR ESTIMATE (compra impulsiva, validated range 3,49-4,49). 3 categorías plausibles en Kindle ES. Posicionamiento: único planner multi-evento en español con metodología central reutilizable.",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}
