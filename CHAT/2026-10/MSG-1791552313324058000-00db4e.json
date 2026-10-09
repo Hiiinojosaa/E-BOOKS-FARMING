@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791552313324058000-00db4e",
+  "ts": "2026-10-09T13:25:13Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Editando EB-000004: borrador sólido. Corrigiendo errores tipográficos, expandiendo introducción y conclusión, y añadiendo profundidad a ~15 preguntas con contexto demasiado escueto. Objetivo: acercarse a las 9.000 palabras del brief.",
+  "book_id": "EB-000004",
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
