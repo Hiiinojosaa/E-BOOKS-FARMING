@@ -119,3 +119,6 @@
 {"ts": "2026-10-09T22:09:23Z", "type": "BOOK_CREATED", "book_id": "EB-000025", "agent": "S1-JEFE", "topic": "Valentine's Day Couples Journal: 52 Questions to Deepen Your Love", "language": "en-US"}
 {"ts": "2026-10-09T22:09:23Z", "type": "DECISION_ASKED", "decision": "DEC-00010", "book_id": "EB-000025", "by": "S1-JEFE"}
 {"ts": "2026-10-09T22:09:23Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "question", "msg": "MSG-1791583763695998700-5bea12"}
+{"ts": "2026-10-09T22:10:27Z", "type": "BOOK_CREATED", "book_id": "EB-000026", "agent": "S1-JEFE", "topic": "Planificador y Agenda Anual 2027: Organiza tu Año con Intención", "language": "es-ES"}
+{"ts": "2026-10-09T22:10:27Z", "type": "DECISION_ASKED", "decision": "DEC-00011", "book_id": "EB-000026", "by": "S1-JEFE"}
+{"ts": "2026-10-09T22:10:27Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "question", "msg": "MSG-1791583827879177700-165333"}

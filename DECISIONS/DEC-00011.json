@@ -1,0 +1,21 @@
+{
+  "id": "DEC-00011",
+  "book_id": "EB-000026",
+  "question": "Te recomiendo «Planificador y Agenda Anual 2027: Organiza tu Año con Intención» (es-ES). FACT: Annual planners in Spanish are top-3 KDP bestsellers every November-December, with demand peaking in Q4 for the upcoming year. FACT: We have a New Year 2027 planner pending in English (DEC-00001) but no equivalent for the Spanish market, which is our strongest growing segment. ESTIMATE: A Spanish 2027 annual planner would complement EB-000012 (Cierra el Año) as a companion product — review the past year, then plan the next. HIGH urgency: must be published by November to capture peak demand.",
+  "options": [
+    "Adelante",
+    "Descartar"
+  ],
+  "asked_by": "S1-JEFE",
+  "asked_at": "2026-10-09T22:10:27Z",
+  "urgency": "NORMAL",
+  "status": "OPEN",
+  "answer": null,
+  "answered_by": null,
+  "action": {
+    "type": "approve_idea",
+    "book_id": "EB-000026",
+    "yes": "Adelante",
+    "no": "Descartar"
+  }
+}
