@@ -5,6 +5,8 @@
 ## APROBAR (listos, QC superado)
 
 - **EB-000001** — The One-Page System (en-US) · QC WARN · 21 págs · precio sugerido 3.99 → `BOOKS/EB-000001/review/HUMAN_REVIEW.md`
+- **EB-000003** — Tu Primer Año de Orden Financiero: Guía y Planner Completo (es-ES) · QC HUMAN_REVIEW · 28 págs · precio sugerido 3.99 → `BOOKS/EB-000003/review/HUMAN_REVIEW.md`
+- **EB-000004** — Diario de Autoconocimiento: 100 Preguntas para Conocerte y Reordenar tu Vida (es-ES) · QC PASS · 43 págs · precio sugerido 3.99 → `BOOKS/EB-000004/review/HUMAN_REVIEW.md`
 - **EB-000009** — Navidad en la Mesa: 50 Recetas Españolas y 5 Menús Completos para Toda la Temporada (es-ES) · QC PASS · 51 págs · precio sugerido 2.99 → `BOOKS/EB-000009/review/HUMAN_REVIEW.md`
 - **EB-000015** — Large Print Sudoku for Seniors (en-US) · QC PASS · 27 págs · precio sugerido 6.99 → `BOOKS/EB-000015/review/HUMAN_REVIEW.md`
 
@@ -23,6 +25,8 @@
 ## DECISIONES
 
 - EB-000001: ¿crear versiones es-ES, en-GB? (`python factory.py translate EB-000001 --to <lang>`)
+- EB-000003: ¿crear versiones en-US, en-GB? (`python factory.py translate EB-000003 --to <lang>`)
+- EB-000004: ¿crear versiones en-US, en-GB? (`python factory.py translate EB-000004 --to <lang>`)
 - EB-000009: ¿crear versiones en-US, en-GB? (`python factory.py translate EB-000009 --to <lang>`)
 - EB-000015: ¿crear versiones es-ES, en-GB? (`python factory.py translate EB-000015 --to <lang>`)
 - EB-TEST-001: ¿crear versiones es-ES, en-GB? (`python factory.py translate EB-TEST-001 --to <lang>`)
@@ -37,5 +41,5 @@
 
 ## Estado de la fábrica
 
-TOTAL BOOKS: 25 · IDEAS: 12 · RESEARCH: 5 · QC: 3 · HUMAN REVIEW: 3 · READY TO PUBLISH: 1 · FAILED: 1
+TOTAL BOOKS: 25 · IDEAS: 12 · RESEARCH: 5 · QC: 1 · HUMAN REVIEW: 5 · READY TO PUBLISH: 1 · FAILED: 1
 

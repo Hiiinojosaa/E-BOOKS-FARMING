@@ -1,6 +1,6 @@
 # DAILY REPORT 2026-10-09
 
-_Periodo: últimos 1 día(s) hasta 2026-10-09T13:58:40Z_
+_Periodo: últimos 1 día(s) hasta 2026-10-09T14:12:26Z_
 
 ## Trabajo realizado
 
@@ -30,11 +30,13 @@ _Periodo: últimos 1 día(s) hasta 2026-10-09T13:58:40Z_
 - 2026-10-09T13:58 S1-JEFE completó **FORMAT** de EB-000005 (TASK-000071)
 - 2026-10-09T13:58 S1-JEFE completó **FORMAT** de EB-000004 (TASK-000072)
 - 2026-10-09T13:58 S1-JEFE completó **FORMAT** de EB-000003 (TASK-000073)
+- 2026-10-09T14:09 S1-JEFE completó **QC** de EB-000003 (TASK-000074)
+- 2026-10-09T14:11 S1-JEFE completó **QC** de EB-000004 (TASK-000075)
 
 ## Libros avanzados
 
-- EB-000003: ahora en **QC_PENDING**
-- EB-000004: ahora en **QC_PENDING**
+- EB-000003: ahora en **HUMAN_REVIEW**
+- EB-000004: ahora en **HUMAN_REVIEW**
 - EB-000005: ahora en **QC_PENDING**
 - EB-000010: ahora en **BRIEF_READY**
 - EB-000011: ahora en **BRIEF_READY**
@@ -57,6 +59,8 @@ _Periodo: últimos 1 día(s) hasta 2026-10-09T13:58:40Z_
 ## Decisiones necesarias
 
 - EB-000001 The One-Page System: HUMAN_REVIEW
+- EB-000003 Tu Primer Año de Orden Financiero: Guía y Planner Completo: HUMAN_REVIEW
+- EB-000004 Diario de Autoconocimiento: 100 Preguntas para Conocerte y Reordenar tu Vida: HUMAN_REVIEW
 - EB-000009 Navidad en la Mesa: 50 Recetas Españolas y 5 Menús Completos para Toda la Temporada: HUMAN_REVIEW
 - EB-000015 Large Print Sudoku for Seniors: HUMAN_REVIEW
 - DEC-00001: Te recomiendo «New Year 2027 Goal Planner & Annual Review Journal» (en-US). Q4 pico: los planners anuales dominan el top de ventas KDP en noviembre-diciembre. Nicho validado con el Sudoku y la productividad en inglés. Bajo riesgo, alta demanda recurrente. Complementa EB-TEST-001 (productividad) y diversifica hacia inglés.
@@ -70,6 +74,4 @@ _Periodo: últimos 1 día(s) hasta 2026-10-09T13:58:40Z_
 
 ## Próximas tareas
 
-- TASK-000074 QC EB-000003 (NORMAL)
-- TASK-000075 QC EB-000004 (NORMAL)
 - TASK-000076 QC EB-000005 (NORMAL)
