@@ -20,3 +20,5 @@
 {"ts": "2026-10-09T13:58:35Z", "from": "DESIGN_COMPLETE", "to": "FORMATTING", "agent": "S1-JEFE", "action": "CLAIM FORMAT", "result": "OK", "task_id": "TASK-000072"}
 {"ts": "2026-10-09T13:58:38Z", "from": "FORMATTING", "to": "QC_PENDING", "agent": "S1-JEFE", "action": "COMPLETE FORMAT", "result": "OK", "task_id": "TASK-000072", "note": "43 págs, 9 caps, 6216 palabras"}
 {"ts": "2026-10-09T14:10:46Z", "from": "QC_PENDING", "to": "QC", "agent": "S1-JEFE", "action": "CLAIM QC", "result": "OK", "task_id": "TASK-000075"}
+{"ts": "2026-10-09T14:11:30Z", "from": "QC", "to": "QC_PASSED", "agent": "S1-JEFE", "action": "COMPLETE QC", "result": "OK", "task_id": "TASK-000075", "note": "QC EB-000004 LOW risk: 1 FAIL inicial corregido (H1 redundante eliminado del manuscrito). Auto-QC final 24/24 PASS. VERDICT: PASS."}
+{"ts": "2026-10-09T14:11:30Z", "from": "QC_PASSED", "to": "HUMAN_REVIEW", "agent": "S1-JEFE", "action": "REVIEW_PACK", "result": "OK"}

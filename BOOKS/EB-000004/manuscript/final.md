@@ -1,5 +1,3 @@
-# Diario de Autoconocimiento: 100 Preguntas para Conocerte y Reordenar tu Vida
-
 *Un recorrido guiado por las preguntas que más importan*
 
 ---
