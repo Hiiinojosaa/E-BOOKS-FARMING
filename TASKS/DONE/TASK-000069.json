@@ -5,17 +5,19 @@
   "role": "DESIGN_AGENT",
   "auto": false,
   "priority": "NORMAL",
-  "status": "RUNNING",
+  "status": "DONE",
   "assigned_agent": "S1-JEFE",
   "created_by": "S1-JEFE",
   "created_at": "2026-10-09T13:48:12Z",
   "started_at": "2026-10-09T13:54:56Z",
-  "completed_at": null,
+  "completed_at": "2026-10-09T13:55:56Z",
   "claimed_from_state": "DESIGN_PENDING",
   "dependencies": [],
   "prompt": "PROMPTS/DESIGN.md",
   "notes": "",
-  "output": null,
+  "output": {
+    "cover": "design/cover.png"
+  },
   "error": null,
   "errors": [],
   "retry_count": 0,
@@ -23,7 +25,12 @@
   "attempts": [
     {
       "agent": "S1-JEFE",
-      "started_at": "2026-10-09T13:54:56Z"
+      "started_at": "2026-10-09T13:54:56Z",
+      "ended_at": "2026-10-09T13:55:56Z",
+      "result": "DONE",
+      "note": "Portada EB-000004: plantilla minimal, carbón cálido + terracota, '100 / Preguntas', tagline 'Autoconocimiento'. Propuesta de valor inmediata, paleta neutra-cálida que amplía el alcance más allá del segmento femenino de journaling.",
+      "usage": null
     }
-  ]
+  ],
+  "warnings": []
 }

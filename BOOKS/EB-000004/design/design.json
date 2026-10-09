@@ -1,0 +1,14 @@
+{
+  "template": "minimal",
+  "title_line1": "100",
+  "title_line2": "Preguntas",
+  "tagline": "Autoconocimiento",
+  "badge": "",
+  "palette": {
+    "bg": "#1C1A18",
+    "fg": "#F2EDDF",
+    "accent": "#C4814A",
+    "muted": "#7A6E60"
+  },
+  "rationale": "Carbón cálido + terracota: evoca introspección, profundidad personal y calidez. El número '100' en tipografía masiva + 'Preguntas' en terracota es la propuesta de valor inmediata para lectoras de journaling. Paleta neutra-cálida que evita los estereotipos de 'autoayuda femenina' (sin rosas ni pasteles) y amplía el alcance hacia lectores masculinos en transición. Alta legibilidad en miniatura."
+}
