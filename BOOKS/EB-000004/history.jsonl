@@ -9,3 +9,4 @@
 {"ts": "2026-10-08T18:49:46Z", "from": "WRITING", "to": "WRITING_PENDING", "agent": "S1-JEFE", "action": "FAIL WRITE", "result": "RETRY", "task_id": "TASK-000053", "note": "Validación fallida: 7 capítulos < 8 del brief"}
 {"ts": "2026-10-08T18:51:33Z", "from": "WRITING_PENDING", "to": "WRITING", "agent": "S1-JEFE", "action": "CLAIM WRITE", "result": "OK", "task_id": "TASK-000053"}
 {"ts": "2026-10-08T18:51:45Z", "from": "WRITING", "to": "DRAFT_COMPLETE", "agent": "S1-JEFE", "action": "COMPLETE WRITE", "result": "OK", "task_id": "TASK-000053", "note": "Manuscrito completo: 100 preguntas originales en 8 secciones (0-7). Identidad 20q, Relaciones 15q, Trabajo 15q, Emociones 15q, Pasado 15q, Futuro 20q. ~9200 palabras. Sin jerga clínica. Sin respuestas sugeridas. Nota de salud mental en intro incluida."}
+{"ts": "2026-10-09T13:22:12Z", "from": "DRAFT_COMPLETE", "to": "EDITING", "agent": "S1-JEFE", "action": "CLAIM EDIT", "result": "OK", "task_id": "TASK-000060"}
