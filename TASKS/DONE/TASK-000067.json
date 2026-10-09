@@ -1,0 +1,36 @@
+{
+  "task_id": "TASK-000067",
+  "book_id": "EB-000003",
+  "type": "METADATA",
+  "role": "MARKET_AGENT",
+  "auto": false,
+  "priority": "NORMAL",
+  "status": "DONE",
+  "assigned_agent": "S1-JEFE",
+  "created_by": "S1-JEFE",
+  "created_at": "2026-10-09T13:44:36Z",
+  "started_at": "2026-10-09T13:48:58Z",
+  "completed_at": "2026-10-09T13:52:15Z",
+  "claimed_from_state": "FACT_CHECKED",
+  "dependencies": [],
+  "prompt": "PROMPTS/METADATA.md",
+  "notes": "",
+  "output": {
+    "title": "Tu Primer Año de Orden Financiero: Guía y Planner Completo"
+  },
+  "error": null,
+  "errors": [],
+  "retry_count": 0,
+  "last_attempt": "2026-10-09T13:48:58Z",
+  "attempts": [
+    {
+      "agent": "S1-JEFE",
+      "started_at": "2026-10-09T13:48:58Z",
+      "ended_at": "2026-10-09T13:52:15Z",
+      "result": "DONE",
+      "note": "Metadata para EB-000003 (HIGH risk): subtitle señala audiencia (autónomos/freelancers/ingresos variables), descripción incluye disclaimer orientativo, keywords centrados en el diferenciador de ingresos variables, precio 3.99 EUR, 3 market claims etiquetados FACT/ESTIMATE/HYPOTHESIS",
+      "usage": null
+    }
+  ],
+  "warnings": []
+}

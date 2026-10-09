@@ -1,0 +1,46 @@
+{
+  "title": "Tu Primer Año de Orden Financiero: Guía y Planner Completo",
+  "subtitle": "Para autónomos, freelancers y personas con ingresos variables",
+  "description": "¿Cómo presupuestas cuando no sabes cuánto vas a cobrar el mes que viene? La mayoría de guías de finanzas personales están pensadas para asalariados con nómina fija. Este libro es para los demás: autónomos, freelancers y personas con ingresos que varían mes a mes que necesitan un sistema que funcione igual cuando entra mucho que cuando entra poco.\n\nTu Primer Año de Orden Financiero combina una guía práctica de hábitos financieros con un planner de 12 meses integrado. No es teoría: son hojas de trabajo listas para rellenar que te acompañan desde el diagnóstico inicial hasta el cierre del año.\n\nQué encontrarás:\n- El método del presupuesto por porcentajes: cómo distribuir lo que entra, sea mucho o poco\n- Cómo construir un fondo de emergencia adaptado a los ingresos irregulares\n- La reserva fiscal explicada sin jerga: qué guardar cada mes para IRPF e IVA trimestral\n- Cómo controlar los gastos sin pasar horas en hojas de cálculo\n- Planner mensual de 12 meses: ingresos, gastos, balance y objetivos\n- Los primeros pasos para empezar a ahorrar y fijar objetivos con un sueldo irregular\n\nEste libro es para ti si:\n- Eres autónomo o freelancer y los pagos trimestrales a Hacienda siempre te pillan sin liquidez\n- Tus ingresos varían mes a mes y no tienes un sistema claro para gestionarlos\n- Estás empezando y quieres construir buenos hábitos financieros desde el principio\n- Buscas una guía práctica con hojas de trabajo, no un libro de teorías financieras\n\nNota: este libro tiene fines educativos y orientativos. No constituye asesoramiento financiero ni fiscal profesional. Para decisiones sobre tu situación concreta, consulta con un asesor cualificado.",
+  "keywords": [
+    "planner finanzas autónomos",
+    "finanzas personales ingresos variables",
+    "organizar dinero freelance",
+    "reserva fiscal autónomos",
+    "presupuesto autónomo mensual",
+    "guía finanzas primer año",
+    "control gastos ingresos irregulares"
+  ],
+  "categories": [
+    "Tienda Kindle > No Ficción > Economía y empresa > Finanzas personales",
+    "Tienda Kindle > No Ficción > Economía y empresa > Pequeña empresa y emprendimiento",
+    "Tienda Kindle > No Ficción > Autoayuda y superación personal > Desarrollo personal"
+  ],
+  "price": {
+    "amount": 3.99,
+    "currency": "EUR",
+    "basis": "ESTIMATE",
+    "rationale": "La investigación sitúa el rango óptimo en 2,99–4,99 EUR para guías prácticas de finanzas personales en Kindle ES. 3,99 EUR es el punto medio que maximiza la compra impulsiva sin señalar precio de baja calidad. El formato guía + planner justifica estar en la mitad alta del rango frente a guías sin contenido práctico integrado."
+  },
+  "target_audience": "Autónomos y freelancers con 0–5 años de actividad, estudiantes universitarios con primeros ingresos, y cualquier persona de 22–40 años con ingresos variables o irregulares en España. El dolor central: sensación de que el dinero 'se evapora' sin saber adónde va, combinada con la complejidad específica de la fiscalidad de autónomos (pagos trimestrales a Hacienda).",
+  "positioning": "La única guía de finanzas personales en español diseñada específicamente para ingresos variables — autónomos, freelancers y primeros ingresos — que integra una metodología de presupuesto, la fiscalidad básica española y un planner de 12 meses en un solo libro, sin recomendaciones de productos financieros.",
+  "claims": [
+    {
+      "text": "España tiene más de 3 millones de trabajadores autónomos afiliados al RETA (Régimen Especial de Trabajadores Autónomos).",
+      "type": "FACT",
+      "source": "S2"
+    },
+    {
+      "text": "La categoría de finanzas personales es una de las de mayor crecimiento sostenido en Kindle España, con libros de autores como Carlos Galán y Raimon Samsó entre los más destacados.",
+      "type": "ESTIMATE",
+      "source": "S1"
+    },
+    {
+      "text": "El segmento de guías financieras específicas para autónomos e ingresos irregulares tiene escasa competencia directa en el Kindle Store español frente al mercado anglófono.",
+      "type": "HYPOTHESIS",
+      "source": "S3"
+    }
+  ],
+  "author": "E-Book Factory",
+  "language": "es-ES"
+}
