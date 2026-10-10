@@ -1,14 +1,14 @@
 # DASHBOARD — E-Book Factory
 
-_Generado 2026-10-09T22:07:55Z_
+_Generado 2026-10-09T22:14:31Z_
 
 | TOTAL BOOKS | IDEAS | RESEARCH | WRITING | EDITING | TRANSLATION | DESIGN | QC | HUMAN REVIEW | READY TO PUBLISH | PUBLISHED | FAILED | BLOCKED |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 25 | 12 | 5 | 0 | 0 | 0 | 0 | 0 | 6 | 1 | 0 | 1 | 0 |
+| 28 | 15 | 5 | 0 | 0 | 0 | 0 | 0 | 6 | 1 | 0 | 1 | 0 |
 
 ## Últimos 7 días
 
-- books created: **9**
+- books created: **12**
 - books completed: **0**
 - books awaiting approval: **6**
 - tasks completed: **54**
@@ -43,6 +43,9 @@ _Generado 2026-10-09T22:07:55Z_
 | EB-000022 | Meal Prep and Healthy Eating Weekly Planner | en-US | IDEA | NORMAL | - | 2026-10-06T22:09:41Z |
 | EB-000023 | Mi Libro de Recetas: Cuaderno Personal de Cocina en Blanco | es-ES | IDEA | NORMAL | - | 2026-10-06T22:10:12Z |
 | EB-000024 | Mi Libro de Recetas: Cuaderno Personal de Cocina en Blanco | es-ES | REJECTED | NORMAL | - | 2026-10-06T22:11:48Z |
+| EB-000025 | Valentine's Day Couples Journal: 52 Questions to Deepen Your Love | en-US | IDEA | HIGH | - | 2026-10-09T22:09:23Z |
+| EB-000026 | Planificador y Agenda Anual 2027: Organiza tu Año con Intención | es-ES | IDEA | HIGH | - | 2026-10-09T22:10:27Z |
+| EB-000027 | Daily Gratitude Journal: 365 Days of Mindfulness and Reflection | en-US | IDEA | NORMAL | - | 2026-10-09T22:11:31Z |
 | EB-TEST-001 | Productivity for Beginners | en-US | READY_FOR_PUBLISHING | HIGH | - | 2026-10-01T22:53:49Z |
 
 ## Agentes
