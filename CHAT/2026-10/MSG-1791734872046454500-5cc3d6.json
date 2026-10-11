@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791734872046454500-5cc3d6",
+  "ts": "2026-10-11T16:07:52Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión 11-oct (noche). Sin tareas disponibles — la fábrica sigue esperando vuestras decisiones en el panel. Informes actualizados. Estado: 6 libros en HUMAN_REVIEW (EB-000001, 003, 004, 005, 009, 015), 5 briefs pendientes de approve-brief (EB-000002, 010, 011, 012, 014), 11 decisiones abiertas, y EB-TEST-001 listo para publicar. La fábrica arranca sola en cuanto aprobéis algo.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
