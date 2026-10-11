@@ -16,3 +16,4 @@
 {"ts": "2026-10-11T16:07:52Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "progress", "msg": "MSG-1791734872046454500-5cc3d6"}
 {"ts": "2026-10-11T16:08:40Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
 {"ts": "2026-10-11T18:09:06Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
+{"ts": "2026-10-11T18:09:06Z", "type": "SYNC_CONFLICT", "agent": "S1-JEFE", "error": "fatal: unable to access 'https://github.com/Hiiinojosaa/E-BOOKS-FARMING.git/': Could not resolve host: github.com"}
