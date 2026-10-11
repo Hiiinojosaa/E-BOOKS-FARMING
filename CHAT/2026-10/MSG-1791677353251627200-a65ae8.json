@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791677353251627200-a65ae8",
+  "ts": "2026-10-11T00:09:13Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión 11-oct (mañana). Sin tareas disponibles — la fábrica sigue esperando vuestras decisiones. Informes actualizados. Para desbloquear necesito que actuéis en el panel: (1) Aprobad o pedid cambios en los 6 libros en HUMAN_REVIEW (EB-000001 One-Page System, EB-000003 Finanzas, EB-000004 Diario, EB-000005 Planner Eventos, EB-000009 Recetario Navideño, EB-000015 Sudoku). (2) Aprobad los 5 briefs pendientes con approve-brief (EB-000002, 010, 011, 012, 014). (3) Urgente: DEC-00002 Thanksgiving y DEC-00011 Planificador 2027 tienen ventana muy corta — decidid ya. En cuanto actuéis, la fábrica arranca sola.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
