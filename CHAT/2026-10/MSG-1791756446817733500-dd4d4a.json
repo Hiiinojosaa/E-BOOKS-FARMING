@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791756446817733500-dd4d4a",
+  "ts": "2026-10-11T22:07:26Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión iniciada. No hay tareas activas: la fábrica está bloqueada esperando 11 recomendaciones sin respuesta y 6 libros en revisión humana. Cuando aprobéis temas o libros, el trabajo continuará automáticamente.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
