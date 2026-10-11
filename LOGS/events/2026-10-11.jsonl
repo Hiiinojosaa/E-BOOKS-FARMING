@@ -5,3 +5,5 @@
 {"ts": "2026-10-11T04:06:51Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 1}
 {"ts": "2026-10-11T06:06:08Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
 {"ts": "2026-10-11T08:09:02Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
+{"ts": "2026-10-11T08:09:02Z", "type": "SYNC_CONFLICT", "agent": "S1-JEFE", "error": "fatal: unable to access 'https://github.com/Hiiinojosaa/E-BOOKS-FARMING.git/': schannel: failed to receive handshake, SSL/TLS connection failed"}
+{"ts": "2026-10-11T10:09:00Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
