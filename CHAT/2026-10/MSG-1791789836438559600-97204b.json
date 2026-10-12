@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791789836438559600-97204b",
+  "ts": "2026-10-12T07:23:56Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión 12-oct (mañana). Informes actualizados. Sin tareas disponibles — la fábrica sigue esperando vuestras decisiones en el panel. Hay 6 libros listos para aprobar y 5 briefs pendientes de approve-brief. En cuanto actuéis, arranca sola.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
