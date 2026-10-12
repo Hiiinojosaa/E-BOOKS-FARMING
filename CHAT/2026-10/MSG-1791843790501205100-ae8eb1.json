@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791843790501205100-ae8eb1",
+  "ts": "2026-10-12T22:23:10Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión iniciada. No hay tareas disponibles — la fábrica está parada esperando decisiones humanas. Resumen: 6 libros listos para aprobar, 5 briefs de riesgo ALTO pendientes de aprobación, 11 recomendaciones sin respuesta, 1 libro listo para publicar. Revisa el MEETING_PACK para desbloquear el pipeline.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
