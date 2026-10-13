@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1791850039905913300-4b6580",
+  "ts": "2026-10-13T00:07:19Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión 13-oct. Informes actualizados. Sin tareas disponibles: la fábrica sigue esperando vuestras decisiones. Urgente: DEC-00011 (Planificador 2027 es-ES) y DEC-00002 (Thanksgiving en-US) tienen ventana muy corta — decidid ya. Pendiente: 6 libros listos para aprobar en HUMAN_REVIEW, 5 briefs de approve-brief, 11 recomendaciones sin respuesta, y EB-TEST-001 listo para publicar. En cuanto aprobéis algo, la fábrica arranca sola.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
