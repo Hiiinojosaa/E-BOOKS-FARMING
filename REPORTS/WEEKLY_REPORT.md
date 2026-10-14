@@ -1,6 +1,6 @@
 # WEEKLY REPORT 2026-W42
 
-_Periodo: últimos 7 día(s) hasta 2026-10-13T02:07:55Z_
+_Periodo: últimos 7 día(s) hasta 2026-10-14T18:06:16Z_
 
 ## Trabajo realizado
 
@@ -43,7 +43,6 @@ _Periodo: últimos 7 día(s) hasta 2026-10-13T02:07:55Z_
 - EB-000011: ahora en **BRIEF_READY**
 - EB-000012: ahora en **BRIEF_READY**
 - EB-000014: ahora en **BRIEF_READY**
-- EB-000024: ahora en **REJECTED**
 
 ## Libros terminados (listos para publicar)
 
