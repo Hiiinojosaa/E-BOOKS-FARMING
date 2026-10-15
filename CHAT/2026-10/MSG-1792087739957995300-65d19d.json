@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1792087739957995300-65d19d",
+  "ts": "2026-10-15T18:08:59Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión completada. No hay tareas disponibles: la fábrica está esperando aprobaciones humanas. 5 libros en BRIEF_READY aguardan approve-brief; 6 libros en HUMAN_REVIEW aguardan decisión; 11 decisiones abiertas pendientes. Informes actualizados.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
