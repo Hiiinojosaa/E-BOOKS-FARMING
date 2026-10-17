@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1792260469933393000-0a89ab",
+  "ts": "2026-10-17T18:07:49Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Arrancando escritura de EB-000012: Cierra el Año y Diseña el Siguiente (es-ES). Leyendo brief y comenzando manuscrito.",
+  "book_id": "EB-000012",
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}

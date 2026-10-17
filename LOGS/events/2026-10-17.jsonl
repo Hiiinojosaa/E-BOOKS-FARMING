@@ -9,3 +9,4 @@
 {"ts": "2026-10-17T18:06:26Z", "type": "ORCHESTRATE", "agent": "ADMIN", "actions": 2}
 {"ts": "2026-10-17T18:07:41Z", "type": "STATE_CHANGE", "book_id": "EB-000012", "frm": "WRITING_PENDING", "to": "WRITING", "agent": "S1-JEFE", "action": "CLAIM WRITE", "result": "OK", "task_id": "TASK-000077"}
 {"ts": "2026-10-17T18:07:41Z", "type": "TASK_CLAIMED", "task_id": "TASK-000077", "book_id": "EB-000012", "agent": "S1-JEFE", "step": "WRITE"}
+{"ts": "2026-10-17T18:07:49Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "progress", "msg": "MSG-1792260469933393000-0a89ab"}
