@@ -1,0 +1,21 @@
+{
+  "id": "DEC-00013",
+  "book_id": "EB-000028",
+  "question": "Te recomiendo «The Ultimate Password and Account Log Book (en-US)» (en-US). FACT: Password log books are a perennial top-10 KDP bestseller in the reference/organizer category with very consistent year-round sales. FACT: Our English catalog has planners and journals but no utility/organizer in the secure-records niche. ESTIMATE: Extremely low production cost — structured blank pages, no research required — with high evergreen demand. HYPOTHESIS: Strong gift potential for seniors and non-tech buyers who also buy our Large Print Sudoku (EB-000015). Fills a clear catalog gap with minimal production risk.",
+  "options": [
+    "Adelante",
+    "Descartar"
+  ],
+  "asked_by": "S1-JEFE",
+  "asked_at": "2026-10-18T17:57:11Z",
+  "urgency": "NORMAL",
+  "status": "OPEN",
+  "answer": null,
+  "answered_by": null,
+  "action": {
+    "type": "approve_idea",
+    "book_id": "EB-000028",
+    "yes": "Adelante",
+    "no": "Descartar"
+  }
+}
