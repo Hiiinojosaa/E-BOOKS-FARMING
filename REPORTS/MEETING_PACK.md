@@ -16,7 +16,6 @@
 - **EB-000002** — Los 200 Mejores Prompts de IA para Trabajar Menos y Rendir Más: brief de riesgo ALTO pendiente de aprobar (`approve-brief`)
 - **EB-000010** — Diciembre en Familia: Calendario de Adviento, Actividades y Recuerdos: brief de riesgo ALTO pendiente de aprobar (`approve-brief`)
 - **EB-000011** — Guia de Regalos de Navidad: Ideas para Todos sin Gastar de Mas: brief de riesgo ALTO pendiente de aprobar (`approve-brief`)
-- **EB-000012** — Cierra el Año y Diseña el Siguiente: Guia de Revision y Metas: brief de riesgo ALTO pendiente de aprobar (`approve-brief`)
 - **EB-000014** — Hanukkah en Familia: Actividades, Recetas y Tradiciones: brief de riesgo ALTO pendiente de aprobar (`approve-brief`)
 
 ## DESCARTAR (candidatos)
@@ -46,5 +45,5 @@
 
 ## Estado de la fábrica
 
-TOTAL BOOKS: 28 · IDEAS: 15 · RESEARCH: 5 · HUMAN REVIEW: 6 · READY TO PUBLISH: 1 · FAILED: 1
+TOTAL BOOKS: 28 · IDEAS: 15 · RESEARCH: 4 · WRITING: 1 · HUMAN REVIEW: 6 · READY TO PUBLISH: 1 · FAILED: 1
 

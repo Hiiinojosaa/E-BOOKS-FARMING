@@ -1,6 +1,6 @@
 # DAILY REPORT 2026-10-17
 
-_Periodo: últimos 1 día(s) hasta 2026-10-17T18:06:20Z_
+_Periodo: últimos 1 día(s) hasta 2026-10-17T18:17:14Z_
 
 ## Trabajo realizado
 
@@ -8,7 +8,7 @@ _Periodo: últimos 1 día(s) hasta 2026-10-17T18:06:20Z_
 
 ## Libros avanzados
 
-- Ninguno
+- EB-000012: ahora en **WRITING**
 
 ## Libros terminados (listos para publicar)
 
