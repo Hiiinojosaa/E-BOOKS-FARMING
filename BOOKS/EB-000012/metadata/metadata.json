@@ -1,0 +1,46 @@
+{
+  "title": "Cierra el Año y Diseña el Siguiente",
+  "subtitle": "Guía de Revisión Anual con un Método que Funciona",
+  "description": "¿Cómo te ha ido este año? No la versión que le cuentas a los demás, sino la real.\n\nEsta guía te lleva paso a paso por las dos fases que hacen que una revisión de fin de año realmente funcione: primero cierras el año que termina con honestidad y sin autocrítica destructiva, y luego, desde ese cierre, diseñas el siguiente con objetivos que podrás evaluar en diciembre.\n\nAl terminar tendrás:\n- Una revisión escrita de las seis áreas principales de tu vida, con al menos un aprendizaje concreto por área\n- Tres objetivos para el año siguiente escritos de forma que en diciembre puedas saber con un sí o un no si los cumpliste\n- Un esquema de los cuatro trimestres con un foco principal por trimestre\n\nNo es una lista de 100 preguntas de reflexión. No es un diario en blanco. Es un método: primero revisas (retrospectiva honesta del año pasado), luego diseñas (plan realista para el siguiente). Las dos fases están conectadas: los aprendizajes del año que termina alimentan directamente los objetivos del siguiente.\n\nEl proceso completo lleva entre dos y tres horas. Está pensado para hacerse en una tarde, no como un proyecto de un mes.\n\nPara adultos de 25 a 45 años que quieren hacer un balance de fin de año con estructura, no con una lista de preguntas sueltas de blog. Para quien ya leyó libros de hábitos y gestión del tiempo y quiere un proceso concreto, no motivación genérica.\n\nSin promesas de transformación radical. Sin metodologías complejas. Solo un proceso claro que en diciembre del año siguiente podrás evaluar como lo que fue.",
+  "keywords": [
+    "revisión anual",
+    "propósitos año nuevo",
+    "balance fin de año",
+    "planificación personal",
+    "objetivos personales",
+    "desarrollo personal",
+    "reflexión anual"
+  ],
+  "categories": [
+    "Tienda Kindle > No ficción > Autoayuda > Motivación y superación personal",
+    "Libros > Autoayuda > Productividad y gestión del tiempo",
+    "Libros > Autoayuda > Motivación y superación personal"
+  ],
+  "price": {
+    "amount": 2.99,
+    "currency": "EUR",
+    "basis": "ESTIMATE",
+    "rationale": "Precio de impulso para compras de fin de año en Amazon.es Kindle. Coherente con el segmento de guías prácticas cortas en español. La ventana de compra es diciembre-enero, donde el precio bajo facilita la compra por impulso."
+  },
+  "target_audience": "Adultos de 25-45 años con interés en productividad y desarrollo personal, que quieren estructurar su revisión de fin de año con un método claro y ejecutable en una tarde. Familiarizados con libros de hábitos; frustrados con listas de preguntas sueltas sin estructura.",
+  "positioning": "La primera guía en español con un método completo de revisión + diseño de año —ejecutable en una tarde— que conecta el balance honesto del año pasado con los objetivos realistas del siguiente. Atemporal: funciona para cualquier año.",
+  "claims": [
+    {
+      "text": "La ventana de compra principal para contenido de fin de año es del 10 de diciembre al 10 de enero",
+      "type": "FACT",
+      "source": "S1"
+    },
+    {
+      "text": "No existe ningún libro en español que ofrezca un método de revisión anual estructurado como guía de lectura; la competencia son planners físicos o libros de propósitos genéricos",
+      "type": "ESTIMATE",
+      "source": "S2"
+    },
+    {
+      "text": "La audiencia española de productividad personal es receptiva a métodos estructurados, educada en sistemas y hábitos por el éxito de libros como Hábitos Atómicos",
+      "type": "ESTIMATE",
+      "source": "S4"
+    }
+  ],
+  "author": "E-Book Factory",
+  "language": "es-ES"
+}
