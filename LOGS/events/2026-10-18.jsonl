@@ -4,3 +4,4 @@
 {"ts": "2026-10-18T11:49:50Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 1}
 {"ts": "2026-10-18T11:51:03Z", "type": "STATE_CHANGE", "book_id": "EB-000012", "frm": "WRITING_PENDING", "to": "WRITING", "agent": "S1-JEFE", "action": "CLAIM WRITE", "result": "OK", "task_id": "TASK-000077"}
 {"ts": "2026-10-18T11:51:03Z", "type": "TASK_CLAIMED", "task_id": "TASK-000077", "book_id": "EB-000012", "agent": "S1-JEFE", "step": "WRITE"}
+{"ts": "2026-10-18T11:58:50Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "progress", "msg": "MSG-1792324726619983800-29a4a7"}

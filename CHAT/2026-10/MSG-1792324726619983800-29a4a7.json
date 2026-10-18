@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1792324726619983800-29a4a7",
+  "ts": "2026-10-18T11:58:45Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Empezando a escribir el manuscrito de EB-000012 'Cierra el Año y Diseña el Siguiente'. Target 6.000 palabras, 8 capítulos. Estaré listo en esta sesión.",
+  "book_id": "EB-000012",
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
