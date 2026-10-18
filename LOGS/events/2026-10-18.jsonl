@@ -61,3 +61,4 @@
 {"ts": "2026-10-18T17:57:11Z", "type": "DECISION_ASKED", "decision": "DEC-00013", "book_id": "EB-000028", "by": "S1-JEFE"}
 {"ts": "2026-10-18T17:57:11Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "question", "msg": "MSG-1792346231168281800-fe367d"}
 {"ts": "2026-10-18T17:58:06Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "progress", "msg": "MSG-1792346286381698000-0bf8a8"}
+{"ts": "2026-10-18T17:59:03Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
