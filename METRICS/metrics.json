@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-17T18:17:14Z",
+  "generated_at": "2026-10-18T08:39:26Z",
   "books_total": 28,
   "books_started": 12,
   "books_completed": 1,
@@ -10,14 +10,14 @@
   },
   "tasks_total": 77,
   "tasks_completed": 76,
-  "tasks_failed": 9,
+  "tasks_failed": 10,
   "tasks_blocked": 0,
-  "retries": 6,
+  "retries": 7,
   "agent_utilization": {
     "S1-JEFE": {
       "tasks_done": 57,
-      "tasks_failed": 5,
-      "busy_hours": 2.42
+      "tasks_failed": 6,
+      "busy_hours": 16.93
     },
     "S1-CLAUDE-001": {
       "tasks_done": 12,

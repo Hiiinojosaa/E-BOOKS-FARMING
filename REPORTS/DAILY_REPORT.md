@@ -1,6 +1,6 @@
-# DAILY REPORT 2026-10-17
+# DAILY REPORT 2026-10-18
 
-_Periodo: últimos 1 día(s) hasta 2026-10-17T18:17:14Z_
+_Periodo: últimos 1 día(s) hasta 2026-10-18T08:39:26Z_
 
 ## Trabajo realizado
 
@@ -8,7 +8,7 @@ _Periodo: últimos 1 día(s) hasta 2026-10-17T18:17:14Z_
 
 ## Libros avanzados
 
-- EB-000012: ahora en **WRITING**
+- EB-000012: ahora en **WRITING_PENDING**
 
 ## Libros terminados (listos para publicar)
 
@@ -16,7 +16,7 @@ _Periodo: últimos 1 día(s) hasta 2026-10-17T18:17:14Z_
 
 ## Errores
 
-- Ninguno
+- 2026-10-18T08:38 TASK-000077 EB-000012: interrumpida: lock expirado o agente caído (recover)
 
 ## Bloqueos
 
@@ -44,4 +44,4 @@ _Periodo: últimos 1 día(s) hasta 2026-10-17T18:17:14Z_
 
 ## Próximas tareas
 
-- Cola vacía
+- TASK-000077 WRITE EB-000012 (HIGH)
