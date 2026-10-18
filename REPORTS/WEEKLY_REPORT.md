@@ -1,6 +1,6 @@
 # WEEKLY REPORT 2026-W42
 
-_Periodo: últimos 7 día(s) hasta 2026-10-18T11:49:50Z_
+_Periodo: últimos 7 día(s) hasta 2026-10-18T12:10:21Z_
 
 ## Trabajo realizado
 
@@ -8,7 +8,7 @@ _Periodo: últimos 7 día(s) hasta 2026-10-18T11:49:50Z_
 
 ## Libros avanzados
 
-- EB-000012: ahora en **WRITING_PENDING**
+- EB-000012: ahora en **WRITING**
 
 ## Libros terminados (listos para publicar)
 
@@ -44,4 +44,4 @@ _Periodo: últimos 7 día(s) hasta 2026-10-18T11:49:50Z_
 
 ## Próximas tareas
 
-- TASK-000077 WRITE EB-000012 (HIGH)
+- Cola vacía
