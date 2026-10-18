@@ -8,3 +8,4 @@
 {"ts": "2026-10-17T18:07:41Z", "from": "WRITING_PENDING", "to": "WRITING", "agent": "S1-JEFE", "action": "CLAIM WRITE", "result": "OK", "task_id": "TASK-000077"}
 {"ts": "2026-10-18T08:38:17Z", "from": "WRITING", "to": "WRITING_PENDING", "agent": "S1-JEFE", "action": "FAIL WRITE", "result": "RETRY", "task_id": "TASK-000077", "note": "interrumpida: lock expirado o agente caído (recover)"}
 {"ts": "2026-10-18T11:51:03Z", "from": "WRITING_PENDING", "to": "WRITING", "agent": "S1-JEFE", "action": "CLAIM WRITE", "result": "OK", "task_id": "TASK-000077"}
+{"ts": "2026-10-18T14:06:32Z", "from": "WRITING", "to": "WRITING_PENDING", "agent": "S1-JEFE", "action": "FAIL WRITE", "result": "RETRY", "task_id": "TASK-000077", "note": "interrumpida: lock expirado o agente caído (recover)"}

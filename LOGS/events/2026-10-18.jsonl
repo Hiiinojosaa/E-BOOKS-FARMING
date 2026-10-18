@@ -6,3 +6,6 @@
 {"ts": "2026-10-18T11:51:03Z", "type": "TASK_CLAIMED", "task_id": "TASK-000077", "book_id": "EB-000012", "agent": "S1-JEFE", "step": "WRITE"}
 {"ts": "2026-10-18T11:58:50Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "progress", "msg": "MSG-1792324726619983800-29a4a7"}
 {"ts": "2026-10-18T12:09:12Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
+{"ts": "2026-10-18T14:06:32Z", "type": "STATE_CHANGE", "book_id": "EB-000012", "frm": "WRITING", "to": "WRITING_PENDING", "agent": "S1-JEFE", "action": "FAIL WRITE", "result": "RETRY", "task_id": "TASK-000077"}
+{"ts": "2026-10-18T14:06:32Z", "type": "TASK_FAILED", "task_id": "TASK-000077", "book_id": "EB-000012", "agent": "S1-JEFE", "error": "interrumpida: lock expirado o agente caído (recover)", "retry_count": 2}
+{"ts": "2026-10-18T14:06:33Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 1, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}

@@ -1,6 +1,6 @@
 # DASHBOARD — E-Book Factory
 
-_Generado 2026-10-18T12:10:21Z_
+_Generado 2026-10-18T14:06:34Z_
 
 | TOTAL BOOKS | IDEAS | RESEARCH | WRITING | EDITING | TRANSLATION | DESIGN | QC | HUMAN REVIEW | READY TO PUBLISH | PUBLISHED | FAILED | BLOCKED |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -12,7 +12,7 @@ _Generado 2026-10-18T12:10:21Z_
 - books completed: **0**
 - books awaiting approval: **6**
 - tasks completed: **0**
-- tasks failed: **1**
+- tasks failed: **2**
 - agent activity: **{}**
 
 ## Libros
@@ -30,7 +30,7 @@ _Generado 2026-10-18T12:10:21Z_
 | EB-000009 | Navidad en la Mesa: 50 Recetas Españolas y 5 Menús Completos para Toda la Temporada | es-ES | HUMAN_REVIEW | HIGH | - | 2026-10-05T10:53:41Z |
 | EB-000010 | Diciembre en Familia: Calendario de Adviento, Actividades y Recuerdos | es-ES | BRIEF_READY | HIGH | - | 2026-10-08T18:31:54Z |
 | EB-000011 | Guia de Regalos de Navidad: Ideas para Todos sin Gastar de Mas | es-ES | BRIEF_READY | HIGH | - | 2026-10-08T18:34:08Z |
-| EB-000012 | Cierra el Año y Diseña el Siguiente: Guia de Revision y Metas | es-ES | WRITING | HIGH | S1-JEFE | 2026-10-18T11:51:03Z |
+| EB-000012 | Cierra el Año y Diseña el Siguiente: Guia de Revision y Metas | es-ES | WRITING_PENDING | HIGH | - | 2026-10-18T14:06:32Z |
 | EB-000013 | Black Friday y Navidad sin Sustos: Guia para Comprar Mejor y Gastar Menos | es-ES | IDEA | HIGH | - | 2026-10-01T22:53:13Z |
 | EB-000014 | Hanukkah en Familia: Actividades, Recetas y Tradiciones | es-ES | BRIEF_READY | HIGH | - | 2026-10-08T18:29:35Z |
 | EB-000015 | Large Print Sudoku for Seniors | en-US | HUMAN_REVIEW | NORMAL | - | 2026-10-05T10:31:57Z |
@@ -60,5 +60,5 @@ _Generado 2026-10-18T12:10:21Z_
 | S1-EMPAQUETADOR | ADMIN | OFFLINE | - | 2026-10-01T12:32:31Z |
 | S1-ESCRITOR | ADMIN | OFFLINE | - | 2026-10-01T12:32:31Z |
 | S1-INVESTIGADOR | ADMIN | OFFLINE | - | 2026-10-01T12:32:31Z |
-| S1-JEFE | ADMIN | BUSY | TASK-000077 | 2026-10-18T11:51:03Z |
+| S1-JEFE | ADMIN | IDLE | - | 2026-10-18T14:06:33Z |
 | TEST-AGENT | ADMIN | OFFLINE | - | 2026-10-01T18:22:06Z |
