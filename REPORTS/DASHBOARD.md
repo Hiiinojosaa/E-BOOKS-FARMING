@@ -1,14 +1,14 @@
 # DASHBOARD — E-Book Factory
 
-_Generado 2026-10-18T17:56:14Z_
+_Generado 2026-10-18T17:59:53Z_
 
 | TOTAL BOOKS | IDEAS | RESEARCH | WRITING | EDITING | TRANSLATION | DESIGN | QC | HUMAN REVIEW | READY TO PUBLISH | PUBLISHED | FAILED | BLOCKED |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 28 | 15 | 4 | 0 | 0 | 0 | 0 | 0 | 7 | 1 | 0 | 1 | 0 |
+| 29 | 16 | 4 | 0 | 0 | 0 | 0 | 0 | 7 | 1 | 0 | 1 | 0 |
 
 ## Últimos 7 días
 
-- books created: **0**
+- books created: **1**
 - books completed: **0**
 - books awaiting approval: **7**
 - tasks completed: **7**
@@ -46,6 +46,7 @@ _Generado 2026-10-18T17:56:14Z_
 | EB-000025 | Valentine's Day Couples Journal: 52 Questions to Deepen Your Love | en-US | IDEA | HIGH | - | 2026-10-09T22:09:23Z |
 | EB-000026 | Planificador y Agenda Anual 2027: Organiza tu Año con Intención | es-ES | IDEA | HIGH | - | 2026-10-09T22:10:27Z |
 | EB-000027 | Daily Gratitude Journal: 365 Days of Mindfulness and Reflection | en-US | IDEA | NORMAL | - | 2026-10-09T22:11:31Z |
+| EB-000028 | The Ultimate Password and Account Log Book (en-US) | en-US | IDEA | HIGH | - | 2026-10-18T17:57:11Z |
 | EB-TEST-001 | Productivity for Beginners | en-US | READY_FOR_PUBLISHING | HIGH | - | 2026-10-01T22:53:49Z |
 
 ## Agentes

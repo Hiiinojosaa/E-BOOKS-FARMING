@@ -1,6 +1,6 @@
 # DAILY REPORT 2026-10-18
 
-_Periodo: últimos 1 día(s) hasta 2026-10-18T17:56:14Z_
+_Periodo: últimos 1 día(s) hasta 2026-10-18T17:59:53Z_
 
 ## Trabajo realizado
 
@@ -49,6 +49,7 @@ _Periodo: últimos 1 día(s) hasta 2026-10-18T17:56:14Z_
 - DEC-00010: Te recomiendo «Valentine's Day Couples Journal: 52 Questions to Deepen Your Love» (en-US). FACT: Valentine's Day is the #2 gifting season on KDP after Christmas, with peak demand in January-February. FACT: Couples journals and question books consistently appear in KDP bestseller lists year-round, spiking 3x in Q1. ESTIMATE: Production lead time from now ensures the book is live before January, capturing pre-Valentine buyer search traffic. Fills a clear gap — we have no couples/relationship content and no Q1 2027 seasonal title in English.
 - DEC-00011: Te recomiendo «Planificador y Agenda Anual 2027: Organiza tu Año con Intención» (es-ES). FACT: Annual planners in Spanish are top-3 KDP bestsellers every November-December, with demand peaking in Q4 for the upcoming year. FACT: We have a New Year 2027 planner pending in English (DEC-00001) but no equivalent for the Spanish market, which is our strongest growing segment. ESTIMATE: A Spanish 2027 annual planner would complement EB-000012 (Cierra el Año) as a companion product — review the past year, then plan the next. HIGH urgency: must be published by November to capture peak demand.
 - DEC-00012: Te recomiendo «Daily Gratitude Journal: 365 Days of Mindfulness and Reflection» (en-US). FACT: Gratitude journals are a perennial top-10 KDP category in self-help, with Q4 being the strongest season as they are popular Christmas gifts. FACT: Our English-language catalog focuses on productivity (EB-TEST-001, EB-000001) and puzzles but has no mindfulness/wellness entry — this fills the gap. ESTIMATE: High gift potential with a low production cost relative to editorial complexity. HYPOTHESIS: Buyers of productivity planners often also seek mindfulness companions — cross-sell with EB-TEST-001 and New Year 2027 planner.
+- DEC-00013: Te recomiendo «The Ultimate Password and Account Log Book (en-US)» (en-US). FACT: Password log books are a perennial top-10 KDP bestseller in the reference/organizer category with very consistent year-round sales. FACT: Our English catalog has planners and journals but no utility/organizer in the secure-records niche. ESTIMATE: Extremely low production cost — structured blank pages, no research required — with high evergreen demand. HYPOTHESIS: Strong gift potential for seniors and non-tech buyers who also buy our Large Print Sudoku (EB-000015). Fills a clear catalog gap with minimal production risk.
 
 ## Próximas tareas
 
