@@ -22,3 +22,5 @@
 {"ts": "2026-10-18T14:19:44Z", "type": "TASK_DONE", "task_id": "TASK-000078", "book_id": "EB-000012", "agent": "S1-JEFE", "step": "EDIT", "warnings": 0}
 {"ts": "2026-10-18T14:19:44Z", "type": "TASK_CREATED", "task_id": "TASK-000079", "book_id": "EB-000012", "step": "FACT_CHECK", "priority": "HIGH"}
 {"ts": "2026-10-18T14:19:44Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
+{"ts": "2026-10-18T14:20:52Z", "type": "STATE_CHANGE", "book_id": "EB-000012", "frm": "EDITED", "to": "FACT_CHECKING", "agent": "S1-JEFE", "action": "CLAIM FACT_CHECK", "result": "OK", "task_id": "TASK-000079"}
+{"ts": "2026-10-18T14:20:52Z", "type": "TASK_CLAIMED", "task_id": "TASK-000079", "book_id": "EB-000012", "agent": "S1-JEFE", "step": "FACT_CHECK"}
