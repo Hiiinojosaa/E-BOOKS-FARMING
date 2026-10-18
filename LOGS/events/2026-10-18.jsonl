@@ -60,3 +60,4 @@
 {"ts": "2026-10-18T17:57:11Z", "type": "BOOK_CREATED", "book_id": "EB-000028", "agent": "S1-JEFE", "topic": "The Ultimate Password and Account Log Book (en-US)", "language": "en-US"}
 {"ts": "2026-10-18T17:57:11Z", "type": "DECISION_ASKED", "decision": "DEC-00013", "book_id": "EB-000028", "by": "S1-JEFE"}
 {"ts": "2026-10-18T17:57:11Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "question", "msg": "MSG-1792346231168281800-fe367d"}
+{"ts": "2026-10-18T17:58:06Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "progress", "msg": "MSG-1792346286381698000-0bf8a8"}

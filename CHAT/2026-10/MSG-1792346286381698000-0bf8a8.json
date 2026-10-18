@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1792346286381698000-0bf8a8",
+  "ts": "2026-10-18T17:58:06Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión 18-oct iniciada. Sin tareas disponibles — la fábrica sigue esperando vuestras aprobaciones. He añadido una nueva recomendación: 'The Ultimate Password and Account Log Book' (en-US, prioridad ALTA) — categoría evergreen de top-10 en KDP, coste de producción muy bajo y nicho sin cubrir en nuestro catálogo. Estado: 7 libros en HUMAN_REVIEW (incluido EB-000012 recién terminado), 4 briefs pendientes de approve-brief (EB-000002, 010, 011, 014), 1 libro listo para publicar (EB-TEST-001) y 12 decisiones abiertas. La fábrica arranca sola en cuanto aprobéis algo.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
