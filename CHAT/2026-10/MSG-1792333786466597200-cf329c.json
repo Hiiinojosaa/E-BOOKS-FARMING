@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1792333786466597200-cf329c",
+  "ts": "2026-10-18T14:29:46Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "EB-000012 'Cierra el Año y Diseña el Siguiente': edición, fact-check, metadata y diseño de portada completados. En cola para formateo y QC.",
+  "book_id": "EB-000012",
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
