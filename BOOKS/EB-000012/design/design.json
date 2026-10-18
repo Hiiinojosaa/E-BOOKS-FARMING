@@ -1,0 +1,14 @@
+{
+  "template": "minimal",
+  "title_line1": "Cierra el Año",
+  "title_line2": "Diseña el",
+  "tagline": "Revisión + plan en una tarde",
+  "badge": "",
+  "palette": {
+    "bg": "#1B2B3B",
+    "fg": "#F5F1E8",
+    "accent": "#D4A853",
+    "muted": "#6B8FA0"
+  },
+  "rationale": "Azul marino oscuro (retrospección, profundidad, final de año) con crema cálida para el texto (legible, cercano) y dorado ámbar como acento (transición al año siguiente, energía, claridad). El contraste bg/fg supera 10:1. Paleta atemporal: no evoca Navidad específica. Destaca en el estante digital entre portadas de autoayuda que usan blancos y pasteles. Título dividido en 2 líneas de 13 y 9 chars; 'Siguiente' aparece en el subtítulo de la portada."
+}
