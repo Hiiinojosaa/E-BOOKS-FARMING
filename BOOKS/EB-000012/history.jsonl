@@ -22,3 +22,5 @@
 {"ts": "2026-10-18T14:31:09Z", "from": "DESIGN_COMPLETE", "to": "FORMATTING", "agent": "S1-JEFE", "action": "CLAIM FORMAT", "result": "OK", "task_id": "TASK-000082"}
 {"ts": "2026-10-18T14:31:11Z", "from": "FORMATTING", "to": "QC_PENDING", "agent": "S1-JEFE", "action": "COMPLETE FORMAT", "result": "OK", "task_id": "TASK-000082", "note": "27 págs, 8 caps, 5031 palabras"}
 {"ts": "2026-10-18T17:49:29Z", "from": "QC_PENDING", "to": "QC", "agent": "S1-JEFE", "action": "CLAIM QC", "result": "OK", "task_id": "TASK-000083"}
+{"ts": "2026-10-18T17:50:43Z", "from": "QC", "to": "QC_PASSED", "agent": "S1-JEFE", "action": "COMPLETE QC", "result": "OK", "task_id": "TASK-000083", "note": "QC PASS: 24/24 controles automaticos, revision LLM completa. Contenido cumple promesa (6 areas, 3 objetivos, 4 trimestres). Sin relleno, sin contradicciones, tono antihéroe correcto, tuteo es-ES, metadatos coherentes. Portada legible. Ningun fix requerido."}
+{"ts": "2026-10-18T17:50:44Z", "from": "QC_PASSED", "to": "HUMAN_REVIEW", "agent": "S1-JEFE", "action": "REVIEW_PACK", "result": "OK"}
