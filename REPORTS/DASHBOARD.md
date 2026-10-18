@@ -1,19 +1,19 @@
 # DASHBOARD — E-Book Factory
 
-_Generado 2026-10-18T14:31:11Z_
+_Generado 2026-10-18T17:51:48Z_
 
 | TOTAL BOOKS | IDEAS | RESEARCH | WRITING | EDITING | TRANSLATION | DESIGN | QC | HUMAN REVIEW | READY TO PUBLISH | PUBLISHED | FAILED | BLOCKED |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
-| 28 | 15 | 4 | 0 | 0 | 0 | 0 | 1 | 6 | 1 | 0 | 1 | 0 |
+| 28 | 15 | 4 | 0 | 0 | 0 | 0 | 0 | 7 | 1 | 0 | 1 | 0 |
 
 ## Últimos 7 días
 
 - books created: **0**
 - books completed: **0**
-- books awaiting approval: **6**
-- tasks completed: **6**
+- books awaiting approval: **7**
+- tasks completed: **7**
 - tasks failed: **2**
-- agent activity: **{'S1-JEFE': 6}**
+- agent activity: **{'S1-JEFE': 7}**
 
 ## Libros
 
@@ -30,7 +30,7 @@ _Generado 2026-10-18T14:31:11Z_
 | EB-000009 | Navidad en la Mesa: 50 Recetas Españolas y 5 Menús Completos para Toda la Temporada | es-ES | HUMAN_REVIEW | HIGH | - | 2026-10-05T10:53:41Z |
 | EB-000010 | Diciembre en Familia: Calendario de Adviento, Actividades y Recuerdos | es-ES | BRIEF_READY | HIGH | - | 2026-10-08T18:31:54Z |
 | EB-000011 | Guia de Regalos de Navidad: Ideas para Todos sin Gastar de Mas | es-ES | BRIEF_READY | HIGH | - | 2026-10-08T18:34:08Z |
-| EB-000012 | Cierra el Año y Diseña el Siguiente | es-ES | QC_PENDING | HIGH | - | 2026-10-18T14:31:11Z |
+| EB-000012 | Cierra el Año y Diseña el Siguiente | es-ES | HUMAN_REVIEW | HIGH | - | 2026-10-18T17:50:44Z |
 | EB-000013 | Black Friday y Navidad sin Sustos: Guia para Comprar Mejor y Gastar Menos | es-ES | IDEA | HIGH | - | 2026-10-01T22:53:13Z |
 | EB-000014 | Hanukkah en Familia: Actividades, Recetas y Tradiciones | es-ES | BRIEF_READY | HIGH | - | 2026-10-08T18:29:35Z |
 | EB-000015 | Large Print Sudoku for Seniors | en-US | HUMAN_REVIEW | NORMAL | - | 2026-10-05T10:31:57Z |
@@ -60,5 +60,5 @@ _Generado 2026-10-18T14:31:11Z_
 | S1-EMPAQUETADOR | ADMIN | OFFLINE | - | 2026-10-01T12:32:31Z |
 | S1-ESCRITOR | ADMIN | OFFLINE | - | 2026-10-01T12:32:31Z |
 | S1-INVESTIGADOR | ADMIN | OFFLINE | - | 2026-10-01T12:32:31Z |
-| S1-JEFE | ADMIN | IDLE | - | 2026-10-18T14:31:11Z |
+| S1-JEFE | ADMIN | IDLE | - | 2026-10-18T17:51:42Z |
 | TEST-AGENT | ADMIN | OFFLINE | - | 2026-10-01T18:22:06Z |

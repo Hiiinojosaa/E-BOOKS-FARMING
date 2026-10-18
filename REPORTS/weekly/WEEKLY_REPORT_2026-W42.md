@@ -1,6 +1,6 @@
 # WEEKLY REPORT 2026-W42
 
-_Periodo: últimos 7 día(s) hasta 2026-10-18T14:31:11Z_
+_Periodo: últimos 7 día(s) hasta 2026-10-18T17:51:48Z_
 
 ## Trabajo realizado
 
@@ -10,10 +10,11 @@ _Periodo: últimos 7 día(s) hasta 2026-10-18T14:31:11Z_
 - 2026-10-18T14:23 S1-JEFE completó **METADATA** de EB-000012 (TASK-000080)
 - 2026-10-18T14:28 S1-JEFE completó **DESIGN** de EB-000012 (TASK-000081)
 - 2026-10-18T14:31 S1-JEFE completó **FORMAT** de EB-000012 (TASK-000082)
+- 2026-10-18T17:50 S1-JEFE completó **QC** de EB-000012 (TASK-000083)
 
 ## Libros avanzados
 
-- EB-000012: ahora en **QC_PENDING**
+- EB-000012: ahora en **HUMAN_REVIEW**
 
 ## Libros terminados (listos para publicar)
 
@@ -35,6 +36,7 @@ _Periodo: últimos 7 día(s) hasta 2026-10-18T14:31:11Z_
 - EB-000004 Diario de Autoconocimiento: 100 Preguntas para Conocerte y Reordenar tu Vida: HUMAN_REVIEW
 - EB-000005 El Planner Definitivo de Eventos: Organiza Cualquier Celebración sin Estrés: HUMAN_REVIEW
 - EB-000009 Navidad en la Mesa: 50 Recetas Españolas y 5 Menús Completos para Toda la Temporada: HUMAN_REVIEW
+- EB-000012 Cierra el Año y Diseña el Siguiente: HUMAN_REVIEW
 - EB-000015 Large Print Sudoku for Seniors: HUMAN_REVIEW
 - DEC-00001: Te recomiendo «New Year 2027 Goal Planner & Annual Review Journal» (en-US). Q4 pico: los planners anuales dominan el top de ventas KDP en noviembre-diciembre. Nicho validado con el Sudoku y la productividad en inglés. Bajo riesgo, alta demanda recurrente. Complementa EB-TEST-001 (productividad) y diversifica hacia inglés.
 - DEC-00002: Te recomiendo «Thanksgiving Recipes & Holiday Menu Planner» (en-US). Nicho estacional de alta conversión en KDP (octubre-noviembre). El recetario navideño español (EB-000009) ya pasó QC con éxito — mismo formato probado aplicado al mercado anglófono para Thanksgiving. Ventana corta pero pico de ventas muy alto.
@@ -50,4 +52,4 @@ _Periodo: últimos 7 día(s) hasta 2026-10-18T14:31:11Z_
 
 ## Próximas tareas
 
-- TASK-000083 QC EB-000012 (HIGH)
+- Cola vacía

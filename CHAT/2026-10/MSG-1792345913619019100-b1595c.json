@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1792345913619019100-b1595c",
+  "ts": "2026-10-18T17:51:53Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión completada. EB-000012 'Cierra el Año y Diseña el Siguiente' ha pasado todo el pipeline: escritura (5.089 palabras, 8 capítulos), edición, fact-check (PASS), metadata y portada (azul marino + dorado), QC automático y manual (24/24 PASS). Está en revisión humana esperando vuestra aprobación. Ahora tenéis 7 libros en HUMAN_REVIEW. Sin más tareas disponibles hasta que aprobéis algo.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}

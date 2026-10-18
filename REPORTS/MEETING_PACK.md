@@ -9,6 +9,7 @@
 - **EB-000004** — Diario de Autoconocimiento: 100 Preguntas para Conocerte y Reordenar tu Vida (es-ES) · QC PASS · 43 págs · precio sugerido 3.99 → `BOOKS/EB-000004/review/HUMAN_REVIEW.md`
 - **EB-000005** — El Planner Definitivo de Eventos: Organiza Cualquier Celebración sin Estrés (es-ES) · QC PASS · 27 págs · precio sugerido 3.99 → `BOOKS/EB-000005/review/HUMAN_REVIEW.md`
 - **EB-000009** — Navidad en la Mesa: 50 Recetas Españolas y 5 Menús Completos para Toda la Temporada (es-ES) · QC PASS · 51 págs · precio sugerido 2.99 → `BOOKS/EB-000009/review/HUMAN_REVIEW.md`
+- **EB-000012** — Cierra el Año y Diseña el Siguiente (es-ES) · QC PASS · 27 págs · precio sugerido 2.99 → `BOOKS/EB-000012/review/HUMAN_REVIEW.md`
 - **EB-000015** — Large Print Sudoku for Seniors (en-US) · QC PASS · 27 págs · precio sugerido 6.99 → `BOOKS/EB-000015/review/HUMAN_REVIEW.md`
 
 ## REVISAR (bloqueados o esperando a un humano)
@@ -29,6 +30,7 @@
 - EB-000004: ¿crear versiones en-US, en-GB? (`python factory.py translate EB-000004 --to <lang>`)
 - EB-000005: ¿crear versiones en-US, en-GB? (`python factory.py translate EB-000005 --to <lang>`)
 - EB-000009: ¿crear versiones en-US, en-GB? (`python factory.py translate EB-000009 --to <lang>`)
+- EB-000012: ¿crear versiones en-US, en-GB? (`python factory.py translate EB-000012 --to <lang>`)
 - EB-000015: ¿crear versiones es-ES, en-GB? (`python factory.py translate EB-000015 --to <lang>`)
 - EB-TEST-001: ¿crear versiones es-ES, en-GB? (`python factory.py translate EB-TEST-001 --to <lang>`)
 - DEC-00001: Te recomiendo «New Year 2027 Goal Planner & Annual Review Journal» (en-US). Q4 pico: los planners anuales dominan el top de ventas KDP en noviembre-diciembre. Nicho validado con el Sudoku y la productividad en inglés. Bajo riesgo, alta demanda recurrente. Complementa EB-TEST-001 (productividad) y diversifica hacia inglés. Opciones: Adelante, Descartar (`python factory.py decide DEC-00001 --by <SOCIO> --answer "..."`)
@@ -45,5 +47,5 @@
 
 ## Estado de la fábrica
 
-TOTAL BOOKS: 28 · IDEAS: 15 · RESEARCH: 4 · QC: 1 · HUMAN REVIEW: 6 · READY TO PUBLISH: 1 · FAILED: 1
+TOTAL BOOKS: 28 · IDEAS: 15 · RESEARCH: 4 · HUMAN REVIEW: 7 · READY TO PUBLISH: 1 · FAILED: 1
 
