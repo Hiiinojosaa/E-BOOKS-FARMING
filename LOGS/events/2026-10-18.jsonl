@@ -41,3 +41,10 @@
 {"ts": "2026-10-18T14:28:42Z", "type": "TASK_CREATED", "task_id": "TASK-000082", "book_id": "EB-000012", "step": "FORMAT", "priority": "HIGH"}
 {"ts": "2026-10-18T14:28:42Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
 {"ts": "2026-10-18T14:29:46Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "progress", "msg": "MSG-1792333786466597200-cf329c"}
+{"ts": "2026-10-18T14:31:09Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
+{"ts": "2026-10-18T14:31:09Z", "type": "STATE_CHANGE", "book_id": "EB-000012", "frm": "DESIGN_COMPLETE", "to": "FORMATTING", "agent": "S1-JEFE", "action": "CLAIM FORMAT", "result": "OK", "task_id": "TASK-000082"}
+{"ts": "2026-10-18T14:31:09Z", "type": "TASK_CLAIMED", "task_id": "TASK-000082", "book_id": "EB-000012", "agent": "S1-JEFE", "step": "FORMAT"}
+{"ts": "2026-10-18T14:31:11Z", "type": "STATE_CHANGE", "book_id": "EB-000012", "frm": "FORMATTING", "to": "QC_PENDING", "agent": "S1-JEFE", "action": "COMPLETE FORMAT", "result": "OK", "task_id": "TASK-000082"}
+{"ts": "2026-10-18T14:31:11Z", "type": "TASK_DONE", "task_id": "TASK-000082", "book_id": "EB-000012", "agent": "S1-JEFE", "step": "FORMAT", "warnings": 0}
+{"ts": "2026-10-18T14:31:11Z", "type": "TASK_CREATED", "task_id": "TASK-000083", "book_id": "EB-000012", "step": "QC", "priority": "HIGH"}
+{"ts": "2026-10-18T14:31:11Z", "type": "ORCHESTRATE", "agent": "S1-JEFE", "actions": 1}
