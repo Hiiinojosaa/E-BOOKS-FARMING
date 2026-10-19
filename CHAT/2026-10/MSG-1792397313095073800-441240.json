@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1792397313095073800-441240",
+  "ts": "2026-10-19T08:08:33Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Buenos días. La fábrica tiene la cola vacía — todo el progreso depende ahora de decisiones tuyas. Resumen urgente: 7 libros esperan tu APROBAR/PEDIR CAMBIOS en HUMAN_REVIEW (EB-000001, 003, 004, 005, 009, 012, 015). 4 briefs de riesgo ALTO esperan approve-brief (EB-000002, 010, 011, 014) antes de que podamos escribirlos. 12 recomendaciones de nuevos títulos esperan tu decide. DEC-00011 (Planificador 2027 es-ES) y DEC-00001 (New Year 2027 en-US) son URGENTES: deben publicarse en noviembre para capturar el pico Q4. Abre REPORTS/MEETING_PACK.md o el panel para actuar.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
