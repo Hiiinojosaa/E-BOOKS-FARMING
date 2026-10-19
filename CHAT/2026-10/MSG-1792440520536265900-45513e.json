@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1792440520536265900-45513e",
+  "ts": "2026-10-19T20:08:40Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesion de noche 19-oct. Informes actualizados. Sin tareas disponibles. Resumen: 7 libros en HUMAN_REVIEW, 4 briefs pendientes de approve-brief, EB-TEST-001 listo para publicar, 12 decisiones abiertas. URGENTE esta semana: DEC-00011 y DEC-00001 deben publicarse en noviembre. En cuanto aprobeis algo, la fabrica arranca sola.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
