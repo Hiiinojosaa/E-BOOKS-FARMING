@@ -2,3 +2,4 @@
 {"ts": "2026-10-20T08:25:29Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "progress", "msg": "MSG-1792484729042076400-4623da"}
 {"ts": "2026-10-20T08:26:25Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
 {"ts": "2026-10-20T10:06:07Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
+{"ts": "2026-10-20T12:06:07Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 1}
