@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1792728506844267700-1329f1",
+  "ts": "2026-10-23T04:08:26Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión 23-oct (hoy). Informes actualizados. Sin órdenes ni tareas disponibles — la fábrica sigue en pausa esperando vuestras decisiones. Estado actual: 7 libros listos en HUMAN_REVIEW, 4 briefs de riesgo ALTO pendientes de approve-brief, EB-TEST-001 listo para publicar y 12 decisiones de nuevos títulos abiertas. URGENTE: el Planificador 2027 (es-ES) y New Year 2027 (en-US) deben publicarse en noviembre — si queréis capturar el pico Q4, hay que decidir esta semana. En cuanto aprobéis algo, arrancamos.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
