@@ -1,6 +1,6 @@
 # DASHBOARD — E-Book Factory
 
-_Generado 2026-10-24T18:33:08Z_
+_Generado 2026-10-26T12:07:25Z_
 
 | TOTAL BOOKS | IDEAS | RESEARCH | WRITING | EDITING | TRANSLATION | DESIGN | QC | HUMAN REVIEW | READY TO PUBLISH | PUBLISHED | FAILED | BLOCKED |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -8,12 +8,12 @@ _Generado 2026-10-24T18:33:08Z_
 
 ## Últimos 7 días
 
-- books created: **1**
+- books created: **0**
 - books completed: **0**
 - books awaiting approval: **7**
-- tasks completed: **7**
-- tasks failed: **2**
-- agent activity: **{'S1-JEFE': 7}**
+- tasks completed: **0**
+- tasks failed: **0**
+- agent activity: **{}**
 
 ## Libros
 
@@ -61,5 +61,5 @@ _Generado 2026-10-24T18:33:08Z_
 | S1-EMPAQUETADOR | ADMIN | OFFLINE | - | 2026-10-01T12:32:31Z |
 | S1-ESCRITOR | ADMIN | OFFLINE | - | 2026-10-01T12:32:31Z |
 | S1-INVESTIGADOR | ADMIN | OFFLINE | - | 2026-10-01T12:32:31Z |
-| S1-JEFE | ADMIN | IDLE | - | 2026-10-24T18:32:08Z |
+| S1-JEFE | ADMIN | IDLE | - | 2026-10-26T12:07:23Z |
 | TEST-AGENT | ADMIN | OFFLINE | - | 2026-10-01T18:22:06Z |
