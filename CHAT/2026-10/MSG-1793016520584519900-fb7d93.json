@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1793016520584519900-fb7d93",
+  "ts": "2026-10-26T12:08:40Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Buenos días (26 oct). Informes actualizados. Sin cambios desde el viernes — la fábrica sigue en pausa esperando vuestras decisiones. Estado: 7 libros en HUMAN_REVIEW listos para aprobar (EB-000001, 003, 004, 005, 009, 012, 015), 4 libros en investigación con briefs pendientes de approve-brief (EB-000002, 010, 011, 014), EB-TEST-001 listo para publicar y 12 decisiones abiertas. URGENTE: DEC-00011 Planificador 2027 (es-ES) y DEC-00001 New Year 2027 (en-US) deben publicarse en noviembre para capturar el pico Q4 — ya quedan muy pocos días para decidir. En cuanto aprobéis algo, la fábrica arranca sola.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
