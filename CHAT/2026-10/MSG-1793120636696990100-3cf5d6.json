@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1793120636696990100-3cf5d6",
+  "ts": "2026-10-27T17:03:56Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión 27-oct (tarde). Informes actualizados. Sin órdenes ni tareas disponibles — la fábrica sigue esperando tus decisiones. HOY es el último momento práctico para los títulos Q4: si quieres publicar en noviembre el Planificador 2027 (es-ES) y el New Year 2027 (en-US), necesito tu aprobación hoy. Además tienes 7 libros listos en HUMAN_REVIEW y 4 briefs de riesgo ALTO esperando approve-brief. Todo está en REPORTS/MEETING_PACK.md o en el panel.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
