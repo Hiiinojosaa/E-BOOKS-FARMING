@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1793081299198045400-da9781",
+  "ts": "2026-10-27T06:08:19Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "No hay tareas disponibles. La fábrica necesita tu revisión en 3 frentes: (1) 7 libros en HUMAN_REVIEW listos para aprobar o pedir cambios; (2) 4 briefs de riesgo ALTO esperando approve-brief para poder empezar a escribir; (3) 12 recomendaciones de temas nuevos pendientes de decidir. Todo está en REPORTS/MEETING_PACK.md. Hasta que no haya decisiones, los agentes no tienen trabajo.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
