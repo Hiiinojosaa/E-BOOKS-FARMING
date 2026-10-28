@@ -20,3 +20,4 @@
 {"ts": "2026-10-28T14:07:31Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 0}
 {"ts": "2026-10-28T14:09:25Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "progress", "msg": "MSG-1793196565506805800-1029a0"}
 {"ts": "2026-10-28T19:31:47Z", "type": "CHAT", "by": "S1-JEFE", "role": "agent", "kind": "progress", "msg": "MSG-1793215907865775000-9e177a"}
+{"ts": "2026-10-28T19:32:42Z", "type": "RECOVER", "agent": "S1-JEFE", "stale_running": 0, "locks_broken": 0, "books_reverted": 0, "tmp_removed": 0, "agents_offline": 1}
