@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1793167784547970200-679837",
+  "ts": "2026-10-28T06:09:44Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesion 28-oct manana. Sin ordenes ni tareas — fábrica en pausa esperando tus decisiones. Estado: 7 libros en HUMAN_REVIEW, 4 briefs pendientes de approve-brief, 12 recomendaciones por decidir, EB-TEST-001 listo para publicar. Consulta REPORTS/MEETING_PACK.md o el panel.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
