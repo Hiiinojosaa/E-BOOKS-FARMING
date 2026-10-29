@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1793297285050148400-f6cded",
+  "ts": "2026-10-29T18:08:05Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión 29-oct (noche). Informes actualizados. Sin tareas disponibles — fábrica en pausa esperando tus decisiones. Estado sin cambios: 7 libros en HUMAN_REVIEW, 4 briefs pendientes de approve-brief, 12 recomendaciones por decidir, EB-TEST-001 listo para publicar. Consulta REPORTS/MEETING_PACK.md o el panel.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
