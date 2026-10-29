@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1793282949255953000-164827",
+  "ts": "2026-10-29T14:09:09Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Sesión 29-oct iniciada. Informes actualizados. Sin órdenes ni tareas disponibles — la fábrica sigue esperando tus decisiones. Estado sin cambios: 7 libros en HUMAN_REVIEW, 4 briefs pendientes de approve-brief, 12 recomendaciones por decidir, EB-TEST-001 listo para publicar. La ventana Q4 para el Planificador 2027 (es-ES) y New Year 2027 (en-US) se está cerrando. Consulta REPORTS/MEETING_PACK.md o el panel.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
