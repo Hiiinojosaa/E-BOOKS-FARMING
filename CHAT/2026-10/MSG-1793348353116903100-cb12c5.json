@@ -1,0 +1,14 @@
+{
+  "id": "MSG-1793348353116903100-cb12c5",
+  "ts": "2026-10-30T08:19:13Z",
+  "from": "S1-JEFE",
+  "role": "agent",
+  "kind": "progress",
+  "to": null,
+  "text": "Buenos días (30 oct). Informes actualizados. Sin órdenes ni tareas disponibles — la fábrica sigue esperando tus decisiones. Estado sin cambios: 7 libros en HUMAN_REVIEW listos para aprobar (EB-000001, 003, 004, 005, 009, 012, 015), 4 briefs de riesgo ALTO pendientes de approve-brief (EB-000002, 010, 011, 014), 12 recomendaciones por decidir y EB-TEST-001 listo para publicar. La ventana Q4 para el Planificador 2027 (es-ES) y New Year 2027 (en-US) ya es crítica. Todo está en REPORTS/MEETING_PACK.md o en el panel.",
+  "book_id": null,
+  "order_id": null,
+  "decision_id": null,
+  "options": [],
+  "reply_to": null
+}
