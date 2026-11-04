@@ -1,4 +1,4 @@
-# MEETING PACK — 2026-11-03
+# MEETING PACK — 2026-11-04
 
 > Solo lo que requiere decisión de los socios.
 
