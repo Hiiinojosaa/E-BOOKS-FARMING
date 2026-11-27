@@ -1,6 +1,6 @@
 # WEEKLY REPORT 2026-W48
 
-_Periodo: últimos 7 día(s) hasta 2026-11-27T00:06:27Z_
+_Periodo: últimos 7 día(s) hasta 2026-11-27T02:06:27Z_
 
 ## Trabajo realizado
 
